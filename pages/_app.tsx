@@ -4,6 +4,7 @@ import { SampleProvider } from "./../lib/context/index";
 import Head from "next/head";
 import "../styles/globals.css";
 import "react-toastify/dist/ReactToastify.css";
+import AudioPlayBar from "../components/AudioPlayBar";
 
 function App({ Component, pageProps }: AppProps) {
   return (
@@ -30,6 +31,7 @@ function App({ Component, pageProps }: AppProps) {
       <SampleProvider>
         <ToastContainer position="top-right" autoClose={2000} />
         <Component {...pageProps} />
+        <AudioPlayBar />
       </SampleProvider>
     </>
   );

@@ -12,6 +12,7 @@ export const COLOR = {
 export const SIZE = {
   header_height: 80,
   page_size: 1200,
+  playbar_height: 110,
 };
 
 export const BASE_WRAPPER = styled.div`

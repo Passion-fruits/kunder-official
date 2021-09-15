@@ -3,7 +3,7 @@ export default function PassIcon({ callback, isNext }) {
     <svg
       xmlns="http://www.w3.org/2000/svg"
       width="13.088"
-      height="22.437"
+      height="20.437"
       viewBox="0 0 13.088 22.437"
       onClick={callback}
       style={isNext ? { transform: "rotate(180deg)" } : {}}
