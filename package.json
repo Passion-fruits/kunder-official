@@ -1,0 +1,25 @@
+{
+  "name": "kunder",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
+  },
+  "dependencies": {
+    "@emotion/styled": "^11.3.0",
+    "axios": "^0.21.1",
+    "next": "11.1.0",
+    "react": "17.0.2",
+    "react-dom": "17.0.2",
+    "react-google-login": "^5.2.2",
+    "react-toastify": "^7.0.4",
+    "wavesurfer.js": "^5.2.0"
+  },
+  "devDependencies": {
+    "@types/node": "^16.6.1",
+    "@types/react": "^17.0.18",
+    "typescript": "^4.3.5"
+  }
+}
