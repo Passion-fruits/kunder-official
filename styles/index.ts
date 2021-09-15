@@ -13,6 +13,7 @@ export const SIZE = {
   header_height: 80,
   page_size: 1200,
   playbar_height: 110,
+  card_size: 210,
 };
 
 export const BASE_WRAPPER = styled.div`
@@ -24,4 +25,5 @@ export const BASE_WRAPPER = styled.div`
 export const BASE_CONTAINER = styled.div`
   width: ${`${SIZE.page_size}px`};
   padding-top: ${`${SIZE.header_height}px`};
+  padding-bottom: ${`${SIZE.playbar_height}px`};
 `;

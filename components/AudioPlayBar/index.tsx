@@ -33,6 +33,7 @@ export default function AudioPlayBar() {
   }, [audio]);
 
   const moveMusic = React.useCallback(({ target }) => {
+    if (!musicObj.song_id) return;
     const value = target.value;
     setMusicProgress(value);
     audio.current.currentTime = (audio.current.duration * value) / 100;

@@ -15,7 +15,7 @@ export const Container = styled(BASE_CONTAINER)`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: black;
+  background-color: #0e0e0f;
 `;
 
 export const Info = styled.div`

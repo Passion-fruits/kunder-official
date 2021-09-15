@@ -14,7 +14,7 @@ export const Container = styled(BASE_CONTAINER)`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-top: 0px;
+  padding: 0px;
   height: ${`${SIZE.header_height}px`};
   background-color: ${COLOR.black_background};
 `;
