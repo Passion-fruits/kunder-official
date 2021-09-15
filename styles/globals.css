@@ -2,57 +2,55 @@ html,
 body {
   padding: 0;
   margin: 0;
-  font-family: 'NanumSquare', sans-serif;
+  font-family: "NanumSquare", sans-serif;
+  background-color: #1a1a1a;
 }
 
-header{
-  min-width: 800px;
-}
-
-h1,h2,h3,h4,h5,h6{
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   margin: 0;
 }
 
-div{
+div {
   box-sizing: border-box;
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
 }
 
 * {
   box-sizing: border-box;
-  font-family: 'NanumSquare', sans-serif;
+  font-family: "NanumSquare", sans-serif;
 }
 
-button,input{
+button,
+input {
   outline: none;
+  border: none;
   box-sizing: border-box;
-  border:none;
-  font-family: 'NanumSquare', sans-serif;
+  font-family: "NanumSquare", sans-serif;
 }
 
-p{
+p {
   margin: 0;
-  padding:0;
+  padding: 0;
 }
 
-button{
+button {
   cursor: pointer;
-  background:none;
+  background: none;
 }
 
-img{
-  object-fit:cover;
+img {
+  object-fit: cover;
 }
 
-textarea{
+textarea {
   resize: none;
   outline: none;
 }
 
-textarea::-webkit-scrollbar{
+textarea::-webkit-scrollbar {
   display: none;
 }
