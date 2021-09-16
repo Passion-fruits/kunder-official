@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import { COLOR, SIZE } from "./../../styles/index";
+import { COLOR, SIZE } from "../../styles/index";
 
 export const Wrapper = styled.div`
   display: flex;

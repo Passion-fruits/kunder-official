@@ -1,13 +1,13 @@
 import * as S from "./styles";
 import { MusicCardListProps } from "./../../lib/interfaces/music";
-import MusicCard from "../MusicCard";
+import MusicColumnCard from "../MusicColumnCard";
 
 export default function MusicCardList({ musicList }: MusicCardListProps) {
   return (
     <S.Wrapper>
       {musicList.map(
         ({ title, artist, song_id, song_url, like, cover_url }, index) => (
-          <MusicCard
+          <MusicColumnCard
             title={title}
             artist={artist}
             song_id={song_id}

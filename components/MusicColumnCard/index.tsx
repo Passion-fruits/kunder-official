@@ -1,10 +1,10 @@
 import { HeartIcon, PlayIcon } from "../../assets";
 import { musicCardObject } from "../../lib/interfaces/music";
 import * as S from "./styles";
-import { setValue } from "./../../lib/context/index";
+import { setValue } from "../../lib/context/index";
 import { useRouter } from "next/dist/client/router";
 
-export default function MusicCard({
+export default function MusicColumnCard({
   title,
   artist,
   cover_url,

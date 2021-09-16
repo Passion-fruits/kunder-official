@@ -1,3 +1,4 @@
+@import url(http://fonts.googleapis.com/earlyaccess/notosanskr.css);
 html,
 body {
   padding: 0;
@@ -53,4 +54,9 @@ textarea {
 
 textarea::-webkit-scrollbar {
   display: none;
+}
+
+#noto {
+  font-family: "Noto Sans KR", sans-serif;
+  font-weight: 400;
 }

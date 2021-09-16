@@ -3,8 +3,9 @@ import styled from "@emotion/styled";
 export const COLOR = {
   black_background: "#1A1A1A",
   black_subBackground: "#2A2B2E",
+  black_text: "#848484",
   gray_text: "#D9EDFF",
-  gray_subText: "#848484",
+  gray_subText: "#B4B3B3",
   green_main: "#70FC35",
   red_text: "#FF6464",
 };
