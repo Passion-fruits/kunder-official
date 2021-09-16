@@ -1,14 +1,14 @@
 import React, { useReducer, useContext, createContext, Dispatch } from "react";
-import { dispatchMusicObject } from "./../interfaces/music";
+import { musicCardObject } from "./../interfaces/music";
 
 type State = {
-  musicInformation: dispatchMusicObject;
-  list: dispatchMusicObject[] | [];
+  musicInformation: musicCardObject;
+  list: musicCardObject[] | [];
 };
 
 type Action =
-  | { type: "MUSIC_CHANGE"; musicInformation: dispatchMusicObject }
-  | { type: "SET_MUSIC_LIST"; list: dispatchMusicObject[] };
+  | { type: "MUSIC_CHANGE"; musicInformation: musicCardObject }
+  | { type: "SET_MUSIC_LIST"; list: musicCardObject[] };
 
 type SampleDispatch = Dispatch<Action>;
 

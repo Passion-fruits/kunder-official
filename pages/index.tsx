@@ -1,12 +1,13 @@
 import MusicCard from "../components/MusicCard";
-import { BASE_WRAPPER, BASE_CONTAINER } from "./../styles/index";
 
 export default function Home() {
   return (
-    <BASE_WRAPPER>
-      <BASE_CONTAINER>
-        <MusicCard />
-      </BASE_CONTAINER>
-    </BASE_WRAPPER>
+    <MusicCard
+      title="aaa"
+      song_id="sdf"
+      cover_url="asdfjk"
+      like={1}
+      artist="asdf"
+    />
   );
 }

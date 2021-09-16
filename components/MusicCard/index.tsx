@@ -1,23 +1,56 @@
 import { HeartIcon, PlayIcon } from "../../assets";
+import { musicCardObject } from "../../lib/interfaces/music";
 import * as S from "./styles";
+import { setValue } from "./../../lib/context/index";
+import { useRouter } from "next/dist/client/router";
 
-export default function MusicCard() {
+export default function MusicCard({
+  title,
+  artist,
+  cover_url,
+  song_id,
+  song_url,
+  like,
+}: musicCardObject) {
+  const dispatch = setValue();
+  const router = useRouter();
+
+  const routingToDetail = (): void => {
+    router.push(`/detail?id=${song_id}`);
+  };
+
+  const musicChange = (event) => {
+    event.stopPropagation();
+    dispatch({
+      type: "MUSIC_CHANGE",
+      musicInformation: {
+        title: title,
+        artist: artist,
+        cover_url: cover_url,
+        song_url: song_url,
+        song_id: song_id,
+      },
+    });
+  };
+
   return (
     <S.Wrapper>
       <div className="cover-image-wrap">
-        <div className="cover">
-          <S.PlayBtn>
+        <div className="cover" onClick={routingToDetail}>
+          <S.PlayBtn onClick={musicChange}>
             <PlayIcon size={16} color="white" callback={() => {}} />
           </S.PlayBtn>
         </div>
-        <img src="/cover.jpg" />
+        <img src={cover_url} />
       </div>
-      <h1 className="music-title">나를 찾아줘</h1>
-      <h3 className="musician-name">jungjiwon</h3>
+      <h1 className="music-title" onClick={routingToDetail}>
+        {title}
+      </h1>
+      <h3 className="musician-name">{artist}</h3>
       <S.IconWrap>
         <div className="wrap">
           <HeartIcon size={13} callback={() => {}} />
-          <span>13</span>
+          <span>{like}</span>
         </div>
       </S.IconWrap>
     </S.Wrapper>
