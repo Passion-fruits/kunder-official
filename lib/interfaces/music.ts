@@ -16,3 +16,7 @@ export interface musicObject extends musicCardObject {
   comment: string;
   user_id: string | number;
 }
+
+export interface MusicCardListProps {
+  musicList: musicCardObject[];
+}
