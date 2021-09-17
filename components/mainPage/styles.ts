@@ -3,7 +3,6 @@ import {
   BASE_WRAPPER,
   BASE_CONTAINER,
   COLOR,
-  SIZE,
 } from "./../../styles/index";
 
 export const Wrapper = styled(BASE_WRAPPER)``;
