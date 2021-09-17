@@ -43,13 +43,15 @@ export default function MusicColumnCard({
         </div>
         <img src={cover_url} />
       </div>
-      <h1 className="music-title" onClick={routingToDetail}>
+      <div className="music-title" onClick={routingToDetail}>
         {title}
-      </h1>
-      <h3 className="musician-name">{artist}</h3>
+      </div>
+      <h3 className="musician-name" id="noto">
+        {artist}
+      </h3>
       <S.IconWrap>
         <div className="wrap">
-          <HeartIcon size={13} callback={() => {}} />
+          <HeartIcon size={13} callback={() => {}} isLike={true} />
           <span>{like}</span>
         </div>
       </S.IconWrap>

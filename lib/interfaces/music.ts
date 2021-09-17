@@ -2,7 +2,7 @@ export interface musicCardObject {
   title: string;
   artist: string;
   cover_url: string;
-  song_id: string;
+  song_id: string | number;
   song_url?: string;
   short_url?: string;
   like?: string | number;

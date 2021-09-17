@@ -8,6 +8,7 @@ import {
 
 export const Wrapper = styled(BASE_WRAPPER)`
   position: fixed;
+  z-index: 5;
 `;
 
 export const Container = styled(BASE_CONTAINER)`

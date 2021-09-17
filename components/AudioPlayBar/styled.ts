@@ -16,6 +16,7 @@ export const Container = styled(BASE_CONTAINER)`
   align-items: center;
   justify-content: space-between;
   background-color: #0e0e0f;
+  box-shadow: 0px -3px 20px rgb(0, 0, 0, 0.3);
 `;
 
 export const Info = styled.div`

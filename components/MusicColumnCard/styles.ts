@@ -8,7 +8,7 @@ export const Wrapper = styled.div`
   & .cover-image-wrap {
     width: ${`${SIZE.card_size}px`};
     height: ${`${SIZE.card_size}px`};
-    border-radius: 8px;
+    border-radius: 0px;
     overflow: hidden;
     position: relative;
     & img {
@@ -33,9 +33,11 @@ export const Wrapper = styled.div`
     }
   }
   & .music-title {
+    width: 100%;
     color: ${COLOR.gray_text};
-    font-size: 18px;
-    margin-top: 20px;
+    font-size: 15px;
+    font-weight: 500;
+    margin-top: 13px;
     transition: 0.5s;
     cursor: pointer;
     &:hover {
@@ -44,9 +46,9 @@ export const Wrapper = styled.div`
   }
   & .musician-name {
     color: ${COLOR.gray_subText};
-    font-size: 16px;
+    font-size: 13px;
     font-weight: 500;
-    margin-top: 8px;
+    margin-top: 3px;
     transition: 0.5s;
     cursor: pointer;
     &:hover {
@@ -57,8 +59,8 @@ export const Wrapper = styled.div`
 
 export const IconWrap = styled.div`
   display: flex;
-  justify-content: flex-end;
-  margin-top: 3px;
+  justify-content: flex-start;
+  margin-top: 10px;
   & .wrap {
     display: flex;
     align-items: center;
