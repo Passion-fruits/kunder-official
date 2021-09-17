@@ -7,7 +7,7 @@ import {
 } from "../../assets/index";
 import { getValue, setValue } from "../../lib/context";
 import { toast } from "react-toastify";
-import { dispatchMusicObject } from "./../../lib/interfaces/music";
+import { musicCardObject } from "./../../lib/interfaces/music";
 import React from "react";
 import * as S from "./styled";
 import MusicInfo from "./MusicInfo";
@@ -32,13 +32,16 @@ export default function AudioPlayBar() {
     setIsPlay(true);
   }, [audio]);
 
-  const moveMusic = React.useCallback(({ target }) => {
-    if (!musicObj.song_id) return;
-    const value = target.value;
-    setMusicProgress(value);
-    audio.current.currentTime = (audio.current.duration * value) / 100;
-    musicStart();
-  }, []);
+  const moveMusic = React.useCallback(
+    ({ target }) => {
+      if (!musicObj.song_id) return;
+      const value = target.value;
+      setMusicProgress(value);
+      audio.current.currentTime = (audio.current.duration * value) / 100;
+      musicStart();
+    },
+    [musicObj]
+  );
 
   const controleMusicVolume = React.useCallback(({ target }) => {
     setVolume(target.value);
@@ -75,8 +78,7 @@ export default function AudioPlayBar() {
 
   const moveNextMusic = React.useCallback(() => {
     if (musicListNowIndex + 1 < musicList.length && musicList.length > 0) {
-      const nextMusicObj: dispatchMusicObject =
-        musicList[musicListNowIndex + 1];
+      const nextMusicObj: musicCardObject = musicList[musicListNowIndex + 1];
       dispatch({
         type: "MUSIC_CHANGE",
         musicInformation: {
@@ -151,9 +153,11 @@ export default function AudioPlayBar() {
             )}
             <PassIcon callback={moveNextMusic} isNext={true} />
           </S.CenterControl>
-          <S.RangeContainer progress={musicProgress}>
-            <input type="range" onClick={moveMusic} />
-          </S.RangeContainer>
+          <S.RangeContainerWrap>
+            <S.RangeContainer progress={musicProgress}>
+              <input type="range" onClick={moveMusic} />
+            </S.RangeContainer>
+          </S.RangeContainerWrap>
         </S.Center>
         <MusicInfo
           title={musicObj.title}

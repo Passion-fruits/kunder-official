@@ -121,11 +121,20 @@ export const CenterControl = styled.div`
   }
 `;
 
-export const RangeContainer = styled.div<rangeProps>`
-  margin-top: 25px;
-  -webkit-appearance: none;
+export const RangeContainerWrap = styled.div`
   width: 400px;
-  height: 6px;
+  height: 9px;
+  margin-top: 25px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  &:hover div {
+    height: 100%;
+  }
+`;
+
+export const RangeContainer = styled.div<rangeProps>`
+  width: 100%;
+  height: 70%;
   position: relative;
   display: flex;
   align-items: center;
@@ -133,14 +142,11 @@ export const RangeContainer = styled.div<rangeProps>`
     `linear-gradient(to right, ${COLOR.green_main} 0%, ${COLOR.green_main} 
     ${e.progress}%, #3A3A3A ${e.progress}%, #3A3A3A 100%)`};
   cursor: pointer;
-  transition: background 450ms ease-in;
   border-radius: 24px;
   overflow: hidden;
   border: none;
-  &:hover {
-    height: 9px;
-  }
   & input[type="range"] {
+    -webkit-appearance: none;
     cursor: pointer;
     width: 100%;
     opacity: 0;

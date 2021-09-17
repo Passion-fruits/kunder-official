@@ -17,7 +17,8 @@ export const Container = styled(BASE_CONTAINER)`
   align-items: center;
   padding: 0px;
   height: ${`${SIZE.header_height}px`};
-  background-color: ${COLOR.black_background};
+  background-color: rgb(15, 15, 15, 0.9);
+  backdrop-filter: blur(3px);
 `;
 
 export const MenuWrap = styled.div`
