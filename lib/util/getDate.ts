@@ -1,4 +1,4 @@
-export function getDate(params: Date) {
+export function getDate(params: Date | string) {
   let date = new Date(params);
   const KR_TIME_DIFF = 9 * 60 * 60 * 1000;
   let diff = (new Date().getTime() - date.getTime() + KR_TIME_DIFF) / 1000,
