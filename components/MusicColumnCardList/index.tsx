@@ -1,8 +1,8 @@
 import * as S from "./styles";
-import { MusicCardListProps } from "./../../lib/interfaces/music";
+import { MusicCardListProps } from "../../lib/interfaces/music";
 import MusicColumnCard from "../MusicColumnCard";
 
-export default function MusicCardList({ musicList }: MusicCardListProps) {
+export default function MusicColumnCardList({ musicList }: MusicCardListProps) {
   return (
     <S.Wrapper>
       {musicList.map(

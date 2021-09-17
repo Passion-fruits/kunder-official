@@ -17,6 +17,7 @@ export const ThemaCardListWrapper = styled.div`
   display: flex;
   flex-direction: column;
   margin-top: 20px;
+  position: relative;
   & .title {
     color: ${COLOR.gray_text};
     font-size: 22px;
@@ -27,6 +28,16 @@ export const ThemaCardListWrapper = styled.div`
     font-size: 15px;
     margin-top: 5px;
     margin-bottom: 20px;
+  }
+  & .more-button {
+    position: absolute;
+    right: 0;
+    top: 15px;
+    opacity: 0.7;
+    transition: 0.3s;
+    &:hover {
+      opacity: 1;
+    }
   }
   :first-of-type {
     margin-top: 0px;
@@ -53,6 +64,7 @@ export const GenreCard = styled.div<genreCardProps>`
   background-image: ${(res) => `url(${res.img})`};
   position: relative;
   overflow: hidden;
+  cursor: pointer;
   &::before {
     content: "";
     width: 100%;

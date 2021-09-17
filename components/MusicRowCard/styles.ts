@@ -5,14 +5,14 @@ export const Wrapper = styled.div`
   width: 100%;
   display: flex;
   align-items: center;
-  padding: 12px 20px;
+  padding: 12px 10px;
   border-radius: 10px;
   background-color: ${COLOR.black_background};
-  transition: 0.5s;
+  transition: 0.3s;
   position: relative;
   margin-top: 5px;
   &:hover {
-    background-color: rgb(0, 0, 0, 0.1);
+    background-color: rgb(0, 0, 0, 0.3);
   }
   & .cover-image {
     width: 50px;
@@ -56,10 +56,10 @@ export const Wrapper = styled.div`
     position: absolute;
     right: 0;
     margin-top: 5px;
+    margin-right: 20px;
     & span {
       font-size: 14px;
       color: ${COLOR.green_main};
-      margin-right: 20px;
     }
   }
 `;

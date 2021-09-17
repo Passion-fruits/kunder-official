@@ -10,12 +10,13 @@ export const Wrapper = styled(BASE_WRAPPER)`
 export const Container = styled(BASE_CONTAINER)`
   height: ${`${SIZE.playbar_height}px`};
   padding: 0 25px;
-  border-radius: 10px 10px 0 0;
   position: relative;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: #0e0e0f;
+  border-radius: 20px 20px 0 0;
+  background-color: rgb(0, 0, 0, 0.8);
+  backdrop-filter: blur(3px);
   box-shadow: 0px -3px 20px rgb(0, 0, 0, 0.3);
 `;
 

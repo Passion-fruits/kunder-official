@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import { SIZE } from "./../../styles/index";
+import { SIZE } from "../../styles/index";
 
 export const Wrapper = styled.div`
   width: 100%;
