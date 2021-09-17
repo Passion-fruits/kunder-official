@@ -5,7 +5,7 @@ export const data = [
       "https://passion-fruits-bucket.s3.ap-northeast-2.amazonaws.com/cover/c357fb10-663e-4296-aae3-c3920376cb80 maxresdefault.jpg",
     song_url:
       "https://passion-fruits-bucket.s3.ap-northeast-2.amazonaws.com/song/782dd0ce-5eca-4708-b98b-98d0aa7434fd y2mate.com - pick up the phone.mp3",
-    title: "Pick Up The Phone",
+    title: "Pick Up The Phone My little brother!!",
     description: "팬티 꽉 잡고 들어주세요.",
     created_at: "2021-09-09T16:10:47.747Z",
     genre: "힙합",
@@ -68,5 +68,19 @@ export const data = [
     artist: "이명호",
     like: "2",
     comment: "2",
+  },
+  {
+    song_id: 94,
+    cover_url:
+      "https://t1.daumcdn.net/thumb/R720x0.fpng/?fname=http://t1.daumcdn.net/brunch/service/user/8fXh/image/0_JTh3JET7ZCHaT_IJhG4VbhEpI.png",
+    song_url:
+      "https://passion-fruits-bucket.s3.ap-northeast-2.amazonaws.com/song/782dd0ce-5eca-4708-b98b-98d0aa7434fd y2mate.com - pick up the phone.mp3",
+    title: "Pick Up The Phone",
+    description: "팬티 꽉 잡고 들어주세요.",
+    created_at: "2021-09-09T16:10:47.747Z",
+    genre: "힙합",
+    artist: "Rixt Malone",
+    like: "4",
+    comment: "0",
   },
 ];

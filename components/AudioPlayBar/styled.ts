@@ -123,7 +123,7 @@ export const CenterControl = styled.div`
 
 export const RangeContainerWrap = styled.div`
   width: 400px;
-  height: 9px;
+  height: 7px;
   margin-top: 25px;
   margin-bottom: 10px;
   cursor: pointer;
@@ -134,7 +134,7 @@ export const RangeContainerWrap = styled.div`
 
 export const RangeContainer = styled.div<rangeProps>`
   width: 100%;
-  height: 70%;
+  height: 40%;
   position: relative;
   display: flex;
   align-items: center;
