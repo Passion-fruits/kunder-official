@@ -4,17 +4,22 @@ export const COLOR = {
   black_background: "#0F0F0F",
   black_subBackground: "#1A1A1A",
   black_text: "#848484",
-  gray_text: "#E3E3E3",
+  gray_text: "#E6F3FF",
   gray_subText: "#9D9D9D",
   green_main: "#00FF33",
   red_text: "#FF6464",
 };
 
+const pageSize = 1350;
+
+const cardIndex = 6;
+
 export const SIZE = {
   header_height: 80,
-  page_size: 1350,
+  page_size: pageSize,
   playbar_height: 110,
-  card_size: 210,
+  card_size: pageSize / cardIndex - 13,
+  card_indexing: cardIndex,
 };
 
 export const BASE_WRAPPER = styled.div`
