@@ -1,9 +1,5 @@
 import styled from "@emotion/styled";
-import {
-  BASE_WRAPPER,
-  BASE_CONTAINER,
-  COLOR,
-} from "./../../styles/index";
+import { BASE_WRAPPER, BASE_CONTAINER, COLOR } from "./../../styles/index";
 
 export const Wrapper = styled(BASE_WRAPPER)``;
 
@@ -15,7 +11,7 @@ export const Container = styled(BASE_CONTAINER)`
 export const ThemaCardListWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  margin-top: 20px;
+  margin-top: 30px;
   position: relative;
   & .title {
     color: ${COLOR.gray_text};

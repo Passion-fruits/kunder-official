@@ -6,13 +6,13 @@ export const Wrapper = styled.div`
   display: flex;
   align-items: center;
   padding: 12px 10px;
-  border-radius: 10px;
+  border-radius: 3px;
   background-color: ${COLOR.black_background};
   transition: 0.3s;
   position: relative;
   margin-top: 5px;
   &:hover {
-    background-color: rgb(0, 0, 0, 0.3);
+    background-color: #202020;
   }
   & .cover-image {
     width: 50px;
@@ -44,8 +44,8 @@ export const Wrapper = styled.div`
     & div {
       padding: 7px 15px;
       border-radius: 24px;
-      border: 1px solid ${COLOR.black_text};
-      color: ${COLOR.black_text};
+      border: 1px solid #a1a1a1;
+      color: #a1a1a1;
       font-size: 15px;
     }
   }
