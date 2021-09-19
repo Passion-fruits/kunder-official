@@ -9,6 +9,7 @@ import {
 export const Wrapper = styled(BASE_WRAPPER)`
   position: fixed;
   z-index: 5;
+  border-bottom: 1px solid #1a1a1a;
 `;
 
 export const Container = styled(BASE_CONTAINER)`
@@ -27,14 +28,14 @@ export const MenuWrap = styled.div`
   & .web-logo {
     text-transform: uppercase;
     color: ${COLOR.green_main};
-    font-size: 33px;
+    font-size: 30px;
     font-family: "Agency FB";
     cursor: pointer;
     /* 추후 변경 해야함 font family 안먹음 */
   }
   & span {
     font-size: 17px;
-    font-weight: 600;
+    font-weight: 500;
     color: ${COLOR.gray_text};
     cursor: pointer;
     padding: 10px 15px;
@@ -51,7 +52,7 @@ export const MenuWrap = styled.div`
     padding: 10px 17px;
     background-color: ${COLOR.black_subBackground};
     color: ${COLOR.gray_text};
-    font-size: 16px;
+    font-size: 15px;
     border-radius: 5px;
     transition: 0.5s;
     opacity: 0.7;

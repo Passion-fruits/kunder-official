@@ -11,6 +11,14 @@ export const Wrapper = styled.div`
   transition: 0.3s;
   position: relative;
   margin-top: 5px;
+  & svg {
+    cursor: pointer;
+    opacity: 0.7;
+    margin-left: 20px;
+    &:hover {
+      opacity: 1;
+    }
+  }
   &:hover {
     background-color: #202020;
   }
@@ -18,7 +26,6 @@ export const Wrapper = styled.div`
     width: 50px;
     height: 50px;
     cursor: pointer;
-    margin-left: 20px;
     border-radius: 3px;
   }
   & .music-information {
@@ -28,8 +35,7 @@ export const Wrapper = styled.div`
     margin-left: 20px;
     width: 35%;
     & h1 {
-      font-size: 16px;
-      font-weight: 400;
+      font-size: 15px;
       color: ${COLOR.gray_text};
     }
     & span {
@@ -44,8 +50,8 @@ export const Wrapper = styled.div`
     & div {
       padding: 7px 15px;
       border-radius: 24px;
-      border: 1px solid #a1a1a1;
-      color: #a1a1a1;
+      border: 1px solid #707070;
+      color: #707070;
       font-size: 15px;
     }
   }

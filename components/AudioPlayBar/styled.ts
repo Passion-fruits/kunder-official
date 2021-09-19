@@ -114,10 +114,6 @@ export const CenterControl = styled.div`
   gap: 80px;
   & svg {
     cursor: pointer;
-    transition: 0.5s;
-    &:hover {
-      opacity: 0.5;
-    }
   }
 `;
 

@@ -36,7 +36,6 @@ export const Wrapper = styled.div`
     width: 100%;
     color: ${COLOR.gray_text};
     font-size: 15px;
-    font-family: Arial, Helvetica, sans-serif;
     font-weight: 500;
     margin-top: 13px;
     transition: 0.5s;

@@ -27,7 +27,7 @@ export const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  animation: ${UpperAnime} 1s;
+  animation: ${UpperAnime} 0.5s;
   & .title {
     font-size: 30px;
     font-weight: 800;

@@ -1,9 +1,9 @@
 import styled from "@emotion/styled";
 
 export const COLOR = {
-  black_background: "#0F0F0F",
+  black_background: "#101111",
   black_subBackground: "#242424",
-  black_text: "#848484",
+  black_text: "#FFF",
   gray_text: "#EEF6FF",
   gray_subText: "#999999",
   green_main: "#00FF33",
@@ -15,7 +15,7 @@ const pageSize = 1350;
 const cardIndex = 6;
 
 export const SIZE = {
-  header_height: 80,
+  header_height: 70,
   page_size: pageSize,
   playbar_height: 110,
   card_size: pageSize / cardIndex - 13,

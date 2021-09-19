@@ -15,7 +15,7 @@ export const ThemaCardListWrapper = styled.div`
   position: relative;
   & .title {
     color: ${COLOR.gray_text};
-    font-size: 22px;
+    font-size: 25px;
     font-weight: 800;
   }
   & .description {
@@ -35,7 +35,7 @@ export const ThemaCardListWrapper = styled.div`
     }
   }
   :first-of-type {
-    margin-top: 0px;
+    margin-top: 20px;
   }
 `;
 

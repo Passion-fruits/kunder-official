@@ -96,7 +96,7 @@ export default function LoginPage() {
 
   return (
     <S.Wrapper>
-      {email ? (
+      {!email ? (
         <S.Container>
           <h1 className="title">LOGIN</h1>
           <p className="description">간편 로그인으로 쿤더를 만나보세요</p>
