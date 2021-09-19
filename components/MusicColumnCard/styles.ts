@@ -8,7 +8,7 @@ export const Wrapper = styled.div`
   & .cover-image-wrap {
     width: ${`${SIZE.card_size}px`};
     height: ${`${SIZE.card_size}px`};
-    border-radius: 0px;
+    border-radius: 5px;
     overflow: hidden;
     position: relative;
     & img {
@@ -18,7 +18,7 @@ export const Wrapper = styled.div`
     .cover {
       width: 100%;
       height: 100%;
-      background: linear-gradient(rgb(0, 0, 0, 0), rgb(0, 0, 0, 0.8));
+      background: linear-gradient(rgb(0, 0, 0, 0), rgb(0, 0, 0, 1));
       opacity: 0;
       z-index: 2;
       transition: 0.3s;
@@ -36,6 +36,7 @@ export const Wrapper = styled.div`
     width: 100%;
     color: ${COLOR.gray_text};
     font-size: 15px;
+    font-family: Arial, Helvetica, sans-serif;
     font-weight: 500;
     margin-top: 13px;
     transition: 0.5s;
@@ -73,8 +74,8 @@ export const IconWrap = styled.div`
 `;
 
 export const PlayBtn = styled.button`
-  width: 50px;
-  height: 50px;
+  width: 60px;
+  height: 60px;
   border-radius: 80%;
   border: 2px solid white;
   background-color: rgb(0, 0, 0, 0.3);
@@ -82,7 +83,7 @@ export const PlayBtn = styled.button`
     margin-left: 5px;
   }
   &:hover {
-    width: 55px;
-    height: 55px;
+    width: 65px;
+    height: 65px;
   }
 `;

@@ -4,8 +4,8 @@ export const COLOR = {
   black_background: "#0F0F0F",
   black_subBackground: "#242424",
   black_text: "#848484",
-  gray_text: "#E6F3FF",
-  gray_subText: "#AEAEAE",
+  gray_text: "#EEF6FF",
+  gray_subText: "#999999",
   green_main: "#00FF33",
   red_text: "#FF6464",
 };
