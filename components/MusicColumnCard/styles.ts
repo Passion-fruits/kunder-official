@@ -8,7 +8,7 @@ export const Wrapper = styled.div`
   & .cover-image-wrap {
     width: ${`${SIZE.card_size}px`};
     height: ${`${SIZE.card_size}px`};
-    border-radius: 5px;
+    border-radius: 3px;
     overflow: hidden;
     position: relative;
     & img {
@@ -74,8 +74,8 @@ export const IconWrap = styled.div`
 `;
 
 export const PlayBtn = styled.button`
-  width: 60px;
-  height: 60px;
+  width: 50px;
+  height: 50px;
   border-radius: 80%;
   border: 2px solid white;
   background-color: rgb(0, 0, 0, 0.3);
@@ -83,7 +83,7 @@ export const PlayBtn = styled.button`
     margin-left: 5px;
   }
   &:hover {
-    width: 65px;
-    height: 65px;
+    width: 55px;
+    height: 55px;
   }
 `;

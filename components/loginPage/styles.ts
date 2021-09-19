@@ -1,5 +1,6 @@
 import styled from "@emotion/styled";
 import { BASE_WRAPPER, BASE_CONTAINER, COLOR } from "./../../styles/index";
+import { keyframes } from "@emotion/react";
 
 export const Wrapper = styled(BASE_CONTAINER)`
   width: 100%;
@@ -9,23 +10,32 @@ export const Wrapper = styled(BASE_CONTAINER)`
   align-items: center;
 `;
 
+const UpperAnime = keyframes`
+0%{
+  opacity:0;
+  margin-top:50px;
+}
+100%{
+  opacity:1;
+  margin-top:0px;
+}
+`;
+
 export const Container = styled.div`
-  background: ${COLOR.black_subBackground};
   width: 380px;
-  box-sizing: content-box;
   border-radius: 10px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 50px 0;
-  & .login {
-    font-size: 28px;
+  animation: ${UpperAnime} 1s;
+  & .title {
+    font-size: 30px;
     font-weight: 800;
-    color: white;
+    color: ${COLOR.gray_text};
   }
   & .description {
     margin-top: 10px;
-    font-size: 15px;
+    font-size: 17px;
     color: ${COLOR.gray_subText};
   }
   & .login-button {
@@ -61,5 +71,73 @@ export const Container = styled.div`
     font-size: 14px;
     margin-top: 50px;
     cursor: pointer;
+  }
+`;
+
+export const InputWrap = styled.div`
+  width: 450px;
+  margin-top: 30px;
+  & .input-title {
+    color: ${COLOR.gray_text};
+    font-size: 17px;
+    font-weight: 600;
+    display: flex;
+    margin-bottom: 17px;
+    &::before {
+      content: "*";
+      font-size: 17px;
+      color: ${COLOR.red_text};
+      margin-right: 5px;
+    }
+  }
+  & input {
+    width: 100%;
+    height: 50px;
+    border-radius: 5px;
+    background: #1a1a1a;
+    padding: 0 22px;
+    color: ${COLOR.gray_subText};
+    font-size: 17px;
+  }
+  & .loading-button {
+    background: #7499ff;
+  }
+  & button {
+    width: 100%;
+    height: 50px;
+    border-radius: 5px;
+    background: #4677ff;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 30px;
+    transition: 0.5s;
+    border: 2px solid transparent;
+    :focus {
+      border: 2px solid skyblue;
+    }
+  }
+`;
+
+export const GridContainer = styled.div`
+  display: grid;
+  width: 100%;
+  grid-template-columns: repeat(4, 1fr);
+  margin-top: 10px;
+  & div {
+    display: flex;
+    align-items: center;
+    margin-top: 15px;
+    & label {
+      margin-left: 5px;
+      font-size: 17px;
+      color: ${COLOR.gray_subText};
+      cursor: pointer;
+    }
+    & input[type="checkbox"] {
+      cursor: pointer;
+      width: 15px;
+      height: 15px;
+    }
   }
 `;

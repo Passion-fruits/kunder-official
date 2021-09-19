@@ -38,7 +38,7 @@ export default function MusicColumnCard({
       <div className="cover-image-wrap">
         <div className="cover" onClick={routingToDetail}>
           <S.PlayBtn onClick={musicChange}>
-            <PlayIcon size={18} color="white" callback={() => {}} />
+            <PlayIcon size={17} color="white" callback={() => {}} />
           </S.PlayBtn>
         </div>
         <img src={cover_url} />
