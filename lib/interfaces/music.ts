@@ -8,6 +8,7 @@ export interface musicCardObject {
   like?: string | number;
   created_at?: Date | string;
   genre?: string;
+  indexNum?: number;
 }
 
 export interface musicObject extends musicCardObject {

@@ -11,10 +11,12 @@ export default function MusicRowCard({
   song_url,
   like,
   genre,
+  indexNum,
   created_at,
 }: musicCardObject) {
   return (
     <S.Wrapper>
+      <h3 className="index-num">{indexNum + 1}</h3>
       <img src={cover_url} className="cover-image" />
       <PlayIcon callback={() => {}} size={13} />
       <div className="music-information">
@@ -22,13 +24,13 @@ export default function MusicRowCard({
         <span id="noto">{artist}</span>
       </div>
       <div className="hashtag-container">
-        {/*    <div>{genre}음악</div>
-        <div>아침에</div>
-        <div>{getDate(created_at)}</div> */}
-      </div>
-      <div className="heart-wrap">
-        <HeartIcon size={16} callback={() => {}} />
-        <span>{like}</span>
+        <div className="tag"># {genre}음악</div>
+        <div className="tag"># 아침에</div>
+        <div className="tag">{getDate(created_at)}</div>
+        <div className="heart-wrap">
+          <HeartIcon size={18} callback={() => {}} />
+          <span>{like}</span>
+        </div>
       </div>
     </S.Wrapper>
   );

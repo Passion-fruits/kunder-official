@@ -1,16 +1,17 @@
 import styled from "@emotion/styled";
 
 export const COLOR = {
-  black_background: "#101111",
-  black_subBackground: "#242424",
+  black_background: "#000000",
+  black_subBackground: "#141414",
   black_text: "#FFF",
-  gray_text: "#EEF6FF",
+  gray_text: "#F8F8F8",
   gray_subText: "#999999",
+  gray_borderColor: "rgb(50,50,50)",
   green_main: "#00FF33",
   red_text: "#FF6464",
 };
 
-const pageSize = 1350;
+const pageSize = 1300;
 
 const cardIndex = 6;
 

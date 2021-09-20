@@ -16,7 +16,7 @@ export const data = [
   {
     song_id: 92,
     cover_url:
-      "https://passion-fruits-bucket.s3.ap-northeast-2.amazonaws.com/cover/15284629-b0eb-47fb-831c-7bca0c75c09c 다운로드.jfif",
+      "https://cdn.notefolio.net/img/9a/64/9a649d34569e8803eb35721f5fab8edb4e7f071ab9c9fecccd813b27dfc80342_v1.jpg",
     song_url:
       "https://passion-fruits-bucket.s3.ap-northeast-2.amazonaws.com/song/80d093ff-cee1-441e-8354-b93be081dda1 y2mate.com -  신나는ㄷㅔ 시끄럽진 않은 feat 잼민이 창법 𝟯𝟰𝟳𝗮𝗶𝗱𝗮𝗻  𝗠𝗘𝗠𝗢𝗥𝗜𝗘𝗦 가사해석_320kbps.mp3",
     title: "𝟯𝟰𝟳𝗮𝗶𝗱𝗮𝗻 - 𝗠𝗘𝗠𝗢𝗥𝗜𝗘𝗦! ",
@@ -30,7 +30,7 @@ export const data = [
   {
     song_id: 77,
     cover_url:
-      "https://passion-fruits-bucket.s3.ap-northeast-2.amazonaws.com/cover/7f292f8c-25b5-4ae8-a685-0820ce8461a1 명언.png",
+      "https://d1csarkz8obe9u.cloudfront.net/posterpreviews/dj-album-cover-art-template-design-b12d3187741eae3c70fa59cefd15605b_screen.jpg?ts=1594622282",
     song_url:
       "https://passion-fruits-bucket.s3.ap-northeast-2.amazonaws.com/song/69596253-3484-41c7-9dfa-bcb088ca45ca y2mate.com - 00073.mp3",
     title: '"진우야 그래서 사랑이 뭐라고?"',
@@ -44,7 +44,7 @@ export const data = [
   {
     song_id: 79,
     cover_url:
-      "https://passion-fruits-bucket.s3.ap-northeast-2.amazonaws.com/cover/7e8b29ac-4f3e-4bb3-b530-4c98d5d75e4c jiiiiiiiiiiiii.jpg",
+      "https://cdn.dribbble.com/users/179092/screenshots/10638474/media/c6fe1868e0918240e3799fe2ef9df7b3.jpg?compress=1&resize=400x300",
     song_url:
       "https://passion-fruits-bucket.s3.ap-northeast-2.amazonaws.com/song/6d8c613a-6015-407e-8400-a7332810ba9f y2mate.com - 00074.mp3",
     title: "너였다면",
@@ -58,7 +58,7 @@ export const data = [
   {
     song_id: 76,
     cover_url:
-      "https://passion-fruits-bucket.s3.ap-northeast-2.amazonaws.com/cover/978844cf-0a7f-4328-a4a6-ea37c0bd1104 KakaoTalk_20210614_225908956.jpg",
+      "https://i.pinimg.com/originals/4e/b4/f8/4eb4f8a7e04b57e74914fc46e013ac40.jpg",
     song_url:
       "https://passion-fruits-bucket.s3.ap-northeast-2.amazonaws.com/song/bc88c0c0-9a42-4918-b47c-54668113152e y2mate.com - 대동여지도배경음악.mp3",
     title: "아로하",

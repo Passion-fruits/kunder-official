@@ -43,9 +43,9 @@ export const Info = styled.div`
     display: flex;
     flex-direction: column;
     & .music-title {
-      color: white;
-      font-size: 17px;
-      font-weight: bold;
+      color: ${COLOR.gray_text};
+      font-size: 16px;
+      font-weight: 500;
       cursor: pointer;
       transition: 0.4s;
       &:hover {
@@ -53,7 +53,7 @@ export const Info = styled.div`
       }
     }
     & .musician-name {
-      color: ${COLOR.gray_text};
+      color: ${COLOR.gray_subText};
       font-size: 15px;
       margin-top: 5px;
     }

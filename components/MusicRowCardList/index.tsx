@@ -28,6 +28,7 @@ export default function MusicRowCardList({ musicList }: MusicCardListProps) {
             cover_url={cover_url}
             created_at={created_at}
             genre={genre}
+            indexNum={index}
             key={index}
           />
         )

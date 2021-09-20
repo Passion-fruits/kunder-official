@@ -53,7 +53,7 @@ interface genreCardProps {
 export const GenreCard = styled.div<genreCardProps>`
   width: 24%;
   height: 130px;
-  border-radius: 10px;
+  border-radius: 5px;
   background-size: cover;
   background-repeat: no-repeat;
   background-image: ${(res) => `url(${res.img})`};
@@ -65,12 +65,12 @@ export const GenreCard = styled.div<genreCardProps>`
     width: 100%;
     height: 100%;
     position: absolute;
-    background: linear-gradient(rgb(0, 0, 0, 0.3), rgb(0, 0, 0, 1));
+    background: ${`linear-gradient(rgb(0, 0, 0, 0.3), ${COLOR.black_background})`};
     z-index: 1;
   }
   & h1 {
-    color: white;
-    font-size: 18px;
+    color: ${COLOR.gray_text};
+    font-size: 17px;
     padding: 20px;
     bottom: 0;
     position: absolute;

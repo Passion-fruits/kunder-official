@@ -5,12 +5,13 @@ export const Wrapper = styled.div`
   width: 100%;
   display: flex;
   align-items: center;
-  padding: 12px 10px;
-  border-radius: 3px;
+  padding: 10px 10px;
+  border-radius: 6px;
   background-color: ${COLOR.black_background};
   transition: 0.3s;
   position: relative;
   margin-top: 5px;
+  cursor: pointer;
   & svg {
     cursor: pointer;
     opacity: 0.7;
@@ -20,13 +21,20 @@ export const Wrapper = styled.div`
     }
   }
   &:hover {
-    background-color: #202020;
+    background-color: ${COLOR.black_subBackground};
+  }
+  & .index-num {
+    color: ${COLOR.gray_subText};
+    font-size: 15px;
+    font-weight: 500;
   }
   & .cover-image {
     width: 50px;
     height: 50px;
     cursor: pointer;
     border-radius: 3px;
+    border: 1px solid ${COLOR.gray_borderColor};
+    margin-left: 20px;
   }
   & .music-information {
     display: flex;
@@ -46,25 +54,24 @@ export const Wrapper = styled.div`
   & .hashtag-container {
     display: flex;
     gap: 10px;
-    width: 40%;
-    & div {
+    position: absolute;
+    right: 0;
+    padding-right: 30px;
+    & .tag {
       padding: 7px 15px;
       border-radius: 24px;
-      border: 1px solid #707070;
+      border: 1px solid ${COLOR.gray_borderColor};
       color: #707070;
       font-size: 15px;
     }
   }
   & .heart-wrap {
+    margin-left: 30px;
     display: flex;
     align-items: center;
     gap: 10px;
-    position: absolute;
-    right: 0;
-    margin-top: 5px;
-    margin-right: 20px;
     & span {
-      font-size: 14px;
+      font-size: 16px;
       color: ${COLOR.green_main};
     }
   }

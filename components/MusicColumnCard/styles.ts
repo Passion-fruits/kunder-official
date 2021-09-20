@@ -8,7 +8,8 @@ export const Wrapper = styled.div`
   & .cover-image-wrap {
     width: ${`${SIZE.card_size}px`};
     height: ${`${SIZE.card_size}px`};
-    border-radius: 3px;
+    border-radius: 6px;
+    border: 1px solid ${COLOR.gray_borderColor};
     overflow: hidden;
     position: relative;
     & img {
