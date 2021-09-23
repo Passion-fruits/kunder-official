@@ -28,7 +28,8 @@ div {
 }
 
 button,
-input {
+input,
+select {
   outline: none;
   border: none;
   box-sizing: border-box;
