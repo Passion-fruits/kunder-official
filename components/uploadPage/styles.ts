@@ -134,3 +134,15 @@ export const MuiscUploadWrap = styled.div`
     font-size: 15px;
   }
 `;
+
+export const UploadBtn = styled.button`
+  width: 100%;
+  height: 50px;
+  color: white;
+  background: #3e92ff;
+  font-size: 19px;
+  font-weight: bold;
+  margin-top: 30px;
+  margin-bottom: 50px;
+  border-radius: 3px;
+`;
