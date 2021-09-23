@@ -11,6 +11,7 @@ export default function MusicColumnCard({
   song_id,
   song_url,
   like,
+  genre,
 }: musicCardObject) {
   const dispatch = setValue();
   const router = useRouter();
@@ -47,13 +48,13 @@ export default function MusicColumnCard({
         {title}
       </div>
       <h3 className="musician-name" id="noto">
-        {artist}
+        -{artist}
       </h3>
       <S.IconWrap>
-        <div className="wrap">
-          <HeartIcon size={13} callback={() => {}} />
-          <span>{like}</span>
+        <div className="like">
+          <HeartIcon size={11} callback={() => {}} color="#ff7030" /> {like}
         </div>
+        <div className="genre">#{genre}</div>
       </S.IconWrap>
     </S.Wrapper>
   );

@@ -60,16 +60,27 @@ export const Wrapper = styled.div`
 
 export const IconWrap = styled.div`
   display: flex;
-  justify-content: flex-start;
+  gap: 5px;
   margin-top: 10px;
-  & .wrap {
+  & div {
+    font-size: 12px;
+    padding: 3px 6px;
+    border-radius: 4px;
     display: flex;
     align-items: center;
-    gap: 5px;
-    & span {
-      font-size: 14px;
-      color: ${COLOR.green_main};
-    }
+  }
+  & .like {
+    background: #952e00;
+    color: #ff7030;
+    gap: 3px;
+  }
+  & .genre {
+    background: #002487;
+    color: #82a4ff;
+  }
+  & .mood {
+    background: #006d04;
+    color: #6eff73;
   }
 `;
 
