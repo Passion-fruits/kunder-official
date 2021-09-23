@@ -15,8 +15,10 @@ export default function ThemaCardList({
       <button className="more-button">
         <CircleArrowIcon />
       </button>
-      <h1 className="title">{title}</h1>
-      <p className="description">{descripton}</p>
+      <div className="infor-wrap">
+        <h1 className="title">{title}</h1>
+        <p className="description">: {descripton}</p>
+      </div>
       {isColumn ? (
         <MusicColumnCardList musicList={data} />
       ) : (

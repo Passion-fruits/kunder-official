@@ -13,21 +13,25 @@ export const ThemaCardListWrapper = styled.div`
   flex-direction: column;
   margin-top: 30px;
   position: relative;
-  & .title {
-    color: ${COLOR.gray_text};
-    font-size: 25px;
-    font-weight: 800;
-  }
-  & .description {
-    color: ${COLOR.gray_subText};
-    font-size: 15px;
-    margin-top: 5px;
-    margin-bottom: 20px;
+  & .infor-wrap {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+    & .title {
+      color: ${COLOR.gray_text};
+      font-size: 25px;
+      font-weight: 800;
+    }
+    & .description {
+      color: ${COLOR.gray_subText};
+      font-size: 15px;
+    }
   }
   & .more-button {
     position: absolute;
     right: 0;
-    top: 15px;
+    top: 5px;
     opacity: 0.7;
     transition: 0.3s;
     &:hover {
