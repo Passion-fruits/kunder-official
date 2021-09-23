@@ -20,7 +20,10 @@ export default function AudioPlayBar() {
   const [musicProgress, setMusicProgress] = React.useState<number>(0);
   const [volume, setVolume] = React.useState(50);
   const [musicListNowIndex, setMusicListNowIndex] = React.useState<number>(0);
+  const [controlToggle, setControlToggle] = React.useState<boolean>(false);
+  const controlToggleRef = React.useRef(null);
   const audio = React.useRef(typeof Audio !== "undefined" && new Audio());
+  controlToggleRef.current = controlToggle;
 
   const musicStop = React.useCallback(() => {
     audio.current.pause();
@@ -122,7 +125,9 @@ export default function AudioPlayBar() {
     setInterval(() => {
       const progress =
         (audio.current.currentTime / audio.current.duration) * 100 + 1;
-      if (!isNaN(progress)) setMusicProgress(progress);
+      if (!isNaN(progress) && !controlToggleRef.current) {
+        setMusicProgress(progress);
+      }
     }, 1000);
   }, []);
 
@@ -140,9 +145,26 @@ export default function AudioPlayBar() {
     audio.current.volume = volume / 100;
   }, [volume]);
 
+  React.useEffect(() => {
+    const input: HTMLElement = document.getElementById("input-range");
+    input.addEventListener("mousedown", () => setControlToggle(true));
+    input.addEventListener("mouseup", () => setControlToggle(false));
+    input.addEventListener("input", (event: any) =>
+      setMusicProgress(event.target.value)
+    );
+  }, []);
+
   return (
     <S.Wrapper>
       <S.Container>
+        <S.RangeInput
+          type="range"
+          onClick={moveMusic}
+          progress={musicProgress}
+          value={musicProgress}
+          id="input-range"
+          readOnly
+        />
         <S.Center>
           <S.CenterControl>
             <PassIcon callback={moveBeforeMusic} isNext={false} />
@@ -153,11 +175,6 @@ export default function AudioPlayBar() {
             )}
             <PassIcon callback={moveNextMusic} isNext={true} />
           </S.CenterControl>
-          <S.RangeContainerWrap>
-            <S.RangeContainer progress={musicProgress}>
-              <input type="range" onClick={moveMusic} />
-            </S.RangeContainer>
-          </S.RangeContainerWrap>
         </S.Center>
         <MusicInfo
           title={musicObj.title}

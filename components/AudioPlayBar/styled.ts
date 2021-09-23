@@ -9,15 +9,12 @@ export const Wrapper = styled(BASE_WRAPPER)`
 
 export const Container = styled(BASE_CONTAINER)`
   height: ${`${SIZE.playbar_height}px`};
-  padding: 0 25px;
+  padding: 0 0;
   position: relative;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border-radius: 20px 20px 0 0;
-  background-color: rgb(0, 0, 0, 0.8);
-  backdrop-filter: blur(3px);
-  box-shadow: 0px -3px 20px rgb(0, 0, 0, 0.3);
+  background-color: ${COLOR.black_background};
 `;
 
 export const Info = styled.div`
@@ -26,8 +23,8 @@ export const Info = styled.div`
   gap: 17px;
   z-index: 2;
   & .cover-image {
-    width: 70px;
-    height: 70px;
+    width: 60px;
+    height: 60px;
     cursor: pointer;
     transition: 0.4s;
     &:hover {
@@ -35,8 +32,8 @@ export const Info = styled.div`
     }
   }
   & .none-img {
-    width: 70px;
-    height: 70px;
+    width: 60px;
+    height: 60px;
     background-color: gray;
   }
   & div {
@@ -105,46 +102,43 @@ export const Center = styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  margin-top: 10px;
 `;
 
 export const CenterControl = styled.div`
   display: flex;
   align-items: center;
-  gap: 80px;
+  gap: 60px;
   & svg {
     cursor: pointer;
   }
 `;
 
-export const RangeContainerWrap = styled.div`
-  width: 400px;
-  height: 7px;
-  margin-top: 25px;
-  margin-bottom: 10px;
-  cursor: pointer;
-  &:hover div {
-    height: 100%;
-  }
-`;
-
-export const RangeContainer = styled.div<rangeProps>`
+export const RangeInput = styled.input<rangeProps>`
   width: 100%;
-  height: 40%;
-  position: relative;
-  display: flex;
-  align-items: center;
-  background: ${(e) =>
-    `linear-gradient(to right, ${COLOR.green_main} 0%, ${COLOR.green_main} 
-    ${e.progress}%, #3A3A3A ${e.progress}%, #3A3A3A 100%)`};
+  height: 2px;
   cursor: pointer;
-  border-radius: 24px;
-  overflow: hidden;
-  border: none;
-  & input[type="range"] {
+  position: absolute;
+  top: 0;
+  -webkit-appearance: none;
+  background: ${(e) =>
+    `linear-gradient(to right, white 0%, white
+    ${e.progress}%, #3A3A3A ${e.progress}%, #3A3A3A 100%)`};
+  transition: 0.3s;
+  &:hover {
+    background: ${(e) =>
+      `linear-gradient(to right, ${COLOR.green_main} 0%, ${COLOR.green_main} 
+    ${e.progress}%, #3A3A3A ${e.progress}%, #3A3A3A 100%)`};
+    ::-webkit-slider-thumb {
+      opacity: 1;
+    }
+  }
+  ::-webkit-slider-thumb {
     -webkit-appearance: none;
-    cursor: pointer;
-    width: 100%;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: white;
     opacity: 0;
+    transition: 0.3s;
   }
 `;

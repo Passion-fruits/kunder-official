@@ -18,7 +18,7 @@ const cardIndex = 6;
 export const SIZE = {
   header_height: 70,
   page_size: pageSize,
-  playbar_height: 110,
+  playbar_height: 100,
   card_size: pageSize / cardIndex - 13,
   card_indexing: cardIndex,
 };

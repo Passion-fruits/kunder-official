@@ -61,7 +61,7 @@ export const Wrapper = styled.div`
       padding: 7px 15px;
       border-radius: 24px;
       border: 1px solid ${COLOR.gray_borderColor};
-      color: #707070;
+      color: #a8a8a8;
       font-size: 15px;
     }
   }
