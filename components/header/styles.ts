@@ -48,6 +48,11 @@ export const MenuWrap = styled.div`
       color: ${COLOR.red_text};
     }
   }
+  & .btn-container {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
   & .login-btn {
     padding: 10px 17px;
     background-color: ${COLOR.black_subBackground};
@@ -59,6 +64,13 @@ export const MenuWrap = styled.div`
     &:hover {
       opacity: 1;
     }
+  }
+  & .mypage-btn {
+    padding: 10px 12px;
+    background-color: #005cd4;
+    color: ${COLOR.gray_text};
+    font-size: 15px;
+    border-radius: 5px;
   }
   & svg {
     cursor: pointer;
