@@ -23,6 +23,7 @@ export default function UploadPage() {
 
   const uploadMusic = () => {
     setLoading(true);
+    const dataObject = {};
     /*     music
       .uploadMusic()
       .then(() => {

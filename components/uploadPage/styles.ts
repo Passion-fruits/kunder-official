@@ -30,7 +30,7 @@ export const Container = styled(BASE_CONTAINER)`
 `;
 
 export const InputLabel = styled.div`
-  margin-top: 30px;
+  margin-top: 20px;
   display: flex;
   align-items: center;
   gap: 10px;
@@ -59,9 +59,9 @@ export const InputContainer = styled.div`
     transition: 0.5s;
     font-size: 17px;
     color: ${COLOR.gray_subText};
-    border: 2px solid transparent;
+    border: 1px solid ${COLOR.gray_borderColor};
     &:focus {
-      border: 2px solid #5d75d6;
+      border: 1px solid #5d75d6;
       color: ${COLOR.gray_text};
     }
   }
