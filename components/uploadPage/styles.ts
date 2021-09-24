@@ -1,12 +1,25 @@
 import styled from "@emotion/styled";
 import { BASE_WRAPPER, BASE_CONTAINER, COLOR } from "./../../styles/index";
+import { keyframes } from "@emotion/react";
 
 export const Wrapper = styled(BASE_WRAPPER)``;
+
+const UpperAnime = keyframes`
+0%{
+  opacity:0;
+  margin-top:50px;
+}
+100%{
+  opacity:1;
+  margin-top:0px;
+}
+`;
 
 export const Container = styled(BASE_CONTAINER)`
   width: 770px;
   display: flex;
   flex-direction: column;
+  animation: ${UpperAnime} 0.5s;
   .title {
     color: white;
     font-size: 25px;
