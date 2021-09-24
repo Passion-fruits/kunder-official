@@ -46,6 +46,9 @@ export const Wrapper = styled.div`
       font-size: 15px;
       font-weight: 500;
       color: ${COLOR.gray_text};
+      &:hover {
+        text-decoration: underline;
+      }
     }
     & span {
       color: ${COLOR.green_subMain};

@@ -2,6 +2,7 @@ import * as S from "./styles";
 import { HeartIcon, PlayIcon } from "../../assets";
 import { musicCardObject } from "../../lib/interfaces/music";
 import { getDate } from "./../../lib/util/getDate";
+import { useRouter } from "next/dist/client/router";
 
 export default function MusicRowCard({
   title,
@@ -14,13 +15,14 @@ export default function MusicRowCard({
   indexNum,
   created_at,
 }: musicCardObject) {
+  const router = useRouter();
   return (
     <S.Wrapper>
       <h3 className="index-num">{indexNum + 1}</h3>
       <img src={cover_url} className="cover-image" />
       <PlayIcon callback={() => {}} size={13} />
       <div className="music-information">
-        <h1>{title}</h1>
+        <h1 onClick={() => router.push(`/detail?id=${song_id}`)}>{title}</h1>
         <span id="noto">{artist}</span>
       </div>
       <div className="hashtag-container">
