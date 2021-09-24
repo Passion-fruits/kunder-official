@@ -3,6 +3,7 @@ import { musicCardObject } from "../../lib/interfaces/music";
 import * as S from "./styles";
 import { setValue } from "../../lib/context/index";
 import { useRouter } from "next/dist/client/router";
+import { COLOR } from "./../../styles/index";
 
 export default function MusicColumnCard({
   title,
@@ -52,7 +53,8 @@ export default function MusicColumnCard({
       </h3>
       <S.IconWrap>
         <div className="like">
-          <HeartIcon size={11} callback={() => {}} color="#ff7030" /> {like}
+          <HeartIcon size={11} callback={() => {}} color={COLOR.green_main} />
+          {like}
         </div>
         <div className="genre">#{genre}</div>
       </S.IconWrap>

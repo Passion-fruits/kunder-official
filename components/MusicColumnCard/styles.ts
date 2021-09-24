@@ -36,7 +36,7 @@ export const Wrapper = styled.div`
   & .music-title {
     width: 100%;
     color: ${COLOR.gray_text};
-    font-size: 15px;
+    font-size: 16px;
     font-weight: 500;
     margin-top: 13px;
     transition: 0.5s;
@@ -60,27 +60,24 @@ export const Wrapper = styled.div`
 
 export const IconWrap = styled.div`
   display: flex;
+  align-items: center;
   gap: 5px;
   margin-top: 10px;
   & div {
     font-size: 12px;
-    padding: 3px 6px;
     border-radius: 4px;
     display: flex;
     align-items: center;
+    padding: 3px 5px;
   }
   & .like {
-    background: #952e00;
-    color: #ff7030;
+    color: ${COLOR.green_main};
     gap: 3px;
+    background: #092115;
   }
   & .genre {
-    background: #002487;
-    color: #82a4ff;
-  }
-  & .mood {
-    background: #006d04;
-    color: #6eff73;
+    color: #60b3ff;
+    background: #130c2d;
   }
 `;
 
