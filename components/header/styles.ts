@@ -11,6 +11,7 @@ export const Wrapper = styled(BASE_WRAPPER)`
   z-index: 5;
   border-bottom: 1px solid #1a1a1a;
   background: ${COLOR.black_background};
+  box-shadow: 0px 3px 10px rgb(0, 0, 0, 0.3);
 `;
 
 export const Container = styled(BASE_CONTAINER)`

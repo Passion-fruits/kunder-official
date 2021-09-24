@@ -3,14 +3,15 @@ import { BASE_WRAPPER, BASE_CONTAINER, COLOR } from "./../../styles/index";
 
 export const Wrapper = styled(BASE_WRAPPER)`
   position: relative;
-  & .color-cover {
-    width: 100%;
-    height: 500px;
-    background: linear-gradient(#093d48, rgb(0, 0, 0, 0));
-    opacity: 1;
-    position: absolute;
-    z-index: 0;
-  }
+`;
+
+export const MusicColorCover = styled.div`
+  width: 100%;
+  height: 500px;
+  background: linear-gradient(#093d48, rgb(0, 0, 0, 0));
+  opacity: 1;
+  position: absolute;
+  z-index: 0;
 `;
 
 export const Container = styled(BASE_CONTAINER)`
@@ -89,7 +90,7 @@ export const InforWrap = styled.div`
     margin-top: 20px;
     gap: 10px;
     & div {
-      border: 1px solid ${COLOR.gray_borderColor};
+      border: 1px solid #4b4b4b;
       border-radius: 24px;
       padding: 10px 20px;
       color: #a8a8a8;
@@ -107,7 +108,7 @@ export const InforWrap = styled.div`
 
 export const ControlMusicContainer = styled.div`
   width: 100%;
-  margin-top: 22px;
+  margin-top: 10px;
   display: flex;
   flex-direction: column;
   gap: 18px;

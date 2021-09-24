@@ -3,16 +3,35 @@ import MusicInformation from "./MusicInformation";
 import ControlMusic from "./ControlMusic";
 import SimilarMusic from "./SimilarMusic";
 import Comment from "./Comment";
+import { useRouter } from "next/dist/client/router";
+import React, { useState } from "react";
+import music from "../../api/music";
+import { musicObject } from "../../lib/interfaces/music";
 
 export default function DetailPage() {
+  const router = useRouter();
+  const [musicObj, setMusicObj] = useState<musicObject | null>(null);
+
+  React.useEffect(() => {
+    const music_id = router.query.id;
+    if (music_id) {
+      music.getMusicDetail(music_id).then(({ data }) => {
+        setMusicObj(data);
+      });
+    }
+  }, [router]);
+
   return (
     <S.Wrapper>
-      <S.Container>
-        <MusicInformation />
-        <ControlMusic />
-        <Comment />
-        <SimilarMusic />
-      </S.Container>
+      <S.MusicColorCover />
+      {musicObj && (
+        <S.Container>
+          <MusicInformation musicObj={musicObj} />
+          <ControlMusic like={musicObj.like} music_id={musicObj.song_id} />
+          <Comment />
+          <SimilarMusic />
+        </S.Container>
+      )}
     </S.Wrapper>
   );
 }
