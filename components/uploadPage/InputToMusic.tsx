@@ -1,18 +1,38 @@
 import * as S from "./styles";
 import InputLabel from "./InputLabel";
 import React from "react";
+import { toast } from "react-toastify";
 
-export default function InputToMusic({ inputRef }) {
+export default function InputToMusic({ musicRef, durationRef }) {
   const [fileNmae, setFileName] = React.useState<string>("");
+
+  const checkDuration = (file) => {
+    let reader = new FileReader();
+    reader.readAsDataURL(file);
+    reader.onload = (e) => {
+      const result: any = e.target.result;
+      const audio = new Audio(result);
+      audio.oncanplaythrough = () => {
+        if (audio.duration < 60 || audio.duration > 360) {
+          toast.info("1분 이상, 6분 이하의 곡을 업로드해주세요!");
+          durationRef.current = "";
+          musicRef.current = "";
+        } else {
+          durationRef.current = audio.duration.toString();
+          musicRef.current = file;
+          setFileName(file.name.substring(0, 80));
+        }
+      };
+    };
+  };
 
   const handleFileOnChange = (event) => {
     let reader = new FileReader();
     let file = event.target.files[0];
     reader.onloadend = () => {
-      inputRef.current = file;
-      setFileName(file.name.substring(0, 80));
+      checkDuration(file);
     };
-    reader.readAsDataURL(file);
+    file && reader.readAsDataURL(file);
   };
 
   return (

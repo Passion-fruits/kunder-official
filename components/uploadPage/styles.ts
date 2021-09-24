@@ -139,9 +139,9 @@ export const UploadBtn = styled.button`
   width: 100%;
   height: 50px;
   color: white;
-  background: #3e92ff;
-  font-size: 19px;
-  font-weight: bold;
+  background: #378eff;
+  font-size: 18px;
+  font-weight: 500;
   margin-top: 30px;
   margin-bottom: 50px;
   border-radius: 3px;

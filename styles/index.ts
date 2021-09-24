@@ -9,7 +9,7 @@ export const COLOR = {
   gray_borderColor: "rgb(50,50,50)",
   green_main: "#00FF33",
   red_text: "#FF6464",
-  blue_text: "#72E2FF",
+  blue_text: "#94C2FF",
 };
 
 const pageSize = 1300;

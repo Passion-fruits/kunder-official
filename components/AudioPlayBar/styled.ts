@@ -74,14 +74,14 @@ interface rangeProps {
 
 export const VolumeControlWrap = styled.div<rangeProps>`
   width: 100px;
-  height: 3px;
+  height: 2px;
   cursor: pointer;
   position: relative;
   display: flex;
   align-items: center;
   border-radius: 24px;
   background: ${({ progress }) =>
-    `linear-gradient(to right, #0079D5 0%, #0079D5
+    `linear-gradient(to right, white 0%, white
     ${progress}%, #3A3A3A ${progress}%, #3A3A3A 100%)`};
   &:hover {
     height: 5px;

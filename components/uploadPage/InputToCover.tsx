@@ -12,7 +12,7 @@ export default function InputToCover({ inputRef }) {
       inputRef.current = file;
       setPreview(reader.result.toString());
     };
-    reader.readAsDataURL(file);
+    file && reader.readAsDataURL(file);
   };
 
   return (

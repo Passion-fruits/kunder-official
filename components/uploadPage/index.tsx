@@ -19,13 +19,30 @@ export default function UploadPage() {
   const genreRef = React.useRef(null);
   const moodRef = React.useRef(null);
   const musicRef = React.useRef(null);
+  const durationRef = React.useRef(null);
   const router = useRouter();
 
   const uploadMusic = () => {
+    if (titleRef.current.value.length > 30) {
+      toast.info("제목 글자수를 확인하세요");
+      return;
+    }
+    if (descriptionRef.current.value.length > 300) {
+      toast.info("설명 글자수를 확인하세요");
+      return;
+    }
     setLoading(true);
-    const dataObject = {};
-    /*     music
-      .uploadMusic()
+    const dataObject = {
+      musicSrc: musicRef.current,
+      imgSrc: coverImgRef.current,
+      title: titleRef.current.value,
+      description: descriptionRef.current.value,
+      genre: parseInt(genreRef.current.value),
+      mood: parseInt(moodRef.current.value),
+      duration: durationRef.current,
+    };
+    music
+      .uploadMusic(dataObject)
       .then(() => {
         router.push(`/`);
         toast.success("업로드 되었습니다.");
@@ -38,7 +55,7 @@ export default function UploadPage() {
         }
         toast.error("에러가 발생하였습니다.");
         setLoading(false);
-      }); */
+      });
   };
 
   return (
@@ -51,13 +68,13 @@ export default function UploadPage() {
           <InputToDescription inputRef={descriptionRef} />
         </S.FlexContainer>
         <SelectToGenreMood genreRef={genreRef} moodRef={moodRef} />
-        <InputToMusic inputRef={musicRef} />
+        <InputToMusic musicRef={musicRef} durationRef={durationRef} />
         {loading ? (
           <S.UploadBtn>
             <Spiner size={23} />
           </S.UploadBtn>
         ) : (
-          <S.UploadBtn onClick={uploadMusic}>Upload</S.UploadBtn>
+          <S.UploadBtn onClick={uploadMusic}>Upload Music</S.UploadBtn>
         )}
       </S.Container>
     </S.Wrapper>
