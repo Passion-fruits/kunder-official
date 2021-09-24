@@ -5,9 +5,10 @@ export const COLOR = {
   black_subBackground: "#141414",
   black_text: "#FFF",
   gray_text: "#F8F8F8",
-  gray_subText: "#999999",
+  gray_subText: "#A8A8A8",
   gray_borderColor: "rgb(50,50,50)",
   green_main: "#00FF33",
+  green_subMain: "#95EFB1",
   red_text: "#FF6464",
   blue_text: "#94C2FF",
 };

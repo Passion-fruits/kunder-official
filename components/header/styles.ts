@@ -10,6 +10,7 @@ export const Wrapper = styled(BASE_WRAPPER)`
   position: fixed;
   z-index: 5;
   border-bottom: 1px solid #1a1a1a;
+  background: ${COLOR.black_background};
 `;
 
 export const Container = styled(BASE_CONTAINER)`
@@ -18,7 +19,6 @@ export const Container = styled(BASE_CONTAINER)`
   align-items: center;
   padding: 0px;
   height: ${`${SIZE.header_height}px`};
-  background-color: ${COLOR.black_background};
 `;
 
 export const MenuWrap = styled.div`

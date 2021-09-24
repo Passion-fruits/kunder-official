@@ -13,3 +13,5 @@ export { default as VolumeIcon } from "./volume";
 export { default as YoutubeIcon } from "./youtube";
 export { default as PauseIcon } from "./pause";
 export { default as MuteIcon } from "./mute";
+export { default as InforIcon } from "./infor";
+export { default as PlayListAddIcon } from "./playListAdd";

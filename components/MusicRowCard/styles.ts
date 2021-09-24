@@ -32,7 +32,7 @@ export const Wrapper = styled.div`
     width: 50px;
     height: 50px;
     cursor: pointer;
-    border-radius: 3px;
+    border-radius: 5px;
     border: 1px solid ${COLOR.gray_borderColor};
     margin-left: 20px;
   }
@@ -44,11 +44,12 @@ export const Wrapper = styled.div`
     width: 35%;
     & h1 {
       font-size: 15px;
+      font-weight: 500;
       color: ${COLOR.gray_text};
     }
     & span {
-      color: ${COLOR.gray_subText};
-      font-size: 14px;
+      color: ${COLOR.green_subMain};
+      font-size: 13px;
     }
   }
   & .hashtag-container {
