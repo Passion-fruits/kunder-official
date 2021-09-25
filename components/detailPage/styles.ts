@@ -19,9 +19,9 @@ export const ImageCover = styled.div`
   height: 100%;
   background-size: cover;
   background-repeat: no-repeat;
-  position: absolute;
+  position: fixed;
   filter: blur(10px);
-  -webkit-filter: blur(10px);
+  -webkit-filter: blur(5px);
   & .cover {
     width: 100%;
     height: 100%;
