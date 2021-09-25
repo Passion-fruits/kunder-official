@@ -25,7 +25,7 @@ export const Container = styled(BASE_CONTAINER)`
 export const MenuWrap = styled.div`
   display: flex;
   align-items: center;
-  gap: 20px;
+  gap: 15px;
   & .web-logo {
     text-transform: uppercase;
     color: ${COLOR.green_main};
@@ -35,8 +35,9 @@ export const MenuWrap = styled.div`
     /* 추후 변경 해야함 font family 안먹음 */
   }
   & span {
+    text-transform: capitalize;
     font-size: 17px;
-    font-weight: 500;
+    font-weight: 600;
     color: ${COLOR.gray_text};
     cursor: pointer;
     padding: 10px 15px;
@@ -46,7 +47,7 @@ export const MenuWrap = styled.div`
       background-color: ${COLOR.black_subBackground};
     }
     &:last-of-type {
-      color: ${COLOR.red_text};
+      color: ${COLOR.green_subMain};
     }
   }
   & .btn-container {
@@ -68,10 +69,10 @@ export const MenuWrap = styled.div`
   }
   & .mypage-btn {
     padding: 10px 12px;
-    background-color: #005cd4;
+    background-color: #6900ff;
     color: ${COLOR.gray_text};
     font-size: 15px;
-    border-radius: 5px;
+    border-radius: 3px;
   }
   & svg {
     cursor: pointer;

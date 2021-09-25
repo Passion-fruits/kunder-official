@@ -9,9 +9,12 @@ export default function Menu() {
       <h1 className="web-logo" onClick={() => router.push("/")}>
         kunder
       </h1>
-      <Link menu="전체보기" route="" />
-      <Link menu="피드" route="feed" />
-      <Link menu="음악업로드" route="upload" />
+      <Link menu="둘러보기" route="" />
+      <Link menu="스트리밍" route="" />
+      <Link menu="음악 피드" route="" />
+      <Link menu="플레이리스트" route="" />
+      {/*       <Link menu="피드" route="feed" />
+      <Link menu="음악업로드" route="upload" /> */}
     </S.MenuWrap>
   );
 }

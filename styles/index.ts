@@ -18,7 +18,7 @@ const pageSize = 1300;
 const cardIndex = 6;
 
 export const SIZE = {
-  header_height: 70,
+  header_height: 60,
   page_size: pageSize,
   playbar_height: 100,
   card_size: pageSize / cardIndex - 13,

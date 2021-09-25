@@ -8,6 +8,7 @@ import {
   USER_ID,
 } from "./../../lib/export/localstorage";
 import { toast } from "react-toastify";
+import Link from "./Link";
 
 export default function SideBar() {
   const router = useRouter();
@@ -33,6 +34,7 @@ export default function SideBar() {
   return (
     <S.MenuWrap>
       <SearchIcon />
+      <Link menu="음악 업로드" route="/upload" />
       {isLogin ? (
         <div className="btn-container">
           <button className="login-btn" onClick={logout}>

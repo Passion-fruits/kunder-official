@@ -11,9 +11,14 @@ export default function ControlMusic({ like, music_id }) {
 
   React.useEffect(() => {
     if (music_id) {
-      music.checkIsLike(music_id).then((res) => {
-        res.data.is_like ? setIsLike(true) : setIsLike(false);
-      });
+      music
+        .checkIsLike(music_id)
+        .then((res) => {
+          res.data.is_like ? setIsLike(true) : setIsLike(false);
+        })
+        .catch(() => {
+          return;
+        });
     }
   }, []);
 

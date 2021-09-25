@@ -23,7 +23,6 @@ export default function DetailPage() {
 
   return (
     <S.Wrapper>
-      <S.MusicColorCover />
       {musicObj && (
         <S.Container>
           <MusicInformation musicObj={musicObj} />
