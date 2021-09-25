@@ -2,7 +2,6 @@ import * as S from "./styles";
 import MusicInformation from "./MusicInformation";
 import ControlMusic from "./ControlMusic";
 import SimilarMusic from "./SimilarMusic";
-import Comment from "./Comment";
 import { useRouter } from "next/dist/client/router";
 import React, { useState } from "react";
 import music from "../../api/music";
@@ -23,7 +22,6 @@ export default function DetailPage() {
 
   return (
     <S.Wrapper>
-      {/*       <S.MusicColorCover /> */}
       {musicObj && (
         <S.Container>
           <MusicInformation musicObj={musicObj} />
