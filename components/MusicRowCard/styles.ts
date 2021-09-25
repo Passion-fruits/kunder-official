@@ -7,7 +7,7 @@ export const Wrapper = styled.div`
   align-items: center;
   padding: 10px 10px;
   border-radius: 6px;
-  background-color: ${COLOR.black_background};
+  background-color: rgb(0, 0, 0, 0);
   transition: 0.3s;
   position: relative;
   margin-top: 5px;
@@ -21,7 +21,7 @@ export const Wrapper = styled.div`
     }
   }
   &:hover {
-    background-color: ${COLOR.black_subBackground};
+    background-color: rgb(30, 30, 30, 0.5);
   }
   & .index-num {
     color: ${COLOR.gray_subText};

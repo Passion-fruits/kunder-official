@@ -14,6 +14,21 @@ export const MusicColorCover = styled.div`
   z-index: 0;
 `;
 
+export const ImageCover = styled.div`
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: absolute;
+  filter: blur(10px);
+  -webkit-filter: blur(10px);
+  & .cover {
+    width: 100%;
+    height: 100%;
+    background: rgb(0, 0, 0, 0.9);
+  }
+`;
+
 export const Container = styled(BASE_CONTAINER)`
   z-index: 2;
 `;
