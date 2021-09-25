@@ -69,7 +69,7 @@ export const MenuWrap = styled.div`
   }
   & .mypage-btn {
     padding: 10px 12px;
-    background-color: #6900ff;
+    background-color: #3ac99e;
     color: ${COLOR.gray_text};
     font-size: 15px;
     border-radius: 3px;

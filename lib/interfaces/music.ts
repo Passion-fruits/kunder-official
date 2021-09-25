@@ -21,3 +21,11 @@ export interface musicObject extends musicCardObject {
 export interface MusicCardListProps {
   musicList: musicCardObject[];
 }
+
+export interface comment {
+  comment_content: string;
+  created_at: Date | string;
+  name: string;
+  profile: string;
+  user_id: string | number;
+}

@@ -3,6 +3,7 @@ import { HeartIcon, PlayIcon } from "../../assets";
 import { musicCardObject } from "../../lib/interfaces/music";
 import { getDate } from "./../../lib/util/getDate";
 import { useRouter } from "next/dist/client/router";
+import { setValue } from "./../../lib/context/index";
 
 export default function MusicRowCard({
   title,
@@ -16,13 +17,33 @@ export default function MusicRowCard({
   created_at,
 }: musicCardObject) {
   const router = useRouter();
+  const dispatch = setValue();
+
+  const routingToDetail = (): void => {
+    router.push(`/detail?id=${song_id}`);
+  };
+
+  const musicChange = (event) => {
+    event.stopPropagation();
+    dispatch({
+      type: "MUSIC_CHANGE",
+      musicInformation: {
+        title: title,
+        artist: artist,
+        cover_url: cover_url,
+        song_url: song_url,
+        song_id: song_id,
+      },
+    });
+  };
+
   return (
     <S.Wrapper>
       <h3 className="index-num">{indexNum + 1}</h3>
       <img src={cover_url} className="cover-image" />
-      <PlayIcon callback={() => {}} size={13} />
+      <PlayIcon callback={musicChange} size={13} />
       <div className="music-information">
-        <h1 onClick={() => router.push(`/detail?id=${song_id}`)}>{title}</h1>
+        <h1 onClick={routingToDetail}>{title}</h1>
         <span id="noto">{artist}</span>
       </div>
       <div className="hashtag-container">

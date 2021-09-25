@@ -41,6 +41,7 @@ export default function SideBar() {
             로그아웃
           </button>
           <button className="mypage-btn">내 정보</button>
+          {/* 내 정보 나중에 프사로 수정 요함 */}
         </div>
       ) : (
         <button className="login-btn" onClick={() => router.push("/login")}>

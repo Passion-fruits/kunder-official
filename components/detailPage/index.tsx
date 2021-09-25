@@ -23,11 +23,11 @@ export default function DetailPage() {
 
   return (
     <S.Wrapper>
+      {/*       <S.MusicColorCover /> */}
       {musicObj && (
         <S.Container>
           <MusicInformation musicObj={musicObj} />
-          <ControlMusic like={musicObj.like} music_id={musicObj.song_id} />
-          <Comment />
+          <ControlMusic musicObj={musicObj} />
           <SimilarMusic />
         </S.Container>
       )}

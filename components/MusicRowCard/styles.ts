@@ -29,8 +29,8 @@ export const Wrapper = styled.div`
     font-weight: 500;
   }
   & .cover-image {
-    width: 50px;
-    height: 50px;
+    width: 55px;
+    height: 55px;
     cursor: pointer;
     border-radius: 5px;
     border: 1px solid ${COLOR.gray_borderColor};
@@ -43,7 +43,7 @@ export const Wrapper = styled.div`
     margin-left: 20px;
     width: 35%;
     & h1 {
-      font-size: 15px;
+      font-size: 16px;
       font-weight: 500;
       color: ${COLOR.gray_text};
       &:hover {

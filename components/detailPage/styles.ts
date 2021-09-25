@@ -7,9 +7,9 @@ export const Wrapper = styled(BASE_WRAPPER)`
 
 export const MusicColorCover = styled.div`
   width: 100%;
-  height: 500px;
-  background: linear-gradient(#093d48, rgb(0, 0, 0, 0));
-  opacity: 1;
+  height: 600px;
+  background: linear-gradient(red, rgb(0, 0, 0, 0));
+  opacity: 0.5;
   position: absolute;
   z-index: 0;
 `;
@@ -155,7 +155,7 @@ export const SimilarMusicWrap = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 50px;
+  margin-top: 30px;
   & h1 {
     color: #bfbfbf;
     font-size: 20px;
@@ -176,9 +176,49 @@ export const CommentWrap = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 30px;
   & .none-comment {
     margin-top: 30px;
     color: ${COLOR.blue_text};
     font-size: 16px;
+  }
+`;
+
+export const CommentContainer = styled.div`
+  width: 100%;
+  display: grid;
+  grid-template-columns: 60px auto;
+  & .cover-image {
+    width: 60px;
+    height: 60px;
+    border-radius: 80%;
+    border: 1px solid ${COLOR.gray_borderColor};
+    cursor: pointer;
+  }
+  & .comment-contents {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding-left: 20px;
+    & .writer-date {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      & h3 {
+        color: ${COLOR.gray_subText};
+        font-size: 15px;
+      }
+      & span {
+        font-size: 14px;
+        margin-top: 3px;
+        color: ${COLOR.gray_subText};
+      }
+    }
+    & .description {
+      color: white;
+      font-size: 16px;
+      margin-top: 8px;
+      line-height: 25px;
+    }
   }
 `;

@@ -114,6 +114,7 @@ export const CenterControl = styled.div`
 `;
 
 export const RangeInput = styled.input<rangeProps>`
+  z-index: 10;
   width: 100%;
   height: 2px;
   cursor: pointer;
