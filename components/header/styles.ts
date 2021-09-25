@@ -53,7 +53,7 @@ export const MenuWrap = styled.div`
   & .btn-container {
     display: flex;
     align-items: center;
-    gap: 5px;
+    gap: 20px;
   }
   & .login-btn {
     padding: 10px 17px;
@@ -68,11 +68,11 @@ export const MenuWrap = styled.div`
     }
   }
   & .mypage-btn {
-    padding: 10px 12px;
-    background-color: #3ac99e;
-    color: ${COLOR.gray_text};
-    font-size: 15px;
-    border-radius: 3px;
+    width: 40px;
+    height: 40px;
+    border-radius: 80%;
+    border: 1px solid ${COLOR.gray_borderColor};
+    cursor: pointer;
   }
   & svg {
     cursor: pointer;

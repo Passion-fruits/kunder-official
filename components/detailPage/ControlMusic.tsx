@@ -19,7 +19,6 @@ export default function ControlMusic({ musicObj }: props) {
   const [isLike, setIsLike] = React.useState<boolean>(false);
   const [commentList, setCommentList] = React.useState<comment[]>([]);
   const commentRef = React.useRef(null);
-  const router = useRouter();
 
   React.useEffect(() => {
     setLikeCnt(parseInt(musicObj.like.toString()));
@@ -78,7 +77,6 @@ export default function ControlMusic({ musicObj }: props) {
         .sendComment(musicObj.song_id, commentContents)
         .then(() => {
           commentRef.current.value = "";
-          toast.success("댓글이 등록되었습니다");
           getComment();
         })
         .catch((err) => {

@@ -9,10 +9,12 @@ import {
 } from "./../../lib/export/localstorage";
 import { toast } from "react-toastify";
 import Link from "./Link";
+import profile from "../../api/profile";
 
 export default function SideBar() {
   const router = useRouter();
   const [isLogin, setIsLogin] = React.useState<boolean>();
+  const [profileImg, setProfileImg] = React.useState<string>(null);
 
   const logout = React.useCallback(() => {
     toast.success("로그아웃 되었습니다.");
@@ -26,6 +28,16 @@ export default function SideBar() {
   React.useEffect(() => {
     if (localStorage.getItem(ACCESS_TOKEN)) {
       setIsLogin(true);
+      if (!profileImg) {
+        profile
+          .getUserProfile(localStorage.getItem(USER_ID))
+          .then((res) => {
+            setProfileImg(res.data.profile);
+          })
+          .catch(() => {
+            return;
+          });
+      }
     } else {
       setIsLogin(false);
     }
@@ -40,8 +52,7 @@ export default function SideBar() {
           <button className="login-btn" onClick={logout}>
             로그아웃
           </button>
-          <button className="mypage-btn">내 정보</button>
-          {/* 내 정보 나중에 프사로 수정 요함 */}
+          <img className="mypage-btn" src={profileImg} />
         </div>
       ) : (
         <button className="login-btn" onClick={() => router.push("/login")}>
