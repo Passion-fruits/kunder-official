@@ -66,7 +66,7 @@ export const InforWrap = styled.div`
       font-weight: bold;
     }
     & h5 {
-      color: #00ebbb;
+      color: ${COLOR.green_subMain};
       font-size: 17px;
       font-weight: 500;
     }

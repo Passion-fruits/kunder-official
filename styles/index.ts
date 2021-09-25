@@ -7,8 +7,8 @@ export const COLOR = {
   gray_text: "#F8F8F8",
   gray_subText: "#A8A8A8",
   gray_borderColor: "rgb(50,50,50)",
-  green_main: "#00FF33",
-  green_subMain: "#95EFB1",
+  green_main: "#1CE1BF",
+  green_subMain: "#74E5BB",
   red_text: "#FF6464",
   blue_text: "#94C2FF",
 };
