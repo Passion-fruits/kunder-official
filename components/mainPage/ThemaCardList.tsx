@@ -17,7 +17,7 @@ export default function ThemaCardList({
       </button>
       <div className="infor-wrap">
         <h1 className="title">{title}</h1>
-        <p className="description">: {descripton}</p>
+        <p className="description">{descripton}</p>
       </div>
       {isColumn ? (
         <MusicColumnCardList musicList={data} />

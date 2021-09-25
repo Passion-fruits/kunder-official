@@ -17,6 +17,7 @@ export default function SideBar() {
   const [profileImg, setProfileImg] = React.useState<string>(null);
 
   const logout = React.useCallback(() => {
+    setProfileImg(null);
     toast.success("로그아웃 되었습니다.");
     localStorage.setItem(ACCESS_TOKEN, "");
     localStorage.setItem(REFRESH_TOKEN, "");
@@ -46,7 +47,7 @@ export default function SideBar() {
   return (
     <S.MenuWrap>
       <SearchIcon />
-      <Link menu="음악 업로드" route="/upload" />
+      <Link menu="음악 업로드" route="upload" />
       {isLogin ? (
         <div className="btn-container">
           <button className="login-btn" onClick={logout}>
