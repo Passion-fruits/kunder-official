@@ -1,28 +1,15 @@
-import {
-  PassIcon,
-  PlayIcon,
-  VolumeIcon,
-  PauseIcon,
-  MuteIcon,
-} from "../../assets/index";
-import { getValue, setValue } from "../../lib/context";
-import { toast } from "react-toastify";
-import { musicCardObject } from "./../../lib/interfaces/music";
+import { PassIcon, PlayIcon, PauseIcon } from "../../assets/index";
+import { getValue } from "../../lib/context";
 import React from "react";
 import * as S from "./styled";
 import MusicInfo from "./MusicInfo";
 import PlayListAddIcon from "./../../assets/playListAdd";
-import { COLOR } from "./../../styles/index";
-import HeartIcon from "./../../assets/heart";
+import VolumeControl from "./VolumeControl";
 
 export default function AudioPlayBar() {
-  const dispatch = setValue();
   const musicObj = getValue().musicInformation;
-  const musicList = getValue().list;
   const [isPlay, setIsPlay] = React.useState<boolean>(false);
   const [musicProgress, setMusicProgress] = React.useState<number>(0);
-  const [volume, setVolume] = React.useState(50);
-  const [musicListNowIndex, setMusicListNowIndex] = React.useState<number>(0);
   const [controlToggle, setControlToggle] = React.useState<boolean>(false);
   const controlToggleRef = React.useRef(null);
   const audio = React.useRef(typeof Audio !== "undefined" && new Audio());
@@ -49,72 +36,6 @@ export default function AudioPlayBar() {
     [musicObj]
   );
 
-  const controleMusicVolume = React.useCallback(({ target }) => {
-    setVolume(target.value);
-  }, []);
-
-  const volumeIconEvent = React.useCallback(() => {
-    if (volume === 0) {
-      setVolume(50);
-    } else {
-      setVolume(0);
-    }
-  }, [volume]);
-
-  const moveBeforeMusic = React.useCallback(() => {
-    if (musicListNowIndex - 1 >= 0 && musicList.length > 0) {
-      const nextMusicObj: any = musicList[musicListNowIndex - 1];
-      dispatch({
-        type: "MUSIC_CHANGE",
-        musicInformation: {
-          title: nextMusicObj.title,
-          cover_url: nextMusicObj.cover_url,
-          artist: nextMusicObj.artist,
-          song_id: nextMusicObj.song_id,
-          song_url: nextMusicObj.song_url
-            ? nextMusicObj.song_url
-            : nextMusicObj.short_url,
-        },
-      });
-      setMusicListNowIndex((value) => value - 1);
-    } else {
-      toast.info("이전 곡이 없습니다.");
-    }
-  }, [musicList, musicListNowIndex]);
-
-  const moveNextMusic = React.useCallback(() => {
-    if (musicListNowIndex + 1 < musicList.length && musicList.length > 0) {
-      const nextMusicObj: musicCardObject = musicList[musicListNowIndex + 1];
-      dispatch({
-        type: "MUSIC_CHANGE",
-        musicInformation: {
-          title: nextMusicObj.title,
-          cover_url: nextMusicObj.cover_url,
-          artist: nextMusicObj.artist,
-          song_id: nextMusicObj.song_id,
-          song_url: nextMusicObj.song_url
-            ? nextMusicObj.song_url
-            : nextMusicObj.short_url,
-        },
-      });
-      setMusicListNowIndex((value) => value + 1);
-    } else {
-      toast.info("다음 곡이 없습니다.");
-    }
-  }, [musicList, musicListNowIndex]);
-
-  React.useEffect(() => {
-    setMusicListNowIndex(-1);
-  }, [musicList]);
-
-  React.useEffect(() => {
-    musicList.forEach((obj, index) => {
-      if (musicObj.song_id === obj.song_id) {
-        setMusicListNowIndex(index);
-      }
-    });
-  }, [musicObj]);
-
   React.useEffect(() => {
     setMusicProgress(0);
     if (musicObj.song_url) {
@@ -136,17 +57,10 @@ export default function AudioPlayBar() {
 
   React.useEffect(() => {
     if (musicProgress >= 100) {
-      if (musicListNowIndex + 1 === musicList.length) {
-        musicStop();
-        return;
-      }
-      moveNextMusic();
+      musicStop();
+      // 다음곡 재생
     }
   }, [musicProgress]);
-
-  React.useEffect(() => {
-    audio.current.volume = volume / 100;
-  }, [volume]);
 
   React.useEffect(() => {
     const input: HTMLElement = document.getElementById("input-range");
@@ -170,13 +84,13 @@ export default function AudioPlayBar() {
         />
         <S.Center>
           <S.CenterControl>
-            <PassIcon callback={moveBeforeMusic} isNext={false} />
+            <PassIcon callback={() => {}} isNext={false} />
             {isPlay ? (
               <PauseIcon size={16} callback={musicStop} />
             ) : (
               <PlayIcon size={16} callback={musicStart} />
             )}
-            <PassIcon callback={moveNextMusic} isNext={true} />
+            <PassIcon callback={() => {}} isNext={true} />
           </S.CenterControl>
         </S.Center>
         <MusicInfo
@@ -186,15 +100,8 @@ export default function AudioPlayBar() {
           songId={musicObj.song_id}
         />
         <S.Control>
-          <PlayListAddIcon size={19} />
-          {volume == 0 ? (
-            <MuteIcon size={20} callback={volumeIconEvent} />
-          ) : (
-            <VolumeIcon size={20} callback={volumeIconEvent} />
-          )}
-          <S.VolumeControlWrap progress={volume}>
-            <input type="range" onClick={controleMusicVolume} />
-          </S.VolumeControlWrap>
+          <PlayListAddIcon size={16} />
+          <VolumeControl audio={audio} />
         </S.Control>
       </S.Container>
     </S.Wrapper>
