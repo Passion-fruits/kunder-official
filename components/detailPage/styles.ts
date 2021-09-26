@@ -84,6 +84,10 @@ export const InforWrap = styled.div`
       color: ${COLOR.green_subMain};
       font-size: 17px;
       font-weight: 500;
+      cursor: pointer;
+      &:hover {
+        opacity: 0.7;
+      }
     }
   }
   & .sub-info {

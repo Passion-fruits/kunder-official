@@ -10,6 +10,7 @@ export const ProfileInfoWrap = styled.div`
   padding-top: 30px;
   display: grid;
   grid-template-columns: 250px auto;
+  margin-bottom: 40px;
   & .cover-img {
     width: 250px;
     height: 250px;

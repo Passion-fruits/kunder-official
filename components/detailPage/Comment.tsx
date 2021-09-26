@@ -1,12 +1,14 @@
 import { comment } from "../../lib/interfaces/music";
 import * as S from "./styles";
 import { getDate } from "./../../lib/util/getDate";
+import { useRouter } from "next/dist/client/router";
 
 interface props {
   commentList: comment[];
 }
 
 export default function Comment({ commentList }: props) {
+  const router = useRouter();
   return (
     <S.CommentWrap>
       {commentList.length === 0 ? (
@@ -15,7 +17,11 @@ export default function Comment({ commentList }: props) {
         <>
           {commentList.map((comment, index) => (
             <S.CommentContainer key={index}>
-              <img className="cover-image" src={comment.profile} />
+              <img
+                className="cover-image"
+                onClick={() => router.push(`/profile?id=${comment.user_id}`)}
+                src={comment.profile}
+              />
               <div className="comment-contents">
                 <div className="writer-date">
                   <h3 id="noto">{comment.name}</h3>

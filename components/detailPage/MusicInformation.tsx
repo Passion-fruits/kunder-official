@@ -6,6 +6,7 @@ import { musicObject } from "../../lib/interfaces/music";
 import { getDate } from "./../../lib/util/getDate";
 import React from "react";
 import { setValue } from "./../../lib/context/index";
+import { useRouter } from "next/dist/client/router";
 
 interface props {
   musicObj: musicObject;
@@ -13,6 +14,7 @@ interface props {
 
 export default function MusicInformation({ musicObj }: props) {
   const dispatch = setValue();
+  const router = useRouter();
 
   const musicChange = () => {
     dispatch({
@@ -38,7 +40,9 @@ export default function MusicInformation({ musicObj }: props) {
         </div>
         <div className="musician">
           <span>Music by</span>
-          <h5>{musicObj.artist}</h5>
+          <h5 onClick={() => router.push(`/profile?id=${musicObj.user_id}`)}>
+            {musicObj.artist}
+          </h5>
         </div>
         <div className="sub-info">
           <div>

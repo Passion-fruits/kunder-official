@@ -4,6 +4,8 @@ import React from "react";
 import { profileObj } from "./../../lib/interfaces/profile";
 import { useRouter } from "next/dist/client/router";
 import profile from "../../api/profile";
+import MusicRowCardList from "./../MusicRowCardList/index";
+import { data } from "./../../lib/export/data";
 
 export default function ProfilePage() {
   const [profileObj, setProfileObj] = React.useState<profileObj | null>(null);
@@ -35,6 +37,7 @@ export default function ProfilePage() {
             <ProfileInformation profileObj={profileObj} getData={getData} />
           </>
         )}
+        <MusicRowCardList musicList={data} />
       </S.Container>
     </S.Wrapper>
   );
