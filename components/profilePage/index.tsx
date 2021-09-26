@@ -9,7 +9,7 @@ export default function ProfilePage() {
   const [profileObj, setProfileObj] = React.useState<profileObj | null>(null);
   const router = useRouter();
 
-  React.useEffect(() => {
+  const getData = React.useCallback(() => {
     const user_id = router.query.id;
     if (user_id) {
       profile
@@ -23,12 +23,16 @@ export default function ProfilePage() {
     }
   }, [router]);
 
+  React.useEffect(() => {
+    getData();
+  }, [router]);
+
   return (
     <S.Wrapper>
       <S.Container>
         {profileObj && (
           <>
-            <ProfileInformation profileObj={profileObj} />
+            <ProfileInformation profileObj={profileObj} getData={getData} />
           </>
         )}
       </S.Container>

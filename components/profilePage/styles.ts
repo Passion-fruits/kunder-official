@@ -104,7 +104,7 @@ export const FlexContainer = styled.div`
   gap: 30px;
   align-items: center;
   margin-top: 30px;
-  & .follow-btn {
+  & button {
     padding: 10px 15px;
     background: none;
     border-radius: 3px;
