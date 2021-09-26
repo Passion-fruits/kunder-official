@@ -21,7 +21,7 @@ export const ProfileInfoWrap = styled.div`
 
 export const InfoContainer = styled.div`
   width: 100%;
-  padding-top: 30px;
+  padding-top: 20px;
   padding-left: 30px;
   display: flex;
   flex-direction: column;

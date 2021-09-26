@@ -122,7 +122,7 @@ export default function ControlMusic({ musicObj }: props) {
             {likeCnt}
           </button>
           <button>
-            <PlayListAddIcon /> 추가
+            <PlayListAddIcon size={16} /> 추가
           </button>
         </div>
         <form onSubmit={sendComment}>

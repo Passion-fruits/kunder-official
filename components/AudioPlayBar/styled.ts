@@ -9,7 +9,7 @@ export const Wrapper = styled(BASE_WRAPPER)`
 
 export const Container = styled(BASE_CONTAINER)`
   height: ${`${SIZE.playbar_height}px`};
-  padding: 0 0;
+  padding: 0;
   position: relative;
   display: flex;
   align-items: center;
@@ -22,6 +22,7 @@ export const Info = styled.div`
   align-items: center;
   gap: 17px;
   z-index: 2;
+  padding-left: 20px;
   & .cover-image {
     width: 60px;
     height: 60px;
@@ -58,6 +59,7 @@ export const Info = styled.div`
 `;
 
 export const Control = styled.div`
+  padding-right: 20px;
   height: 100%;
   display: flex;
   align-items: center;
@@ -107,7 +109,7 @@ export const Center = styled.div`
 export const CenterControl = styled.div`
   display: flex;
   align-items: center;
-  gap: 60px;
+  gap: 50px;
   & svg {
     cursor: pointer;
   }

@@ -11,6 +11,9 @@ import { musicCardObject } from "./../../lib/interfaces/music";
 import React from "react";
 import * as S from "./styled";
 import MusicInfo from "./MusicInfo";
+import PlayListAddIcon from "./../../assets/playListAdd";
+import { COLOR } from "./../../styles/index";
+import HeartIcon from "./../../assets/heart";
 
 export default function AudioPlayBar() {
   const dispatch = setValue();
@@ -183,6 +186,7 @@ export default function AudioPlayBar() {
           songId={musicObj.song_id}
         />
         <S.Control>
+          <PlayListAddIcon size={19} />
           {volume == 0 ? (
             <MuteIcon size={20} callback={volumeIconEvent} />
           ) : (
