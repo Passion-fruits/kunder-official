@@ -34,7 +34,6 @@ export default function LoginPage() {
           localStorage.setItem(ACCESS_TOKEN, data.access_token);
           localStorage.setItem(REFRESH_TOKEN, data.refresh_token);
           localStorage.setItem(USER_ID, data.user_id);
-          toast.success("로그인 되었습니다.");
           router.push("/");
           return;
         }

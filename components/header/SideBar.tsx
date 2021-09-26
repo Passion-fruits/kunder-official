@@ -7,7 +7,6 @@ import {
   REFRESH_TOKEN,
   USER_ID,
 } from "./../../lib/export/localstorage";
-import { toast } from "react-toastify";
 import Link from "./Link";
 import profile from "../../api/profile";
 
@@ -18,7 +17,6 @@ export default function SideBar() {
 
   const logout = React.useCallback(() => {
     setProfileImg(null);
-    toast.success("로그아웃 되었습니다.");
     localStorage.setItem(ACCESS_TOKEN, "");
     localStorage.setItem(REFRESH_TOKEN, "");
     localStorage.setItem(USER_ID, "");
@@ -53,7 +51,13 @@ export default function SideBar() {
           <button className="login-btn" onClick={logout}>
             로그아웃
           </button>
-          <img className="mypage-btn" src={profileImg} />
+          <img
+            onClick={() =>
+              router.push(`/profile?id=${localStorage.getItem(USER_ID)}`)
+            }
+            className="mypage-btn"
+            src={profileImg}
+          />
         </div>
       ) : (
         <button className="login-btn" onClick={() => router.push("/login")}>
