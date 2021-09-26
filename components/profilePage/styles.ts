@@ -132,3 +132,27 @@ export const FlexContainer = styled.div`
     }
   }
 `;
+
+export const UserInforWrap = styled.div`
+  width: 100%;
+  margin-top: 60px;
+  margin-bottom: 30px;
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  border-bottom: 1px solid ${COLOR.gray_borderColor};
+`;
+
+interface InforMenuProps {
+  isCheck: boolean;
+}
+
+export const InforMenu = styled.span<InforMenuProps>`
+  font-size: 18px;
+  font-weight: bold;
+  color: ${(res) => (res.isCheck ? COLOR.green_subMain : "#fff")};
+  padding-bottom: 13px;
+  border-bottom: ${(res) =>
+    `3px solid ${res.isCheck ? COLOR.green_subMain : "transparent"}`};
+  cursor: pointer;
+`;

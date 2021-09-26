@@ -4,15 +4,14 @@ import React from "react";
 import { profileObj } from "./../../lib/interfaces/profile";
 import { useRouter } from "next/dist/client/router";
 import profile from "../../api/profile";
-import MusicRowCardList from "./../MusicRowCardList/index";
-import { data } from "./../../lib/export/data";
+import UserSubInformation from "./UserSubInformation";
 
 export default function ProfilePage() {
   const [profileObj, setProfileObj] = React.useState<profileObj | null>(null);
   const router = useRouter();
+  const user_id = router.query.id;
 
   const getData = React.useCallback(() => {
-    const user_id = router.query.id;
     if (user_id) {
       profile
         .getUserProfile(user_id)
@@ -35,9 +34,9 @@ export default function ProfilePage() {
         {profileObj && (
           <>
             <ProfileInformation profileObj={profileObj} getData={getData} />
+            <UserSubInformation user_id={user_id} />
           </>
         )}
-        <MusicRowCardList musicList={data} />
       </S.Container>
     </S.Wrapper>
   );

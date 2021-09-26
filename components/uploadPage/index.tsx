@@ -10,6 +10,7 @@ import { useRouter } from "next/dist/client/router";
 import Spiner from "./../Spiner";
 import music from "../../api/music";
 import { toast } from "react-toastify";
+import { USER_ID } from "../../lib/export/localstorage";
 
 export default function UploadPage() {
   const [loading, setLoading] = React.useState<boolean>(false);
@@ -44,7 +45,7 @@ export default function UploadPage() {
     music
       .uploadMusic(dataObject)
       .then(() => {
-        router.push(`/`);
+        router.push(`/profile?id=${localStorage.getItem(USER_ID)}`);
         toast.success("업로드 되었습니다.");
       })
       .catch((err) => {

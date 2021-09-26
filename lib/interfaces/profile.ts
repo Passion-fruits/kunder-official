@@ -11,3 +11,10 @@ export interface profileObj {
   following: string;
   is_mine: boolean;
 }
+
+export interface menuObj {
+  song: "song";
+  playlist: "playlist";
+  follow: "follow";
+  follower: "follower";
+}

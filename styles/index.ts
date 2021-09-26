@@ -34,5 +34,5 @@ export const BASE_WRAPPER = styled.div`
 export const BASE_CONTAINER = styled.div`
   width: ${`${SIZE.page_size}px`};
   padding-top: ${`${SIZE.header_height}px`};
-  padding-bottom: ${`${SIZE.playbar_height}px`};
+  padding-bottom: ${`${SIZE.playbar_height + 50}px`};
 `;
