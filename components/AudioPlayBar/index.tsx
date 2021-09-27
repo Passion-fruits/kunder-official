@@ -39,11 +39,13 @@ export default function AudioPlayBar() {
   );
 
   const addPlayList = React.useCallback(() => {
-    dispatch({
-      type: "SET_MODAL",
-      modal: "addPlayList",
-      song_id: musicObj.song_id,
-    });
+    if (musicObj.song_id) {
+      dispatch({
+        type: "SET_MODAL",
+        modal: "addPlayList",
+        song_id: musicObj.song_id,
+      });
+    }
   }, [musicObj]);
 
   React.useEffect(() => {

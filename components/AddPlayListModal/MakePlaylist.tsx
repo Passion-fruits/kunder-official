@@ -1,13 +1,30 @@
 import React from "react";
 import { COLOR } from "./../../styles/index";
+import playlist from "../../api/playlist";
+import { toast } from "react-toastify";
 
-export default function MakePlaylist() {
+export default function MakePlaylist({ getUserPlaylist }) {
   const inputRef = React.useRef<HTMLInputElement>(null);
   const [playlistName, setPlaylistName] = React.useState<string>("");
   const limitLength = 20;
 
   const inputHandler = ({ target }) => {
     setPlaylistName(target.value);
+  };
+
+  const createPlaylist = () => {
+    if (playlistName.length === 0) {
+      toast.info("플레이리스트 이름을 입력하세요");
+      return;
+    }
+    playlist
+      .createNewPlaylist(playlistName)
+      .then(() => {
+        getUserPlaylist();
+      })
+      .catch(() => {
+        toast.error("에러가 발생하였습니다.");
+      });
   };
 
   React.useEffect(() => {
@@ -30,7 +47,7 @@ export default function MakePlaylist() {
       >
         {playlistName.length} / {limitLength}
       </div>
-      <button>만들기</button>
+      <button onClick={createPlaylist}>만들기</button>
     </div>
   );
 }

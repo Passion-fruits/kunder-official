@@ -75,12 +75,39 @@ export const Wrapper = styled.div`
 export const PlayListContainer = styled.div`
   display: flex;
   flex-direction: column;
+  gap: 15px;
   padding: 25px 20px;
+  max-height: 300px;
+  overflow-y: scroll;
+  ::-webkit-scrollbar {
+    width: 5px;
+    background: ${COLOR.gray_borderColor};
+  }
+  ::-webkit-scrollbar-thumb {
+    background: ${COLOR.green_main};
+    border-radius: 24px;
+  }
   & .none {
     width: 100%;
     text-align: center;
     padding: 20px 0;
     color: ${COLOR.blue_text};
     font-size: 16px;
+  }
+  & .option {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    & input[type="checkbox"] {
+      width: 15px;
+      height: 15px;
+      cursor: pointer;
+    }
+    & label {
+      color: white;
+      font-size: 17px;
+      margin-left: 10px;
+      cursor: pointer;
+    }
   }
 `;
