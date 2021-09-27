@@ -25,9 +25,14 @@ export default function UserSubInformation({ user_id }) {
   }, []);
 
   React.useEffect(() => {
-    profile.getUserMusic(user_id, 1).then((res) => {
-      setMusicList(res.data.songs);
-    });
+    profile
+      .getUserMusic(user_id, 1)
+      .then((res) => {
+        setMusicList(res.data.songs);
+      })
+      .catch(() => {
+        return;
+      });
   }, []);
 
   return (
