@@ -6,6 +6,7 @@ import MusicInfo from "./MusicInfo";
 import PlayListAddIcon from "./../../assets/playListAdd";
 import VolumeControl from "./VolumeControl";
 import { setValue } from "./../../lib/context/index";
+import { toast } from "react-toastify";
 
 export default function AudioPlayBar() {
   const musicObj = getValue().musicInformation;
@@ -43,8 +44,13 @@ export default function AudioPlayBar() {
       dispatch({
         type: "SET_MODAL",
         modal: "addPlayList",
+      });
+      dispatch({
+        type: "SET_MUSIC_ID",
         song_id: musicObj.song_id,
       });
+    } else {
+      toast.info("곡이 없습니다.");
     }
   }, [musicObj]);
 

@@ -14,8 +14,8 @@ type Action =
   | {
       type: "SET_MODAL";
       modal: "addPlayList" | null;
-      song_id?: number | string;
-    };
+    }
+  | { type: "SET_MUSIC_ID"; song_id: number | string };
 
 type SampleDispatch = Dispatch<Action>;
 
@@ -38,6 +38,10 @@ function reducer(state: State, action: Action): State {
       return {
         ...state,
         modal: action.modal,
+      };
+    case "SET_MUSIC_ID":
+      return {
+        ...state,
         song_id: action.song_id,
       };
     default:
