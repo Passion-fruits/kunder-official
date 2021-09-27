@@ -4,7 +4,7 @@ import { COLOR } from "../../styles";
 export const Wrapper = styled.div`
   width: 400px;
   background: ${COLOR.black_subBackground};
-  border-radius: 5px;
+  border-radius: 0px;
   & .title {
     font-size: 20px;
     font-weight: 500;
@@ -23,10 +23,64 @@ export const Wrapper = styled.div`
       opacity: 0.7;
     }
   }
+  & .playlist-make-container {
+    border-top: 1px solid ${COLOR.gray_borderColor};
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 0;
+    position: relative;
+    & input {
+      background: none;
+      border-bottom: 1px solid ${COLOR.gray_subText};
+      width: 80%;
+      padding: 10px;
+      color: ${COLOR.gray_subText};
+      font-size: 17px;
+      transition: 0.5s;
+      &::placeholder {
+        color: ${COLOR.gray_subText};
+      }
+      &:focus {
+        color: ${COLOR.gray_text};
+        border-bottom: 1px solid ${COLOR.blue_text};
+      }
+    }
+    & .title-length {
+      width: 80%;
+      display: flex;
+      justify-content: flex-end;
+      color: ${COLOR.gray_subText};
+      font-size: 14px;
+      margin-top: 10px;
+    }
+    & button {
+      width: 80%;
+      color: ${COLOR.blue_text};
+      border: 1px solid ${COLOR.blue_text};
+      font-size: 15px;
+      margin-top: 20px;
+      padding: 10px 0;
+      transition: 0.5s;
+      &:hover {
+        border: 1px solid ${COLOR.green_subMain};
+        color: ${COLOR.green_subMain};
+      }
+    }
+  }
 `;
 
 export const PlayListContainer = styled.div`
   display: flex;
   flex-direction: column;
   padding: 25px 20px;
+  & .none {
+    width: 100%;
+    text-align: center;
+    padding: 20px 0;
+    color: ${COLOR.blue_text};
+    font-size: 16px;
+  }
 `;
