@@ -37,10 +37,10 @@ export const InforWrap = styled.div`
   margin-top: 30px;
   width: 100%;
   display: grid;
-  grid-template-columns: 205px auto;
+  grid-template-columns: 250px auto;
   & .cover-image {
-    width: 200px;
-    height: 200px;
+    width: 250px;
+    height: 250px;
     border: 1px solid ${COLOR.gray_borderColor};
     border-radius: 5px;
   }

@@ -9,6 +9,7 @@ import { comment, musicObject } from "../../lib/interfaces/music";
 import { toast } from "react-toastify";
 import { ACCESS_TOKEN } from "./../../lib/export/localstorage";
 import Comment from "./Comment";
+import { setValue } from "./../../lib/context/index";
 
 interface props {
   musicObj: musicObject;
@@ -19,6 +20,7 @@ export default function ControlMusic({ musicObj }: props) {
   const [isLike, setIsLike] = React.useState<boolean>(false);
   const [commentList, setCommentList] = React.useState<comment[]>([]);
   const commentRef = React.useRef(null);
+  const dispatch = setValue();
 
   React.useEffect(() => {
     setLikeCnt(parseInt(musicObj.like.toString()));
@@ -64,6 +66,17 @@ export default function ControlMusic({ musicObj }: props) {
         });
     }
   }, [likeCnt, isLike]);
+
+  const addMusicToPlaylist = React.useCallback(() => {
+    dispatch({
+      type: "SET_MODAL",
+      modal: "addPlayList",
+    });
+    dispatch({
+      type: "SET_MUSIC_ID",
+      song_id: musicObj.song_id,
+    });
+  }, [musicObj]);
 
   const sendComment = (event: React.FormEvent) => {
     event.preventDefault();
@@ -121,7 +134,7 @@ export default function ControlMusic({ musicObj }: props) {
             />
             {likeCnt}
           </button>
-          <button>
+          <button onClick={addMusicToPlaylist}>
             <PlayListAddIcon size={16} /> 추가
           </button>
         </div>
