@@ -24,11 +24,6 @@ export default function DetailPage() {
     <S.Wrapper>
       {musicObj && (
         <>
-          <S.ImageCover
-            style={{ backgroundImage: `url("${musicObj.cover_url}")` }}
-          >
-            <div className="cover"></div>
-          </S.ImageCover>
           <S.Container>
             <MusicInformation musicObj={musicObj} />
             <ControlMusic musicObj={musicObj} />
