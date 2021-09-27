@@ -6,6 +6,7 @@ import "../styles/globals.css";
 import "react-toastify/dist/ReactToastify.css";
 import AudioPlayBar from "../components/AudioPlayBar";
 import Header from "../components/Header";
+import Modal from "../components/Modal";
 
 function App({ Component, pageProps }: AppProps) {
   return (
@@ -30,6 +31,7 @@ function App({ Component, pageProps }: AppProps) {
         <link rel="icon" href="/logo.ico" />
       </Head>
       <SampleProvider>
+        <Modal />
         <Header />
         <ToastContainer position="top-right" autoClose={2000} />
         <Component {...pageProps} />

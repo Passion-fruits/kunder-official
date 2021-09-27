@@ -4,11 +4,18 @@ import { musicCardObject } from "./../interfaces/music";
 type State = {
   musicInformation: musicCardObject;
   list: musicCardObject[] | [];
+  modal: "addPlayList" | null;
+  song_id: number | string;
 };
 
 type Action =
   | { type: "MUSIC_CHANGE"; musicInformation: musicCardObject }
-  | { type: "SET_MUSIC_LIST"; list: musicCardObject[] };
+  | { type: "SET_MUSIC_LIST"; list: musicCardObject[] }
+  | {
+      type: "SET_MODAL";
+      modal: "addPlayList" | null;
+      song_id?: number | string;
+    };
 
 type SampleDispatch = Dispatch<Action>;
 
@@ -27,6 +34,12 @@ function reducer(state: State, action: Action): State {
         ...state,
         list: action.list,
       };
+    case "SET_MODAL":
+      return {
+        ...state,
+        modal: action.modal,
+        song_id: action.song_id,
+      };
     default:
       throw new Error("Unhandled action");
   }
@@ -42,6 +55,8 @@ export function SampleProvider({ children }: { children: React.ReactNode }) {
       song_id: "",
     },
     list: [],
+    modal: null,
+    song_id: 0,
   });
   return (
     <SampleStateContext.Provider value={state}>

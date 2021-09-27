@@ -5,9 +5,11 @@ import * as S from "./styled";
 import MusicInfo from "./MusicInfo";
 import PlayListAddIcon from "./../../assets/playListAdd";
 import VolumeControl from "./VolumeControl";
+import { setValue } from "./../../lib/context/index";
 
 export default function AudioPlayBar() {
   const musicObj = getValue().musicInformation;
+  const dispatch = setValue();
   const [isPlay, setIsPlay] = React.useState<boolean>(false);
   const [musicProgress, setMusicProgress] = React.useState<number>(0);
   const [controlToggle, setControlToggle] = React.useState<boolean>(false);
@@ -35,6 +37,14 @@ export default function AudioPlayBar() {
     },
     [musicObj]
   );
+
+  const addPlayList = React.useCallback(() => {
+    dispatch({
+      type: "SET_MODAL",
+      modal: "addPlayList",
+      song_id: musicObj.song_id,
+    });
+  }, [musicObj]);
 
   React.useEffect(() => {
     setMusicProgress(0);
@@ -100,7 +110,7 @@ export default function AudioPlayBar() {
           songId={musicObj.song_id}
         />
         <S.Control>
-          <PlayListAddIcon size={16} />
+          <PlayListAddIcon size={16} callback={addPlayList} />
           <VolumeControl audio={audio} />
         </S.Control>
       </S.Container>

@@ -65,7 +65,7 @@ export default function ProfileInformation({ profileObj, getData }: props) {
         <div className="followCntContainer">
           <div>
             <h3>{profileObj.follower}</h3>
-            <span>팔로우</span>
+            <span>팔로워</span>
           </div>
           <div>
             <h3>{profileObj.following}</h3>
