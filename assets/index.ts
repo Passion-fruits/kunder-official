@@ -15,3 +15,4 @@ export { default as PauseIcon } from "./pause";
 export { default as MuteIcon } from "./mute";
 export { default as InforIcon } from "./infor";
 export { default as PlayListAddIcon } from "./playListAdd";
+export { default as PlaylistIcon } from "./playlist";

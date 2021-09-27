@@ -2,10 +2,10 @@ import request from "./axios";
 import { ACCESS_TOKEN, USER_ID } from "./../lib/export/localstorage";
 
 export default {
-  getUserPlaylist() {
+  getUserPlaylist(user_id) {
     return request({
       method: "get",
-      url: `/playlist/profile/${localStorage.getItem(USER_ID)}`,
+      url: `/playlist/profile/${user_id}`,
     });
   },
   createNewPlaylist(name) {

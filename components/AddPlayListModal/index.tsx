@@ -1,6 +1,6 @@
 import * as S from "./styles";
 import React from "react";
-import { ACCESS_TOKEN } from "./../../lib/export/localstorage";
+import { ACCESS_TOKEN, USER_ID } from "./../../lib/export/localstorage";
 import { getValue, setValue } from "./../../lib/context/index";
 import { toast } from "react-toastify";
 import playlist from "../../api/playlist";
@@ -16,7 +16,7 @@ export default function AddPlayListModal() {
   const getUserPlaylist = React.useCallback(() => {
     setIsMake(false);
     playlist
-      .getUserPlaylist()
+      .getUserPlaylist(localStorage.getItem(USER_ID))
       .then((res) => {
         setPlayListArr(res.data);
       })

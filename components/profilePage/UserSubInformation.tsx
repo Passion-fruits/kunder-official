@@ -5,6 +5,9 @@ import UserInforMenu from "./UserInforMenu";
 import MusicColumnCardList from "../MusicColumnCardList";
 import { musicCardObject } from "./../../lib/interfaces/music";
 import profile from "../../api/profile";
+import playlist from "../../api/playlist";
+import PlaylistCardList from "../PlaylistCardList";
+import { playList } from "./../../lib/interfaces/playlist";
 
 export default function UserSubInformation({ user_id }) {
   const menuObj: menuObj = {
@@ -17,6 +20,7 @@ export default function UserSubInformation({ user_id }) {
     "song" | "playlist" | "follow" | "follower"
   >(menuObj.song);
   const [musicList, setMusicList] = React.useState<musicCardObject[]>([]);
+  const [playlistArr, setPlaylistArr] = React.useState<playList[]>([]);
 
   const changeMenu = React.useCallback(({ target }) => {
     if (target.id) {
@@ -29,6 +33,17 @@ export default function UserSubInformation({ user_id }) {
       .getUserMusic(user_id, 1)
       .then((res) => {
         setMusicList(res.data.songs);
+      })
+      .catch(() => {
+        return;
+      });
+  }, []);
+
+  React.useEffect(() => {
+    playlist
+      .getUserPlaylist(user_id)
+      .then((res) => {
+        setPlaylistArr(res.data);
       })
       .catch(() => {
         return;
@@ -61,6 +76,9 @@ export default function UserSubInformation({ user_id }) {
       </S.UserInforWrap>
       {menuObj.song === nowMenu && (
         <MusicColumnCardList musicList={musicList} />
+      )}
+      {menuObj.playlist === nowMenu && (
+        <PlaylistCardList playlistArr={playlistArr} />
       )}
     </>
   );
