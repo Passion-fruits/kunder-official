@@ -35,20 +35,22 @@ export default function UserSubInformation({ user_id }) {
         setMusicList(res.data.songs);
       })
       .catch(() => {
-        return;
+        setMusicList([]);
       });
-  }, []);
+  }, [user_id]);
 
   React.useEffect(() => {
-    playlist
-      .getUserPlaylist(user_id)
-      .then((res) => {
-        setPlaylistArr(res.data);
-      })
-      .catch(() => {
-        return;
-      });
-  }, []);
+    if (nowMenu === menuObj.playlist) {
+      playlist
+        .getUserPlaylist(user_id)
+        .then((res) => {
+          setPlaylistArr(res.data);
+        })
+        .catch(() => {
+          setPlaylistArr([]);
+        });
+    }
+  }, [nowMenu, user_id]);
 
   return (
     <>
