@@ -10,13 +10,72 @@ import { toast } from "react-toastify";
 
 export default function AudioPlayBar() {
   const musicObj = getValue().musicInformation;
+  const musicList = getValue().list;
   const dispatch = setValue();
   const [isPlay, setIsPlay] = React.useState<boolean>(false);
   const [musicProgress, setMusicProgress] = React.useState<number>(0);
   const [controlToggle, setControlToggle] = React.useState<boolean>(false);
+  const [musicListNowIndex, setMusicListNowIndex] = React.useState<number>(0);
   const controlToggleRef = React.useRef(null);
   const audio = React.useRef(typeof Audio !== "undefined" && new Audio());
   controlToggleRef.current = controlToggle;
+
+  // 다음 곡 관련
+  //======================================
+  const moveBeforeMusic = React.useCallback(() => {
+    if (musicListNowIndex - 1 >= 0 && musicList.length > 0) {
+      const nextMusicObj: any = musicList[musicListNowIndex - 1];
+      dispatch({
+        type: "MUSIC_CHANGE",
+        musicInformation: {
+          title: nextMusicObj.title,
+          cover_url: nextMusicObj.cover_url,
+          artist: nextMusicObj.artist,
+          song_id: nextMusicObj.song_id,
+          song_url: nextMusicObj.song_url
+            ? nextMusicObj.song_url
+            : nextMusicObj.short_url,
+        },
+      });
+      setMusicListNowIndex((value) => value - 1);
+    } else {
+      toast.info("이전 곡이 없습니다.");
+    }
+  }, [musicList, musicListNowIndex]);
+
+  const moveNextMusic = React.useCallback(() => {
+    if (musicListNowIndex + 1 < musicList.length && musicList.length > 0) {
+      const nextMusicObj = musicList[musicListNowIndex + 1];
+      dispatch({
+        type: "MUSIC_CHANGE",
+        musicInformation: {
+          title: nextMusicObj.title,
+          cover_url: nextMusicObj.cover_url,
+          artist: nextMusicObj.artist,
+          song_id: nextMusicObj.song_id,
+          song_url: nextMusicObj.song_url
+            ? nextMusicObj.song_url
+            : nextMusicObj.short_url,
+        },
+      });
+      setMusicListNowIndex((value) => value + 1);
+    } else {
+      toast.info("다음 곡이 없습니다.");
+    }
+  }, [musicList, musicListNowIndex]);
+
+  React.useEffect(() => {
+    setMusicListNowIndex(-1);
+  }, [musicList]);
+
+  React.useEffect(() => {
+    musicList.forEach((obj, index) => {
+      if (musicObj.song_id === obj.song_id) {
+        setMusicListNowIndex(index);
+      }
+    });
+  }, [musicObj]);
+  // =========================
 
   const musicStop = React.useCallback(() => {
     audio.current.pause();
@@ -75,8 +134,11 @@ export default function AudioPlayBar() {
 
   React.useEffect(() => {
     if (musicProgress >= 100) {
-      musicStop();
-      // 다음곡 재생
+      if (musicListNowIndex + 1 === musicList.length) {
+        musicStop();
+        return;
+      }
+      moveNextMusic();
     }
   }, [musicProgress]);
 
@@ -102,13 +164,13 @@ export default function AudioPlayBar() {
         />
         <S.Center>
           <S.CenterControl>
-            <PassIcon callback={() => {}} isNext={false} />
+            <PassIcon callback={moveBeforeMusic} isNext={false} />
             {isPlay ? (
               <PauseIcon size={16} callback={musicStop} />
             ) : (
               <PlayIcon size={16} callback={musicStart} />
             )}
-            <PassIcon callback={() => {}} isNext={true} />
+            <PassIcon callback={moveNextMusic} isNext={true} />
           </S.CenterControl>
         </S.Center>
         <MusicInfo

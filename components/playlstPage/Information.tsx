@@ -2,6 +2,9 @@ import { HeartIcon, PlayIcon } from "../../assets";
 import { playlistInfor } from "../../lib/interfaces/playlist";
 import * as S from "./styles";
 import { getDate } from "./../../lib/util/getDate";
+import { setValue, getValue } from "./../../lib/context/index";
+import React from "react";
+import { toast } from "react-toastify";
 
 export default function PlaylistInformation({
   name,
@@ -11,6 +14,26 @@ export default function PlaylistInformation({
   playlist_id,
   created_at,
 }: playlistInfor) {
+  const dispatch = setValue();
+  const musicList = getValue().list;
+
+  const startPlaylist = () => {
+    if (musicList.length > 0) {
+      dispatch({
+        type: "MUSIC_CHANGE",
+        musicInformation: {
+          title: musicList[0].title,
+          cover_url: musicList[0].cover_url,
+          song_url: musicList[0].song_url,
+          song_id: musicList[0].song_id,
+          artist: musicList[0].artist,
+        },
+      });
+    } else {
+      toast.info("곡이 없습니다.");
+    }
+  };
+
   return (
     <S.InforWrap>
       <img
@@ -35,7 +58,7 @@ export default function PlaylistInformation({
           </h3>
         </div>
         <div className="control-wrap">
-          <button className="play-btn">
+          <button className="play-btn" onClick={startPlaylist}>
             <PlayIcon callback={() => {}} size={20} />
           </button>
           <HeartIcon callback={() => {}} size={35} color="white" />

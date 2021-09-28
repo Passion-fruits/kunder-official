@@ -83,6 +83,8 @@ export const IconWrap = styled.div`
   }
   & .add-playlist {
     margin-top: 3px;
+    position: absolute;
+    right: 0;
   }
 `;
 

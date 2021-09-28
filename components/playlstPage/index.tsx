@@ -7,9 +7,11 @@ import React from "react";
 import playlist from "../../api/playlist";
 import { playlistInfor } from "../../lib/interfaces/playlist";
 import { musicCardObject } from "../../lib/interfaces/music";
+import { setValue } from "./../../lib/context/index";
 
 export default function PlaylistPage() {
   const router = useRouter();
+  const dispatch = setValue();
   const playlist_id = router.query.id;
   const [playlistObj, setPlaylistObj] = React.useState<playlistInfor>();
   const [musicArr, setMusicArr] = React.useState<musicCardObject[]>([]);
@@ -21,9 +23,12 @@ export default function PlaylistPage() {
         .then((res) => {
           setPlaylistObj(res.data.playlist);
           setMusicArr(res.data.songs);
+          dispatch({
+            type: "SET_MUSIC_LIST",
+            list: res.data.songs,
+          });
         })
-        .catch((err) => {
-          console.log(err);
+        .catch(() => {
           return;
         });
     }
