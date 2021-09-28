@@ -1,18 +1,16 @@
 import * as S from "./styles";
 import InputLabel from "./InputLabel";
 import React from "react";
+import { getFileData } from "../../lib/util/getFileData";
 
 export default function InputToCover({ inputRef }) {
   const [preview, setPreview] = React.useState<string>("");
 
   const handleFileOnChange = (event) => {
-    let reader = new FileReader();
-    let file = event.target.files[0];
-    reader.onloadend = () => {
-      inputRef.current = file;
-      setPreview(reader.result.toString());
-    };
-    file && reader.readAsDataURL(file);
+    getFileData(event).then((res) => {
+      inputRef.current = res.file;
+      setPreview(res.preview);
+    });
   };
 
   return (

@@ -5,6 +5,7 @@ import profile from "../../api/profile";
 import { profileObj } from "./../../lib/interfaces/profile";
 import { setValue } from "./../../lib/context/index";
 import { toast } from "react-toastify";
+import { getFileData } from "./../../lib/util/getFileData";
 
 export default function PrfoileUpdateModal() {
   const [profileObj, setProfileObj] = React.useState<profileObj>();
@@ -36,6 +37,23 @@ export default function PrfoileUpdateModal() {
       });
   };
 
+  const setUserProfile = (event) => {
+    getFileData(event).then((res) => {
+      setProfileObj({
+        ...profileObj,
+        profile: res.preview,
+      });
+      profile
+        .updateProfileImg(res.file)
+        .then(() => {
+          toast.success("사진이 변경되었습니다.");
+        })
+        .catch(() => {
+          toast.error("에러가 발생하였습니다.");
+        });
+    });
+  };
+
   React.useEffect(() => {
     profile
       .getUserProfile(router.query.id)
@@ -49,10 +67,18 @@ export default function PrfoileUpdateModal() {
 
   return (
     <S.Wrapper className="scroll-container">
+      <input
+        type="file"
+        accept="image/png, image/jpeg, image/jpg"
+        id="profile-cover-input"
+        onChange={setUserProfile}
+      />
       <h1 className="title">프로필 정보 수정</h1>
       {profileObj && (
         <>
-          <img className="cover-image" src={profileObj.profile} />
+          <label htmlFor="profile-cover-input">
+            <img className="cover-image" src={profileObj.profile} />
+          </label>
           <input
             type="text"
             placeholder="아티스트명"

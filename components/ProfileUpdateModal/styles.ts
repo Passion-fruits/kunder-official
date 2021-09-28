@@ -9,6 +9,9 @@ export const Wrapper = styled.div`
   align-items: center;
   flex-direction: column;
   background: ${COLOR.black_subBackground};
+  & input[type="file"] {
+    display: none;
+  }
   & .title {
     color: white;
     font-size: 20px;
