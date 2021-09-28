@@ -3,6 +3,7 @@ import AddPlayListModal from "../AddPlayListModal";
 import * as S from "./styles";
 import { setValue } from "./../../lib/context/index";
 import React from "react";
+import PrfoileUpdateModal from "./../ProfileUpdateModal/index";
 
 export default function Modal() {
   const contextObj = getValue();
@@ -21,7 +22,13 @@ export default function Modal() {
     <>
       {modal && (
         <S.Wrapper id="modal-wrapper" onClick={closeModal}>
-          {modal === "addPlayList" ? <AddPlayListModal /> : <></>}
+          {modal === "addPlayList" ? (
+            <AddPlayListModal />
+          ) : modal === "updateProfile" ? (
+            <PrfoileUpdateModal />
+          ) : (
+            <></>
+          )}
         </S.Wrapper>
       )}
     </>

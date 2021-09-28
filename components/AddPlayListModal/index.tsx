@@ -67,7 +67,7 @@ export default function AddPlayListModal() {
   return (
     <S.Wrapper>
       <h1 className="title">내 플레이리스트</h1>
-      <S.PlayListContainer>
+      <S.PlayListContainer className="scroll-container">
         {playListArr.length === 0 ? (
           <span className="none">플레이리스트가 없습니다.</span>
         ) : (

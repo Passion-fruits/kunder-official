@@ -5,10 +5,12 @@ import { profileObj } from "./../../lib/interfaces/profile";
 import { useRouter } from "next/dist/client/router";
 import profile from "../../api/profile";
 import UserSubInformation from "./UserSubInformation";
+import { getValue } from "../../lib/context";
 
 export default function ProfilePage() {
   const [profileObj, setProfileObj] = React.useState<profileObj | null>(null);
   const router = useRouter();
+  const contextObj = getValue();
   const user_id = router.query.id;
 
   const getData = React.useCallback(() => {
@@ -26,7 +28,7 @@ export default function ProfilePage() {
 
   React.useEffect(() => {
     getData();
-  }, [router]);
+  }, [router, contextObj.modal]);
 
   return (
     <S.Wrapper>

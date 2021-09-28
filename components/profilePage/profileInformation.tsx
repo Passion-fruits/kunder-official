@@ -8,6 +8,8 @@ import SnsButton from "./SnsButton";
 import React from "react";
 import { useRouter } from "next/dist/client/router";
 import profile from "../../api/profile";
+import { USER_ID } from "../../lib/export/localstorage";
+import { setValue } from "./../../lib/context/index";
 
 interface props {
   profileObj: profileObj;
@@ -18,6 +20,7 @@ export default function ProfileInformation({ profileObj, getData }: props) {
   const [isFollow, setIsFollow] = React.useState<boolean>(false);
   const router = useRouter();
   const user_id = router.query.id;
+  const dispatch = setValue();
 
   React.useEffect(() => {
     if (user_id) {
@@ -57,6 +60,13 @@ export default function ProfileInformation({ profileObj, getData }: props) {
         });
     }
   }, [profileObj, isFollow]);
+
+  const profileUpdate = React.useCallback(() => {
+    dispatch({
+      type: "SET_MODAL",
+      modal: "updateProfile",
+    });
+  }, []);
 
   return (
     <S.ProfileInfoWrap>
@@ -103,8 +113,8 @@ export default function ProfileInformation({ profileObj, getData }: props) {
           />
         </div>
         <S.FlexContainer>
-          {profileObj.is_mine ? (
-            <button>정보수정</button>
+          {user_id === localStorage.getItem(USER_ID) ? (
+            <button onClick={profileUpdate}>정보수정</button>
           ) : (
             <button onClick={follow}>{isFollow ? "언팔로우" : "팔로우"}</button>
           )}

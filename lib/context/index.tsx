@@ -4,7 +4,7 @@ import { musicCardObject } from "./../interfaces/music";
 type State = {
   musicInformation: musicCardObject;
   list: musicCardObject[] | [];
-  modal: "addPlayList" | null;
+  modal: "addPlayList" | "updateProfile" | null;
   song_id: number | string;
 };
 
@@ -13,7 +13,7 @@ type Action =
   | { type: "SET_MUSIC_LIST"; list: musicCardObject[] }
   | {
       type: "SET_MODAL";
-      modal: "addPlayList" | null;
+      modal: "addPlayList" | "updateProfile" | null;
     }
   | { type: "SET_MUSIC_ID"; song_id: number | string };
 
