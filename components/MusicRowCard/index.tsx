@@ -17,6 +17,7 @@ export default function MusicRowCard({
   genre,
   indexNum,
   created_at,
+  mood,
 }: musicCardObject) {
   const router = useRouter();
   const dispatch = setValue();
@@ -62,7 +63,7 @@ export default function MusicRowCard({
       <div className="right">
         <div className="hashtag-container">
           <div className="tag"># {genre}음악</div>
-          <div className="tag"># 아침에</div>
+          <div className="tag"># {mood}</div>
           <div className="tag">{getDate(created_at)}</div>
         </div>
         <div className="add-playlist" onClick={addMusicToPlaylist}>

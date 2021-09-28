@@ -16,6 +16,7 @@ export default function MusicRowCardList({ musicList }: MusicCardListProps) {
             cover_url,
             created_at,
             genre,
+            mood,
           },
           index
         ) => (
@@ -29,6 +30,7 @@ export default function MusicRowCardList({ musicList }: MusicCardListProps) {
             created_at={created_at}
             genre={genre}
             indexNum={index}
+            mood={mood}
             key={index}
           />
         )
