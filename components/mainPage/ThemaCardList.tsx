@@ -22,7 +22,7 @@ export default function ThemaCardList({
       {isColumn ? (
         <MusicColumnCardList musicList={data} />
       ) : (
-        <MusicRowCardList musicList={data} />
+        <MusicRowCardList musicList={data.concat(data)} />
       )}
     </S.ThemaCardListWrapper>
   );
