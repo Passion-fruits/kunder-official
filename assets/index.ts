@@ -16,3 +16,5 @@ export { default as MuteIcon } from "./mute";
 export { default as InforIcon } from "./infor";
 export { default as PlayListAddIcon } from "./playListAdd";
 export { default as PlaylistIcon } from "./playlist";
+export { default as PeopleIcon } from "./people";
+export { default as SongIcon } from "./song";

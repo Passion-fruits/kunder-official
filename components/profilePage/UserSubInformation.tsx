@@ -8,16 +8,17 @@ import profile from "../../api/profile";
 import playlist from "../../api/playlist";
 import PlaylistCardList from "../PlaylistCardList";
 import { playList } from "./../../lib/interfaces/playlist";
+import ProfileCard from "../ProfileCard";
 
 export default function UserSubInformation({ user_id }) {
   const menuObj: menuObj = {
     song: "song",
     playlist: "playlist",
-    follow: "follow",
     follower: "follower",
+    following: "following",
   };
   const [nowMenu, setNowMen] = React.useState<
-    "song" | "playlist" | "follow" | "follower"
+    "song" | "playlist" | "follower" | "following"
   >(menuObj.song);
   const [musicList, setMusicList] = React.useState<musicCardObject[]>([]);
   const [playlistArr, setPlaylistArr] = React.useState<playList[]>([]);
@@ -66,14 +67,14 @@ export default function UserSubInformation({ user_id }) {
           contents="플레이리스트"
         />
         <UserInforMenu
-          isCheck={menuObj.follow === nowMenu}
-          id={menuObj.follow}
-          contents="팔로우"
-        />
-        <UserInforMenu
           isCheck={menuObj.follower === nowMenu}
           id={menuObj.follower}
           contents="팔로워"
+        />
+        <UserInforMenu
+          isCheck={menuObj.following === nowMenu}
+          id={menuObj.following}
+          contents="팔로잉"
         />
       </S.UserInforWrap>
       {menuObj.song === nowMenu && (
@@ -82,6 +83,7 @@ export default function UserSubInformation({ user_id }) {
       {menuObj.playlist === nowMenu && (
         <PlaylistCardList playlistArr={playlistArr} />
       )}
+      {menuObj.follower === nowMenu && <ProfileCard />}
     </>
   );
 }

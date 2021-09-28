@@ -15,6 +15,6 @@ export interface profileObj {
 export interface menuObj {
   song: "song";
   playlist: "playlist";
-  follow: "follow";
   follower: "follower";
+  following: "following";
 }
