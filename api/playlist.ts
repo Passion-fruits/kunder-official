@@ -40,4 +40,16 @@ export default {
       url: `/playlist/${playlist_id}`,
     });
   },
+  updatePlaylistCover({ playlist_id, cover_url }) {
+    const fd = new FormData();
+    fd.append("image", cover_url);
+    return request({
+      method: "post",
+      url: `/playlist/cover/${playlist_id}`,
+      headers: {
+        "Content-type": "application/json",
+        Authorization: `Bearer ${localStorage.getItem(ACCESS_TOKEN)}`,
+      },
+    });
+  },
 };

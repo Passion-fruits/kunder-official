@@ -26,11 +26,12 @@ export const InforWrap = styled(BASE_WRAP)`
     display: flex;
     flex-direction: column;
     padding-left: 30px;
+    position: relative;
   }
   & .playlist-intro {
     display: flex;
     gap: 15px;
-    margin-top: 13px;
+    margin-top: 20px;
     & h5 {
       font-weight: 500;
       color: ${COLOR.gray_text};
@@ -40,7 +41,6 @@ export const InforWrap = styled(BASE_WRAP)`
       font-size: 17px;
       color: ${COLOR.gray_subText};
       & b {
-        /*         color: ${COLOR.green_subMain}; */
         font-weight: 500;
       }
     }
@@ -61,6 +61,10 @@ export const InforWrap = styled(BASE_WRAP)`
       color: ${COLOR.gray_subText};
       & b {
         color: ${COLOR.gray_text};
+        cursor: pointer;
+        &:hover {
+          opacity: 0.8;
+        }
       }
     }
   }
@@ -74,7 +78,8 @@ export const InforWrap = styled(BASE_WRAP)`
     display: flex;
     gap: 30px;
     align-items: center;
-    margin-top: 30px;
+    position: absolute;
+    bottom: 0;
     & .play-btn {
       width: 55px;
       height: 55px;
@@ -84,6 +89,11 @@ export const InforWrap = styled(BASE_WRAP)`
         margin-left: 5px;
       }
     }
+  }
+  & .update-button {
+    position: absolute;
+    right: 0;
+    bottom: 0;
   }
 `;
 

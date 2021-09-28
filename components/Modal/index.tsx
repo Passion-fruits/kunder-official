@@ -1,9 +1,10 @@
 import { getValue } from "../../lib/context";
 import AddPlayListModal from "../AddPlayListModal";
 import * as S from "./styles";
-import { setValue } from "./../../lib/context/index";
+import { setValue } from "../../lib/context/index";
 import React from "react";
-import PrfoileUpdateModal from "./../ProfileUpdateModal/index";
+import PrfoileUpdateModal from "../ProfileUpdateModal/index";
+import PlaylistUpdateModal from "../PlaylistUpdateModal";
 
 export default function Modal() {
   const contextObj = getValue();
@@ -26,6 +27,8 @@ export default function Modal() {
             <AddPlayListModal />
           ) : modal === "updateProfile" ? (
             <PrfoileUpdateModal />
+          ) : modal === "updatePlaylist" ? (
+            <PlaylistUpdateModal />
           ) : (
             <></>
           )}

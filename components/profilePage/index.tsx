@@ -27,7 +27,9 @@ export default function ProfilePage() {
   }, [router]);
 
   React.useEffect(() => {
-    getData();
+    if (contextObj.modal === null) {
+      getData();
+    }
   }, [router, contextObj.modal]);
 
   return (

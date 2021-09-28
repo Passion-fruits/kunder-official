@@ -10,5 +10,6 @@ export interface playList {
 
 export interface playlistInfor extends playList {
   created_at: Date;
+  user_id: number;
   songs?: musicCardObject[];
 }

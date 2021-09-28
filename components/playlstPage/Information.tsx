@@ -5,6 +5,9 @@ import { getDate } from "./../../lib/util/getDate";
 import { setValue, getValue } from "./../../lib/context/index";
 import React from "react";
 import { toast } from "react-toastify";
+import UpdateIcon from "../../assets/update";
+import { USER_ID } from "../../lib/export/localstorage";
+import { useRouter } from "next/dist/client/router";
 
 export default function PlaylistInformation({
   name,
@@ -13,9 +16,11 @@ export default function PlaylistInformation({
   cover_url,
   playlist_id,
   created_at,
+  user_id,
 }: playlistInfor) {
   const dispatch = setValue();
   const musicList = getValue().list;
+  const router = useRouter();
 
   const startPlaylist = () => {
     if (musicList.length > 0) {
@@ -34,6 +39,13 @@ export default function PlaylistInformation({
     }
   };
 
+  const updatePlaylist = React.useCallback(() => {
+    dispatch({
+      type: "SET_MODAL",
+      modal: "updatePlaylist",
+    });
+  }, []);
+
   return (
     <S.InforWrap>
       <img
@@ -50,7 +62,10 @@ export default function PlaylistInformation({
         <h1 className="playlist-title">{name}</h1>
         <div className="playlist-sub-infor">
           <h3>
-            만든사람 <b>{author}</b>
+            만든사람{" "}
+            <b onClick={() => router.push(`/profile?id=${user_id}`)}>
+              {author}
+            </b>
           </h3>
           <div className="circle" />
           <h3>
@@ -63,6 +78,11 @@ export default function PlaylistInformation({
           </button>
           <HeartIcon callback={() => {}} size={35} color="white" />
         </div>
+        {localStorage.getItem(USER_ID) === user_id.toString() && (
+          <button className="update-button" onClick={updatePlaylist}>
+            <UpdateIcon />
+          </button>
+        )}
       </div>
     </S.InforWrap>
   );

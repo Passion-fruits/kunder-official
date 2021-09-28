@@ -7,17 +7,18 @@ import React from "react";
 import playlist from "../../api/playlist";
 import { playlistInfor } from "../../lib/interfaces/playlist";
 import { musicCardObject } from "../../lib/interfaces/music";
-import { setValue } from "./../../lib/context/index";
+import { getValue, setValue } from "./../../lib/context/index";
 
 export default function PlaylistPage() {
   const router = useRouter();
   const dispatch = setValue();
+  const contextObj = getValue();
   const playlist_id = router.query.id;
   const [playlistObj, setPlaylistObj] = React.useState<playlistInfor>();
   const [musicArr, setMusicArr] = React.useState<musicCardObject[]>([]);
 
   React.useEffect(() => {
-    if (playlist_id) {
+    if (playlist_id && contextObj.modal === null) {
       playlist
         .getPlaylistDetail(playlist_id)
         .then((res) => {
@@ -32,7 +33,7 @@ export default function PlaylistPage() {
           return;
         });
     }
-  }, [router]);
+  }, [router, contextObj.modal]);
 
   return (
     <S.Wrapper>
@@ -46,6 +47,7 @@ export default function PlaylistPage() {
               cover_url={playlistObj.cover_url}
               playlist_id={playlistObj.playlist_id}
               created_at={playlistObj.created_at}
+              user_id={playlistObj.user_id}
             />
             <S.MusicListWrap>
               {musicArr.length === 0 ? (

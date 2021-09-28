@@ -27,13 +27,14 @@ export default function PrfoileUpdateModal() {
     profile
       .updateProfile(profileObj)
       .then(() => {
+        toast.success("정보가 수정되었습니다.");
         dispatch({
           type: "SET_MODAL",
           modal: null,
         });
       })
       .catch(() => {
-        return;
+        toast.error("에러가 발생하였습니다.");
       });
   };
 
