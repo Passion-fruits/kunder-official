@@ -5,13 +5,15 @@ export const Wrapper = styled.div`
   width: 100%;
   display: flex;
   align-items: center;
-  padding: 10px 10px;
+  padding: 10px 0px;
   border-radius: 6px;
+  border-bottom: 1px solid #2b2b2b;
   background-color: rgb(0, 0, 0, 0);
   transition: 0.3s;
   position: relative;
-  margin-top: 5px;
-  cursor: pointer;
+  & :last-of-type {
+    border: none;
+  }
   & svg {
     cursor: pointer;
     opacity: 0.7;
@@ -20,17 +22,14 @@ export const Wrapper = styled.div`
       opacity: 1;
     }
   }
-  &:hover {
-    background-color: rgb(30, 30, 30, 0.5);
-  }
   & .index-num {
     color: ${COLOR.gray_subText};
     font-size: 15px;
     font-weight: 500;
   }
   & .cover-image {
-    width: 55px;
-    height: 55px;
+    width: 50px;
+    height: 50px;
     cursor: pointer;
     border-radius: 5px;
     border: 1px solid ${COLOR.gray_borderColor};
@@ -46,6 +45,7 @@ export const Wrapper = styled.div`
       font-size: 16px;
       font-weight: 500;
       color: ${COLOR.gray_text};
+      cursor: pointer;
       &:hover {
         text-decoration: underline;
       }
@@ -60,7 +60,6 @@ export const Wrapper = styled.div`
     gap: 10px;
     position: absolute;
     right: 0;
-    padding-right: 30px;
     & .tag {
       padding: 7px 15px;
       border-radius: 24px;
