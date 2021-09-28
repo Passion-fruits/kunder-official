@@ -1,6 +1,7 @@
 import { PlaylistIcon } from "../../assets";
 import * as S from "./styles";
 import { playList } from "./../../lib/interfaces/playlist";
+import { useRouter } from "next/dist/client/router";
 
 export default function PlayListCard({
   name,
@@ -9,10 +10,14 @@ export default function PlayListCard({
   playlist_id,
   like,
 }: playList) {
+  const router = useRouter();
   return (
     <S.Wrapper>
       <div className="cover-image-wrap">
-        <img src={cover_url ? cover_url : "/playlist.png"} />
+        <img
+          src={cover_url ? cover_url : "/playlist.png"}
+          onClick={() => router.push(`/playlist?id=${playlist_id}`)}
+        />
         <div className="bottom-wrap">
           <PlaylistIcon size={13} />
         </div>

@@ -1,45 +1,56 @@
-import { HeartIcon, PlayIcon } from "../../assets";
 import MusicRowCardList from "../MusicRowCardList";
 import * as S from "./styles";
 import { data } from "./../../lib/export/data";
+import PlaylistInformation from "./Information";
+import { useRouter } from "next/dist/client/router";
+import React from "react";
+import playlist from "../../api/playlist";
+import { playlistInfor } from "../../lib/interfaces/playlist";
+import { musicCardObject } from "../../lib/interfaces/music";
 
 export default function PlaylistPage() {
+  const router = useRouter();
+  const playlist_id = router.query.id;
+  const [playlistObj, setPlaylistObj] = React.useState<playlistInfor>();
+  const [musicArr, setMusicArr] = React.useState<musicCardObject[]>([]);
+
+  React.useEffect(() => {
+    if (playlist_id) {
+      playlist
+        .getPlaylistDetail(playlist_id)
+        .then((res) => {
+          setPlaylistObj(res.data.playlist);
+          setMusicArr(res.data.songs);
+        })
+        .catch((err) => {
+          console.log(err);
+          return;
+        });
+    }
+  }, [router]);
+
   return (
     <S.Wrapper>
       <S.Container>
-        <S.InforWrap>
-          <img
-            src="https://cdna.artstation.com/p/assets/images/images/029/031/880/medium/universegfx-juice-wrld-album-cover-behance-version.jpg?1596238538"
-            className="cover-image"
-          />
-          <div className="infor-container">
-            <div className="playlist-intro">
-              <h5>플레이리스트</h5>
-              <span>
-                <b>300명</b>이 좋아합니다.
-              </span>
-            </div>
-            <h1 className="playlist-title">밤에 듣기 좋은 노래</h1>
-            <div className="playlist-sub-infor">
-              <h3>
-                만든사람 <b>김팔복</b>
-              </h3>
-              <div className="circle" />
-              <h3>
-                최초공개 <b>3일 전</b>
-              </h3>
-            </div>
-            <div className="control-wrap">
-              <button className="play-btn">
-                <PlayIcon callback={() => {}} size={20} />
-              </button>
-              <HeartIcon callback={() => {}} size={35} color="white" />
-            </div>
-          </div>
-        </S.InforWrap>
-        <S.MusicListWrap>
-          <MusicRowCardList musicList={data} />
-        </S.MusicListWrap>
+        {playlistObj && (
+          <>
+            <PlaylistInformation
+              name={playlistObj.name}
+              author={playlistObj.author}
+              like={playlistObj.like}
+              cover_url={playlistObj.cover_url}
+              playlist_id={playlistObj.playlist_id}
+              created_at={playlistObj.created_at}
+            />
+            <S.MusicListWrap>
+              {musicArr.length === 0 ? (
+                <div className="none">플레이리스트에 곡이 없습니다.</div>
+              ) : (
+                <MusicRowCardList musicList={musicArr} />
+              )}
+            </S.MusicListWrap>
+          </>
+        )}
       </S.Container>
     </S.Wrapper>
   );

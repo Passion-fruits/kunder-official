@@ -11,13 +11,14 @@ export const Wrapper = styled.div`
   background-color: rgb(0, 0, 0, 0);
   transition: 0.3s;
   position: relative;
-  & :last-of-type {
+  :last-of-type {
     border: none;
   }
   & svg {
     cursor: pointer;
     opacity: 0.7;
     margin-left: 20px;
+    transition: 0.3s;
     &:hover {
       opacity: 1;
     }
@@ -34,6 +35,10 @@ export const Wrapper = styled.div`
     border-radius: 5px;
     border: 1px solid ${COLOR.gray_borderColor};
     margin-left: 20px;
+    transition: 0.3s;
+    &:hover {
+      opacity: 0.8;
+    }
   }
   & .music-information {
     display: flex;
@@ -46,8 +51,9 @@ export const Wrapper = styled.div`
       font-weight: 500;
       color: ${COLOR.gray_text};
       cursor: pointer;
+      transition: 0.3s;
       &:hover {
-        text-decoration: underline;
+        opacity: 0.8;
       }
     }
     & span {
@@ -55,11 +61,15 @@ export const Wrapper = styled.div`
       font-size: 13px;
     }
   }
+  & .right {
+    position: absolute;
+    right: 0;
+    display: flex;
+    align-items: center;
+  }
   & .hashtag-container {
     display: flex;
     gap: 10px;
-    position: absolute;
-    right: 0;
     & .tag {
       padding: 7px 15px;
       border-radius: 24px;
@@ -68,8 +78,12 @@ export const Wrapper = styled.div`
       font-size: 15px;
     }
   }
+  & .add-playlist {
+    margin-left: 20px;
+    margin-top: 3px;
+  }
   & .heart-wrap {
-    margin-left: 30px;
+    margin-left: 10px;
     display: flex;
     align-items: center;
     gap: 10px;

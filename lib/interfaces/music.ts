@@ -9,10 +9,10 @@ export interface musicCardObject {
   created_at?: Date | string;
   genre?: string;
   indexNum?: number;
+  mood?: string;
 }
 
 export interface musicObject extends musicCardObject {
-  mood: string;
   description: string;
   comment: string;
   user_id: string | number;

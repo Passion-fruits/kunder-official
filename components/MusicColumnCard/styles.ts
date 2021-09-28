@@ -59,6 +59,8 @@ export const Wrapper = styled.div`
 `;
 
 export const IconWrap = styled.div`
+  width: 100%;
+  position: relative;
   display: flex;
   align-items: center;
   gap: 5px;
@@ -78,6 +80,9 @@ export const IconWrap = styled.div`
   & .genre {
     color: #60b3ff;
     background: #130c2d;
+  }
+  & .add-playlist {
+    margin-top: 3px;
   }
 `;
 

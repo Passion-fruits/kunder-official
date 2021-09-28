@@ -88,5 +88,12 @@ export const InforWrap = styled(BASE_WRAP)`
 `;
 
 export const MusicListWrap = styled(BASE_WRAP)`
-  padding: 10px 20px;
+  padding: 5px 20px;
+  & .none {
+    width: 100%;
+    text-align: center;
+    color: ${COLOR.blue_text};
+    font-size: 17px;
+    padding: 30px 0;
+  }
 `;

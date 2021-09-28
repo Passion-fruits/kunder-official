@@ -4,6 +4,7 @@ import * as S from "./styles";
 import { setValue } from "../../lib/context/index";
 import { useRouter } from "next/dist/client/router";
 import { COLOR } from "./../../styles/index";
+import PlayListAddIcon from "./../../assets/playListAdd";
 
 export default function MusicColumnCard({
   title,
@@ -35,6 +36,17 @@ export default function MusicColumnCard({
     });
   };
 
+  const addMusicToPlaylist = () => {
+    dispatch({
+      type: "SET_MODAL",
+      modal: "addPlayList",
+    });
+    dispatch({
+      type: "SET_MUSIC_ID",
+      song_id: song_id,
+    });
+  };
+
   return (
     <S.Wrapper>
       <div className="cover-image-wrap">
@@ -57,6 +69,9 @@ export default function MusicColumnCard({
           {like}
         </div>
         <div className="genre">#{genre}</div>
+        <button className="add-playlist" onClick={addMusicToPlaylist}>
+          <PlayListAddIcon size={12} color={COLOR.gray_subText} />
+        </button>
       </S.IconWrap>
     </S.Wrapper>
   );

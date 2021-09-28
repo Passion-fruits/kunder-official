@@ -34,4 +34,10 @@ export default {
       },
     });
   },
+  getPlaylistDetail(playlist_id) {
+    return request({
+      method: "get",
+      url: `/playlist/${playlist_id}`,
+    });
+  },
 };
