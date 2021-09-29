@@ -18,3 +18,10 @@ export interface menuObj {
   follower: "follower";
   following: "following";
 }
+
+export interface profileCard {
+  id: number;
+  name: string;
+  follower: number;
+  profile: string;
+}

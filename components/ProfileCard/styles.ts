@@ -5,11 +5,21 @@ export const Wrapper = styled.div`
   width: ${`${SIZE.card_size}px`};
   display: flex;
   flex-direction: column;
-  & .profile-image {
+  & .img-wrap {
     width: ${`${SIZE.card_size}px`};
     height: ${`${SIZE.card_size}px`};
     border-radius: 80%;
+    overflow: hidden;
+  }
+  & .profile-image {
+    width: 100%;
+    height: 100%;
     border: 1px solid ${COLOR.gray_borderColor};
+    transition: 0.3s;
+    cursor: pointer;
+    &:hover {
+      transform: scale(1.1);
+    }
   }
   & .infor-wrap {
     width: 100%;

@@ -8,7 +8,6 @@ import profile from "../../api/profile";
 import playlist from "../../api/playlist";
 import PlaylistCardList from "../PlaylistCardList";
 import { playList } from "./../../lib/interfaces/playlist";
-import ProfileCard from "../ProfileCard";
 
 export default function UserSubInformation({ user_id }) {
   const menuObj: menuObj = {
@@ -83,7 +82,6 @@ export default function UserSubInformation({ user_id }) {
       {menuObj.playlist === nowMenu && (
         <PlaylistCardList playlistArr={playlistArr} />
       )}
-      {menuObj.follower === nowMenu && <ProfileCard />}
     </>
   );
 }

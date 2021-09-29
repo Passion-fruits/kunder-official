@@ -36,3 +36,11 @@ export const BASE_CONTAINER = styled.div`
   padding-top: ${`${SIZE.header_height}px`};
   padding-bottom: ${`${SIZE.playbar_height + 50}px`};
 `;
+
+export const LIST_WRAPPER = styled.div`
+  width: 100%;
+  display: grid;
+  grid-template-columns: ${`repeat(${SIZE.card_indexing},${SIZE.card_size}px)`};
+  justify-content: space-between;
+  grid-row-gap: 30px;
+`;

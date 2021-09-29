@@ -1,16 +1,23 @@
 import { SongIcon, PeopleIcon } from "../../assets";
 import * as S from "./styles";
+import { profileCard } from "./../../lib/interfaces/profile";
+import { useRouter } from "next/dist/client/router";
 
-export default function ProfileCard() {
+export default function ProfileCard({
+  profile,
+  name,
+  follower,
+  id,
+}: profileCard) {
+  const router = useRouter();
   return (
     <S.Wrapper>
-      <img
-        src="https://images.unsplash.com/photo-1586672806791-3a67d24186c0?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8Y292ZXIlMjBhcnR8ZW58MHx8MHx8&ixlib=rb-1.2.1&w=1000&q=80"
-        className="profile-image"
-      />
+      <div className="img-wrap">
+        <img src={profile} className="profile-image" />
+      </div>
       <div className="infor-wrap">
         <div className="line" />
-        <h1 className="name">정지원</h1>
+        <h1 className="name">{name}</h1>
         <div className="music-follow-cnt">
           <div>
             <SongIcon />
@@ -18,7 +25,7 @@ export default function ProfileCard() {
           </div>
           <div>
             <PeopleIcon />
-            12
+            {follower}
           </div>
         </div>
       </div>

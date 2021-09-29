@@ -1,10 +1,10 @@
-import * as S from "./styles";
 import { MusicCardListProps } from "../../lib/interfaces/music";
 import MusicColumnCard from "../MusicColumnCard";
+import { LIST_WRAPPER } from "./../../styles/index";
 
 export default function MusicColumnCardList({ musicList }: MusicCardListProps) {
   return (
-    <S.Wrapper>
+    <LIST_WRAPPER>
       {musicList.map(
         (
           { title, artist, song_id, song_url, like, cover_url, genre },
@@ -22,6 +22,6 @@ export default function MusicColumnCardList({ musicList }: MusicCardListProps) {
           />
         )
       )}
-    </S.Wrapper>
+    </LIST_WRAPPER>
   );
 }

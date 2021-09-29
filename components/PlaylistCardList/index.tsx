@@ -1,6 +1,6 @@
-import * as S from "./styles";
 import { playList } from "./../../lib/interfaces/playlist";
 import PlayListCard from "../PlaylistCard";
+import { LIST_WRAPPER } from "./../../styles/index";
 
 interface props {
   playlistArr: playList[];
@@ -8,7 +8,7 @@ interface props {
 
 export default function PlaylistCardList({ playlistArr }: props) {
   return (
-    <S.Wrapper>
+    <LIST_WRAPPER>
       {playlistArr.map((playlist, index) => (
         <PlayListCard
           key={index}
@@ -19,6 +19,6 @@ export default function PlaylistCardList({ playlistArr }: props) {
           like={playlist.like}
         />
       ))}
-    </S.Wrapper>
+    </LIST_WRAPPER>
   );
 }
