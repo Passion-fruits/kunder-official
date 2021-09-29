@@ -79,4 +79,16 @@ export default {
       },
     });
   },
+  getUserFollower({ user_id, page }) {
+    return request({
+      url: `/follower/${user_id}?page=${page}`,
+      method: "get",
+    });
+  },
+  getUserFollowing({ user_id, page }) {
+    return request({
+      url: `/following/${user_id}?page=${page}`,
+      method: "get",
+    });
+  },
 };

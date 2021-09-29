@@ -13,7 +13,7 @@ export default function ProfileCardList({ profileList }: props) {
         <ProfileCard
           name={profile.name}
           id={profile.id}
-          profile={profile.profile}
+          image_path={profile.image_path}
           follower={profile.follower}
           key={index}
         />

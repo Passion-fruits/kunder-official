@@ -2,7 +2,6 @@ import * as S from "./styles";
 import { useRouter } from "next/dist/client/router";
 import React from "react";
 import playlist from "../../api/playlist";
-import { toast } from "react-toastify";
 import { getFileData } from "../../lib/util/getFileData";
 
 export default function PlaylistUpdateModal() {

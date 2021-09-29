@@ -23,5 +23,5 @@ export interface profileCard {
   id: number;
   name: string;
   follower: number;
-  profile: string;
+  image_path: string;
 }

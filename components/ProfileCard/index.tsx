@@ -4,7 +4,7 @@ import { profileCard } from "./../../lib/interfaces/profile";
 import { useRouter } from "next/dist/client/router";
 
 export default function ProfileCard({
-  profile,
+  image_path,
   name,
   follower,
   id,
@@ -12,8 +12,11 @@ export default function ProfileCard({
   const router = useRouter();
   return (
     <S.Wrapper>
-      <div className="img-wrap">
-        <img src={profile} className="profile-image" />
+      <div
+        className="img-wrap"
+        onClick={() => router.push(`/profile?id=${id}`)}
+      >
+        <img src={image_path} className="profile-image" />
       </div>
       <div className="infor-wrap">
         <div className="line" />
