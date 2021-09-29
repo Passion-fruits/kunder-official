@@ -1,17 +1,15 @@
 import MusicRowCardList from "../MusicRowCardList";
 import * as S from "./styles";
-import { data } from "./../../lib/export/data";
 import PlaylistInformation from "./Information";
 import { useRouter } from "next/dist/client/router";
 import React from "react";
 import playlist from "../../api/playlist";
 import { playlistInfor } from "../../lib/interfaces/playlist";
 import { musicCardObject } from "../../lib/interfaces/music";
-import { getValue, setValue } from "./../../lib/context/index";
+import { getValue } from "./../../lib/context/index";
 
 export default function PlaylistPage() {
   const router = useRouter();
-  const dispatch = setValue();
   const contextObj = getValue();
   const playlist_id = router.query.id;
   const [playlistObj, setPlaylistObj] = React.useState<playlistInfor>();
@@ -24,10 +22,6 @@ export default function PlaylistPage() {
         .then((res) => {
           setPlaylistObj(res.data.playlist);
           setMusicArr(res.data.songs);
-          dispatch({
-            type: "SET_MUSIC_LIST",
-            list: res.data.songs,
-          });
         })
         .catch(() => {
           return;
@@ -48,6 +42,7 @@ export default function PlaylistPage() {
               playlist_id={playlistObj.playlist_id}
               created_at={playlistObj.created_at}
               user_id={playlistObj.user_id}
+              songs={musicArr}
             />
             <S.MusicListWrap>
               {musicArr.length === 0 ? (

@@ -17,22 +17,26 @@ export default function PlaylistInformation({
   playlist_id,
   created_at,
   user_id,
+  songs,
 }: playlistInfor) {
   const dispatch = setValue();
-  const musicList = getValue().list;
   const router = useRouter();
 
   const startPlaylist = () => {
-    if (musicList.length > 0) {
+    if (songs.length > 0) {
       dispatch({
         type: "MUSIC_CHANGE",
         musicInformation: {
-          title: musicList[0].title,
-          cover_url: musicList[0].cover_url,
-          song_url: musicList[0].song_url,
-          song_id: musicList[0].song_id,
-          artist: musicList[0].artist,
+          title: songs[0].title,
+          cover_url: songs[0].cover_url,
+          song_url: songs[0].song_url,
+          song_id: songs[0].song_id,
+          artist: songs[0].artist,
         },
+      });
+      dispatch({
+        type: "SET_MUSIC_LIST",
+        list: songs,
       });
     } else {
       toast.info("곡이 없습니다.");

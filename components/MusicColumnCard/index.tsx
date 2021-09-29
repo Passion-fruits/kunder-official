@@ -55,7 +55,7 @@ export default function MusicColumnCard({
             <PlayIcon size={17} color="white" callback={() => {}} />
           </S.PlayBtn>
         </div>
-        <img src={cover_url} />
+        <img src={cover_url} loading="lazy" />
       </div>
       <div className="music-title" onClick={routingToDetail}>
         {title}

@@ -42,7 +42,6 @@ export const InforWrap = styled.div`
     width: 250px;
     height: 250px;
     border: 1px solid ${COLOR.gray_borderColor};
-    border-radius: 5px;
   }
   & .infor-container {
     width: 100%;
