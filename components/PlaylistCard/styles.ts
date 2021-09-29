@@ -26,8 +26,7 @@ export const Wrapper = styled.div`
       display: flex;
       justify-content: center;
       align-items: center;
-      background: rgb(0, 0, 0, 0.7);
-      backdrop-filter: blur(5px);
+      background: rgb(0, 0, 0, 0.8);
       position: absolute;
       bottom: 0;
     }

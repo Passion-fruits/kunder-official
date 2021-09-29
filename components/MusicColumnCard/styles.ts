@@ -15,6 +15,11 @@ export const Wrapper = styled.div`
       width: 100%;
       height: 100%;
     }
+    & .none-img {
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(134.42deg, #f96678 7.99%, #5f9c77 92.85%);
+    }
     .cover {
       width: 100%;
       height: 100%;

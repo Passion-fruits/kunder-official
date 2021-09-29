@@ -5,6 +5,7 @@ import { setValue } from "../../lib/context/index";
 import { useRouter } from "next/dist/client/router";
 import { COLOR } from "./../../styles/index";
 import PlayListAddIcon from "./../../assets/playListAdd";
+import React from "react";
 
 export default function MusicColumnCard({
   title,
@@ -17,6 +18,7 @@ export default function MusicColumnCard({
 }: musicCardObject) {
   const dispatch = setValue();
   const router = useRouter();
+  const [coverImg, setCoverImg] = React.useState<string>("/playlist.png");
 
   const routingToDetail = (): void => {
     router.push(`/detail?id=${song_id}`);
@@ -47,6 +49,14 @@ export default function MusicColumnCard({
     });
   };
 
+  React.useEffect(() => {
+    const img = new Image();
+    img.src = cover_url;
+    img.onload = () => {
+      setCoverImg(cover_url);
+    };
+  }, []);
+
   return (
     <S.Wrapper>
       <div className="cover-image-wrap">
@@ -55,7 +65,7 @@ export default function MusicColumnCard({
             <PlayIcon size={17} color="white" callback={() => {}} />
           </S.PlayBtn>
         </div>
-        <img src={cover_url} loading="lazy" />
+        <img src={coverImg} />
       </div>
       <div className="music-title" onClick={routingToDetail}>
         {title}

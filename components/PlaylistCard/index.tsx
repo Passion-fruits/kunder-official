@@ -2,6 +2,7 @@ import { PlaylistIcon } from "../../assets";
 import * as S from "./styles";
 import { playList } from "./../../lib/interfaces/playlist";
 import { useRouter } from "next/dist/client/router";
+import React from "react";
 
 export default function PlayListCard({
   name,
@@ -11,11 +12,19 @@ export default function PlayListCard({
   like,
 }: playList) {
   const router = useRouter();
+  const [coverImg, setCoverImg] = React.useState<string>("/playlist.png");
+  React.useEffect(() => {
+    const img = new Image();
+    img.src = cover_url;
+    img.onload = () => {
+      cover_url && setCoverImg(cover_url);
+    };
+  }, []);
   return (
     <S.Wrapper>
       <div className="cover-image-wrap">
         <img
-          src={cover_url ? cover_url : "/playlist.png"}
+          src={coverImg}
           onClick={() => router.push(`/playlist?id=${playlist_id}`)}
         />
         <div className="bottom-wrap">
