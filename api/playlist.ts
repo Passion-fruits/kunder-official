@@ -44,12 +44,13 @@ export default {
     const fd = new FormData();
     fd.append("image", cover_url);
     return request({
-      method: "post",
-      url: `/playlist/cover/${playlist_id}`,
+      method: "patch",
+      url: `/playlist/${playlist_id}`,
       headers: {
-        "Content-type": "application/json",
+        "Content-type": "multipart/form-data",
         Authorization: `Bearer ${localStorage.getItem(ACCESS_TOKEN)}`,
       },
+      data: fd,
     });
   },
 };
