@@ -55,17 +55,17 @@ export const InforWrap = styled.div`
     align-items: center;
     gap: 15px;
     & button {
-      width: 40px;
-      height: 40px;
+      width: 50px;
+      height: 50px;
       border-radius: 80%;
       border: 2px solid white;
       & svg {
-        margin-left: 4px;
+        margin-left: 6px;
       }
     }
     & h1 {
-      font-size: 30px;
-      font-weight: bold;
+      font-size: 40px;
+      font-weight: 800;
       color: white;
     }
   }
@@ -73,15 +73,15 @@ export const InforWrap = styled.div`
     display: flex;
     align-items: center;
     gap: 5px;
-    margin-top: 10px;
+    margin-top: 15px;
     & span {
-      color: ${COLOR.gray_subText};
-      font-size: 15px;
+      color: ${COLOR.gray_text};
+      font-size: 17px;
       font-weight: bold;
     }
     & h5 {
-      color: ${COLOR.green_subMain};
-      font-size: 17px;
+      color: ${COLOR.green_main};
+      font-size: 19px;
       font-weight: 500;
       cursor: pointer;
       &:hover {
@@ -96,10 +96,10 @@ export const InforWrap = styled.div`
     & div {
       display: flex;
       align-items: center;
-      gap: 5px;
+      gap: 8px;
       & span {
-        color: #b5b5b5;
-        font-size: 15px;
+        color: ${COLOR.gray_subText};
+        font-size: 16px;
       }
     }
   }
@@ -108,11 +108,11 @@ export const InforWrap = styled.div`
     margin-top: 20px;
     gap: 10px;
     & div {
-      border: 1px solid #4b4b4b;
+      border: 2px solid ${COLOR.gray_subText};
       border-radius: 24px;
       padding: 10px 20px;
-      color: #a8a8a8;
-      font-size: 15px;
+      color: ${COLOR.gray_text};
+      font-size: 17px;
     }
   }
   & .description {

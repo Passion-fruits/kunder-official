@@ -11,16 +11,16 @@ export const Container = styled(BASE_CONTAINER)`
 export const ThemaCardListWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  margin-top: 30px;
+  margin-top: 50px;
   position: relative;
   & .infor-wrap {
     display: flex;
     align-items: center;
     gap: 10px;
-    margin-bottom: 15px;
+    margin-bottom: 30px;
     & .title {
       color: ${COLOR.gray_text};
-      font-size: 25px;
+      font-size: 30px;
       font-weight: 800;
     }
     & .description {
@@ -47,7 +47,7 @@ export const GenreListWrapper = styled.div`
   width: 100%;
   display: flex;
   justify-content: space-between;
-  margin-top: 20px;
+  margin-top: 50px;
 `;
 
 interface genreCardProps {

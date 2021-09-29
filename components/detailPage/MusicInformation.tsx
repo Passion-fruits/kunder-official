@@ -34,7 +34,7 @@ export default function MusicInformation({ musicObj }: props) {
       <div className="infor-container">
         <div className="title-wrap">
           <button onClick={musicChange}>
-            <PlayIcon size={12} callback={() => {}} />
+            <PlayIcon size={16} callback={() => {}} />
           </button>
           <h1>{musicObj.title}</h1>
         </div>
