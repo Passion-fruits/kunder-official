@@ -11,13 +11,13 @@ import { profileCard } from "./../../lib/interfaces/profile";
 import ProfileCardList from "../ProfileCardList";
 
 export default function UserSubInformation({ user_id }) {
-  const [nowMenu, setNowMen] = React.useState<
-    "song" | "playlist" | "follower" | "following"
-  >("song");
   const [musicList, setMusicList] = React.useState<musicCardObject[]>([]);
   const [playlistArr, setPlaylistArr] = React.useState<playList[]>([]);
   const [followerArr, setFollowerArr] = React.useState<profileCard[]>([]);
   const [followingArr, setFollowingArr] = React.useState<profileCard[]>([]);
+  const [nowMenu, setNowMen] = React.useState<
+    "song" | "playlist" | "follower" | "following"
+  >("song");
 
   const changeMenu = React.useCallback(({ target }) => {
     if (target.id) {
@@ -67,7 +67,7 @@ export default function UserSubInformation({ user_id }) {
       .catch(() => {
         return;
       });
-  }, []);
+  }, [user_id]);
 
   React.useEffect(() => {
     switch (nowMenu) {
@@ -85,6 +85,13 @@ export default function UserSubInformation({ user_id }) {
         return;
     }
   }, [user_id, nowMenu]);
+
+  React.useEffect(() => {
+    setMusicList([]);
+    setPlaylistArr([]);
+    setFollowerArr([]);
+    setFollowingArr([]);
+  }, [user_id]);
 
   return (
     <>
