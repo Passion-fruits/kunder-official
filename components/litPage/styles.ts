@@ -1,5 +1,6 @@
 import styled from "@emotion/styled";
 import { BASE_WRAPPER, BASE_CONTAINER, COLOR } from "./../../styles/index";
+import { keyframes } from "@emotion/react";
 
 const gap = 30;
 const wrap_width = 400;
@@ -159,4 +160,33 @@ export const MusicSubInfoWrap = styled.div`
     border-radius: 24px;
     border: 2px solid ${COLOR.green_subMain};
   }
+`;
+
+const vibeAnime = keyframes`
+0%{
+  height:0px;
+}
+50%{
+  height:30px;
+}
+100%{
+  height:0px;
+}
+`;
+
+export const VibeWrap = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 5px;
+`;
+
+interface vibeBarProps {
+  second: number;
+}
+
+export const VibeBar = styled.div<vibeBarProps>`
+  width: 2px;
+  background-color: ${COLOR.green_main};
+  animation: ${vibeAnime} infinite linear;
+  animation-duration: ${(res) => `${res.second}s`};
 `;

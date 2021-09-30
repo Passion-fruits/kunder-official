@@ -4,6 +4,10 @@ import CommentIcon from "./../../assets/comment";
 import PlayListAddIcon from "./../../assets/playListAdd";
 import { musicCardObject } from "./../../lib/interfaces/music";
 import { getDate } from "./../../lib/util/getDate";
+import React from "react";
+import Vibe from "./Vibe";
+import { useRouter } from "next/dist/client/router";
+import { setValue } from "./../../lib/context/index";
 
 interface props extends musicCardObject {
   nowIndex?: boolean;
@@ -19,8 +23,25 @@ export default function LitCard({
   created_at,
   genre,
   song_id,
-  song_url,
 }: props) {
+  const router = useRouter();
+  const dispatch = setValue();
+
+  const routingToDetail = React.useCallback(() => {
+    router.push(`/detail?id=${song_id}`);
+  }, [song_id]);
+
+  const addMusicToPlaylist = React.useCallback(() => {
+    dispatch({
+      type: "SET_MODAL",
+      modal: "addPlayList",
+    });
+    dispatch({
+      type: "SET_MUSIC_ID",
+      song_id: song_id,
+    });
+  }, [song_id]);
+
   return (
     <S.LitCard>
       <div className="music-info-wrap" id={nowIndex ? "now-index-wrap" : ""}>
@@ -30,13 +51,14 @@ export default function LitCard({
               <S.MusicSubInfoWrap>
                 <div className="profile-wrap">
                   <img src="https://images.unsplash.com/photo-1586672806791-3a67d24186c0?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8Y292ZXIlMjBhcnR8ZW58MHx8MHx8&ixlib=rb-1.2.1&w=1000&q=80" />
+                  {nowIndex && <Vibe />}
                 </div>
                 <div className="tag-wrap">
                   <span>{genre}음악</span>
                   <span>{mood}</span>
                   <span>{getDate(created_at)}</span>
                 </div>
-                <button>전체듣기{" >"}</button>
+                <button onClick={routingToDetail}>전체듣기{" >"}</button>
               </S.MusicSubInfoWrap>
               <S.IconWrap>
                 <button>
@@ -47,7 +69,7 @@ export default function LitCard({
                   <CommentIcon size={30} />
                   12
                 </button>
-                <button className="korean">
+                <button className="korean" onClick={addMusicToPlaylist}>
                   <PlayListAddIcon size={20} />
                   추가
                 </button>

@@ -53,7 +53,6 @@ export default function LitPage() {
               mood={music.mood}
               genre={music.genre}
               song_id={music.song_id}
-              song_url={music.song_url}
               like={music.like}
               key={index}
             />
