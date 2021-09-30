@@ -2,7 +2,7 @@ import styled from "@emotion/styled";
 import { BASE_WRAPPER, BASE_CONTAINER, COLOR } from "./../../styles/index";
 
 const gap = 30;
-const wrap_width = 450;
+const wrap_width = 400;
 
 export const Wrapper = styled(BASE_WRAPPER)`
   height: 100vh;
@@ -12,6 +12,7 @@ export const Wrapper = styled(BASE_WRAPPER)`
 export const Container = styled(BASE_CONTAINER)`
   height: 100%;
   position: relative;
+  padding-left: ${`${wrap_width - gap}px`};
 `;
 
 interface wrapProps {

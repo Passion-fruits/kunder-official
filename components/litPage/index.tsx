@@ -2,7 +2,7 @@ import LitCard from "./LitCard";
 import * as S from "./styles";
 import React from "react";
 import { getValue, setValue } from "./../../lib/context/index";
-import profile from "../../api/profile";
+import feed from "../../api/feed";
 import { musicCardObject } from "./../../lib/interfaces/music";
 
 export default function LitPage() {
@@ -25,10 +25,10 @@ export default function LitPage() {
   }, [musicList]);
 
   React.useEffect(() => {
-    profile
-      .getUserMusic(27, 1)
+    feed
+      .getFeedList(1, 1, 2)
       .then((res) => {
-        setMusicList(res.data.songs);
+        setMusicList(res.data);
       })
       .catch(() => {
         return;
