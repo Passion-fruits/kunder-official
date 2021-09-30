@@ -2,15 +2,7 @@ import styled from "@emotion/styled";
 import { BASE_WRAPPER, BASE_CONTAINER, COLOR } from "./../../styles/index";
 
 const gap = 30;
-const wrap_width = 400;
-
-export const Button = styled.button`
-  width: 200px;
-  height: 100px;
-  background: blue;
-  position: absolute;
-  z-index: 10;
-`;
+const wrap_width = 450;
 
 export const Wrapper = styled(BASE_WRAPPER)`
   height: 100vh;
@@ -37,6 +29,11 @@ export const LitCardWrap = styled.div<wrapProps>`
 
 export const LitCard = styled.div`
   display: flex;
+
+  & #now-index-wrap {
+    width: 550px;
+    opacity: 1;
+  }
 
   & .music-info-wrap {
     width: ${`${wrap_width}px`};

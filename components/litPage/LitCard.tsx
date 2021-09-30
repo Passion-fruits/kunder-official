@@ -2,39 +2,46 @@ import * as S from "./styles";
 import HeartIcon from "./../../assets/heart";
 import CommentIcon from "./../../assets/comment";
 import PlayListAddIcon from "./../../assets/playListAdd";
+import { musicCardObject } from "./../../lib/interfaces/music";
+import { getDate } from "./../../lib/util/getDate";
 
-interface props {
+interface props extends musicCardObject {
   nowIndex?: boolean;
 }
 
-export default function LitCard({ nowIndex = false }: props) {
+export default function LitCard({
+  nowIndex = false,
+  artist,
+  title,
+  cover_url,
+  like,
+  mood = "느낌있는",
+  created_at,
+  genre,
+  song_id,
+  song_url,
+}: props) {
   return (
     <S.LitCard>
-      <div
-        className="music-info-wrap"
-        style={nowIndex ? { width: "550px", opacity: "1" } : {}}
-      >
+      <div className="music-info-wrap" id={nowIndex ? "now-index-wrap" : ""}>
         <div className="square">
           <div className="cover-image-wrap">
             <div className="on-cover-info">
               <S.MusicSubInfoWrap>
                 <div className="profile-wrap">
-                  <img
-                    src="https://images.squarespace-cdn.com/content/v1/53b6eb62e4b06e0feb2d8e86/1607362705516-R5Q22H4FVIVPNMW8OWD7/SamSpratt_KidCudi_ManOnTheMoon3_AlbumCover_Web.jpg?format=1500w"
-                    alt=""
-                  />
+                  <img src="https://images.unsplash.com/photo-1586672806791-3a67d24186c0?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8Y292ZXIlMjBhcnR8ZW58MHx8MHx8&ixlib=rb-1.2.1&w=1000&q=80" />
                 </div>
                 <div className="tag-wrap">
-                  <span>힙합음악</span>
-                  <span>느낌있는</span>
-                  <span>2주 전</span>
+                  <span>{genre}음악</span>
+                  <span>{mood}</span>
+                  <span>{getDate(created_at)}</span>
                 </div>
                 <button>전체듣기{" >"}</button>
               </S.MusicSubInfoWrap>
               <S.IconWrap>
                 <button>
                   <HeartIcon size={30} callback={() => {}} color="white" />
-                  12
+                  {like}
                 </button>
                 <button>
                   <CommentIcon size={30} />
@@ -46,14 +53,10 @@ export default function LitCard({ nowIndex = false }: props) {
                 </button>
               </S.IconWrap>
             </div>
-            <img
-              src="https://d1csarkz8obe9u.cloudfront.net/posterpreviews/artistic-album-cover-design-template-d12ef0296af80b58363dc0deef077ecc_screen.jpg?ts=1561488440"
-              className="cover-img"
-              alt=""
-            />
+            <img src={cover_url} className="cover-img" />
           </div>
         </div>
-        <h1 className="title">Nikes on my feet</h1>
+        <h1 className="title">{title}</h1>
         <div className="description">
           제가 이번에 열심히 쓴 곡입니다. 재밌게 들어주세요!! 그리고 다음곡도
           기대해주세요~

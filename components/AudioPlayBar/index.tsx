@@ -27,15 +27,7 @@ export default function AudioPlayBar() {
       const nextMusicObj: any = musicList[musicListNowIndex - 1];
       dispatch({
         type: "MUSIC_CHANGE",
-        musicInformation: {
-          title: nextMusicObj.title,
-          cover_url: nextMusicObj.cover_url,
-          artist: nextMusicObj.artist,
-          song_id: nextMusicObj.song_id,
-          song_url: nextMusicObj.song_url
-            ? nextMusicObj.song_url
-            : nextMusicObj.short_url,
-        },
+        musicInformation: nextMusicObj,
       });
       setMusicListNowIndex((value) => value - 1);
     } else {
@@ -48,15 +40,7 @@ export default function AudioPlayBar() {
       const nextMusicObj = musicList[musicListNowIndex + 1];
       dispatch({
         type: "MUSIC_CHANGE",
-        musicInformation: {
-          title: nextMusicObj.title,
-          cover_url: nextMusicObj.cover_url,
-          artist: nextMusicObj.artist,
-          song_id: nextMusicObj.song_id,
-          song_url: nextMusicObj.song_url
-            ? nextMusicObj.song_url
-            : nextMusicObj.short_url,
-        },
+        musicInformation: nextMusicObj,
       });
       setMusicListNowIndex((value) => value + 1);
     } else {
@@ -75,6 +59,13 @@ export default function AudioPlayBar() {
       }
     });
   }, [musicObj]);
+
+  React.useEffect(() => {
+    dispatch({
+      type: "SET_MUSIC_LIST_INDEX",
+      list_index: musicListNowIndex,
+    });
+  }, [musicListNowIndex]);
   // =========================
 
   const musicStop = React.useCallback(() => {
