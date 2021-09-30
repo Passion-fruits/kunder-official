@@ -6,10 +6,11 @@ import React from "react";
 import playlist from "../../api/playlist";
 import { playlistInfor } from "../../lib/interfaces/playlist";
 import { musicCardObject } from "../../lib/interfaces/music";
-import { getValue } from "./../../lib/context/index";
+import { getValue, setValue } from "./../../lib/context/index";
 
 export default function PlaylistPage() {
   const router = useRouter();
+  const dispatch = setValue();
   const contextObj = getValue();
   const playlist_id = router.query.id;
   const [playlistObj, setPlaylistObj] = React.useState<playlistInfor>();
@@ -28,6 +29,13 @@ export default function PlaylistPage() {
         });
     }
   }, [router, contextObj.modal]);
+
+  React.useEffect(() => {
+    dispatch({
+      type: "SET_MUSIC_LIST",
+      list: musicArr,
+    });
+  }, [musicArr]);
 
   return (
     <S.Wrapper>
