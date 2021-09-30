@@ -1,6 +1,17 @@
 import styled from "@emotion/styled";
 import { BASE_WRAPPER, BASE_CONTAINER, COLOR } from "./../../styles/index";
 
+const gap = 30;
+const wrap_width = 400;
+
+export const Button = styled.button`
+  width: 200px;
+  height: 100px;
+  background: blue;
+  position: absolute;
+  z-index: 10;
+`;
+
 export const Wrapper = styled(BASE_WRAPPER)`
   height: 100vh;
   overflow: hidden;
@@ -11,27 +22,29 @@ export const Container = styled(BASE_CONTAINER)`
   position: relative;
 `;
 
-export const LitCardWrap = styled.div`
-  width: 100%;
+interface wrapProps {
+  indexNum: number;
+}
+
+export const LitCardWrap = styled.div<wrapProps>`
   height: 100%;
   display: flex;
-  justify-content: center;
   align-items: center;
-  padding: 30px 70px;
+  gap: ${`${gap}px`};
+  transition: 0.5s;
+  transform: ${(res) => `translateX(-${res.indexNum * (gap + wrap_width)}px)`};
 `;
 
 export const LitCard = styled.div`
-  border-radius: 10px;
-  padding: 20px;
   display: flex;
-  justify-content: center;
 
   & .music-info-wrap {
-    width: 400px;
+    width: ${`${wrap_width}px`};
     opacity: 0.6;
     display: flex;
     flex-direction: column;
     position: relative;
+    transition: 0.5s;
     & .square {
       width: 100%;
       position: relative;
