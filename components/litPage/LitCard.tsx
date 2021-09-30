@@ -7,7 +7,7 @@ import { getDate } from "./../../lib/util/getDate";
 import React from "react";
 import Vibe from "./Vibe";
 import { useRouter } from "next/dist/client/router";
-import { setValue } from "./../../lib/context/index";
+import { getValue, setValue } from "./../../lib/context/index";
 
 interface props extends musicCardObject {
   nowIndex?: boolean;
@@ -23,9 +23,11 @@ export default function LitCard({
   created_at,
   genre,
   song_id,
+  indexNum,
 }: props) {
   const router = useRouter();
   const dispatch = setValue();
+  const contextObj = getValue();
 
   const routingToDetail = React.useCallback(() => {
     router.push(`/detail?id=${song_id}`);
@@ -42,9 +44,27 @@ export default function LitCard({
     });
   }, [song_id]);
 
+  const changeShowCard = () => {
+    dispatch({
+      type: "SET_MUSIC_LIST_INDEX",
+      list_index: indexNum,
+    });
+    dispatch({
+      type: "MUSIC_CHANGE",
+      musicInformation: contextObj.list[indexNum],
+    });
+  };
+
   return (
-    <S.LitCard>
-      <div className="music-info-wrap" id={nowIndex ? "now-index-wrap" : ""}>
+    <S.LitCard
+      onClick={!nowIndex ? changeShowCard : () => {}}
+      style={!nowIndex ? { cursor: "pointer" } : {}}
+    >
+      <div
+        className="music-info-wrap"
+        style={!nowIndex ? { pointerEvents: "none" } : {}}
+        id={nowIndex ? "now-index-wrap" : ""}
+      >
         <div className="square">
           <div className="cover-image-wrap">
             <div className="on-cover-info">

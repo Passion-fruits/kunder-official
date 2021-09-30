@@ -54,6 +54,7 @@ export default function LitPage() {
               genre={music.genre}
               song_id={music.song_id}
               like={music.like}
+              indexNum={index}
               key={index}
             />
           ))}

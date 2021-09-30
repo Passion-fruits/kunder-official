@@ -108,11 +108,12 @@ export default function AudioPlayBar() {
     setMusicProgress(0);
     if (musicObj.song_url) {
       audio.current.src = musicObj.song_url;
+      audio.current.play();
     }
     if (musicObj.short_url) {
       audio.current.src = musicObj.short_url;
+      audio.current.play();
     }
-    audio.current.play();
     setIsPlay(true);
   }, [musicObj]);
 
