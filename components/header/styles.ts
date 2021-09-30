@@ -46,9 +46,6 @@ export const MenuWrap = styled.div`
     &:hover {
       background-color: ${COLOR.black_subBackground};
     }
-    &:last-of-type {
-      color: ${COLOR.green_subMain};
-    }
   }
   & .btn-container {
     display: flex;

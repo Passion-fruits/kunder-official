@@ -9,6 +9,7 @@ import {
 } from "./../../lib/export/localstorage";
 import Link from "./Link";
 import profile from "../../api/profile";
+import { COLOR } from "./../../styles/index";
 
 export default function SideBar() {
   const router = useRouter();
@@ -45,7 +46,7 @@ export default function SideBar() {
   return (
     <S.MenuWrap>
       <SearchIcon />
-      <Link menu="음악 업로드" route="upload" />
+      <Link menu="음악 업로드" route="upload" color={COLOR.green_subMain} />
       {isLogin ? (
         <div className="btn-container">
           <button className="login-btn" onClick={logout}>

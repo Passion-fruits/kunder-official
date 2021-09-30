@@ -1,6 +1,7 @@
 import * as S from "./styles";
 import { useRouter } from "next/dist/client/router";
 import Link from "./Link";
+import { COLOR } from "./../../styles/index";
 
 export default function Menu() {
   const router = useRouter();
@@ -10,9 +11,9 @@ export default function Menu() {
         kunder
       </h1>
       <Link menu="둘러보기" route="" />
-      <Link menu="스트리밍" route="" />
-      <Link menu="음악 피드" route="" />
-      <Link menu="플레이리스트" route="" />
+      <Link menu="내 피드" route="" />
+      <Link menu="쿤더차트" route="" />
+      <Link menu="🔥Lit" route="" color={COLOR.red_text} />
     </S.MenuWrap>
   );
 }

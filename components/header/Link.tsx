@@ -1,7 +1,8 @@
 import { useRouter } from "next/dist/client/router";
 import { ACCESS_TOKEN } from "./../../lib/export/localstorage";
 import { toast } from "react-toastify";
-export default function Link({ menu, route }) {
+import { COLOR } from "./../../styles/index";
+export default function Link({ menu, route, color = COLOR.gray_text }) {
   const router = useRouter();
   const routing = () => {
     if (route === "upload" && !localStorage.getItem(ACCESS_TOKEN)) {
@@ -10,5 +11,9 @@ export default function Link({ menu, route }) {
     }
     router.push("/" + route);
   };
-  return <span onClick={routing}>{menu}</span>;
+  return (
+    <span style={{ color: color }} onClick={routing}>
+      {menu}
+    </span>
+  );
 }
