@@ -13,7 +13,7 @@ export default function Menu() {
       <Link menu="둘러보기" route="" />
       <Link menu="내 피드" route="" />
       <Link menu="쿤더차트" route="" />
-      <Link menu="🔥Lit" route="" color={COLOR.red_text} />
+      <Link menu="🔥Lit" route="lit" color={COLOR.red_text} />
     </S.MenuWrap>
   );
 }
