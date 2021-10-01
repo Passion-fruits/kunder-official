@@ -41,7 +41,19 @@ export const BASE_CONTAINER = styled.div`
 export const LIST_WRAPPER = styled.div`
   width: 100%;
   display: grid;
-  grid-template-columns: ${`repeat(${SIZE.card_indexing},${SIZE.card_size}px)`};
+  grid-template-columns: ${`repeat(${SIZE.card_indexing},${
+    100 / SIZE.card_indexing - 1
+  }%)`};
   justify-content: space-between;
   grid-row-gap: 30px;
+`;
+
+export const SQUARE = styled.div`
+  width: 100%;
+  position: relative;
+  ::after {
+    content: "";
+    display: block;
+    padding-bottom: 100%;
+  }
 `;

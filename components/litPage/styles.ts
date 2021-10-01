@@ -67,16 +67,6 @@ export const LitCard = styled.div`
       width: ${`${mac_wrap_width}px`};
     }
 
-    & .square {
-      width: 100%;
-      position: relative;
-      ::after {
-        content: "";
-        display: block;
-        padding-bottom: 100%;
-      }
-    }
-
     & .cover-image-wrap {
       position: absolute;
       width: 100%;

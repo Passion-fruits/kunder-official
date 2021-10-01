@@ -4,13 +4,13 @@ import { COLOR, SIZE } from "../../styles/index";
 export const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
-  width: ${`${SIZE.card_size}px`};
+  width: 100%;
   & .cover-image-wrap {
-    width: ${`${SIZE.card_size}px`};
-    height: ${`${SIZE.card_size}px`};
+    position: absolute;
+    width: 100%;
+    height: 100%;
     border: 1px solid ${COLOR.gray_borderColor};
     overflow: hidden;
-    position: relative;
     & img {
       width: 100%;
       height: 100%;

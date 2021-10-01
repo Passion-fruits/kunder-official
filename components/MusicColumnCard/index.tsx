@@ -3,7 +3,7 @@ import { musicCardObject } from "../../lib/interfaces/music";
 import * as S from "./styles";
 import { setValue } from "../../lib/context/index";
 import { useRouter } from "next/dist/client/router";
-import { COLOR } from "./../../styles/index";
+import { COLOR, SQUARE } from "./../../styles/index";
 import PlayListAddIcon from "./../../assets/playListAdd";
 import React from "react";
 
@@ -59,14 +59,16 @@ export default function MusicColumnCard({
 
   return (
     <S.Wrapper>
-      <div className="cover-image-wrap">
-        <div className="cover" onClick={routingToDetail}>
-          <S.PlayBtn onClick={musicChange}>
-            <PlayIcon size={17} color="white" callback={() => {}} />
-          </S.PlayBtn>
+      <SQUARE>
+        <div className="cover-image-wrap">
+          <div className="cover" onClick={routingToDetail}>
+            <S.PlayBtn onClick={musicChange}>
+              <PlayIcon size={17} color="white" callback={() => {}} />
+            </S.PlayBtn>
+          </div>
+          <img src={coverImg} />
         </div>
-        <img src={coverImg} />
-      </div>
+      </SQUARE>
       <div className="music-title" onClick={routingToDetail}>
         {title}
       </div>

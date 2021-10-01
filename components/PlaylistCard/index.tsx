@@ -3,6 +3,7 @@ import * as S from "./styles";
 import { playList } from "./../../lib/interfaces/playlist";
 import { useRouter } from "next/dist/client/router";
 import React from "react";
+import { SQUARE } from "../../styles";
 
 export default function PlayListCard({
   name,
@@ -22,15 +23,17 @@ export default function PlayListCard({
   }, []);
   return (
     <S.Wrapper>
-      <div className="cover-image-wrap">
-        <img
-          src={coverImg}
-          onClick={() => router.push(`/playlist?id=${playlist_id}`)}
-        />
-        <div className="bottom-wrap">
-          <PlaylistIcon size={13} />
+      <SQUARE>
+        <div className="cover-image-wrap">
+          <img
+            src={coverImg}
+            onClick={() => router.push(`/playlist?id=${playlist_id}`)}
+          />
+          <div className="bottom-wrap">
+            <PlaylistIcon size={13} />
+          </div>
         </div>
-      </div>
+      </SQUARE>
       <h3 className="title">{name}</h3>
       <h5 className="user-name">
         <span>by</span> {author}
