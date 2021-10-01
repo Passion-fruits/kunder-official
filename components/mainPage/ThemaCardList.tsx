@@ -1,6 +1,5 @@
 import MusicColumnCardList from "../MusicColumnCardList";
 import * as S from "./styles";
-import { data } from "./../../lib/export/data";
 import CircleArrowIcon from "./../../assets/circleArrow";
 import { ThemaCardListProps } from "./../../lib/interfaces/mainPage";
 import MusicRowCardList from "../MusicRowCardList";
@@ -9,6 +8,7 @@ export default function ThemaCardList({
   title,
   descripton,
   isColumn,
+  data,
 }: ThemaCardListProps) {
   return (
     <S.ThemaCardListWrapper>
@@ -22,7 +22,7 @@ export default function ThemaCardList({
       {isColumn ? (
         <MusicColumnCardList musicList={data} />
       ) : (
-        <MusicRowCardList musicList={data.concat(data)} />
+        <MusicRowCardList musicList={data} />
       )}
     </S.ThemaCardListWrapper>
   );

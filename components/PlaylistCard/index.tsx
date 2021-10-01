@@ -35,7 +35,7 @@ export default function PlayListCard({
       </S.ResponsiveWrap>
       <h3 className="title">{name}</h3>
       <h5 className="user-name">
-        <span>by</span> {author}
+        <span>만든사람</span> {author}
       </h5>
     </S.Wrapper>
   );

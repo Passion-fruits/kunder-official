@@ -27,6 +27,7 @@ export const Wrapper = styled.div`
     color: ${COLOR.gray_subText};
     font-size: 15px;
     font-weight: 500;
+    width: 30px;
   }
   & .cover-image {
     width: 50px;
