@@ -2,12 +2,13 @@ import styled from "@emotion/styled";
 import { COLOR, SIZE } from "../../styles";
 
 export const Wrapper = styled.div`
-  width: ${`${SIZE.card_size}px`};
+  width: 100%;
   display: flex;
   flex-direction: column;
   & .img-wrap {
-    width: ${`${SIZE.card_size}px`};
-    height: ${`${SIZE.card_size}px`};
+    width: 100%;
+    height: 100%;
+    position: absolute;
     border-radius: 80%;
     overflow: hidden;
   }
