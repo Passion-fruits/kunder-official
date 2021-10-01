@@ -79,6 +79,7 @@ export const CommentWrap = styled.div`
     height: 50px;
     border-radius: 80%;
     border: 1px solid ${COLOR.gray_borderColor};
+    cursor: pointer;
   }
   & .infor-container {
     display: flex;

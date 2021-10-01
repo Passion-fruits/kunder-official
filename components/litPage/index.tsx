@@ -56,6 +56,7 @@ export default function LitPage() {
               like={music.like}
               indexNum={index}
               comment={music.comment}
+              description={music.description}
               key={index}
             />
           ))}

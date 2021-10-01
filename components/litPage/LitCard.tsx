@@ -25,6 +25,7 @@ export default function LitCard({
   song_id,
   indexNum,
   comment,
+  description,
 }: props) {
   const router = useRouter();
   const dispatch = setValue();
@@ -111,10 +112,7 @@ export default function LitCard({
           </div>
         </div>
         <h1 className="title">{title}</h1>
-        <div className="description">
-          제가 이번에 열심히 쓴 곡입니다. 재밌게 들어주세요!! 그리고 다음곡도
-          기대해주세요~
-        </div>
+        <div className="description">{description}</div>
       </div>
     </S.LitCard>
   );

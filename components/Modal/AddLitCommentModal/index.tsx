@@ -5,6 +5,7 @@ import music from "../../../api/music";
 import { comment } from "../../../lib/interfaces/music";
 import { getDate } from "./../../../lib/util/getDate";
 import { toast } from "react-toastify";
+import Comment from "./Comment";
 
 export default function AddLitCommentModal() {
   const song_id = getValue().song_id;
@@ -66,16 +67,14 @@ export default function AddLitCommentModal() {
         ) : (
           <>
             {commentArr.map((comment, index) => (
-              <S.CommentWrap key={index}>
-                <img src={comment.profile} />
-                <div className="infor-container">
-                  <div className="writer-date">
-                    <h3>{comment.name.slice(0, 10)}</h3>
-                    <span>{getDate(comment.created_at)}</span>
-                  </div>
-                  <p className="contents">{comment.comment_content}</p>
-                </div>
-              </S.CommentWrap>
+              <Comment
+                key={index}
+                profile={comment.profile}
+                created_at={comment.created_at}
+                name={comment.name}
+                comment_content={comment.comment_content}
+                user_id={comment.user_id}
+              />
             ))}
           </>
         )}
