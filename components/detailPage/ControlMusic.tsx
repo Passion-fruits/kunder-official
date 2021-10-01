@@ -81,10 +81,6 @@ export default function ControlMusic({ musicObj }: props) {
   const sendComment = (event: React.FormEvent) => {
     event.preventDefault();
     const commentContents = commentRef.current.value;
-    if (!window.localStorage.getItem(ACCESS_TOKEN)) {
-      toast.info("로그인 후 이용해주세요.");
-      return;
-    }
     if (commentContents) {
       music
         .sendComment(musicObj.song_id, commentContents)

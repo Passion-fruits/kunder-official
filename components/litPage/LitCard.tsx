@@ -24,6 +24,7 @@ export default function LitCard({
   genre,
   song_id,
   indexNum,
+  comment,
 }: props) {
   const router = useRouter();
   const dispatch = setValue();
@@ -55,6 +56,17 @@ export default function LitCard({
     });
   };
 
+  const addComment = React.useCallback(() => {
+    dispatch({
+      type: "SET_MODAL",
+      modal: "addLitComment",
+    });
+    dispatch({
+      type: "SET_MUSIC_ID",
+      song_id: song_id,
+    });
+  }, [song_id]);
+
   return (
     <S.LitCard
       onClick={!nowIndex ? changeShowCard : () => {}}
@@ -85,9 +97,9 @@ export default function LitCard({
                   <HeartIcon size={30} callback={() => {}} color="white" />
                   {like}
                 </button>
-                <button>
+                <button onClick={addComment}>
                   <CommentIcon size={30} />
-                  12
+                  {comment}
                 </button>
                 <button className="korean" onClick={addMusicToPlaylist}>
                   <PlayListAddIcon size={20} />

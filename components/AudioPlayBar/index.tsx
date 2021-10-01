@@ -11,6 +11,7 @@ import { toast } from "react-toastify";
 export default function AudioPlayBar() {
   const musicObj = getValue().musicInformation;
   const musicList = getValue().list;
+  const modal = getValue().modal;
   const dispatch = setValue();
   const [isPlay, setIsPlay] = React.useState<boolean>(false);
   const [musicProgress, setMusicProgress] = React.useState<number>(0);
@@ -48,10 +49,12 @@ export default function AudioPlayBar() {
     }
   }, [musicList, musicListNowIndex]);
 
+  // 처음에 초기화겸
   React.useEffect(() => {
     setMusicListNowIndex(-1);
   }, [musicList]);
 
+  // 리스트 현재 재생중인 인덱스값 가져오기
   React.useEffect(() => {
     musicList.forEach((obj, index) => {
       if (musicObj.song_id === obj.song_id) {
@@ -60,6 +63,7 @@ export default function AudioPlayBar() {
     });
   }, [musicObj]);
 
+  // 리스트 인덱스 변경
   React.useEffect(() => {
     dispatch({
       type: "SET_MUSIC_LIST_INDEX",
@@ -104,6 +108,7 @@ export default function AudioPlayBar() {
     }
   }, [musicObj]);
 
+  // 곡 바뀔때마다 재생
   React.useEffect(() => {
     setMusicProgress(0);
     if (musicObj.song_url) {
@@ -117,6 +122,7 @@ export default function AudioPlayBar() {
     setIsPlay(true);
   }, [musicObj]);
 
+  // 오디오 시간 1초마다 가져와서 progress 변경
   React.useEffect(() => {
     setInterval(() => {
       const progress =
@@ -127,6 +133,7 @@ export default function AudioPlayBar() {
     }, 1000);
   }, []);
 
+  // 음악 끝나면 다음곡 있으면 넘기고 아니면 정지
   React.useEffect(() => {
     if (musicProgress >= 100) {
       if (musicListNowIndex + 1 === musicList.length) {
@@ -137,6 +144,7 @@ export default function AudioPlayBar() {
     }
   }, [musicProgress]);
 
+  // 오디오바 컨트롤 이벤트
   React.useEffect(() => {
     const input: HTMLElement = document.getElementById("input-range");
     input.addEventListener("mousedown", () => setControlToggle(true));
@@ -145,6 +153,15 @@ export default function AudioPlayBar() {
       setMusicProgress(event.target.value)
     );
   }, []);
+
+  // lit 카드 댓글 작성시 정지
+  React.useEffect(() => {
+    if (modal === "addLitComment") {
+      audio.current.loop = true;
+    } else {
+      audio.current.loop = false;
+    }
+  }, [modal]);
 
   return (
     <S.Wrapper>

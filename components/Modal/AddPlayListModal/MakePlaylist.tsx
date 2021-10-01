@@ -1,6 +1,6 @@
 import React from "react";
-import { COLOR } from "./../../styles/index";
-import playlist from "../../api/playlist";
+import { COLOR } from "../../../styles/index";
+import playlist from "../../../api/playlist";
 import { toast } from "react-toastify";
 
 export default function MakePlaylist({ getUserPlaylist }) {

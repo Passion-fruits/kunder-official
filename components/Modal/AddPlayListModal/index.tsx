@@ -1,10 +1,10 @@
 import * as S from "./styles";
 import React from "react";
-import { ACCESS_TOKEN, USER_ID } from "./../../lib/export/localstorage";
-import { getValue, setValue } from "./../../lib/context/index";
+import { ACCESS_TOKEN, USER_ID } from "../../../lib/export/localstorage";
+import { getValue, setValue } from "../../../lib/context/index";
 import { toast } from "react-toastify";
-import playlist from "../../api/playlist";
-import { playList } from "./../../lib/interfaces/playlist";
+import playlist from "../../../api/playlist";
+import { playList } from "../../../lib/interfaces/playlist";
 import MakePlaylist from "./MakePlaylist";
 
 export default function AddPlayListModal() {

@@ -1,9 +1,9 @@
 import * as S from "./styles";
 import { useRouter } from "next/dist/client/router";
 import React from "react";
-import playlist from "../../api/playlist";
-import { getFileData } from "../../lib/util/getFileData";
-import { setValue } from "./../../lib/context/index";
+import playlist from "../../../api/playlist";
+import { getFileData } from "../../../lib/util/getFileData";
+import { setValue } from "../../../lib/context/index";
 import { toast } from "react-toastify";
 
 export default function PlaylistUpdateModal() {

@@ -1,11 +1,11 @@
 import * as S from "./styles";
 import { useRouter } from "next/dist/client/router";
 import React from "react";
-import profile from "../../api/profile";
-import { profileObj } from "./../../lib/interfaces/profile";
-import { setValue } from "./../../lib/context/index";
+import profile from "../../../api/profile";
+import { profileObj } from "../../../lib/interfaces/profile";
+import { setValue } from "../../../lib/context/index";
 import { toast } from "react-toastify";
-import { getFileData } from "./../../lib/util/getFileData";
+import { getFileData } from "../../../lib/util/getFileData";
 
 export default function PrfoileUpdateModal() {
   const [profileObj, setProfileObj] = React.useState<profileObj>();
