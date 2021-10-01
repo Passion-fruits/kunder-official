@@ -39,7 +39,7 @@ export const LitCard = styled.div`
 
   & .music-info-wrap {
     width: ${`${wrap_width}px`};
-    opacity: 0.6;
+    opacity: 0.5;
     display: flex;
     flex-direction: column;
     position: relative;

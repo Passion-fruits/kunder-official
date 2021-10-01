@@ -64,7 +64,7 @@ export default {
   },
   checkIsLike(id) {
     return request({
-      url: `/like?song_id=${id}`,
+      url: `/like/song?song_id=${id}`,
       method: "get",
       headers: {
         "Content-type": "application/json",
@@ -74,7 +74,7 @@ export default {
   },
   pushLike(id) {
     return request({
-      url: `/like/${id}`,
+      url: `/like/song/${id}`,
       method: "post",
       headers: {
         "Content-type": "application/json",
@@ -84,7 +84,7 @@ export default {
   },
   deleteLike(id) {
     return request({
-      url: `/like/${id}`,
+      url: `/like/song/${id}`,
       method: "delete",
       headers: {
         "Content-type": "application/json",
