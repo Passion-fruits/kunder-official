@@ -13,7 +13,7 @@ export const COLOR = {
   blue_text: "#94C2FF",
 };
 
-const pageSize = 1300;
+const pageSize = 1400;
 
 const cardIndex = 6;
 
@@ -23,13 +23,14 @@ export const SIZE = {
   playbar_height: 100,
   card_size: pageSize / cardIndex - 13,
   card_indexing: cardIndex,
-  mac_width: "1400px",
+  mac_width: "1450px",
 };
 
 export const BASE_WRAPPER = styled.div`
   width: 100%;
   display: flex;
   justify-content: center;
+  padding: 0 100px;
 `;
 
 export const BASE_CONTAINER = styled.div`

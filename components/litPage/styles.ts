@@ -4,6 +4,7 @@ import {
   BASE_CONTAINER,
   COLOR,
   SIZE,
+  SQUARE,
 } from "./../../styles/index";
 import { keyframes } from "@emotion/react";
 
@@ -43,6 +44,8 @@ export const LitCardWrap = styled.div<wrapProps>`
       `translateX(-${res.indexNum * (gap + mac_wrap_width)}px)`};
   }
 `;
+
+export const ResponsiveWrap = styled(SQUARE)``;
 
 export const LitCard = styled.div`
   display: flex;

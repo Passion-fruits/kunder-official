@@ -8,7 +8,6 @@ import React from "react";
 import Vibe from "./Vibe";
 import { useRouter } from "next/dist/client/router";
 import { getValue, setValue } from "./../../lib/context/index";
-import { SQUARE } from "../../styles/index";
 
 interface props extends musicCardObject {
   nowIndex?: boolean;
@@ -79,7 +78,7 @@ export default function LitCard({
         style={!nowIndex ? { pointerEvents: "none" } : {}}
         id={nowIndex ? "now-index-wrap" : ""}
       >
-        <SQUARE>
+        <S.ResponsiveWrap>
           <div className="cover-image-wrap">
             <div className="on-cover-info">
               <S.MusicSubInfoWrap>
@@ -111,7 +110,7 @@ export default function LitCard({
             </div>
             <img src={cover_url} className="cover-img" />
           </div>
-        </SQUARE>
+        </S.ResponsiveWrap>
         <h1 className="title">{title}</h1>
         <div className="description">{description}</div>
       </div>

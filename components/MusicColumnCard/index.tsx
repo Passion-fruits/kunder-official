@@ -3,7 +3,7 @@ import { musicCardObject } from "../../lib/interfaces/music";
 import * as S from "./styles";
 import { setValue } from "../../lib/context/index";
 import { useRouter } from "next/dist/client/router";
-import { COLOR, SQUARE } from "./../../styles/index";
+import { COLOR } from "./../../styles/index";
 import PlayListAddIcon from "./../../assets/playListAdd";
 import React from "react";
 
@@ -59,7 +59,7 @@ export default function MusicColumnCard({
 
   return (
     <S.Wrapper>
-      <SQUARE>
+      <S.ResponsiveWrap>
         <div className="cover-image-wrap">
           <div className="cover" onClick={routingToDetail}>
             <S.PlayBtn onClick={musicChange}>
@@ -68,7 +68,7 @@ export default function MusicColumnCard({
           </div>
           <img src={coverImg} />
         </div>
-      </SQUARE>
+      </S.ResponsiveWrap>
       <div className="music-title" onClick={routingToDetail}>
         {title}
       </div>

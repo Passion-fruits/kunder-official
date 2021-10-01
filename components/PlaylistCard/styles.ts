@@ -1,5 +1,7 @@
 import styled from "@emotion/styled";
-import { COLOR } from "../../styles";
+import { COLOR, SQUARE } from "../../styles";
+
+export const ResponsiveWrap = styled(SQUARE)``;
 
 export const Wrapper = styled.div`
   width: 100%;

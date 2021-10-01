@@ -1,5 +1,7 @@
 import styled from "@emotion/styled";
-import { COLOR, SIZE } from "../../styles/index";
+import { COLOR, SIZE, SQUARE } from "../../styles/index";
+
+export const ResponsiveWrap = styled(SQUARE)``;
 
 export const Wrapper = styled.div`
   display: flex;

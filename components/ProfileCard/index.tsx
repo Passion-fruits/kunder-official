@@ -3,7 +3,6 @@ import * as S from "./styles";
 import { profileCard } from "./../../lib/interfaces/profile";
 import { useRouter } from "next/dist/client/router";
 import React from "react";
-import { SQUARE } from "../../styles";
 
 export default function ProfileCard({
   image_path,
@@ -22,14 +21,14 @@ export default function ProfileCard({
   }, [image_path]);
   return (
     <S.Wrapper>
-      <SQUARE>
+      <S.ResponsiveWrap>
         <div
           className="img-wrap"
           onClick={() => router.push(`/profile?id=${id}`)}
         >
           <img src={profileImg} className="profile-image" />
         </div>
-      </SQUARE>
+      </S.ResponsiveWrap>
       <div className="infor-wrap">
         <div className="line" />
         <h1 className="name">{name}</h1>
