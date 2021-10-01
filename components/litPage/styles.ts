@@ -1,9 +1,17 @@
 import styled from "@emotion/styled";
-import { BASE_WRAPPER, BASE_CONTAINER, COLOR } from "./../../styles/index";
+import {
+  BASE_WRAPPER,
+  BASE_CONTAINER,
+  COLOR,
+  SIZE,
+} from "./../../styles/index";
 import { keyframes } from "@emotion/react";
 
 const gap = 30;
 const wrap_width = 400;
+const mac_wrap_width = 350;
+const now_index_wrap_width = 550;
+const mac_now_index_wrap_width = 450;
 
 export const Wrapper = styled(BASE_WRAPPER)`
   height: 100vh;
@@ -13,7 +21,8 @@ export const Wrapper = styled(BASE_WRAPPER)`
 export const Container = styled(BASE_CONTAINER)`
   height: 100%;
   position: relative;
-  padding-left: ${`${wrap_width - gap}px`};
+  display: flex;
+  justify-content: center;
 `;
 
 interface wrapProps {
@@ -21,20 +30,29 @@ interface wrapProps {
 }
 
 export const LitCardWrap = styled.div<wrapProps>`
+  width: ${`${now_index_wrap_width}px`};
   height: 100%;
   display: flex;
   align-items: center;
   gap: ${`${gap}px`};
   transition: 0.5s;
   transform: ${(res) => `translateX(-${res.indexNum * (gap + wrap_width)}px)`};
+  @media screen and (max-width: ${SIZE.mac_width}) {
+    width: ${`${mac_now_index_wrap_width}px`};
+    transform: ${(res) =>
+      `translateX(-${res.indexNum * (gap + mac_wrap_width)}px)`};
+  }
 `;
 
 export const LitCard = styled.div`
   display: flex;
 
   & #now-index-wrap {
-    width: 550px;
+    width: ${`${now_index_wrap_width}px`};
     opacity: 1;
+    @media screen and (max-width: ${SIZE.mac_width}) {
+      width: ${`${mac_now_index_wrap_width}px`};
+    }
   }
 
   & .music-info-wrap {
@@ -44,6 +62,11 @@ export const LitCard = styled.div`
     flex-direction: column;
     position: relative;
     transition: 0.5s;
+
+    @media screen and (max-width: ${SIZE.mac_width}) {
+      width: ${`${mac_wrap_width}px`};
+    }
+
     & .square {
       width: 100%;
       position: relative;

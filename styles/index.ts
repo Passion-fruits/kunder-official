@@ -23,6 +23,7 @@ export const SIZE = {
   playbar_height: 100,
   card_size: pageSize / cardIndex - 13,
   card_indexing: cardIndex,
+  mac_width: "1400px",
 };
 
 export const BASE_WRAPPER = styled.div`
