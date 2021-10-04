@@ -1,4 +1,4 @@
-import DetailPage from "../../components/detailPage";
+import DetailPage from "../../components/page/detailPage";
 export default function Detail() {
   return <DetailPage />;
 }

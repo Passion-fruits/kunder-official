@@ -1,5 +1,5 @@
 import { MusicCardListProps } from "../../lib/interfaces/music";
-import MusicColumnCard from "../MusicColumnCard";
+import MusicColumnCard from "./MusicColumnCard";
 import { LIST_WRAPPER } from "./../../styles/index";
 
 export default function MusicColumnCardList({ musicList }: MusicCardListProps) {

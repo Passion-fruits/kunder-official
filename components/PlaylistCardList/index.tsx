@@ -1,5 +1,5 @@
 import { playList } from "./../../lib/interfaces/playlist";
-import PlayListCard from "../PlaylistCard";
+import PlayListCard from "./PlaylistCard";
 import { LIST_WRAPPER } from "./../../styles/index";
 
 interface props {

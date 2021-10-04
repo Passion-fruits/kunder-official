@@ -1,6 +1,6 @@
 import * as S from "./styles";
 import { MusicCardListProps } from "../../lib/interfaces/music";
-import MusicRowCard from "./../MusicRowCard/index";
+import MusicRowCard from "./MusicRowCard/index";
 
 export default function MusicRowCardList({ musicList }: MusicCardListProps) {
   return (

@@ -1,6 +1,6 @@
 import { LIST_WRAPPER } from "./../../styles/index";
 import { profileCard } from "./../../lib/interfaces/profile";
-import ProfileCard from "../ProfileCard";
+import ProfileCard from "./ProfileCard";
 
 interface props {
   profileList: profileCard[];
