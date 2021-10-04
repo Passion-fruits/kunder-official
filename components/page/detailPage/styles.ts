@@ -99,7 +99,7 @@ export const InforWrap = styled.div`
       gap: 8px;
       & span {
         color: ${COLOR.gray_subText};
-        font-size: 16px;
+        font-size: 17px;
       }
     }
   }

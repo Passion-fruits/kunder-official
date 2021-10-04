@@ -24,13 +24,13 @@ export const Wrapper = styled.div`
   }
   & .index-num {
     color: ${COLOR.gray_subText};
-    font-size: 15px;
-    font-weight: 500;
+    font-size: 17px;
+    font-weight: 600;
     width: 30px;
   }
   & .cover-image {
-    width: 50px;
-    height: 50px;
+    width: 60px;
+    height: 60px;
     cursor: pointer;
     border: 1px solid ${COLOR.gray_borderColor};
     margin-left: 20px;
@@ -46,8 +46,8 @@ export const Wrapper = styled.div`
     margin-left: 20px;
     width: 35%;
     & h1 {
-      font-size: 16px;
-      font-weight: 500;
+      font-size: 17px;
+      font-weight: 600;
       color: ${COLOR.gray_text};
       cursor: pointer;
       transition: 0.3s;
@@ -58,6 +58,7 @@ export const Wrapper = styled.div`
     & span {
       color: ${COLOR.green_subMain};
       font-size: 13px;
+      margin-top: 2px;
     }
   }
   & .right {
@@ -69,16 +70,16 @@ export const Wrapper = styled.div`
   & .hashtag-container {
     display: flex;
     gap: 10px;
+    margin-right: 150px;
     & .tag {
       padding: 7px 15px;
       border-radius: 24px;
-      border: 1px solid ${COLOR.gray_borderColor};
-      color: #a8a8a8;
+      border: 2px solid ${COLOR.gray_borderColor};
+      color: ${COLOR.gray_subText};
       font-size: 15px;
     }
   }
   & .add-playlist {
-    margin-left: 20px;
     margin-top: 3px;
   }
   & .heart-wrap {
