@@ -5,9 +5,7 @@ export const Wrapper = styled.div`
   width: 100%;
   display: flex;
   align-items: center;
-  padding: 10px 0px;
-  border-bottom: 1px solid #2b2b2b;
-  background-color: rgb(0, 0, 0, 0);
+  padding: 8px 0px;
   transition: 0.3s;
   position: relative;
   :last-of-type {
@@ -29,11 +27,12 @@ export const Wrapper = styled.div`
     width: 30px;
   }
   & .cover-image {
-    width: 60px;
-    height: 60px;
+    width: 50px;
+    height: 50px;
     cursor: pointer;
     border: 1px solid ${COLOR.gray_borderColor};
-    margin-left: 20px;
+    border-radius: 3px;
+    margin-left: 10px;
     transition: 0.3s;
     &:hover {
       opacity: 0.8;
