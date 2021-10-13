@@ -54,9 +54,7 @@ export default function SideBar() {
           </button>
           <img
             onClick={() =>
-              router.push(
-                `/profile?id=${localStorage.getItem(USER_ID)}&menu=song`
-              )
+              router.push(`/profile?id=${localStorage.getItem(USER_ID)}`)
             }
             className="mypage-btn"
             src={profileImg}

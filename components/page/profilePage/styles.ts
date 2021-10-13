@@ -37,7 +37,7 @@ export const InfoContainer = styled.div`
     gap: 10px;
     margin-top: 13px;
     & h1 {
-      font-size: 45px;
+      font-size: 2.3vw;
       color: white;
     }
     & span {

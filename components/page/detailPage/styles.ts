@@ -64,7 +64,8 @@ export const InforWrap = styled.div`
       }
     }
     & h1 {
-      font-size: 40px;
+      width: calc(100% - 50px);
+      font-size: 35px;
       font-weight: 800;
       color: white;
     }

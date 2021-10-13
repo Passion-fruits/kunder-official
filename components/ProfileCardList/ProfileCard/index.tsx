@@ -24,7 +24,7 @@ export default function ProfileCard({
       <S.ResponsiveWrap>
         <div
           className="img-wrap"
-          onClick={() => router.push(`/profile?id=${id}&menu=song`)}
+          onClick={() => router.push(`/profile?id=${id}`)}
         >
           <img src={profileImg} className="profile-image" />
         </div>

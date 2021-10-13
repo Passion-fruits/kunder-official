@@ -36,7 +36,7 @@ export default function MusicInformation({ musicObj }: props) {
           <button onClick={musicChange}>
             <PlayIcon size={16} callback={() => {}} />
           </button>
-          <h1>{musicObj.title}</h1>
+          <h1>Based on leesureen - 01. 첫장 (feat.DJ Kendricxx)</h1>
         </div>
         <div className="musician">
           <span>Music by</span>
