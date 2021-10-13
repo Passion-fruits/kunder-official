@@ -9,8 +9,10 @@ import PlaylistCardList from "../../PlaylistCardList";
 import { playList } from "../../../lib/interfaces/playlist";
 import { profileCard } from "../../../lib/interfaces/profile";
 import ProfileCardList from "../../ProfileCardList";
+import { useRouter } from "next/dist/client/router";
 
 export default function UserSubInformation({ user_id }) {
+  const router = useRouter();
   const [musicList, setMusicList] = React.useState<musicCardObject[]>([]);
   const [playlistArr, setPlaylistArr] = React.useState<playList[]>([]);
   const [followerArr, setFollowerArr] = React.useState<profileCard[]>([]);
@@ -19,11 +21,16 @@ export default function UserSubInformation({ user_id }) {
     "song" | "playlist" | "follower" | "following"
   >("song");
 
-  const changeMenu = React.useCallback(({ target }) => {
-    if (target.id) {
-      setNowMen(target.id);
-    }
-  }, []);
+  const changeMenu = React.useCallback(
+    ({ target }) => {
+      const id = target.id;
+      if (id) {
+        setNowMen(id);
+        router.push(`/profile?id=${router.query.id}&menu=${id}`);
+      }
+    },
+    [router]
+  );
 
   const getUserMusic = React.useCallback(() => {
     profile
@@ -92,6 +99,13 @@ export default function UserSubInformation({ user_id }) {
     setFollowerArr([]);
     setFollowingArr([]);
   }, [user_id]);
+
+  React.useEffect(() => {
+    const menu: any = router.query.menu;
+    if (menu) {
+      setNowMen(menu.toString());
+    }
+  }, [router]);
 
   return (
     <>
