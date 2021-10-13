@@ -104,6 +104,8 @@ export default function UserSubInformation({ user_id }) {
     const menu: any = router.query.menu;
     if (menu) {
       setNowMen(menu.toString());
+    } else {
+      setNowMen("song");
     }
   }, [router]);
 
