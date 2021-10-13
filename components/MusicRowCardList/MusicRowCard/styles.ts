@@ -56,7 +56,7 @@ export const Wrapper = styled.div`
       }
     }
     & span {
-      color: ${COLOR.green_subMain};
+      color: ${COLOR.gray_subText};
       font-size: 13px;
       margin-top: 2px;
     }

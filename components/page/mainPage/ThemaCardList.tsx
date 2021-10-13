@@ -12,9 +12,9 @@ export default function ThemaCardList({
 }: ThemaCardListProps) {
   return (
     <S.ThemaCardListWrapper>
-      <button className="more-button">
+      {/*      <button className="more-button">
         <CircleArrowIcon />
-      </button>
+      </button> */}
       <div className="infor-wrap">
         <h1 className="title">{title}</h1>
         <p className="description">{descripton}</p>
