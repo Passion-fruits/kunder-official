@@ -46,6 +46,9 @@ export const Wrapper = styled.div`
     font-weight: 500;
     margin-top: 13px;
     transition: 0.5s;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
     cursor: pointer;
     &:hover {
       opacity: 0.7;

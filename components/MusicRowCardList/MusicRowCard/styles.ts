@@ -44,13 +44,16 @@ export const Wrapper = styled.div`
     flex-direction: column;
     gap: 0px;
     margin-left: 20px;
-    width: 35%;
+    width: 30%;
     & h1 {
       font-size: 17px;
-      font-weight: 600;
+      font-weight: 500;
       color: ${COLOR.gray_text};
       cursor: pointer;
       transition: 0.3s;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
       &:hover {
         opacity: 0.8;
       }
@@ -68,9 +71,9 @@ export const Wrapper = styled.div`
     align-items: center;
   }
   & .hashtag-container {
+    margin-left: 50px;
     display: flex;
     gap: 10px;
-    margin-right: 150px;
     & .tag {
       padding: 7px 15px;
       border-radius: 24px;

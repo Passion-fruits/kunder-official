@@ -60,12 +60,12 @@ export default function MusicRowCard({
         <h1 onClick={routingToDetail}>{title}</h1>
         <span id="noto">{artist}</span>
       </div>
+      <div className="hashtag-container">
+        <div className="tag"># {genre}음악</div>
+        <div className="tag"># {mood}</div>
+        <div className="tag">{getDate(created_at)}</div>
+      </div>
       <div className="right">
-        <div className="hashtag-container">
-          <div className="tag"># {genre}음악</div>
-          <div className="tag"># {mood}</div>
-          <div className="tag">{getDate(created_at)}</div>
-        </div>
         <div className="add-playlist" onClick={addMusicToPlaylist}>
           <PlayListAddIcon size={14} color={COLOR.gray_subText} />
         </div>
