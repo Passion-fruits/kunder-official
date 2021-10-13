@@ -32,7 +32,17 @@ export default function SearchBar() {
           onFocus={focusOn}
         />
         <div className="recommend">
-          <div className="menu">김팔복</div>
+          <div className="result">
+            <b>김</b>팔복
+            <span className="kind">노래</span>
+          </div>
+          <div className="result">
+            <b>김</b>치<span className="kind">플레이리스트</span>
+          </div>
+          <div className="result">
+            <b>김</b>치된장국
+            <span className="kind">가수</span>
+          </div>
         </div>
       </S.SearchBarWrap>
     </S.SearchMenu>

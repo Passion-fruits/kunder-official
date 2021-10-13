@@ -12,7 +12,7 @@ export default function Link({ menu, route, color = COLOR.gray_text }) {
     router.push("/" + route);
   };
   return (
-    <span style={{ color: color }} onClick={routing}>
+    <span className="menu" style={{ color: color }} onClick={routing}>
       {menu}
     </span>
   );

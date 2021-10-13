@@ -34,7 +34,7 @@ export const MenuWrap = styled.div`
     cursor: pointer;
     /* 추후 변경 해야함 font family 안먹음 */
   }
-  & span {
+  & .menu {
     text-transform: capitalize;
     font-size: 17px;
     font-weight: 600;
@@ -88,7 +88,7 @@ export const SearchMenu = styled.div`
 
 export const SearchBarWrap = styled.div<searchBarProps>`
   position: relative;
-  width: ${(res) => (res.isFocusing ? `250px` : `0px`)};
+  width: ${(res) => (res.isFocusing ? `300px` : `0px`)};
   transition: 0.5s;
   & input {
     width: 100%;
@@ -112,13 +112,30 @@ export const SearchBarWrap = styled.div<searchBarProps>`
     background-color: ${COLOR.black_subBackground};
     position: absolute;
     margin-top: 1px;
-    & .menu {
+    & .result {
       display: ${(res) => (res.isFocusing ? "flex" : "none")};
+      align-items: center;
       width: 100%;
       padding: 10px 10px;
       font-size: 15px;
       color: ${COLOR.gray_text};
+      overflow: hidden;
       text-overflow: ellipsis;
+      white-space: nowrap;
+      cursor: pointer;
+      border-left: 2px solid ${COLOR.black_subBackground};
+      &:hover {
+        border-left: 2px solid ${COLOR.blue_text};
+      }
+      & b {
+        color: ${COLOR.blue_text};
+        font-weight: 500;
+      }
+      & .kind {
+        color: #777777;
+        margin-left: 10px;
+        font-size: 13px;
+      }
     }
   }
 `;
