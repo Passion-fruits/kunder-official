@@ -1,10 +1,11 @@
-export default function SearchIcon() {
+export default function SearchIcon({ callback }) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       width="20.414"
       height="20.414"
       viewBox="0 0 20.414 20.414"
+      onClick={callback}
     >
       <g
         id="Icon_feather-search"

@@ -1,4 +1,3 @@
-import { SearchIcon } from "../../assets";
 import * as S from "./styles";
 import { useRouter } from "next/dist/client/router";
 import React from "react";
@@ -10,6 +9,7 @@ import {
 import Link from "./Link";
 import profile from "../../api/profile";
 import { COLOR } from "./../../styles/index";
+import SearchBar from "./SearchBar";
 
 export default function SideBar() {
   const router = useRouter();
@@ -45,7 +45,7 @@ export default function SideBar() {
 
   return (
     <S.MenuWrap>
-      <SearchIcon />
+      <SearchBar />
       <Link menu="음악 업로드" route="upload" color={COLOR.green_subMain} />
       {isLogin ? (
         <div className="btn-container">

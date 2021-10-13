@@ -71,8 +71,54 @@ export const MenuWrap = styled.div`
     border: 1px solid ${COLOR.gray_borderColor};
     cursor: pointer;
   }
+`;
+
+interface searchBarProps {
+  isFocusing: boolean;
+}
+
+export const SearchMenu = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 20px;
   & svg {
     cursor: pointer;
-    margin-right: 20px;
+  }
+`;
+
+export const SearchBarWrap = styled.div<searchBarProps>`
+  position: relative;
+  width: ${(res) => (res.isFocusing ? `250px` : `0px`)};
+  transition: 0.5s;
+  & input {
+    width: 100%;
+    height: 35px;
+    background-color: ${COLOR.black_subBackground};
+    border-radius: 5px;
+    transition: 0.5s;
+    color: ${COLOR.gray_subText};
+    font-size: 15px;
+    padding: 0px;
+    &:focus {
+      color: ${COLOR.gray_text};
+      padding: 10px;
+    }
+    &::placeholder {
+      color: ${COLOR.gray_subText};
+    }
+  }
+  & .recommend {
+    width: 100%;
+    background-color: ${COLOR.black_subBackground};
+    position: absolute;
+    margin-top: 1px;
+    & .menu {
+      display: ${(res) => (res.isFocusing ? "flex" : "none")};
+      width: 100%;
+      padding: 10px 10px;
+      font-size: 15px;
+      color: ${COLOR.gray_text};
+      text-overflow: ellipsis;
+    }
   }
 `;
