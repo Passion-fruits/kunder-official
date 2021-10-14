@@ -11,7 +11,7 @@ export const Container = styled(BASE_CONTAINER)`
 export const ThemaCardListWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  margin-top: 50px;
+  margin-top: 40px;
   position: relative;
   & .infor-wrap {
     display: flex;
