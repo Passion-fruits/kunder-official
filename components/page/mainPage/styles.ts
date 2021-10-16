@@ -15,12 +15,12 @@ export const ThemaCardListWrapper = styled.div`
   position: relative;
   & .infor-wrap {
     display: flex;
-    align-items: center;
-    gap: 15px;
-    margin-bottom: 30px;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
     & .title {
       color: ${COLOR.gray_text};
-      font-size: 30px;
+      font-size: 25px;
       font-weight: 800;
     }
     & .description {

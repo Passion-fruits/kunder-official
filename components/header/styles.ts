@@ -1,10 +1,5 @@
 import styled from "@emotion/styled";
-import {
-  BASE_WRAPPER,
-  BASE_CONTAINER,
-  COLOR,
-  SIZE,
-} from "./../../styles/index";
+import { BASE_WRAPPER, BASE_CONTAINER, COLOR, SIZE } from "../../styles/index";
 
 export const Wrapper = styled(BASE_WRAPPER)`
   position: fixed;
@@ -12,6 +7,7 @@ export const Wrapper = styled(BASE_WRAPPER)`
   border-bottom: 1px solid #1a1a1a;
   background: ${COLOR.black_background};
   box-shadow: 0px 3px 10px rgb(0, 0, 0, 0.3);
+  padding: 0 20px;
 `;
 
 export const Container = styled(BASE_CONTAINER)`
@@ -20,12 +16,13 @@ export const Container = styled(BASE_CONTAINER)`
   align-items: center;
   padding: 0px;
   height: ${`${SIZE.header_height}px`};
+  width: 100%;
 `;
 
 export const MenuWrap = styled.div`
   display: flex;
   align-items: center;
-  gap: 15px;
+  gap: 20px;
   & .web-logo {
     text-transform: uppercase;
     color: ${COLOR.green_main};
@@ -40,7 +37,7 @@ export const MenuWrap = styled.div`
     font-weight: 600;
     color: ${COLOR.gray_text};
     cursor: pointer;
-    padding: 10px 15px;
+    padding: 10px 10px;
     border-radius: 7px;
     transition: 0.5s;
     &:hover {

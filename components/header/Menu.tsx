@@ -1,7 +1,7 @@
 import * as S from "./styles";
 import { useRouter } from "next/dist/client/router";
 import Link from "./Link";
-import { COLOR } from "./../../styles/index";
+import { COLOR } from "../../styles/index";
 
 export default function Menu() {
   const router = useRouter();

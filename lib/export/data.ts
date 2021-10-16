@@ -45,6 +45,21 @@ export const data = [
     comment: "1",
   },
   {
+    song_id: 101,
+    cover_url:
+      "https://passion-fruits-bucket.s3.ap-northeast-2.amazonaws.com/cover/3679f1a0-1275-4843-8c4e-c1032f67f459 Rectangle 2 (1).png",
+    song_url:
+      "https://passion-fruits-bucket.s3.ap-northeast-2.amazonaws.com/song/72c4db65-60db-41e2-89fa-a580439ab5d6 y2mate.com - 나 괜찮은거라고 말해줘 Nirvana너바나Lithium가사해석lyrics.mp3",
+    title: "임련상",
+    description: "장난",
+    created_at: "2021-09-28T15:31:47.687Z",
+    genre: "클래식",
+    artist: "정지원",
+    mood: "느낌있는",
+    like: "1",
+    comment: "1",
+  },
+  {
     song_id: 100,
     cover_url:
       "https://passion-fruits-bucket.s3.ap-northeast-2.amazonaws.com/cover/b28fbfa2-ae50-4a23-a9f7-b673392bc8c4 sports-4013449_1920.jpg",
@@ -181,5 +196,20 @@ export const data2 = [
     mood: "느낌있는",
     like: "0",
     comment: "0",
+  },
+  {
+    song_id: 101,
+    cover_url:
+      "https://passion-fruits-bucket.s3.ap-northeast-2.amazonaws.com/cover/3679f1a0-1275-4843-8c4e-c1032f67f459 Rectangle 2 (1).png",
+    song_url:
+      "https://passion-fruits-bucket.s3.ap-northeast-2.amazonaws.com/song/72c4db65-60db-41e2-89fa-a580439ab5d6 y2mate.com - 나 괜찮은거라고 말해줘 Nirvana너바나Lithium가사해석lyrics.mp3",
+    title: "임련상",
+    description: "장난",
+    created_at: "2021-09-28T15:31:47.687Z",
+    genre: "클래식",
+    artist: "정지원",
+    mood: "느낌있는",
+    like: "1",
+    comment: "1",
   },
 ];

@@ -5,8 +5,9 @@ import Head from "next/head";
 import "../styles/globals.css";
 import "react-toastify/dist/ReactToastify.css";
 import AudioPlayBar from "../components/AudioPlayBar";
-import Header from "../components/Header";
+import Header from "../components/header";
 import Modal from "../components/Modal";
+import SideBar from "../components/SideBar";
 
 function App({ Component, pageProps }: AppProps) {
   return (
@@ -33,6 +34,7 @@ function App({ Component, pageProps }: AppProps) {
       <SampleProvider>
         <Modal />
         <Header />
+        <SideBar />
         <ToastContainer position="top-right" autoClose={2000} />
         <Component {...pageProps} />
         <AudioPlayBar />

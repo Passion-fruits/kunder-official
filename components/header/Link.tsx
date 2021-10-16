@@ -1,7 +1,7 @@
 import { useRouter } from "next/dist/client/router";
-import { ACCESS_TOKEN } from "./../../lib/export/localstorage";
+import { ACCESS_TOKEN } from "../../lib/export/localstorage";
 import { toast } from "react-toastify";
-import { COLOR } from "./../../styles/index";
+import { COLOR } from "../../styles/index";
 export default function Link({ menu, route, color = COLOR.gray_text }) {
   const router = useRouter();
   const routing = () => {

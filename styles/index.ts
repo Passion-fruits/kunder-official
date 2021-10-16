@@ -13,14 +13,15 @@ export const COLOR = {
   blue_text: "#94C2FF",
 };
 
-const pageSize = 1500;
+const pageSize = 1350;
 
-const cardIndex = 6;
+const cardIndex = 7;
 
 export const SIZE = {
   header_height: 60,
   page_size: pageSize,
   playbar_height: 100,
+  sidebar_size: 260,
   card_size: pageSize / cardIndex - 13,
   card_indexing: cardIndex,
   mac_width: "1450px",
@@ -30,11 +31,13 @@ export const BASE_WRAPPER = styled.div`
   width: 100%;
   display: flex;
   justify-content: center;
-  padding: 0 100px;
+  padding-left: ${SIZE.sidebar_size + "px"};
+  padding-right: 100px;
 `;
 
 export const BASE_CONTAINER = styled.div`
-  width: ${`${SIZE.page_size}px`};
+  /*   width: ${`${SIZE.page_size}px`}; */
+  width: 100%;
   padding-top: ${`${SIZE.header_height}px`};
   padding-bottom: ${`${SIZE.playbar_height + 50}px`};
 `;
@@ -47,6 +50,11 @@ export const LIST_WRAPPER = styled.div`
   }%)`};
   justify-content: space-between;
   grid-row-gap: 30px;
+  @media screen and (max-width: 1300px) {
+    /*     grid-template-columns: ${`repeat(${SIZE.card_indexing - 1},${
+      100 / (SIZE.card_indexing - 1) - 1
+    }%)`}; */
+  }
 `;
 
 export const SQUARE = styled.div`

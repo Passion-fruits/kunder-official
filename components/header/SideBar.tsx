@@ -5,10 +5,10 @@ import {
   ACCESS_TOKEN,
   REFRESH_TOKEN,
   USER_ID,
-} from "./../../lib/export/localstorage";
+} from "../../lib/export/localstorage";
 import Link from "./Link";
 import profile from "../../api/profile";
-import { COLOR } from "./../../styles/index";
+import { COLOR } from "../../styles/index";
 import SearchBar from "./SearchBar";
 
 export default function SideBar() {

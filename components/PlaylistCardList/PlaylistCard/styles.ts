@@ -43,16 +43,17 @@ export const Wrapper = styled.div`
     color: ${COLOR.gray_text};
     font-size: 17px;
     font-weight: bold;
-    margin-top: 15px;
+    margin-top: 13px;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
   }
   & .user-name {
     color: ${COLOR.gray_subText};
-    font-size: 15px;
+    font-size: 14px;
     font-weight: 500;
-    margin-top: 7px;
+    margin-top: 6px;
+    margin-bottom: 5px;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
