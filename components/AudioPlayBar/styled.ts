@@ -5,9 +5,11 @@ export const Wrapper = styled(BASE_WRAPPER)`
   position: fixed;
   bottom: 0;
   z-index: 10;
+  padding: 0;
 `;
 
 export const Container = styled(BASE_CONTAINER)`
+  width: 100%;
   height: ${`${SIZE.playbar_height}px`};
   padding: 0;
   position: relative;
