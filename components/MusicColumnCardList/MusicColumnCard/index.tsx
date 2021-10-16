@@ -73,7 +73,7 @@ export default function MusicColumnCard({
         {title}
       </div>
       <h3 className="musician-name" id="noto">
-        -{artist}
+        {artist}
       </h3>
       <S.IconWrap>
         <div className="like">
