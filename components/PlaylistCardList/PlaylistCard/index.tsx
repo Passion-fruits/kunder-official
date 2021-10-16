@@ -21,15 +21,12 @@ export default function PlayListCard({
     };
   }, []);
   return (
-    <S.Wrapper>
+    <S.Wrapper onClick={() => router.push(`/playlist?id=${playlist_id}`)}>
       <S.ResponsiveWrap>
         <div className="cover-image-wrap">
-          <img
-            src={coverImg}
-            onClick={() => router.push(`/playlist?id=${playlist_id}`)}
-          />
+          <img src={coverImg} />
           <div className="bottom-wrap">
-            <PlaylistIcon size={13} />
+            <PlaylistIcon size={12} />
           </div>
         </div>
       </S.ResponsiveWrap>

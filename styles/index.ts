@@ -13,7 +13,7 @@ export const COLOR = {
   blue_text: "#94C2FF",
 };
 
-const pageSize = 1400;
+const pageSize = 1500;
 
 const cardIndex = 6;
 

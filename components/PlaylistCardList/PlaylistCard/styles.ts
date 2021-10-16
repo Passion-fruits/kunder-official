@@ -7,30 +7,36 @@ export const Wrapper = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
+  background-color: ${COLOR.black_subBackground};
+  border: 1px solid ${COLOR.black_subBackground};
+  padding: 12px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: 0.3s;
+  &:hover {
+    transform: translateY(-10px);
+  }
   & .cover-image-wrap {
     width: 100%;
     height: 100%;
-    border: 1px solid ${COLOR.gray_borderColor};
     position: absolute;
-    cursor: pointer;
+    border-radius: 3px;
     overflow: hidden;
     & img {
       width: 100%;
       height: 100%;
       transition: 0.3s;
     }
-    &:hover img {
-      transform: scale(1.1);
-    }
     & .bottom-wrap {
-      width: 100%;
-      height: 40px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      background: rgb(0, 0, 0, 0.8);
       position: absolute;
+      right: 0;
       bottom: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: rgb(0, 0, 0, 0.5);
+      width: 100%;
+      padding: 12px 0;
     }
   }
   & .title {
@@ -38,12 +44,18 @@ export const Wrapper = styled.div`
     font-size: 17px;
     font-weight: bold;
     margin-top: 15px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
   & .user-name {
     color: ${COLOR.gray_subText};
     font-size: 15px;
     font-weight: 500;
-    margin-top: 5px;
+    margin-top: 7px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
     & span {
       color: #6e6e6e;
     }
