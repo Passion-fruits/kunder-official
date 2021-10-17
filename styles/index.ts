@@ -15,7 +15,7 @@ export const COLOR = {
 
 const pageSize = 1350;
 
-const cardIndex = 7;
+const cardIndex = 6;
 
 export const SIZE = {
   header_height: 60,

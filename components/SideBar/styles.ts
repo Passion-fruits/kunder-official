@@ -11,7 +11,7 @@ export const Wrapper = styled.div`
   z-index: 2;
   overflow-y: scroll;
   &::-webkit-scrollbar {
-    width: 2px;
+    width: 1px;
     background-color: ${COLOR.gray_borderColor};
   }
   &::-webkit-scrollbar-thumb {
