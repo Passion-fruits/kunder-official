@@ -3,9 +3,9 @@ import { SIZE } from "../../styles";
 import { COLOR } from "./../../styles/index";
 
 export const Wrapper = styled.div`
-  width: ${SIZE.sidebar_size - 20 + "px"};
+  width: ${SIZE.sidebar_size + "px"};
   height: 100%;
-  padding: ${SIZE.header_height + "px"} 15px;
+  padding: ${SIZE.header_height + "px"} ${SIZE.sidebar_padding + "px"};
   position: fixed;
   background-color: ${COLOR.black_background};
   z-index: 2;

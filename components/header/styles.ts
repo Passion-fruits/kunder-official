@@ -7,7 +7,9 @@ export const Wrapper = styled(BASE_WRAPPER)`
   border-bottom: 1px solid #1a1a1a;
   background: ${COLOR.black_background};
   box-shadow: 0px 3px 10px rgb(0, 0, 0, 0.3);
-  padding: 0 20px;
+  padding: 0;
+  padding-left: ${SIZE.sidebar_padding + "px"};
+  padding-right: ${SIZE.right_padding + "px"};
 `;
 
 export const Container = styled(BASE_CONTAINER)`

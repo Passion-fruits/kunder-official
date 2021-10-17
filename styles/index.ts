@@ -21,7 +21,9 @@ export const SIZE = {
   header_height: 60,
   page_size: pageSize,
   playbar_height: 100,
-  sidebar_size: 260,
+  sidebar_size: 300,
+  sidebar_padding: 30,
+  right_padding: 100,
   card_size: pageSize / cardIndex - 13,
   card_indexing: cardIndex,
   mac_width: "1450px",
@@ -32,14 +34,14 @@ export const BASE_WRAPPER = styled.div`
   display: flex;
   justify-content: center;
   padding-left: ${SIZE.sidebar_size + "px"};
-  padding-right: 100px;
+  padding-right: ${SIZE.right_padding + "px"};
 `;
 
 export const BASE_CONTAINER = styled.div`
-  /*   width: ${`${SIZE.page_size}px`}; */
   width: 100%;
   padding-top: ${`${SIZE.header_height}px`};
   padding-bottom: ${`${SIZE.playbar_height + 50}px`};
+  padding-left: ${SIZE.sidebar_padding + "px"};
 `;
 
 export const LIST_WRAPPER = styled.div`

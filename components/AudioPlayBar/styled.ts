@@ -20,11 +20,11 @@ export const Container = styled(BASE_CONTAINER)`
 `;
 
 export const Info = styled.div`
+  padding-left: ${SIZE.sidebar_padding + "px"};
   display: flex;
   align-items: center;
   gap: 17px;
   z-index: 2;
-  padding-left: 20px;
   & .cover-image {
     width: 60px;
     height: 60px;
@@ -61,7 +61,7 @@ export const Info = styled.div`
 `;
 
 export const Control = styled.div`
-  padding-right: 20px;
+  padding-right: ${SIZE.right_padding + "px"};
   height: 100%;
   display: flex;
   align-items: center;
