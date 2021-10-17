@@ -1,5 +1,10 @@
 import styled from "@emotion/styled";
-import { BASE_WRAPPER, BASE_CONTAINER, COLOR } from "../../../styles/index";
+import {
+  BASE_WRAPPER,
+  BASE_CONTAINER,
+  COLOR,
+  SIZE,
+} from "../../../styles/index";
 import { keyframes } from "@emotion/react";
 
 export const Wrapper = styled(BASE_WRAPPER)``;
@@ -20,6 +25,9 @@ export const Container = styled(BASE_CONTAINER)`
   display: flex;
   flex-direction: column;
   animation: ${UpperAnime} 0.5s;
+  padding: 0;
+  padding-top: ${SIZE.header_height + "px"};
+  padding-bottom: ${SIZE.playbar_height + "px"};
   .title {
     color: white;
     font-size: 25px;
