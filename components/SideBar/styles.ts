@@ -103,7 +103,7 @@ export const RouteMenu = styled.div`
     margin-top: 0px;
   }
   & span {
-    font-size: 18px;
+    font-size: 17px;
     font-weight: bold;
     color: ${COLOR.gray_text};
   }

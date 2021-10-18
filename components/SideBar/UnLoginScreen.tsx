@@ -1,14 +1,18 @@
 import AddFuncMenu from "./AddFuncMenu";
 import * as S from "./styles";
+import { useRouter } from "next/dist/client/router";
 
 export default function UnLoginScreen() {
+  const router = useRouter();
   return (
     <>
       <h1 className="title">
         아직 <b>계정</b>이 없으신가요?
       </h1>
       <p className="description">로그인시 추가기능이 제공됩니다</p>
-      <button className="login-btn">로그인/가입 {">"}</button>
+      <button className="login-btn" onClick={() => router.push("/login")}>
+        로그인/가입 {">"}
+      </button>
       <h3 className="line-title">로그인시 추가기능</h3>
       <AddFuncMenu contents="음악 업로드" />
       <AddFuncMenu contents="플레이리스트 제작" />
