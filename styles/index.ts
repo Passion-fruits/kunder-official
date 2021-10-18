@@ -39,7 +39,7 @@ export const BASE_WRAPPER = styled.div`
 
 export const BASE_CONTAINER = styled.div`
   width: 100%;
-  padding-top: ${`${SIZE.header_height}px`};
+  padding-top: ${`${SIZE.header_height + 30}px`};
   padding-bottom: ${`${SIZE.playbar_height + 50}px`};
   padding-left: ${SIZE.sidebar_padding + 50 + "px"};
 `;

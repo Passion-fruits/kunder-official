@@ -3,7 +3,7 @@ import { musicCardObject } from "./music";
 export interface playList {
   name: string;
   author: string;
-  like: number;
+  like: number | string;
   cover_url: string;
   playlist_id: number;
 }

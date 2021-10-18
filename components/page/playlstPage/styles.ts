@@ -9,8 +9,8 @@ export const BASE_WRAP = styled.div`
   width: 100%;
   padding: 20px 30px;
   background: #141414;
-  margin-top: 20px;
   border-radius: 10px;
+  margin-bottom: 20px;
 `;
 
 export const InforWrap = styled(BASE_WRAP)`

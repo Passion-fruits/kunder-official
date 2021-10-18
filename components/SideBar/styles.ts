@@ -16,7 +16,7 @@ export const Wrapper = styled.div`
     display: block;
   }
   &::-webkit-scrollbar {
-    width: 3px;
+    width: 1px;
     background-color: ${COLOR.gray_borderColor};
     display: none;
   }

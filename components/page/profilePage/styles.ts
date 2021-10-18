@@ -7,7 +7,6 @@ export const Container = styled(BASE_CONTAINER)``;
 
 export const ProfileInfoWrap = styled.div`
   width: 100%;
-  padding-top: 30px;
   display: grid;
   grid-template-columns: 250px auto;
   margin-bottom: 40px;

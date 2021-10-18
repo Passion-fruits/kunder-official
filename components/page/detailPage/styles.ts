@@ -34,7 +34,6 @@ export const Container = styled(BASE_CONTAINER)`
 `;
 
 export const InforWrap = styled.div`
-  margin-top: 30px;
   width: 100%;
   display: grid;
   grid-template-columns: 250px auto;

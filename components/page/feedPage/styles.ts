@@ -10,7 +10,6 @@ export const Container = styled(BASE_CONTAINER)`
     font-size: 25px;
     font-weight: 800;
     color: ${COLOR.gray_text};
-    margin-top: 30px;
   }
   & .description {
     font-size: 18px;

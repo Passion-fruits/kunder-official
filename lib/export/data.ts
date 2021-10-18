@@ -1,3 +1,5 @@
+import { playList } from "../interfaces/playlist";
+
 export const data = [
   {
     song_id: 103,
@@ -211,5 +213,86 @@ export const data2 = [
     mood: "느낌있는",
     like: "1",
     comment: "1",
+  },
+];
+
+export const data3: playList[] = [
+  {
+    playlist_id: 7,
+    name: "레전드 플리",
+    cover_url:
+      "https://passion-fruits-bucket.s3.ap-northeast-2.amazonaws.com/playlist/4d9bbf03-252e-445c-8c2a-248dbad7382c%20canva-book-cover-lonely-journey-a3BEBl2BBic.jpg",
+    author: "정지원",
+    like: "0",
+  },
+  {
+    playlist_id: 8,
+    name: "좋은 노래만",
+    cover_url:
+      "https://passion-fruits-bucket.s3.ap-northeast-2.amazonaws.com/playlist/25e92066-9e33-47dc-9f1b-4852bc15c367%20Book%20lover-pana.png",
+    author: "정지원",
+    like: "0",
+  },
+  {
+    playlist_id: 9,
+    name: "싹 도노",
+    cover_url:
+      "https://passion-fruits-bucket.s3.ap-northeast-2.amazonaws.com/playlist/8d39f969-c69e-4a0e-b326-da2cf99a7b20%20musician-1658887_1920.jpg",
+    author: "정지원",
+    like: "0",
+  },
+  {
+    playlist_id: 10,
+    name: "곽도현 플리",
+    cover_url:
+      "https://passion-fruits-bucket.s3.ap-northeast-2.amazonaws.com/playlist/b32f412d-a3ff-4ba7-8424-b2e132f863d2%20%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C.jpg",
+    author: "정지원",
+    like: "0",
+  },
+  {
+    playlist_id: 11,
+    name: "sexy",
+    cover_url: null,
+    author: "정지원",
+    like: "0",
+  },
+  {
+    playlist_id: 12,
+    name: "test playlist",
+    cover_url: null,
+    author: "정지원",
+    like: "0",
+  },
+  {
+    playlist_id: 13,
+    name: "playlist cover test",
+    cover_url:
+      "https://passion-fruits-bucket.s3.ap-northeast-2.amazonaws.com/cover/c357fb10-663e-4296-aae3-c3920376cb80 maxresdefault.jpg",
+    author: "정지원",
+    like: "0",
+  },
+  {
+    playlist_id: 14,
+    name: "굿 노래",
+    cover_url:
+      "https://passion-fruits-bucket.s3.ap-northeast-2.amazonaws.com/cover/15284629-b0eb-47fb-831c-7bca0c75c09c 다운로드.jfif",
+    author: "정지원",
+    like: "0",
+  },
+  {
+    playlist_id: 18,
+    name: "BEST HIPHOP EVER🔥🔥",
+    cover_url:
+      "https://passion-fruits-bucket.s3.ap-northeast-2.amazonaws.com/cover/1dd94566-7a0d-4318-a05f-5fb9e4c02e55 3af0e55ea66ea69e35145fb108b4a636.jpg",
+    author: "정지원",
+    like: "0",
+  },
+  {
+    playlist_id: 19,
+    name: "섹스",
+    cover_url:
+      "https://passion-fruits-bucket.s3.ap-northeast-2.amazonaws.com/cover/b5acda61-6219-4c9f-88e3-af6e6ce12742 0916 해커톤 대회_포스터_최종 (1).jpg",
+    author: "정지원",
+    like: "0",
   },
 ];
