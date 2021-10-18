@@ -12,7 +12,7 @@ export const Wrapper = styled.div`
     width: 100%;
     height: 100%;
     border: 1px solid ${COLOR.gray_borderColor};
-    border-radius: 3px;
+    border-radius: 0px;
     overflow: hidden;
     & img {
       width: 100%;

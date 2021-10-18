@@ -4,7 +4,7 @@ import { BASE_WRAPPER, BASE_CONTAINER, COLOR, SIZE } from "../../styles/index";
 export const Wrapper = styled(BASE_WRAPPER)`
   position: fixed;
   z-index: 5;
-  border-bottom: 1px solid #1a1a1a;
+  border-bottom: 1px solid ${COLOR.gray_borderColor};
   background: ${COLOR.black_background};
   box-shadow: 0px 3px 10px rgb(0, 0, 0, 0.3);
   padding: 0;
