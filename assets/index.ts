@@ -18,3 +18,5 @@ export { default as PlayListAddIcon } from "./playListAdd";
 export { default as PlaylistIcon } from "./playlist";
 export { default as PeopleIcon } from "./people";
 export { default as SongIcon } from "./song";
+export { default as UploadIcon } from "./upload";
+export { default as HistoryIcon } from "./history";
