@@ -2,6 +2,7 @@ import { HeartIcon, PlaylistIcon, HistoryIcon } from "../../assets";
 import RouteMenu from "./RouteMenu";
 import UploadIcon from "./../../assets/upload";
 import HistoryMusic from "./HistoryMusic";
+import MyPlaylist from "./MyPlaylist";
 
 export default function LoginScreen() {
   return (
@@ -27,8 +28,7 @@ export default function LoginScreen() {
         route="upload"
       />
       <HistoryMusic />
-      <div className="line" />
-      <h1 className="line-title">내 플레이리스트</h1>
+      <MyPlaylist />
     </>
   );
 }

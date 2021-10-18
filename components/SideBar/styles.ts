@@ -9,14 +9,20 @@ export const Wrapper = styled.div`
   padding-bottom: ${SIZE.playbar_height + 30 + "px"};
   position: fixed;
   background-color: ${COLOR.black_background};
+  border-right: 1px solid ${COLOR.gray_borderColor};
   z-index: 2;
   overflow-y: scroll;
+  &:hover::-webkit-scrollbar {
+    display: block;
+  }
   &::-webkit-scrollbar {
-    width: 1px;
+    width: 3px;
     background-color: ${COLOR.gray_borderColor};
+    display: none;
   }
   &::-webkit-scrollbar-thumb {
-    background-color: ${COLOR.blue_text};
+    background-color: ${COLOR.green_subMain};
+    border-radius: 24px;
   }
   & .title {
     color: ${COLOR.gray_text};
@@ -159,6 +165,28 @@ export const HistoryMusicList = styled.div`
     & span {
       font-size: 15px;
       color: ${COLOR.gray_subText};
+    }
+  }
+`;
+
+export const PlaylistWrap = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-top: 25px;
+  gap: 25px;
+  & div {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    opacity: 0.7;
+    cursor: pointer;
+    &:hover {
+      opacity: 1;
+    }
+    & span {
+      color: ${COLOR.gray_text};
+      font-size: 17px;
     }
   }
 `;
