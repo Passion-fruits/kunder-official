@@ -23,10 +23,11 @@ export const SIZE = {
   playbar_height: 100,
   sidebar_size: 260,
   sidebar_padding: 25,
-  right_padding: 150,
+  right_padding: 50,
   card_size: pageSize / cardIndex - 13,
   card_indexing: cardIndex,
-  mac_width: "1450px",
+  medium_width: "1700px",
+  mac_width: "1400px",
 };
 
 export const BASE_WRAPPER = styled.div`
@@ -52,10 +53,15 @@ export const LIST_WRAPPER = styled.div`
   }%)`};
   justify-content: space-between;
   grid-row-gap: 30px;
-  @media screen and (max-width: 1300px) {
-    /*     grid-template-columns: ${`repeat(${SIZE.card_indexing - 1},${
-      100 / (SIZE.card_indexing - 1) - 1
-    }%)`}; */
+  @media screen and (max-width: ${SIZE.medium_width}) {
+    grid-template-columns: ${`repeat(${SIZE.card_indexing - 1},${
+      100 / (SIZE.card_indexing - 1) - 1.3
+    }%)`};
+  }
+  @media screen and (max-width: ${SIZE.mac_width}) {
+    grid-template-columns: ${`repeat(${SIZE.card_indexing - 2},${
+      100 / (SIZE.card_indexing - 2) - 1.3
+    }%)`};
   }
 `;
 

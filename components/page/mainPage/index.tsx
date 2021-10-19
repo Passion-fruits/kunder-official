@@ -1,12 +1,17 @@
+import { useEffect } from "react";
 import MusicCardList from "./MusicCardList";
 import PlaylistList from "./PlaylistList";
 import * as S from "./styles";
 
 export default function MainPage() {
+  useEffect(() => {
+    window.addEventListener("resize", () => {
+      console.log(window.innerWidth);
+    });
+  }, []);
   return (
     <S.Wrapper>
       <S.Container>
-        <S.Title style={{ marginBottom: "30px" }}>홈</S.Title>
         <MusicCardList />
         <PlaylistList />
         <MusicCardList />
