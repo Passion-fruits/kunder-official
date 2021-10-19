@@ -44,6 +44,7 @@ export default function MusicCardList({ option }: Props) {
                 artist={music.artist}
                 song_id={music.song_id}
                 cover_url={music.cover_url}
+                song_url={music.song_url}
               />
             ))}
           </>

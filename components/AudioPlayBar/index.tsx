@@ -114,12 +114,13 @@ export default function AudioPlayBar() {
     if (musicObj.song_url) {
       audio.current.src = musicObj.song_url;
       audio.current.play();
+      setIsPlay(true);
     }
     if (musicObj.short_url) {
       audio.current.src = musicObj.short_url;
       audio.current.play();
+      setIsPlay(true);
     }
-    setIsPlay(true);
   }, [musicObj]);
 
   // 오디오 시간 1초마다 가져와서 progress 변경

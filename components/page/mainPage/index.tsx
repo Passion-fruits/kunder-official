@@ -1,6 +1,4 @@
-import { useEffect } from "react";
 import MusicCardList from "./MusicCardList";
-import PlaylistList from "./PlaylistList";
 import * as S from "./styles";
 
 export default function MainPage() {
