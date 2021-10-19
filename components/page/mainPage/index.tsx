@@ -13,6 +13,8 @@ export default function MainPage() {
         <MusicCardList option="playlist" />
         <MusicCardList option="music" />
         <MusicCardList option="playlist" />
+        <MusicCardList option="music" />
+        <MusicCardList option="playlist" />
       </S.Container>
     </S.Wrapper>
   );
