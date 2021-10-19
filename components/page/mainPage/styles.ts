@@ -28,3 +28,9 @@ export const SubTitle = styled.h3`
   margin-top: 10px;
   margin-bottom: 20px;
 `;
+
+export const List = styled.div`
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+`;

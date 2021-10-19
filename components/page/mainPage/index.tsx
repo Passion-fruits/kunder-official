@@ -4,20 +4,15 @@ import PlaylistList from "./PlaylistList";
 import * as S from "./styles";
 
 export default function MainPage() {
-  useEffect(() => {
-    window.addEventListener("resize", () => {
-      console.log(window.innerWidth);
-    });
-  }, []);
   return (
     <S.Wrapper>
       <S.Container>
         <MusicCardList />
-        <PlaylistList />
+        {/*         <PlaylistList />
         <MusicCardList />
         <PlaylistList />
         <MusicCardList />
-        <PlaylistList />
+        <PlaylistList /> */}
       </S.Container>
     </S.Wrapper>
   );
