@@ -17,6 +17,8 @@ const mac_now_index_wrap_width = 450;
 export const Wrapper = styled(BASE_WRAPPER)`
   height: 100vh;
   overflow: hidden;
+  padding-left: 0;
+  padding-right: 0;
 `;
 
 export const Container = styled(BASE_CONTAINER)`
@@ -24,6 +26,7 @@ export const Container = styled(BASE_CONTAINER)`
   position: relative;
   display: flex;
   justify-content: center;
+  padding-left: 0;
 `;
 
 interface wrapProps {

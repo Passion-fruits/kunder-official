@@ -8,8 +8,11 @@ import AudioPlayBar from "../components/AudioPlayBar";
 import Header from "../components/header";
 import Modal from "../components/Modal";
 import SideBar from "../components/SideBar";
+import { useRouter } from "next/dist/client/router";
+import { useEffect } from "react";
 
 function App({ Component, pageProps }: AppProps) {
+  const router = useRouter();
   return (
     <>
       <Head>
@@ -34,7 +37,7 @@ function App({ Component, pageProps }: AppProps) {
       <SampleProvider>
         <Modal />
         <Header />
-        <SideBar />
+        {router.pathname !== "/lit" && <SideBar />}
         <ToastContainer position="top-right" autoClose={2000} />
         <Component {...pageProps} />
         <AudioPlayBar />

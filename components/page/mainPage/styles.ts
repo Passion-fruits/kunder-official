@@ -11,9 +11,9 @@ export const Container = styled(BASE_CONTAINER)`
 export const ListWrap = styled.div`
   display: flex;
   flex-direction: column;
-  margin-top: 60px;
+  margin-top: 80px;
   &:first-of-type {
-    margin-top: 30px;
+    margin-top: 0px;
   }
 `;
 

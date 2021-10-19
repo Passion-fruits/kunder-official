@@ -6,9 +6,7 @@ export default function MainPage() {
   return (
     <S.Wrapper>
       <S.Container>
-        <S.Title>홈</S.Title>
-        <MusicCardList />
-        <PlaylistList />
+        <S.Title style={{ marginBottom: "30px" }}>홈</S.Title>
         <MusicCardList />
         <PlaylistList />
         <MusicCardList />
