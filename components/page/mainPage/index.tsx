@@ -7,12 +7,12 @@ export default function MainPage() {
   return (
     <S.Wrapper>
       <S.Container>
-        <MusicCardList />
-        {/*         <PlaylistList />
-        <MusicCardList />
-        <PlaylistList />
-        <MusicCardList />
-        <PlaylistList /> */}
+        <MusicCardList option="music" />
+        <MusicCardList option="playlist" />
+        <MusicCardList option="music" />
+        <MusicCardList option="playlist" />
+        <MusicCardList option="music" />
+        <MusicCardList option="playlist" />
       </S.Container>
     </S.Wrapper>
   );
