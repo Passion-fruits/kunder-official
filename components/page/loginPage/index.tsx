@@ -11,7 +11,7 @@ import {
   USER_ID,
 } from "../../../lib/export/localstorage";
 import { genreList } from "../../../lib/export/genre";
-import Spiner from "../../Spiner";
+import Spiner from "../../common/Spiner";
 
 export default function LoginPage() {
   const router = useRouter();

@@ -1,7 +1,7 @@
-import MusicRowCardList from "../../MusicRowCardList";
+import MusicRowCardList from "../../common/MusicRowCardList";
 import * as S from "./styles";
 import { data } from "../../../lib/export/data";
-import MusicColumnCardList from "../../MusicColumnCardList";
+import MusicColumnCardList from "../../common/MusicColumnCardList";
 
 export default function SimilarMusic() {
   return (

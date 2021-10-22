@@ -1,4 +1,4 @@
-import MusicRowCardList from "../../MusicRowCardList";
+import MusicRowCardList from "../../common/MusicRowCardList";
 import * as S from "./styles";
 import PlaylistInformation from "./Information";
 import { useRouter } from "next/dist/client/router";

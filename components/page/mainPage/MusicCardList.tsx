@@ -1,8 +1,8 @@
 import { data2, data3 } from "../../../lib/export/data";
 import * as S from "./styles";
-import MusicColumnCard from "./../../MusicColumnCardList/MusicColumnCard/index";
+import MusicColumnCard from "../../common/MusicColumnCardList/MusicColumnCard/index";
 import { useCallback, useEffect, useState } from "react";
-import PlayListCard from "../../PlaylistCardList/PlaylistCard";
+import PlayListCard from "../../common/PlaylistCardList/PlaylistCard";
 
 interface Props {
   option: "music" | "playlist";

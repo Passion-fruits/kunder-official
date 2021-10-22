@@ -1,14 +1,14 @@
 import * as S from "./styles";
 import React from "react";
 import UserInforMenu from "./UserInforMenu";
-import MusicColumnCardList from "../../MusicColumnCardList";
+import MusicColumnCardList from "../../common/MusicColumnCardList";
 import { musicCardObject } from "../../../lib/interfaces/music";
 import profile from "../../../api/profile";
 import playlist from "../../../api/playlist";
-import PlaylistCardList from "../../PlaylistCardList";
+import PlaylistCardList from "../../common/PlaylistCardList";
 import { playList } from "../../../lib/interfaces/playlist";
 import { profileCard } from "../../../lib/interfaces/profile";
-import ProfileCardList from "../../ProfileCardList";
+import ProfileCardList from "../../common/Modal/ProfileCardList";
 import { useRouter } from "next/dist/client/router";
 
 export default function UserSubInformation({ user_id }) {

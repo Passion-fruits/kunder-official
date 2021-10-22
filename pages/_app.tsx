@@ -4,10 +4,10 @@ import { SampleProvider } from "./../lib/context/index";
 import Head from "next/head";
 import "../styles/globals.css";
 import "react-toastify/dist/ReactToastify.css";
-import AudioPlayBar from "../components/AudioPlayBar";
-import Header from "../components/header";
-import Modal from "../components/Modal";
-import SideBar from "../components/SideBar";
+import AudioPlayBar from "../components/common/AudioPlayBar";
+import Header from "../components/common/Header";
+import Modal from "../components/common/Modal";
+import SideBar from "../components/common/SideBar";
 import { useRouter } from "next/dist/client/router";
 import { useEffect } from "react";
 

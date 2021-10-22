@@ -1,4 +1,4 @@
-import MusicColumnCardList from "../../MusicColumnCardList";
+import MusicColumnCardList from "../../common/MusicColumnCardList";
 import * as S from "./styles";
 import { data, data2 } from "./../../../lib/export/data";
 

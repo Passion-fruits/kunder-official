@@ -7,7 +7,7 @@ import InputToCover from "./InputToCover";
 import SelectToGenreMood from "./selectToGenreMood";
 import InputToMusic from "./InputToMusic";
 import { useRouter } from "next/dist/client/router";
-import Spiner from "../../Spiner";
+import Spiner from "../../common/Spiner";
 import music from "../../../api/music";
 import { toast } from "react-toastify";
 import { USER_ID } from "../../../lib/export/localstorage";
