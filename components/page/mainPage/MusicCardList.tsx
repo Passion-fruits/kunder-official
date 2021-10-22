@@ -25,9 +25,10 @@ export default function MusicCardList({ option }: Props) {
 
   useEffect(() => {
     setIndexingToInnerWidth();
-    window.addEventListener("resize", () => {
-      setIndexingToInnerWidth();
-    });
+    window.addEventListener("resize", setIndexingToInnerWidth);
+    return () => {
+      window.removeEventListener("resize", setIndexingToInnerWidth);
+    };
   }, []);
 
   return (

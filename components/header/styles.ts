@@ -46,11 +46,6 @@ export const MenuWrap = styled.div`
       background-color: ${COLOR.black_subBackground};
     }
   }
-  & .btn-container {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-  }
   & .login-btn {
     padding: 10px 17px;
     background-color: ${COLOR.black_subBackground};
@@ -69,6 +64,39 @@ export const MenuWrap = styled.div`
     border-radius: 80%;
     border: 1px solid ${COLOR.gray_borderColor};
     cursor: pointer;
+  }
+`;
+
+export const ProfileContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  position: relative;
+`;
+
+export const ProfileMenu = styled.div`
+  position: absolute;
+  background: ${COLOR.black_subBackground};
+  border-radius: 10px;
+  margin-top: 50px;
+  width: 150px;
+  box-shadow: 0px 0px 10px rgb(0, 0, 0, 0.3);
+  overflow: hidden;
+  & button {
+    width: 100%;
+    padding: 12px 0;
+    color: ${COLOR.gray_text};
+    background-color: ${COLOR.black_subBackground};
+    font-size: 17px;
+    font-weight: bold;
+    border-bottom: 1px solid #606060;
+    &:hover {
+      background-color: #2b2b2b;
+    }
+    &:last-of-type {
+      border: none;
+      color: ${COLOR.red_text};
+    }
   }
 `;
 

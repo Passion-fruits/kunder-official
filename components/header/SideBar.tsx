@@ -1,12 +1,12 @@
 import * as S from "./styles";
 import { useRouter } from "next/dist/client/router";
-import React from "react";
+import React, { MouseEvent } from "react";
 import {
   ACCESS_TOKEN,
   REFRESH_TOKEN,
   USER_ID,
 } from "../../lib/export/localstorage";
-import Link from "./Link";
+import Link from "next/Link";
 import profile from "../../api/profile";
 import { COLOR } from "../../styles/index";
 import SearchBar from "./SearchBar";
@@ -15,6 +15,7 @@ export default function SideBar() {
   const router = useRouter();
   const [isLogin, setIsLogin] = React.useState<boolean>();
   const [profileImg, setProfileImg] = React.useState<string>(null);
+  const [isProfileModal, setIsProfileModal] = React.useState<boolean>(false);
 
   const logout = React.useCallback(() => {
     setProfileImg(null);
@@ -43,23 +44,36 @@ export default function SideBar() {
     }
   }, [router]);
 
+  React.useEffect(() => {
+    window.addEventListener("click", (event: any) => {
+      if (event.target.id === "header_profile_img") {
+        setIsProfileModal(true);
+      } else {
+        setIsProfileModal(false);
+      }
+    });
+  }, []);
+
   return (
     <S.MenuWrap>
       <SearchBar />
-      {/*      <Link menu="음악 업로드" route="upload" color={COLOR.green_subMain} /> */}
       {isLogin ? (
-        <div className="btn-container">
-          <button className="login-btn" onClick={logout}>
-            로그아웃
-          </button>
+        <S.ProfileContainer>
           <img
-            onClick={() =>
-              router.push(`/profile?id=${localStorage.getItem(USER_ID)}`)
-            }
             className="mypage-btn"
+            id="header_profile_img"
             src={profileImg}
           />
-        </div>
+          {isProfileModal && (
+            <S.ProfileMenu>
+              <Link href={`/profile?id=${localStorage.getItem(USER_ID)}`}>
+                <button>내 프로필</button>
+              </Link>
+              <button>내 지갑</button>
+              <button onClick={logout}>로그아웃</button>
+            </S.ProfileMenu>
+          )}
+        </S.ProfileContainer>
       ) : (
         <button className="login-btn" onClick={() => router.push("/login")}>
           로그인/가입
