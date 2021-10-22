@@ -49,11 +49,26 @@ export default function MusicColumnCard({
     });
   };
 
+  const setCoverImgToLoading = (): any =>
+    new Promise((resolve) => {
+      const img = new Image();
+      img.src = cover_url;
+      img.onload = () => {
+        resolve({
+          isOnload: true,
+        });
+      };
+    });
+
   React.useEffect(() => {
-    const img = new Image();
-    img.src = cover_url;
-    img.onload = () => {
-      setCoverImg(cover_url);
+    let isComponentMounted = true;
+    setCoverImgToLoading().then((res) => {
+      if (isComponentMounted) {
+        if (res.isOnload) setCoverImg(cover_url);
+      }
+    });
+    return () => {
+      isComponentMounted = false;
     };
   }, []);
 
