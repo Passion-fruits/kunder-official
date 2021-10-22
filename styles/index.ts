@@ -20,7 +20,7 @@ const cardIndex = 6;
 export const SIZE = {
   header_height: 60,
   page_size: pageSize,
-  playbar_height: 100,
+  playbar_height: 90,
   sidebar_size: 260,
   sidebar_padding: 25,
   right_padding: 50,

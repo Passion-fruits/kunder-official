@@ -26,8 +26,9 @@ export const Info = styled.div`
   gap: 17px;
   z-index: 2;
   & .cover-image {
-    width: 60px;
-    height: 60px;
+    width: 50px;
+    height: 50px;
+    border-radius: 3px;
     cursor: pointer;
     transition: 0.4s;
     &:hover {
@@ -35,8 +36,9 @@ export const Info = styled.div`
     }
   }
   & .none-img {
-    width: 60px;
-    height: 60px;
+    width: 50px;
+    height: 50px;
+    border-radius: 3px;
     background-color: gray;
   }
   & div {

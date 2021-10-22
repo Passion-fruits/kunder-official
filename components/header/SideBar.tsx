@@ -46,7 +46,7 @@ export default function SideBar() {
   return (
     <S.MenuWrap>
       <SearchBar />
-      {/*       <Link menu="음악 업로드" route="upload" color={COLOR.green_subMain} /> */}
+      {/*      <Link menu="음악 업로드" route="upload" color={COLOR.green_subMain} /> */}
       {isLogin ? (
         <div className="btn-container">
           <button className="login-btn" onClick={logout}>

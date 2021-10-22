@@ -1,3 +1,4 @@
+import { COLOR } from "./../styles/index";
 export default function SearchIcon({ callback }) {
   return (
     <svg
@@ -18,7 +19,7 @@ export default function SearchIcon({ callback }) {
           d="M20.5,12.5a8,8,0,1,1-8-8A8,8,0,0,1,20.5,12.5Z"
           transform="translate(-4.5 -4.5)"
           fill="none"
-          stroke="#848484"
+          stroke={COLOR.gray_subText}
           strokeLinecap="round"
           strokeLinejoin="round"
           strokeWidth="2"
@@ -29,7 +30,7 @@ export default function SearchIcon({ callback }) {
           d="M29.325,29.325l-4.35-4.35"
           transform="translate(-11.325 -11.325)"
           fill="none"
-          stroke="#848484"
+          stroke={COLOR.gray_subText}
           strokeLinecap="round"
           strokeLinejoin="round"
           strokeWidth="2"

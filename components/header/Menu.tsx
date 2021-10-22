@@ -10,7 +10,6 @@ export default function Menu() {
       <h1 className="web-logo" onClick={() => router.push("/")}>
         kunder
       </h1>
-      <Link menu="둘러보기" route="" />
       <Link menu="내 피드" route="feed" />
       <Link menu="쿤더차트" route="" />
       <Link menu="🔥LIT" route="lit" color={COLOR.red_text} />
