@@ -109,6 +109,7 @@ export default function ControlMusic({ musicObj }: props) {
         setCommentList(res.data);
       })
       .catch(() => {
+        setCommentList([]);
         return;
       });
   }, [musicObj.song_id]);
