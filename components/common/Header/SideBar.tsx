@@ -8,7 +8,6 @@ import {
 } from "../../../lib/export/localstorage";
 import Link from "next/Link";
 import profile from "../../../api/profile";
-import { COLOR } from "../../../styles/index";
 import SearchBar from "./SearchBar";
 
 export default function SideBar() {
