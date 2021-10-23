@@ -6,7 +6,7 @@ import {
   REFRESH_TOKEN,
   USER_ID,
 } from "../../../lib/export/localstorage";
-import Link from "next/Link";
+import Link from "next/link";
 import profile from "../../../api/profile";
 import SearchBar from "./SearchBar";
 
