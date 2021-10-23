@@ -10,15 +10,19 @@ import { keyframes } from "@emotion/react";
 
 const gap = 30;
 const wrap_width = 400;
-const mac_wrap_width = 350;
+const mac_wrap_width = 300;
 const now_index_wrap_width = 550;
-const mac_now_index_wrap_width = 450;
+const mac_now_index_wrap_width = 400;
 
 export const Wrapper = styled(BASE_WRAPPER)`
   height: 100vh;
   overflow: hidden;
   padding-left: 0;
   padding-right: 0;
+  @media screen and (max-width: ${SIZE.medium_width}) {
+    padding-left: 0;
+    padding-right: 0;
+  }
 `;
 
 export const Container = styled(BASE_CONTAINER)`
@@ -27,6 +31,9 @@ export const Container = styled(BASE_CONTAINER)`
   display: flex;
   justify-content: center;
   padding-left: 0;
+  @media screen and (max-width: ${SIZE.medium_width}) {
+    padding-left: 0;
+  }
 `;
 
 interface wrapProps {
@@ -41,7 +48,7 @@ export const LitCardWrap = styled.div<wrapProps>`
   gap: ${`${gap}px`};
   transition: 0.5s;
   transform: ${(res) => `translateX(-${res.indexNum * (gap + wrap_width)}px)`};
-  @media screen and (max-width: ${SIZE.mac_width}) {
+  @media screen and (max-width: ${SIZE.medium_width}) {
     width: ${`${mac_now_index_wrap_width}px`};
     transform: ${(res) =>
       `translateX(-${res.indexNum * (gap + mac_wrap_width)}px)`};
@@ -56,8 +63,11 @@ export const LitCard = styled.div`
   & #now-index-wrap {
     width: ${`${now_index_wrap_width}px`};
     opacity: 1;
-    @media screen and (max-width: ${SIZE.mac_width}) {
+    @media screen and (max-width: ${SIZE.medium_width}) {
       width: ${`${mac_now_index_wrap_width}px`};
+    }
+    & .on-cover-info {
+      opacity: 1;
     }
   }
 
@@ -69,7 +79,7 @@ export const LitCard = styled.div`
     position: relative;
     transition: 0.5s;
 
-    @media screen and (max-width: ${SIZE.mac_width}) {
+    @media screen and (max-width: ${SIZE.medium_width}) {
       width: ${`${mac_wrap_width}px`};
     }
 
@@ -84,6 +94,8 @@ export const LitCard = styled.div`
       }
 
       & .on-cover-info {
+        opacity: 0;
+        transition: 0.5s;
         width: 100%;
         height: 100%;
         position: absolute;
@@ -103,6 +115,9 @@ export const LitCard = styled.div`
     font-weight: 800;
     color: ${COLOR.gray_text};
     margin-top: 20px;
+    @media screen and (max-width: ${SIZE.medium_width}) {
+      font-size: 20px;
+    }
   }
 
   & .description {
@@ -111,6 +126,9 @@ export const LitCard = styled.div`
     color: ${COLOR.gray_subText};
     margin-top: 10px;
     line-height: 24px;
+    @media screen and (max-width: ${SIZE.medium_width}) {
+      font-size: 15px;
+    }
   }
 `;
 
@@ -156,6 +174,10 @@ export const MusicSubInfoWrap = styled.div`
       height: 60px;
       border-radius: 80%;
       border: 1px solid ${COLOR.gray_borderColor};
+      @media screen and (max-width: ${SIZE.medium_width}) {
+        width: 50px;
+        height: 50px;
+      }
     }
   }
 
@@ -165,6 +187,9 @@ export const MusicSubInfoWrap = styled.div`
     & span {
       font-size: 16px;
       color: ${COLOR.gray_text};
+      @media screen and (max-width: ${SIZE.medium_width}) {
+        font-size: 14px;
+      }
       ::before {
         content: "#";
       }
@@ -178,6 +203,11 @@ export const MusicSubInfoWrap = styled.div`
     color: ${COLOR.green_subMain};
     border-radius: 24px;
     border: 2px solid ${COLOR.green_subMain};
+    @media screen and (max-width: ${SIZE.medium_width}) {
+      font-size: 14px;
+      padding: 7px 0;
+      width: 90px;
+    }
   }
 `;
 

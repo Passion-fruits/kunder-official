@@ -1,5 +1,10 @@
 import styled from "@emotion/styled";
-import { BASE_WRAPPER, BASE_CONTAINER, COLOR } from "../../../styles/index";
+import {
+  BASE_WRAPPER,
+  BASE_CONTAINER,
+  COLOR,
+  SIZE,
+} from "../../../styles/index";
 
 export const Wrapper = styled(BASE_WRAPPER)``;
 
@@ -16,10 +21,17 @@ export const BASE_WRAP = styled.div`
 export const InforWrap = styled(BASE_WRAP)`
   display: grid;
   grid-template-columns: 250px auto;
+  @media screen and (max-width: ${SIZE.medium_width}) {
+    grid-template-columns: 200px auto;
+  }
   & .cover-image {
     width: 250px;
     height: 250px;
     border: 1px solid ${COLOR.gray_borderColor};
+    @media screen and (max-width: ${SIZE.medium_width}) {
+      width: 200px;
+      height: 200px;
+    }
   }
   & .infor-container {
     width: 100%;
@@ -36,10 +48,16 @@ export const InforWrap = styled(BASE_WRAP)`
       font-weight: 500;
       color: ${COLOR.gray_text};
       font-size: 17px;
+      @media screen and (max-width: ${SIZE.medium_width}) {
+        font-size: 15px;
+      }
     }
     & span {
       font-size: 17px;
       color: ${COLOR.gray_subText};
+      @media screen and (max-width: ${SIZE.medium_width}) {
+        font-size: 15px;
+      }
       & b {
         font-weight: 500;
       }
@@ -50,15 +68,24 @@ export const InforWrap = styled(BASE_WRAP)`
     font-weight: 800;
     color: white;
     margin-top: 10px;
+    @media screen and (max-width: ${SIZE.medium_width}) {
+      font-size: 40px;
+    }
   }
   & .playlist-sub-infor {
     display: flex;
     align-items: center;
     gap: 15px;
     margin-top: 25px;
+    @media screen and (max-width: ${SIZE.medium_width}) {
+      margin-top: 20px;
+    }
     & h3 {
       font-size: 18px;
       color: ${COLOR.gray_subText};
+      @media screen and (max-width: ${SIZE.medium_width}) {
+        font-size: 15px;
+      }
       & b {
         color: ${COLOR.gray_text};
         cursor: pointer;
@@ -85,6 +112,10 @@ export const InforWrap = styled(BASE_WRAP)`
       height: 55px;
       border-radius: 80%;
       background: ${COLOR.green_main};
+      @media screen and (max-width: ${SIZE.medium_width}) {
+        width: 50px;
+        height: 50px;
+      }
       & svg {
         margin-left: 5px;
       }

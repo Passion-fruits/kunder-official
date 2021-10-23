@@ -12,8 +12,13 @@ export const Wrapper = styled.div`
   border-right: 1px solid ${COLOR.gray_borderColor};
   z-index: 2;
   overflow-y: scroll;
-  @media screen and (max-width: ${SIZE.mac_width}) {
+  @media screen and (max-width: ${SIZE.medium_width}) {
     width: ${SIZE.mac_sidebar_size + "px"};
+  }
+  @media screen and (max-width: ${SIZE.medium_width}) {
+    width: ${SIZE.mac_sidebar_size + "px"};
+    padding: ${SIZE.header_height + 25 + "px"}
+      ${SIZE.mac_sidebar_padding + "px"};
   }
   &:hover::-webkit-scrollbar {
     display: block;
@@ -31,6 +36,9 @@ export const Wrapper = styled.div`
     color: ${COLOR.gray_text};
     font-size: 18px;
     font-weight: 500;
+    @media screen and (max-width: ${SIZE.medium_width}) {
+      font-size: 15px;
+    }
     & b {
       font-weight: 800;
     }
@@ -39,6 +47,9 @@ export const Wrapper = styled.div`
     color: ${COLOR.gray_subText};
     font-size: 15px;
     margin-top: 7px;
+    @media screen and (max-width: ${SIZE.medium_width}) {
+      font-size: 13px;
+    }
   }
   & .login-btn {
     width: 100%;
@@ -48,18 +59,25 @@ export const Wrapper = styled.div`
     font-size: 16px;
     margin-top: 25px;
     margin-bottom: 20px;
+    @media screen and (max-width: ${SIZE.medium_width}) {
+      font-size: 14px;
+      padding: 8px 0;
+    }
   }
   & .line-title {
     font-size: 17px;
     padding-top: 10px;
     color: ${COLOR.gray_text};
-    ::before {
+    @media screen and (max-width: ${SIZE.medium_width}) {
+      font-size: 15px;
+    }
+    &::before {
       content: "";
       width: 50px;
       height: 2px;
       background: ${COLOR.green_main};
       position: absolute;
-      transform: translateY(-10px);
+      transform: translateY(-13px);
     }
   }
   & .line {
@@ -87,6 +105,9 @@ export const AddFuncMenu = styled.div`
   & span {
     color: ${COLOR.gray_subText};
     font-size: 16px;
+    @media screen and (max-width: ${SIZE.medium_width}) {
+      font-size: 14px;
+    }
   }
 `;
 
@@ -109,6 +130,9 @@ export const RouteMenu = styled.div`
     font-size: 17px;
     font-weight: bold;
     color: ${COLOR.gray_text};
+    @media screen and (max-width: ${SIZE.medium_width}) {
+      font-size: 15px;
+    }
   }
 `;
 
@@ -129,6 +153,10 @@ export const HistoryMusicList = styled.div`
     cursor: pointer;
     border-radius: 5px;
     overflow: hidden;
+    @media screen and (max-width: ${SIZE.medium_width}) {
+      width: 40px;
+      height: 40px;
+    }
     & img {
       width: 100%;
       height: 100%;
@@ -161,6 +189,9 @@ export const HistoryMusicList = styled.div`
       color: ${COLOR.gray_text};
       margin-bottom: 5px;
       cursor: pointer;
+      @media screen and (max-width: ${SIZE.medium_width}) {
+        font-size: 15px;
+      }
       &:hover {
         opacity: 0.8;
       }
@@ -168,6 +199,9 @@ export const HistoryMusicList = styled.div`
     & span {
       font-size: 15px;
       color: ${COLOR.gray_subText};
+      @media screen and (max-width: ${SIZE.medium_width}) {
+        font-size: 13px;
+      }
     }
   }
 `;
@@ -190,6 +224,9 @@ export const PlaylistWrap = styled.div`
     & span {
       color: ${COLOR.gray_text};
       font-size: 17px;
+      @media screen and (max-width: ${SIZE.medium_width}) {
+        font-size: 15px;
+      }
     }
   }
 `;

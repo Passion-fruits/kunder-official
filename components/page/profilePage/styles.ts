@@ -1,5 +1,10 @@
 import styled from "@emotion/styled";
-import { BASE_WRAPPER, BASE_CONTAINER, COLOR } from "../../../styles/index";
+import {
+  BASE_WRAPPER,
+  BASE_CONTAINER,
+  COLOR,
+  SIZE,
+} from "../../../styles/index";
 
 export const Wrapper = styled(BASE_WRAPPER)``;
 
@@ -10,11 +15,18 @@ export const ProfileInfoWrap = styled.div`
   display: grid;
   grid-template-columns: 250px auto;
   margin-bottom: 40px;
+  @media screen and (max-width: ${SIZE.medium_width}) {
+    grid-template-columns: 200px auto;
+  }
   & .cover-img {
     width: 250px;
     height: 250px;
     border-radius: 80%;
     border: 1px solid ${COLOR.gray_borderColor};
+    @media screen and (max-width: ${SIZE.medium_width}) {
+      width: 200px;
+      height: 200px;
+    }
   }
 `;
 
@@ -51,6 +63,10 @@ export const InfoContainer = styled.div`
     font-size: 17px;
     margin-top: 30px;
     line-height: 23px;
+    @media screen and (max-width: ${SIZE.medium_width}) {
+      font-size: 15px;
+      margin-top: 20px;
+    }
   }
   & .followCntContainer {
     margin-top: 30px;
@@ -70,13 +86,22 @@ export const InfoContainer = styled.div`
       justify-content: center;
       align-items: center;
       gap: 5px;
+      @media screen and (max-width: ${SIZE.medium_width}) {
+        height: 65px;
+      }
       & h3 {
         font-size: 23px;
         color: white;
+        @media screen and (max-width: ${SIZE.medium_width}) {
+          font-size: 18px;
+        }
       }
       & span {
         color: ${COLOR.gray_subText};
         font-size: 15px;
+        @media screen and (max-width: ${SIZE.medium_width}) {
+          font-size: 13px;
+        }
       }
     }
   }
@@ -95,6 +120,9 @@ export const InfoContainer = styled.div`
       justify-content: center;
       align-items: center;
       gap: 13px;
+      @media screen and (max-width: ${SIZE.medium_width}) {
+        font-size: 15px;
+      }
     }
   }
 `;
@@ -119,6 +147,9 @@ export const FlexContainer = styled.div`
     & .content {
       color: ${COLOR.gray_subText};
       font-size: 17px;
+      @media screen and (max-width: ${SIZE.medium_width}) {
+        font-size: 15px;
+      }
       & b {
         color: white;
       }
@@ -154,4 +185,7 @@ export const InforMenu = styled.span<InforMenuProps>`
   border-bottom: ${(res) =>
     `3px solid ${res.isCheck ? COLOR.green_subMain : "transparent"}`};
   cursor: pointer;
+  @media screen and (max-width: ${SIZE.medium_width}) {
+    font-size: 15px;
+  }
 `;

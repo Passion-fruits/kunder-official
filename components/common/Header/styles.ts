@@ -15,8 +15,8 @@ export const Wrapper = styled(BASE_WRAPPER)`
   padding: 0;
   padding-right: ${SIZE.right_padding + "px"};
   padding-left: ${SIZE.sidebar_padding + "px"};
-  @media screen and (max-width: ${SIZE.mac_width}) {
-    padding-left: ${SIZE.sidebar_padding + "px"};
+  @media screen and (max-width: ${SIZE.medium_width}) {
+    padding-left: ${SIZE.mac_sidebar_padding + "px"};
   }
 `;
 
@@ -27,7 +27,7 @@ export const Container = styled(BASE_CONTAINER)`
   padding: 0px;
   height: ${`${SIZE.header_height}px`};
   width: 100%;
-  @media screen and (max-width: ${SIZE.mac_width}) {
+  @media screen and (max-width: ${SIZE.medium_width}) {
     padding: 0;
   }
 `;
@@ -43,6 +43,9 @@ export const MenuWrap = styled.div`
     font-family: "Agency FB";
     cursor: pointer;
     /* 추후 변경 해야함 font family 안먹음 */
+    @media screen and (max-width: ${SIZE.medium_width}) {
+      font-size: 25px;
+    }
   }
   & .menu {
     text-transform: capitalize;
@@ -53,6 +56,9 @@ export const MenuWrap = styled.div`
     padding: 10px 10px;
     border-radius: 7px;
     transition: 0.5s;
+    @media screen and (max-width: ${SIZE.medium_width}) {
+      font-size: 15px;
+    }
     &:hover {
       background-color: ${COLOR.black_subBackground};
     }
@@ -65,6 +71,10 @@ export const MenuWrap = styled.div`
     border-radius: 5px;
     transition: 0.5s;
     opacity: 0.7;
+    @media screen and (max-width: ${SIZE.medium_width}) {
+      font-size: 14px;
+      padding: 8px 12px;
+    }
     &:hover {
       opacity: 1;
     }
@@ -75,6 +85,10 @@ export const MenuWrap = styled.div`
     border-radius: 80%;
     border: 1px solid ${COLOR.gray_borderColor};
     cursor: pointer;
+    @media screen and (max-width: ${SIZE.medium_width}) {
+      width: 35px;
+      height: 35px;
+    }
   }
 `;
 
@@ -93,6 +107,9 @@ export const ProfileMenu = styled.div`
   width: 150px;
   box-shadow: 0px 0px 10px rgb(0, 0, 0, 0.3);
   overflow: hidden;
+  @media screen and (max-width: ${SIZE.medium_width}) {
+    width: 120px;
+  }
   & button {
     width: 100%;
     padding: 12px 0;
@@ -101,6 +118,10 @@ export const ProfileMenu = styled.div`
     font-size: 17px;
     font-weight: bold;
     border-bottom: 1px solid #606060;
+    @media screen and (max-width: ${SIZE.medium_width}) {
+      font-size: 14px;
+      padding: 8px 0;
+    }
     &:hover {
       background-color: #2b2b2b;
     }

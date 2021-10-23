@@ -10,6 +10,7 @@ import { playList } from "../../../lib/interfaces/playlist";
 import { profileCard } from "../../../lib/interfaces/profile";
 import ProfileCardList from "../../common/Modal/ProfileCardList";
 import { useRouter } from "next/dist/client/router";
+import { isScreenBottom } from "./../../../lib/util/isScreenBottom";
 
 export default function UserSubInformation({ user_id }) {
   const router = useRouter();
@@ -17,6 +18,7 @@ export default function UserSubInformation({ user_id }) {
   const [playlistArr, setPlaylistArr] = React.useState<playList[]>([]);
   const [followerArr, setFollowerArr] = React.useState<profileCard[]>([]);
   const [followingArr, setFollowingArr] = React.useState<profileCard[]>([]);
+  const [page, setPage] = React.useState<number>(1);
   const [nowMenu, setNowMen] = React.useState<
     "song" | "playlist" | "follower" | "following"
   >("song");
@@ -33,15 +35,16 @@ export default function UserSubInformation({ user_id }) {
   );
 
   const getUserMusic = React.useCallback(() => {
+    console.log(page);
     profile
-      .getUserMusic(user_id, 1)
+      .getUserMusic(user_id, page)
       .then((res) => {
-        setMusicList(res.data.songs);
+        setMusicList(musicList.concat(res.data.songs));
       })
       .catch(() => {
         return;
       });
-  }, [user_id]);
+  }, [user_id, page, musicList]);
 
   const getUserPlaylist = React.useCallback(() => {
     playlist
@@ -52,7 +55,7 @@ export default function UserSubInformation({ user_id }) {
       .catch(() => {
         return;
       });
-  }, [user_id]);
+  }, [user_id, page]);
 
   const getUserFollower = React.useCallback(() => {
     profile
@@ -63,7 +66,7 @@ export default function UserSubInformation({ user_id }) {
       .catch(() => {
         return;
       });
-  }, [user_id]);
+  }, [user_id, page]);
 
   const getUserFollowing = React.useCallback(() => {
     profile
@@ -74,7 +77,7 @@ export default function UserSubInformation({ user_id }) {
       .catch(() => {
         return;
       });
-  }, [user_id]);
+  }, [user_id, page]);
 
   React.useEffect(() => {
     switch (nowMenu) {
@@ -91,7 +94,21 @@ export default function UserSubInformation({ user_id }) {
         getUserFollowing();
         return;
     }
+  }, [user_id, nowMenu, page]);
+
+  React.useEffect(() => {
+    setPage(1);
   }, [user_id, nowMenu]);
+
+  React.useEffect(() => {
+    let page = 1;
+    window.addEventListener("scroll", () => {
+      if (isScreenBottom()) {
+        page += 1;
+        setPage(page);
+      }
+    });
+  }, []);
 
   React.useEffect(() => {
     setMusicList([]);

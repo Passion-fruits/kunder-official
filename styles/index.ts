@@ -26,9 +26,9 @@ export const SIZE = {
   right_padding: 50,
   card_size: pageSize / cardIndex - 13,
   card_indexing: cardIndex,
-  medium_width: "1700px",
-  mac_width: "1400px",
-  mac_sidebar_size: 230,
+  medium_width: "1550px",
+  mac_sidebar_size: 210,
+  mac_sidebar_padding: 10,
 };
 
 export const BASE_WRAPPER = styled.div`
@@ -37,7 +37,7 @@ export const BASE_WRAPPER = styled.div`
   justify-content: center;
   padding-left: ${SIZE.sidebar_size + "px"};
   padding-right: ${SIZE.right_padding + "px"};
-  @media screen and (max-width: ${SIZE.mac_width}) {
+  @media screen and (max-width: ${SIZE.medium_width}) {
     padding-left: ${SIZE.mac_sidebar_size + "px"};
   }
 `;
@@ -46,28 +46,25 @@ export const BASE_CONTAINER = styled.div`
   width: 100%;
   padding-top: ${`${SIZE.header_height + 30}px`};
   padding-bottom: ${`${SIZE.playbar_height + 50}px`};
-  padding-left: ${SIZE.sidebar_padding + 50 + "px"};
-  @media screen and (max-width: ${SIZE.mac_width}) {
-    padding-left: ${SIZE.sidebar_padding + 30 + "px"};
-  }
+  padding-left: ${SIZE.sidebar_padding + "px"};
 `;
 
 export const LIST_WRAPPER = styled.div`
   width: 100%;
   display: grid;
   grid-template-columns: ${`repeat(${SIZE.card_indexing},${
-    100 / SIZE.card_indexing - 1.3
+    100 / SIZE.card_indexing - 1.2
   }%)`};
   justify-content: space-between;
   grid-row-gap: 30px;
-  @media screen and (max-width: ${SIZE.medium_width}) {
+  @media screen and (max-width: 1500px) {
     grid-template-columns: ${`repeat(${SIZE.card_indexing - 1},${
-      100 / (SIZE.card_indexing - 1) - 1.3
+      100 / (SIZE.card_indexing - 1) - 1.2
     }%)`};
   }
   @media screen and (max-width: 1300px) {
     grid-template-columns: ${`repeat(${SIZE.card_indexing - 2},${
-      100 / (SIZE.card_indexing - 2) - 1.3
+      100 / (SIZE.card_indexing - 2) - 1.2
     }%)`};
   }
 `;

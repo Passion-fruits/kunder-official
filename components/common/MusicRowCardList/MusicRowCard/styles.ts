@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import { COLOR } from "../../../../styles/index";
+import { COLOR, SIZE } from "../../../../styles/index";
 
 export const Wrapper = styled.div`
   width: 100%;
@@ -8,9 +8,6 @@ export const Wrapper = styled.div`
   padding: 8px 0px;
   transition: 0.3s;
   position: relative;
-  :last-of-type {
-    border: none;
-  }
   & svg {
     cursor: pointer;
     opacity: 0.7;
@@ -25,6 +22,9 @@ export const Wrapper = styled.div`
     font-size: 17px;
     font-weight: 600;
     width: 30px;
+    @media screen and (max-width: ${SIZE.medium_width}) {
+      font-size: 15px;
+    }
   }
   & .cover-image {
     width: 50px;
@@ -34,6 +34,10 @@ export const Wrapper = styled.div`
     border-radius: 3px;
     margin-left: 10px;
     transition: 0.3s;
+    @media screen and (max-width: ${SIZE.medium_width}) {
+      width: 40px;
+      height: 40px;
+    }
     &:hover {
       opacity: 0.8;
     }
@@ -53,6 +57,9 @@ export const Wrapper = styled.div`
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
+      @media screen and (max-width: ${SIZE.medium_width}) {
+        font-size: 15px;
+      }
       &:hover {
         opacity: 0.8;
       }
@@ -61,6 +68,9 @@ export const Wrapper = styled.div`
       color: ${COLOR.gray_subText};
       font-size: 13px;
       margin-top: 2px;
+      @media screen and (max-width: ${SIZE.medium_width}) {
+        font-size: 11px;
+      }
     }
   }
   & .right {
@@ -79,6 +89,10 @@ export const Wrapper = styled.div`
       border: 2px solid ${COLOR.gray_borderColor};
       color: ${COLOR.gray_subText};
       font-size: 15px;
+      @media screen and (max-width: ${SIZE.medium_width}) {
+        font-size: 14px;
+        padding: 5px 12px;
+      }
     }
   }
   & .add-playlist {

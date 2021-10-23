@@ -1,5 +1,10 @@
 import styled from "@emotion/styled";
-import { BASE_WRAPPER, BASE_CONTAINER, COLOR } from "../../../styles/index";
+import {
+  BASE_WRAPPER,
+  BASE_CONTAINER,
+  COLOR,
+  SIZE,
+} from "../../../styles/index";
 
 export const Wrapper = styled(BASE_WRAPPER)``;
 
@@ -20,6 +25,9 @@ export const ListWrap = styled.div`
 export const Title = styled.h1`
   font-size: 25px;
   color: ${COLOR.gray_text};
+  @media screen and (max-width: ${SIZE.medium_width}) {
+    font-size: 20px;
+  }
 `;
 
 export const SubTitle = styled.h3`
@@ -27,6 +35,9 @@ export const SubTitle = styled.h3`
   color: ${COLOR.gray_subText};
   margin-top: 10px;
   margin-bottom: 20px;
+  @media screen and (max-width: ${SIZE.medium_width}) {
+    font-size: 15px;
+  }
 `;
 
 export const List = styled.div`
