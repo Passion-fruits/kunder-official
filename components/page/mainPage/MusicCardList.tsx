@@ -13,7 +13,7 @@ export default function MusicCardList({ option }: Props) {
 
   const setIndexingToInnerWidth = useCallback(() => {
     console.log(window.innerWidth);
-    if (window.innerWidth < 1300) {
+    if (window.innerWidth < 1200) {
       setIndexing(4);
       return;
     }

@@ -62,7 +62,7 @@ export const LIST_WRAPPER = styled.div`
       100 / (SIZE.card_indexing - 1) - 1.2
     }%)`};
   }
-  @media screen and (max-width: 1300px) {
+  @media screen and (max-width: 1200px) {
     grid-template-columns: ${`repeat(${SIZE.card_indexing - 2},${
       100 / (SIZE.card_indexing - 2) - 1.2
     }%)`};
