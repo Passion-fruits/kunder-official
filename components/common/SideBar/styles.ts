@@ -12,6 +12,9 @@ export const Wrapper = styled.div`
   border-right: 1px solid ${COLOR.gray_borderColor};
   z-index: 2;
   overflow-y: scroll;
+  @media screen and (max-width: ${SIZE.mac_width}) {
+    width: ${SIZE.mac_sidebar_size + "px"};
+  }
   &:hover::-webkit-scrollbar {
     display: block;
   }

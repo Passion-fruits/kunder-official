@@ -12,7 +12,7 @@ export default function MusicCardList({ option }: Props) {
   const [indexing, setIndexing] = useState<number>(6);
 
   const setIndexingToInnerWidth = useCallback(() => {
-    if (window.innerWidth < 1400) {
+    if (window.innerWidth < 1300) {
       setIndexing(4);
       return;
     }

@@ -13,8 +13,11 @@ export const Wrapper = styled(BASE_WRAPPER)`
   background: ${COLOR.black_background};
   box-shadow: 0px 3px 10px rgb(0, 0, 0, 0.3);
   padding: 0;
-  padding-left: ${SIZE.sidebar_padding + "px"};
   padding-right: ${SIZE.right_padding + "px"};
+  padding-left: ${SIZE.sidebar_padding + "px"};
+  @media screen and (max-width: ${SIZE.mac_width}) {
+    padding-left: ${SIZE.sidebar_padding + "px"};
+  }
 `;
 
 export const Container = styled(BASE_CONTAINER)`
@@ -24,6 +27,9 @@ export const Container = styled(BASE_CONTAINER)`
   padding: 0px;
   height: ${`${SIZE.header_height}px`};
   width: 100%;
+  @media screen and (max-width: ${SIZE.mac_width}) {
+    padding: 0;
+  }
 `;
 
 export const MenuWrap = styled.div`

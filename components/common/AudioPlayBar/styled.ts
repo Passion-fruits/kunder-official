@@ -6,6 +6,9 @@ export const Wrapper = styled(BASE_WRAPPER)`
   bottom: 0;
   z-index: 10;
   padding: 0;
+  @media screen and (max-width: ${SIZE.mac_width}) {
+    padding: 0;
+  }
 `;
 
 export const Container = styled(BASE_CONTAINER)`
@@ -17,6 +20,9 @@ export const Container = styled(BASE_CONTAINER)`
   align-items: center;
   justify-content: space-between;
   background-color: #090909;
+  @media screen and (max-width: ${SIZE.mac_width}) {
+    padding: 0;
+  }
 `;
 
 export const Info = styled.div`
