@@ -7,36 +7,32 @@ import {
 } from "../../../styles/index";
 
 export const Wrapper = styled(BASE_WRAPPER)`
-  position: fixed;
   z-index: 5;
-  border-bottom: 1px solid ${COLOR.gray_borderColor};
-  background: ${COLOR.black_background};
-  box-shadow: 0px 3px 10px rgb(0, 0, 0, 0.3);
   padding: 0;
   padding-right: ${SIZE.right_padding + "px"};
   padding-left: ${SIZE.sidebar_padding + "px"};
-  @media screen and (max-width: ${SIZE.medium_width}) {
-    padding-left: ${SIZE.mac_sidebar_padding + "px"};
-  }
+  background-color: rgb(0, 0, 0, 0.9);
+  position: fixed;
 `;
 
 export const Container = styled(BASE_CONTAINER)`
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: flex-end;
   padding: 0px;
   height: ${`${SIZE.header_height}px`};
   width: 100%;
-  @media screen and (max-width: ${SIZE.medium_width}) {
-    padding: 0;
-    height: ${`${SIZE.header_height - 10}px`};
-  }
 `;
 
 export const MenuWrap = styled.div`
   display: flex;
   align-items: center;
   gap: 20px;
+  @media screen and (max-width: ${SIZE.medium_width}) {
+    & svg {
+      width: 18px;
+    }
+  }
   @media screen and (max-width: ${SIZE.medium_width}) {
     gap: 15px;
   }

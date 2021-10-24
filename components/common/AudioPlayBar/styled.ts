@@ -19,7 +19,7 @@ export const Container = styled(BASE_CONTAINER)`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: #090909;
+  background-color: ${COLOR.black_background};
   @media screen and (max-width: ${SIZE.medium_width}) {
     padding: 0;
     height: ${`${SIZE.playbar_height - 10}px`};

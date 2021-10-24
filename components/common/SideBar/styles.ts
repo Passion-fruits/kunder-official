@@ -5,20 +5,16 @@ import { COLOR } from "../../../styles/index";
 export const Wrapper = styled.div`
   width: ${SIZE.sidebar_size + "px"};
   height: 100%;
-  padding: ${SIZE.header_height + 25 + "px"} ${SIZE.sidebar_padding + "px"};
+  padding: 30px ${SIZE.sidebar_padding + "px"};
   padding-bottom: ${SIZE.playbar_height + 30 + "px"};
   position: fixed;
   background-color: ${COLOR.black_background};
   border-right: 1px solid ${COLOR.gray_borderColor};
-  z-index: 2;
+  z-index: 10;
   overflow-y: scroll;
   @media screen and (max-width: ${SIZE.medium_width}) {
     width: ${SIZE.mac_sidebar_size + "px"};
-  }
-  @media screen and (max-width: ${SIZE.medium_width}) {
-    width: ${SIZE.mac_sidebar_size + "px"};
-    padding: ${SIZE.header_height + 10 + "px"}
-      ${SIZE.mac_sidebar_padding + "px"};
+    padding: 25px ${SIZE.mac_sidebar_padding + "px"};
     padding-bottom: ${SIZE.playbar_height + 30 + "px"};
   }
   &:hover::-webkit-scrollbar {
@@ -49,7 +45,7 @@ export const Wrapper = styled.div`
     font-size: 15px;
     margin-top: 7px;
     @media screen and (max-width: ${SIZE.medium_width}) {
-      font-size: 13px;
+      font-size: 12px;
     }
   }
   & .login-btn {
@@ -121,6 +117,12 @@ export const RouteMenu = styled.div`
   margin-top: 30px;
   opacity: 0.8;
   cursor: pointer;
+  @media screen and (max-width: ${SIZE.medium_width}) {
+    margin-top: 20px;
+    & svg {
+      width: 18px;
+    }
+  }
   &:hover {
     opacity: 1;
   }

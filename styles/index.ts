@@ -27,8 +27,8 @@ export const SIZE = {
   card_size: pageSize / cardIndex - 13,
   card_indexing: cardIndex,
   medium_width: "1550px",
-  mac_sidebar_size: 210,
-  mac_sidebar_padding: 10,
+  mac_sidebar_size: 200,
+  mac_sidebar_padding: 15,
 };
 
 export const BASE_WRAPPER = styled.div`
@@ -44,14 +44,9 @@ export const BASE_WRAPPER = styled.div`
 
 export const BASE_CONTAINER = styled.div`
   width: 100%;
-  padding-top: ${`${SIZE.header_height + 30}px`};
+  padding-top: ${`${SIZE.header_height}px`};
   padding-bottom: ${`${SIZE.playbar_height + 50}px`};
   padding-left: ${SIZE.sidebar_padding + "px"};
-  @media screen and (max-width: ${SIZE.medium_width}) {
-    padding-top: ${`${SIZE.header_height + 10}px`};
-    padding-bottom: ${`${SIZE.playbar_height + 50}px`};
-    padding-left: ${SIZE.sidebar_padding + "px"};
-  }
 `;
 
 export const LIST_WRAPPER = styled.div`
