@@ -89,7 +89,6 @@ export const AddFuncMenu = styled.div`
   display: flex;
   align-items: center;
   gap: 10px;
-  margin-top: 20px;
   &:first-of-type {
     margin-top: 25px;
   }
@@ -108,17 +107,26 @@ export const AddFuncMenu = styled.div`
   }
 `;
 
+export const RouteMenuWrap = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  margin-top: 30px;
+  @media screen and (max-width: ${SIZE.medium_width}) {
+    gap: 20px;
+    margin-top: 20px;
+  }
+`;
+
 export const RouteMenu = styled.div`
   width: 100%;
   display: flex;
   align-items: center;
   align-items: center;
   gap: 15px;
-  margin-top: 30px;
   opacity: 0.8;
   cursor: pointer;
   @media screen and (max-width: ${SIZE.medium_width}) {
-    margin-top: 20px;
     & svg {
       width: 18px;
     }
@@ -231,5 +239,31 @@ export const PlaylistWrap = styled.div`
         font-size: 15px;
       }
     }
+  }
+`;
+
+export const MenuWrap = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid ${COLOR.gray_borderColor};
+  @media screen and (max-width: ${SIZE.medium_width}) {
+    padding-bottom: 10px;
+  }
+`;
+
+export const Menu = styled.button`
+  width: 100%;
+  font-size: 17px;
+  font-weight: bold;
+  color: ${COLOR.gray_text};
+  display: flex;
+  justify-content: flex-start;
+  padding: 10px 15px;
+  border-radius: 6px;
+  @media screen and (max-width: ${SIZE.medium_width}) {
+    font-size: 14px;
+    padding: 8px 12px;
   }
 `;
