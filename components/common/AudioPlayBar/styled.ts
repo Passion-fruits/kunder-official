@@ -49,14 +49,14 @@ export const Info = styled.div`
     width: 50px;
     height: 50px;
     border-radius: 3px;
-    background-color: gray;
+    background: linear-gradient(pink, skyblue);
   }
   & div {
     display: flex;
     flex-direction: column;
     & .music-title {
       color: ${COLOR.gray_text};
-      font-size: 16px;
+      font-size: 17px;
       font-weight: 500;
       cursor: pointer;
       transition: 0.4s;
@@ -69,10 +69,10 @@ export const Info = styled.div`
     }
     & .musician-name {
       color: ${COLOR.gray_subText};
-      font-size: 15px;
+      font-size: 14px;
       margin-top: 5px;
       @media screen and (max-width: ${SIZE.medium_width}) {
-        font-size: 13px;
+        font-size: 12px;
       }
     }
   }
@@ -103,7 +103,7 @@ export const VolumeControlWrap = styled.div<rangeProps>`
   align-items: center;
   border-radius: 24px;
   background: ${({ progress }) =>
-    `linear-gradient(to right, white 0%, white
+    `linear-gradient(to right, ${COLOR.blue_text} 0%, ${COLOR.blue_text}
     ${progress}%, #3A3A3A ${progress}%, #3A3A3A 100%)`};
   &:hover {
     height: 5px;

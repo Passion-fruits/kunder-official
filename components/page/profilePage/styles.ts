@@ -122,6 +122,8 @@ export const InfoContainer = styled.div`
       gap: 13px;
       @media screen and (max-width: ${SIZE.medium_width}) {
         font-size: 15px;
+        height: 40px;
+        padding: 0 13px;
       }
     }
   }
