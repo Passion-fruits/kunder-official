@@ -112,7 +112,7 @@ export const RouteMenuWrap = styled.div`
   gap: 40px;
   margin-top: 30px;
   @media screen and (max-width: ${SIZE.medium_width}) {
-    gap: 20px;
+    gap: 30px;
     margin-top: 20px;
   }
 `;
@@ -127,7 +127,7 @@ export const RouteMenu = styled.div`
   cursor: pointer;
   @media screen and (max-width: ${SIZE.medium_width}) {
     & svg {
-      width: 18px;
+      width: 15px;
     }
   }
   &:hover {
