@@ -1,26 +1,27 @@
 import * as S from "./styles";
 import { useRouter } from "next/dist/client/router";
-import { COLOR } from "./../../../styles/index";
+import { ReactElement } from "react";
 
 interface Props {
   content: string;
   route: string;
+  svg: ReactElement;
 }
 
-export default function Menu({ content, route }: Props) {
+export default function Menu({ content, route, svg }: Props) {
   const router = useRouter();
   return (
     <S.Menu
       style={
         router.pathname === route
           ? {
-              color: `${COLOR.green_main}`,
-              backgroundColor: "rgb(50, 50, 50, 0.5)",
+              borderRight: "2px solid #fff",
             }
           : {}
       }
       onClick={() => router.push(route)}
     >
+      {svg}
       {content}
     </S.Menu>
   );

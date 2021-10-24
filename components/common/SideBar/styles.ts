@@ -5,7 +5,7 @@ import { COLOR } from "../../../styles/index";
 export const Wrapper = styled.div`
   width: ${SIZE.sidebar_size + "px"};
   height: 100%;
-  padding: 30px ${SIZE.sidebar_padding + "px"};
+  padding: 15px ${SIZE.sidebar_padding + "px"};
   padding-bottom: ${SIZE.playbar_height + 30 + "px"};
   position: fixed;
   background-color: ${COLOR.black_background};
@@ -14,7 +14,7 @@ export const Wrapper = styled.div`
   overflow-y: scroll;
   @media screen and (max-width: ${SIZE.medium_width}) {
     width: ${SIZE.mac_sidebar_size + "px"};
-    padding: 25px ${SIZE.mac_sidebar_padding + "px"};
+    padding: 10px ${SIZE.mac_sidebar_padding + "px"};
     padding-bottom: ${SIZE.playbar_height + 30 + "px"};
   }
   &:hover::-webkit-scrollbar {
@@ -33,6 +33,7 @@ export const Wrapper = styled.div`
     color: ${COLOR.gray_text};
     font-size: 18px;
     font-weight: 500;
+    margin-top: 30px;
     @media screen and (max-width: ${SIZE.medium_width}) {
       font-size: 15px;
     }
@@ -55,7 +56,7 @@ export const Wrapper = styled.div`
     color: ${COLOR.green_main};
     font-size: 16px;
     margin-top: 25px;
-    margin-bottom: 20px;
+    margin-bottom: 40px;
     @media screen and (max-width: ${SIZE.medium_width}) {
       font-size: 14px;
       padding: 8px 0;
@@ -89,9 +90,7 @@ export const AddFuncMenu = styled.div`
   display: flex;
   align-items: center;
   gap: 10px;
-  &:first-of-type {
-    margin-top: 25px;
-  }
+  margin-top: 30px;
   & .circle {
     width: 10px;
     height: 10px;
@@ -110,7 +109,7 @@ export const AddFuncMenu = styled.div`
 export const RouteMenuWrap = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 30px;
+  gap: 40px;
   margin-top: 30px;
   @media screen and (max-width: ${SIZE.medium_width}) {
     gap: 20px;
@@ -139,7 +138,6 @@ export const RouteMenu = styled.div`
   }
   & span {
     font-size: 17px;
-    font-weight: bold;
     color: ${COLOR.gray_text};
     @media screen and (max-width: ${SIZE.medium_width}) {
       font-size: 14px;
@@ -246,24 +244,28 @@ export const MenuWrap = styled.div`
   display: flex;
   flex-direction: column;
   gap: 13px;
-  padding-bottom: 15px;
+  padding-bottom: 20px;
   border-bottom: 1px solid ${COLOR.gray_borderColor};
-  @media screen and (max-width: ${SIZE.medium_width}) {
-    padding-bottom: 10px;
-  }
 `;
 
 export const Menu = styled.button`
   width: 100%;
   font-size: 17px;
-  font-weight: bold;
+  font-weight: 500;
   color: ${COLOR.gray_text};
   display: flex;
   justify-content: flex-start;
-  padding: 10px 15px;
-  border-radius: 6px;
+  margin-top: 25px;
+  gap: 15px;
+  align-items: center;
+  & svg {
+    transform: translateY(-1px);
+  }
   @media screen and (max-width: ${SIZE.medium_width}) {
     font-size: 14px;
-    padding: 8px 12px;
+    margin-top: 15px;
+    & svg {
+      width: 15px;
+    }
   }
 `;

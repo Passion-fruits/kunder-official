@@ -20,3 +20,7 @@ export { default as PeopleIcon } from "./people";
 export { default as SongIcon } from "./song";
 export { default as UploadIcon } from "./upload";
 export { default as HistoryIcon } from "./history";
+export { default as HomeIcon } from "./home";
+export { default as MedalIcon } from "./medal";
+export { default as ListIcon } from "./list";
+export { default as FireIcon } from "./fire";

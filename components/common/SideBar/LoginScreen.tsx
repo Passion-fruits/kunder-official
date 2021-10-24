@@ -4,17 +4,12 @@ import UploadIcon from "../../../assets/upload";
 import HistoryMusic from "./HistoryMusic";
 import MyPlaylist from "./MyPlaylist";
 import * as S from "./styles";
-import Menu from "./Menu";
+import GeneralMenu from "./GeneralMenu";
 
 export default function LoginScreen() {
   return (
     <>
-      <S.MenuWrap>
-        <Menu content="메인 페이지" route="/" />
-        <Menu content="내 피드" route="/feed" />
-        <Menu content="쿤더 차트" route="/chart" />
-        <Menu content="🔥LIT" route="/lit" />
-      </S.MenuWrap>
+      <GeneralMenu />
       <S.RouteMenuWrap>
         <RouteMenu
           icon={<HistoryIcon size={23} />}
