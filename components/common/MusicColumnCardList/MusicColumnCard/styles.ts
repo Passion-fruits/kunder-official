@@ -51,6 +51,9 @@ export const Wrapper = styled.div`
     overflow: hidden;
     text-overflow: ellipsis;
     cursor: pointer;
+    @media screen and (max-width: ${SIZE.medium_width}) {
+      font-size: 14px;
+    }
     &:hover {
       opacity: 0.7;
     }
@@ -62,6 +65,9 @@ export const Wrapper = styled.div`
     margin-top: 3px;
     transition: 0.5s;
     cursor: pointer;
+    @media screen and (max-width: ${SIZE.medium_width}) {
+      font-size: 11px;
+    }
     &:hover {
       opacity: 0.7;
     }
@@ -81,6 +87,9 @@ export const IconWrap = styled.div`
     display: flex;
     align-items: center;
     padding: 3px 5px;
+    @media screen and (max-width: ${SIZE.medium_width}) {
+      font-size: 10px;
+    }
   }
   & .like {
     color: ${COLOR.green_main};

@@ -47,6 +47,11 @@ export const BASE_CONTAINER = styled.div`
   padding-top: ${`${SIZE.header_height + 30}px`};
   padding-bottom: ${`${SIZE.playbar_height + 50}px`};
   padding-left: ${SIZE.sidebar_padding + "px"};
+  @media screen and (max-width: ${SIZE.medium_width}) {
+    padding-top: ${`${SIZE.header_height + 10}px`};
+    padding-bottom: ${`${SIZE.playbar_height + 50}px`};
+    padding-left: ${SIZE.sidebar_padding + "px"};
+  }
 `;
 
 export const LIST_WRAPPER = styled.div`

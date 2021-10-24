@@ -90,7 +90,7 @@ export const Wrapper = styled.div`
       color: ${COLOR.gray_subText};
       font-size: 15px;
       @media screen and (max-width: ${SIZE.medium_width}) {
-        font-size: 14px;
+        font-size: 13px;
         padding: 5px 12px;
       }
     }
@@ -106,6 +106,9 @@ export const Wrapper = styled.div`
     & span {
       font-size: 16px;
       color: ${COLOR.green_main};
+      @media screen and (max-width: ${SIZE.medium_width}) {
+        font-size: 13px;
+      }
     }
   }
 `;

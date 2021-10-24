@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import { COLOR, SQUARE } from "../../../../styles";
+import { COLOR, SIZE, SQUARE } from "../../../../styles";
 
 export const ResponsiveWrap = styled(SQUARE)``;
 
@@ -47,6 +47,9 @@ export const Wrapper = styled.div`
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    @media screen and (max-width: ${SIZE.medium_width}) {
+      font-size: 15px;
+    }
   }
   & .user-name {
     color: ${COLOR.gray_subText};
@@ -57,6 +60,9 @@ export const Wrapper = styled.div`
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    @media screen and (max-width: ${SIZE.medium_width}) {
+      font-size: 12px;
+    }
     & span {
       color: #6e6e6e;
     }

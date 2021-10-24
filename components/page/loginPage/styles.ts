@@ -1,5 +1,10 @@
 import styled from "@emotion/styled";
-import { BASE_WRAPPER, BASE_CONTAINER, COLOR } from "../../../styles/index";
+import {
+  BASE_WRAPPER,
+  BASE_CONTAINER,
+  COLOR,
+  SIZE,
+} from "../../../styles/index";
 import { keyframes } from "@emotion/react";
 
 export const Wrapper = styled(BASE_CONTAINER)`
@@ -32,11 +37,17 @@ export const Container = styled.div`
     font-size: 30px;
     font-weight: 800;
     color: ${COLOR.gray_text};
+    @media screen and (max-width: ${SIZE.medium_width}) {
+      font-size: 23px;
+    }
   }
   & .description {
     margin-top: 10px;
     font-size: 17px;
     color: ${COLOR.gray_subText};
+    @media screen and (max-width: ${SIZE.medium_width}) {
+      font-size: 14px;
+    }
   }
   & .login-button {
     width: 320px;
@@ -47,12 +58,17 @@ export const Container = styled.div`
     align-items: center;
     justify-content: center;
     gap: 10px;
-    :first-of-type {
+    @media screen and (max-width: ${SIZE.medium_width}) {
+      font-size: 15px;
+      width: 270px;
+      height: 50px;
+    }
+    &:first-of-type {
       color: white;
       background: #343434;
       margin-top: 35px;
     }
-    :last-of-type {
+    &:last-of-type {
       color: black;
       background: white;
       margin-top: 10px;
@@ -71,6 +87,9 @@ export const Container = styled.div`
     font-size: 14px;
     margin-top: 50px;
     cursor: pointer;
+    @media screen and (max-width: ${SIZE.medium_width}) {
+      font-size: 12px;
+    }
   }
 `;
 

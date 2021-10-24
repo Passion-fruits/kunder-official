@@ -17,8 +17,9 @@ export const Wrapper = styled.div`
   }
   @media screen and (max-width: ${SIZE.medium_width}) {
     width: ${SIZE.mac_sidebar_size + "px"};
-    padding: ${SIZE.header_height + 25 + "px"}
+    padding: ${SIZE.header_height + 10 + "px"}
       ${SIZE.mac_sidebar_padding + "px"};
+    padding-bottom: ${SIZE.playbar_height + 30 + "px"};
   }
   &:hover::-webkit-scrollbar {
     display: block;
@@ -131,7 +132,7 @@ export const RouteMenu = styled.div`
     font-weight: bold;
     color: ${COLOR.gray_text};
     @media screen and (max-width: ${SIZE.medium_width}) {
-      font-size: 15px;
+      font-size: 14px;
     }
   }
 `;
@@ -184,13 +185,13 @@ export const HistoryMusicList = styled.div`
     padding-left: 15px;
     & h1 {
       width: 100%;
-      font-size: 17px;
+      font-size: 16px;
       font-weight: 500;
       color: ${COLOR.gray_text};
       margin-bottom: 5px;
       cursor: pointer;
       @media screen and (max-width: ${SIZE.medium_width}) {
-        font-size: 15px;
+        font-size: 14px;
       }
       &:hover {
         opacity: 0.8;
@@ -200,7 +201,7 @@ export const HistoryMusicList = styled.div`
       font-size: 15px;
       color: ${COLOR.gray_subText};
       @media screen and (max-width: ${SIZE.medium_width}) {
-        font-size: 13px;
+        font-size: 12px;
       }
     }
   }

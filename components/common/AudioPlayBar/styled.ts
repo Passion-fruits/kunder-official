@@ -22,6 +22,7 @@ export const Container = styled(BASE_CONTAINER)`
   background-color: #090909;
   @media screen and (max-width: ${SIZE.medium_width}) {
     padding: 0;
+    height: ${`${SIZE.playbar_height - 10}px`};
   }
 `;
 
@@ -59,6 +60,9 @@ export const Info = styled.div`
       font-weight: 500;
       cursor: pointer;
       transition: 0.4s;
+      @media screen and (max-width: ${SIZE.medium_width}) {
+        font-size: 14px;
+      }
       &:hover {
         opacity: 0.8;
       }
@@ -67,6 +71,9 @@ export const Info = styled.div`
       color: ${COLOR.gray_subText};
       font-size: 15px;
       margin-top: 5px;
+      @media screen and (max-width: ${SIZE.medium_width}) {
+        font-size: 13px;
+      }
     }
   }
 `;
@@ -156,5 +163,9 @@ export const RangeInput = styled.input<rangeProps>`
     background: white;
     opacity: 0;
     transition: 0.3s;
+    @media screen and (max-width: ${SIZE.medium_width}) {
+      width: 13px;
+      height: 13px;
+    }
   }
 `;

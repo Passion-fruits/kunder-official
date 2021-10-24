@@ -29,6 +29,7 @@ export const Container = styled(BASE_CONTAINER)`
   width: 100%;
   @media screen and (max-width: ${SIZE.medium_width}) {
     padding: 0;
+    height: ${`${SIZE.header_height - 10}px`};
   }
 `;
 
@@ -36,6 +37,9 @@ export const MenuWrap = styled.div`
   display: flex;
   align-items: center;
   gap: 20px;
+  @media screen and (max-width: ${SIZE.medium_width}) {
+    gap: 15px;
+  }
   & .web-logo {
     text-transform: uppercase;
     color: ${COLOR.green_main};
