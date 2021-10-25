@@ -7,64 +7,35 @@ export const Wrapper = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
-  background-color: ${COLOR.black_subBackground};
-  border: 1px solid ${COLOR.black_subBackground};
-  padding: 12px;
   cursor: pointer;
-  border-radius: 5px;
-  transition: 0.3s;
-  &:hover {
-    transform: translateY(-10px);
-  }
-  & .cover-image-wrap {
-    width: 100%;
-    height: 100%;
+  & .cover-img {
+    width: 90%;
+    height: 90%;
     position: absolute;
-    border-radius: 3px;
-    overflow: hidden;
-    & img {
-      width: 100%;
-      height: 100%;
-      transition: 0.3s;
-    }
-    & .bottom-wrap {
-      position: absolute;
-      right: 0;
-      bottom: 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background-color: rgb(0, 0, 0, 0.5);
-      width: 100%;
-      padding: 12px 0;
-    }
+    background-color: ${COLOR.black_background};
+    z-index: 3;
+    border: 1px solid ${COLOR.gray_borderColor};
+  }
+  & .sqaure {
+    width: 90%;
+    height: 90%;
+    position: absolute;
+    border: 1px solid #707070;
+  }
+  & .square1 {
+    background: #3a3a3a;
+    transform: translate(6px, 6px);
+    z-index: 2;
+  }
+  & .square2 {
+    background: #1d1d1d;
+    transform: translate(12px, 12px);
+    z-index: 1;
   }
   & .title {
-    color: ${COLOR.gray_text};
-    font-size: 17px;
+    font-size: 18px;
     font-weight: bold;
-    margin-top: 13px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    @media screen and (max-width: ${SIZE.medium_width}) {
-      font-size: 15px;
-    }
-  }
-  & .user-name {
-    color: ${COLOR.gray_subText};
-    font-size: 14px;
-    font-weight: 500;
-    margin-top: 6px;
-    margin-bottom: 5px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    @media screen and (max-width: ${SIZE.medium_width}) {
-      font-size: 12px;
-    }
-    & span {
-      color: #6e6e6e;
-    }
+    color: ${COLOR.gray_text};
+    margin-top: 15px;
   }
 `;

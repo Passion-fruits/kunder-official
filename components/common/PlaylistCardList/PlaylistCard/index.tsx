@@ -23,17 +23,11 @@ export default function PlayListCard({
   return (
     <S.Wrapper onClick={() => router.push(`/playlist?id=${playlist_id}`)}>
       <S.ResponsiveWrap>
-        <div className="cover-image-wrap">
-          <img src={coverImg} />
-          <div className="bottom-wrap">
-            <PlaylistIcon size={12} />
-          </div>
-        </div>
+        <div className="sqaure square1" />
+        <div className="sqaure square2" />
+        <img src={cover_url} className="cover-img" />
       </S.ResponsiveWrap>
-      <h3 className="title">{name}</h3>
-      <h5 className="user-name">
-        <span>만든사람</span> {author}
-      </h5>
+      <h1 className="title">{name}</h1>
     </S.Wrapper>
   );
 }
