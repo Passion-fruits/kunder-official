@@ -84,16 +84,6 @@ export default function MusicColumnCard({
           <img src={coverImg} />
         </div>
       </S.ResponsiveWrap>
-      {/*       <S.IconWrap>
-        <div className="like">
-          {like}
-          <HeartIcon size={11} callback={() => {}} color={COLOR.green_main} />
-        </div>
-        <div className="genre">#{genre}</div>
-        <button className="add-playlist" onClick={addMusicToPlaylist}>
-          <PlayListAddIcon size={12} color={COLOR.gray_subText} />
-        </button>
-      </S.IconWrap> */}
       <div className="music-title text-overflow" onClick={routingToDetail}>
         {title}
       </div>
