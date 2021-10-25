@@ -9,17 +9,17 @@ import { getRandNum } from "./../../../lib/export/getRandNum";
 import { genreList } from "./../../../lib/export/genre";
 
 export default function MainPage() {
-  const [randNum, setRandNum] = useState<number>();
+  const [randNum, setRandNum] = useState<number>(null);
   const [recentMusicList, setRecentMusicList] = useState<musicCardObject[]>([]);
   const [randomPlaylists, setRandomPlaylists] = useState<playlistInfor[]>([]);
   const [genreMusicList, setGenreMusicList] = useState<musicCardObject[]>([]);
 
   useEffect(() => {
-    setRandNum(getRandNum(0, genreList.length - 1));
+    setRandNum(getRandNum(0, 1));
   }, []);
 
   useEffect(() => {
-    if (randNum) {
+    if (randNum > -1) {
       music
         .getStreaming({ genre: randNum + 1, page: 1, sort: 1, size: 6 })
         .then((res) => {
