@@ -9,10 +9,9 @@ export const Wrapper = styled.div`
   width: 100%;
   & .cover-image-wrap {
     position: absolute;
-    width: 100%;
-    height: 100%;
+    width: 95%;
+    height: 95%;
     border: 1px solid ${COLOR.gray_borderColor};
-    border-radius: 5px;
     overflow: hidden;
     & img {
       width: 100%;
@@ -43,16 +42,16 @@ export const Wrapper = styled.div`
   & .music-title {
     width: 100%;
     color: ${COLOR.gray_text};
-    font-size: 16px;
-    font-weight: 500;
-    margin-top: 13px;
+    font-size: 19px;
+    font-weight: 600;
+    margin-top: 8px;
     transition: 0.5s;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
     cursor: pointer;
     @media screen and (max-width: ${SIZE.medium_width}) {
-      font-size: 14px;
+      font-size: 15px;
     }
     &:hover {
       opacity: 0.7;
@@ -60,13 +59,14 @@ export const Wrapper = styled.div`
   }
   & .musician-name {
     color: ${COLOR.gray_subText};
-    font-size: 13px;
+    font-size: 16px;
     font-weight: 500;
-    margin-top: 3px;
+    margin-top: 10px;
     transition: 0.5s;
     cursor: pointer;
     @media screen and (max-width: ${SIZE.medium_width}) {
-      font-size: 11px;
+      font-size: 12px;
+      margin-top: 5px;
     }
     &:hover {
       opacity: 0.7;
@@ -83,7 +83,7 @@ export const IconWrap = styled.div`
   margin-top: 10px;
   & div {
     font-size: 12px;
-    border-radius: 4px;
+    border-radius: 24px;
     display: flex;
     align-items: center;
     padding: 3px 5px;

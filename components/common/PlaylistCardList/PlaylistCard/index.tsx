@@ -25,7 +25,7 @@ export default function PlayListCard({
       <S.ResponsiveWrap>
         <div className="sqaure square1" />
         <div className="sqaure square2" />
-        <img src={cover_url} className="cover-img" />
+        <img src={coverImg} className="cover-img" />
       </S.ResponsiveWrap>
       <h1 className="title">{name}</h1>
     </S.Wrapper>

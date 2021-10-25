@@ -8,6 +8,10 @@ export const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   cursor: pointer;
+  transition: 0.3s;
+  &:hover {
+    transform: translateY(-6px);
+  }
   & .cover-img {
     width: 90%;
     height: 90%;
@@ -37,5 +41,8 @@ export const Wrapper = styled.div`
     font-weight: bold;
     color: ${COLOR.gray_text};
     margin-top: 15px;
+    @media screen and (max-width: ${SIZE.medium_width}) {
+      font-size: 15px;
+    }
   }
 `;

@@ -84,22 +84,22 @@ export default function MusicColumnCard({
           <img src={coverImg} />
         </div>
       </S.ResponsiveWrap>
+      {/*  <S.IconWrap>
+        <div className="like">
+          {like}
+          <HeartIcon size={11} callback={() => {}} color={COLOR.green_main} />
+        </div>
+        <div className="genre">#{genre}</div>
+        <button className="add-playlist" onClick={addMusicToPlaylist}>
+          <PlayListAddIcon size={12} color={COLOR.gray_subText} />
+        </button>
+      </S.IconWrap> */}
       <div className="music-title" onClick={routingToDetail}>
         {title}
       </div>
       <h3 className="musician-name" id="noto">
         {artist}
       </h3>
-      <S.IconWrap>
-        <div className="like">
-          <HeartIcon size={11} callback={() => {}} color={COLOR.green_main} />
-          {like}
-        </div>
-        <div className="genre">#{genre}</div>
-        <button className="add-playlist" onClick={addMusicToPlaylist}>
-          <PlayListAddIcon size={12} color={COLOR.gray_subText} />
-        </button>
-      </S.IconWrap>
     </S.Wrapper>
   );
 }

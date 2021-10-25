@@ -1,14 +1,18 @@
-import { data2, data3 } from "../../../lib/export/data";
 import * as S from "./styles";
 import MusicColumnCard from "../../common/MusicColumnCardList/MusicColumnCard/index";
 import { useCallback, useEffect, useState } from "react";
-import PlayListCard from "../../common/PlaylistCardList/PlaylistCard";
+import { musicCardObject } from "../../../lib/interfaces/music";
+import { playlistInfor } from "../../../lib/interfaces/playlist";
+import PlayListCard from "../../common/PlaylistCardList/PlaylistCard/index";
 
 interface Props {
   option: "music" | "playlist";
+  data: musicCardObject[] | playlistInfor[];
+  title: string;
+  description: string;
 }
 
-export default function MusicCardList({ option }: Props) {
+export default function CardList({ option, data, title, description }: Props) {
   const [indexing, setIndexing] = useState<number>(6);
 
   const setIndexingToInnerWidth = useCallback(() => {
@@ -33,12 +37,12 @@ export default function MusicCardList({ option }: Props) {
 
   return (
     <S.ListWrap>
-      <S.Title>당신이 좋아할 음악</S.Title>
-      <S.SubTitle>쿤더에서 추천하는 음악을 들어보세요</S.SubTitle>
+      <S.Title>{title}</S.Title>
+      <S.SubTitle>{description}</S.SubTitle>
       <S.List>
         {option === "music" ? (
           <>
-            {data2.slice(0, indexing).map((music, index) => (
+            {data.slice(0, indexing).map((music, index) => (
               <MusicColumnCard
                 key={index}
                 title={music.title}
@@ -53,7 +57,7 @@ export default function MusicCardList({ option }: Props) {
           </>
         ) : option === "playlist" ? (
           <>
-            {data3.slice(0, indexing).map((playlist, index) => (
+            {data.slice(0, indexing).map((playlist, index) => (
               <PlayListCard
                 key={index}
                 cover_url={playlist.cover_url}
