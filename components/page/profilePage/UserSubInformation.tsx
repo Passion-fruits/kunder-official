@@ -35,7 +35,6 @@ export default function UserSubInformation({ user_id }) {
   );
 
   const getUserMusic = React.useCallback(() => {
-    console.log(page);
     profile
       .getUserMusic(user_id, page)
       .then((res) => {

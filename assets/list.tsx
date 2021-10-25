@@ -18,9 +18,9 @@ export default function ListIcon() {
           transform="translate(-3.287)"
           fill="none"
           stroke="#fff"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth="2"
         />
         <path
           id="패스_59"
@@ -29,9 +29,9 @@ export default function ListIcon() {
           transform="translate(-3.287 -3.945)"
           fill="none"
           stroke="#fff"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth="2"
         />
         <path
           id="패스_60"
@@ -40,9 +40,9 @@ export default function ListIcon() {
           transform="translate(-3.287 -7.889)"
           fill="none"
           stroke="#fff"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth="2"
         />
         <path
           id="패스_61"
@@ -50,9 +50,9 @@ export default function ListIcon() {
           d="M4.5,9h0"
           fill="none"
           stroke="#fff"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth="2"
         />
         <path
           id="패스_62"
@@ -61,9 +61,9 @@ export default function ListIcon() {
           transform="translate(0 -3.945)"
           fill="none"
           stroke="#fff"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth="2"
         />
         <path
           id="패스_63"
@@ -72,9 +72,9 @@ export default function ListIcon() {
           transform="translate(0 -7.889)"
           fill="none"
           stroke="#fff"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth="2"
         />
       </g>
     </svg>
