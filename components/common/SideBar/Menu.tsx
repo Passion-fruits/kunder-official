@@ -1,6 +1,7 @@
 import * as S from "./styles";
 import { useRouter } from "next/dist/client/router";
-import { ReactElement } from "react";
+import { ReactElement, useCallback } from "react";
+import { toast } from "react-toastify";
 
 interface Props {
   content: string;
@@ -10,6 +11,15 @@ interface Props {
 
 export default function Menu({ content, route, svg }: Props) {
   const router = useRouter();
+
+  const routing = useCallback(() => {
+    if (route === "/chart") {
+      toast.info("아직 개발중입니다!");
+      return;
+    }
+    router.push(route);
+  }, []);
+
   return (
     <S.Menu
       style={
@@ -19,7 +29,7 @@ export default function Menu({ content, route, svg }: Props) {
             }
           : {}
       }
-      onClick={() => router.push(route)}
+      onClick={routing}
     >
       {svg}
       {content}

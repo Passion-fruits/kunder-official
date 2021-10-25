@@ -25,6 +25,10 @@ export const ListWrap = styled.div`
 export const Title = styled.h1`
   font-size: 25px;
   color: ${COLOR.gray_text};
+  cursor: pointer;
+  &:hover {
+    text-decoration: underline;
+  }
   @media screen and (max-width: ${SIZE.medium_width}) {
     font-size: 20px;
   }

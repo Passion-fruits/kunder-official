@@ -6,7 +6,6 @@ export const ResponsiveWrap = styled(SQUARE)``;
 export const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: center;
   width: 97%;
   & .cover-image-wrap {
     position: absolute;
@@ -41,13 +40,13 @@ export const Wrapper = styled.div`
   }
   & .music-title {
     color: ${COLOR.gray_text};
-    font-size: 19px;
+    font-size: 17px;
     font-weight: 600;
     margin-top: 18px;
     transition: 0.5s;
     cursor: pointer;
     @media screen and (max-width: ${SIZE.medium_width}) {
-      font-size: 15px;
+      font-size: 14px;
       margin-top: 10px;
     }
     &:hover {

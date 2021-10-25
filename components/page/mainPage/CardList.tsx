@@ -35,6 +35,8 @@ export default function CardList({ option, data, title, description }: Props) {
     };
   }, []);
 
+  console.log(data);
+
   return (
     <S.ListWrap>
       <S.Title>{title}</S.Title>

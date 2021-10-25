@@ -13,15 +13,22 @@ export default function MainPage() {
   const [recentMusicList, setRecentMusicList] = useState<musicCardObject[]>([]);
   const [randomPlaylists, setRandomPlaylists] = useState<playlistInfor[]>([]);
   const [genreMusicList, setGenreMusicList] = useState<musicCardObject[]>([]);
+  const [popularMusicList, setPopularMusicList] = useState<musicCardObject[]>(
+    []
+  );
 
   useEffect(() => {
-    setRandNum(getRandNum(0, 1));
+    setGenreMusicList([]);
+  }, []);
+
+  useEffect(() => {
+    setRandNum(getRandNum(0, genreList.length - 1));
   }, []);
 
   useEffect(() => {
     if (randNum > -1) {
       music
-        .getStreaming({ genre: randNum + 1, page: 1, sort: 1, size: 6 })
+        .getStreaming({ genre: randNum + 1, page: 1, sort: 3, size: 6 })
         .then((res) => {
           setGenreMusicList(res.data.songs);
         })
@@ -48,11 +55,31 @@ export default function MainPage() {
       .catch(() => {
         return;
       });
+    main
+      .getPopularMusic({ page: 1, size: 6 })
+      .then((res) => {
+        setPopularMusicList(res.data.song);
+      })
+      .catch(() => {
+        return;
+      });
   }, []);
 
   return (
     <S.Wrapper>
       <S.Container>
+        <CardList
+          option="playlist"
+          data={randomPlaylists}
+          title="랜덤 플레이리스트"
+          description="여러 플레이리스트를 만나보세요"
+        />
+        <CardList
+          option="music"
+          data={recentMusicList}
+          title="🔥지금 인기있는 음악"
+          description="현재 가장 핫한 음악을 만나보세요"
+        />
         <CardList
           option="playlist"
           data={randomPlaylists}
