@@ -39,7 +39,7 @@ export default function CardList({ option, data, title, description }: Props) {
     <S.ListWrap>
       <S.Title>{title}</S.Title>
       <S.SubTitle>{description}</S.SubTitle>
-      <S.List>
+      <S.List index={indexing}>
         {option === "music" ? (
           <>
             {data.slice(0, indexing).map((music, index) => (

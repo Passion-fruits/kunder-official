@@ -3,11 +3,33 @@ import * as S from "./styles";
 import { useEffect, useState } from "react";
 import { musicCardObject } from "../../../lib/interfaces/music";
 import main from "../../../api/main";
+import music from "../../../api/music";
 import { playlistInfor } from "../../../lib/interfaces/playlist";
+import { getRandNum } from "./../../../lib/export/getRandNum";
+import { genreList } from "./../../../lib/export/genre";
 
 export default function MainPage() {
+  const [randNum, setRandNum] = useState<number>();
   const [recentMusicList, setRecentMusicList] = useState<musicCardObject[]>([]);
   const [randomPlaylists, setRandomPlaylists] = useState<playlistInfor[]>([]);
+  const [genreMusicList, setGenreMusicList] = useState<musicCardObject[]>([]);
+
+  useEffect(() => {
+    setRandNum(getRandNum(0, genreList.length - 1));
+  }, []);
+
+  useEffect(() => {
+    if (randNum) {
+      music
+        .getStreaming({ genre: randNum + 1, page: 1, sort: 1, size: 6 })
+        .then((res) => {
+          setGenreMusicList(res.data.songs);
+        })
+        .catch(() => {
+          return;
+        });
+    }
+  }, [randNum]);
 
   useEffect(() => {
     main
@@ -42,6 +64,12 @@ export default function MainPage() {
           data={recentMusicList}
           title="새로 나온 음악"
           description="아티스트들의 새로운 예술을 경험하세요"
+        />
+        <CardList
+          option="music"
+          data={genreMusicList}
+          title={`${genreList[randNum]} 음악`}
+          description={`${genreList[randNum]} 장르를 지금 바로 만나보세요`}
         />
       </S.Container>
     </S.Wrapper>

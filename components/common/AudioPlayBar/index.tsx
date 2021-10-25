@@ -181,7 +181,7 @@ export default function AudioPlayBar() {
             {isPlay ? (
               <PauseIcon size={16} callback={musicStop} />
             ) : (
-              <PlayIcon size={16} callback={musicStart} />
+              <PlayIcon size={17} callback={musicStart} />
             )}
             <PassIcon callback={moveNextMusic} isNext={true} />
           </S.CenterControl>

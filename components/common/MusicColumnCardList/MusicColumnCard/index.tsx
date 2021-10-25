@@ -84,7 +84,7 @@ export default function MusicColumnCard({
           <img src={coverImg} />
         </div>
       </S.ResponsiveWrap>
-      {/*  <S.IconWrap>
+      {/*       <S.IconWrap>
         <div className="like">
           {like}
           <HeartIcon size={11} callback={() => {}} color={COLOR.green_main} />
@@ -94,10 +94,10 @@ export default function MusicColumnCard({
           <PlayListAddIcon size={12} color={COLOR.gray_subText} />
         </button>
       </S.IconWrap> */}
-      <div className="music-title" onClick={routingToDetail}>
+      <div className="music-title text-overflow" onClick={routingToDetail}>
         {title}
       </div>
-      <h3 className="musician-name" id="noto">
+      <h3 className="musician-name text-overflow" id="noto">
         {artist}
       </h3>
     </S.Wrapper>

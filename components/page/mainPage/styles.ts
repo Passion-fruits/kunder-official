@@ -16,7 +16,7 @@ export const Container = styled(BASE_CONTAINER)`
 export const ListWrap = styled.div`
   display: flex;
   flex-direction: column;
-  margin-top: 80px;
+  margin-top: 70px;
   &:first-of-type {
     margin-top: 0px;
   }
@@ -34,14 +34,19 @@ export const SubTitle = styled.h3`
   font-size: 17px;
   color: ${COLOR.gray_subText};
   margin-top: 10px;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
   @media screen and (max-width: ${SIZE.medium_width}) {
     font-size: 15px;
   }
 `;
 
-export const List = styled.div`
-  display: flex;
+interface ListProps {
+  index: number;
+}
+
+export const List = styled.div<ListProps>`
+  display: grid;
+  grid-template-columns: ${(res) =>
+    `repeat(${res.index}, ${100 / res.index - 1.2}%)`};
   justify-content: space-between;
-  gap: 20px;
 `;

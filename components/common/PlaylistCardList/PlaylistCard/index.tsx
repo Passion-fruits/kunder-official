@@ -27,7 +27,7 @@ export default function PlayListCard({
         <div className="sqaure square2" />
         <img src={coverImg} className="cover-img" />
       </S.ResponsiveWrap>
-      <h1 className="title">{name}</h1>
+      <h1 className="title text-overflow">{name}</h1>
     </S.Wrapper>
   );
 }

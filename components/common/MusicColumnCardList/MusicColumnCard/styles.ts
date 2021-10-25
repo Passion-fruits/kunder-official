@@ -9,10 +9,14 @@ export const Wrapper = styled.div`
   width: 100%;
   & .cover-image-wrap {
     position: absolute;
-    width: 95%;
-    height: 95%;
+    width: 100%;
+    height: 100%;
     border: 1px solid ${COLOR.gray_borderColor};
     overflow: hidden;
+    @media screen and (max-width: ${SIZE.medium_width}) {
+      width: 98%;
+      height: 98%;
+    }
     & img {
       width: 100%;
       height: 100%;
@@ -44,7 +48,7 @@ export const Wrapper = styled.div`
     color: ${COLOR.gray_text};
     font-size: 19px;
     font-weight: 600;
-    margin-top: 8px;
+    margin-top: 18px;
     transition: 0.5s;
     white-space: nowrap;
     overflow: hidden;

@@ -41,6 +41,10 @@ export const Info = styled.div`
     border-radius: 3px;
     cursor: pointer;
     transition: 0.4s;
+    @media screen and (max-width: ${SIZE.medium_width}) {
+      width: 45px;
+      height: 45px;
+    }
     &:hover {
       opacity: 0.8;
     }
@@ -50,6 +54,10 @@ export const Info = styled.div`
     height: 50px;
     border-radius: 3px;
     background: linear-gradient(pink, skyblue);
+    @media screen and (max-width: ${SIZE.medium_width}) {
+      width: 45px;
+      height: 45px;
+    }
   }
   & div {
     display: flex;
@@ -87,6 +95,11 @@ export const Control = styled.div`
   z-index: 3;
   & svg {
     cursor: pointer;
+  }
+  @media screen and (max-width: ${SIZE.medium_width}) {
+    & svg {
+      width: 18px;
+    }
   }
 `;
 
@@ -132,6 +145,14 @@ export const CenterControl = styled.div`
   gap: 50px;
   & svg {
     cursor: pointer;
+  }
+  @media screen and (max-width: ${SIZE.medium_width}) {
+    & svg {
+      width: 10px;
+      &:nth-of-type(2) {
+        width: 13px;
+      }
+    }
   }
 `;
 
