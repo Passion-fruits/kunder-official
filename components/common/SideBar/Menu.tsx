@@ -1,7 +1,6 @@
 import * as S from "./styles";
 import { useRouter } from "next/dist/client/router";
 import { ReactElement } from "react";
-import { COLOR } from "./../../../styles/index";
 
 interface Props {
   content: string;
@@ -16,7 +15,7 @@ export default function Menu({ content, route, svg }: Props) {
       style={
         router.pathname === route
           ? {
-              borderRight: `3px solid ${COLOR.green_main}`,
+              background: "rgb(50,50,50,0.5)",
             }
           : {}
       }

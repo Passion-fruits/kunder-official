@@ -28,6 +28,7 @@ export default function PlayListCard({
         <img src={coverImg} className="cover-img" />
       </S.ResponsiveWrap>
       <h1 className="title text-overflow">{name}</h1>
+      <h3 className="musician text-overflow">By {author}</h3>
     </S.Wrapper>
   );
 }

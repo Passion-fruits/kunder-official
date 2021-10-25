@@ -11,7 +11,7 @@ export const Wrapper = styled(BASE_WRAPPER)`
   padding: 0;
   padding-right: ${SIZE.right_padding + "px"};
   padding-left: ${SIZE.sidebar_padding + "px"};
-  background-color: rgb(0, 0, 0, 0.7);
+  background-color: rgb(12, 12, 12, 0.8);
   position: fixed;
 `;
 

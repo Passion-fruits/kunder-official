@@ -242,6 +242,7 @@ export const PlaylistWrap = styled.div`
 
 export const MenuWrap = styled.div`
   display: flex;
+  align-items: center;
   flex-direction: column;
   gap: 13px;
   padding-bottom: 20px;
@@ -255,15 +256,20 @@ export const Menu = styled.button`
   color: ${COLOR.gray_text};
   display: flex;
   justify-content: flex-start;
-  margin-top: 25px;
+  margin-top: 7px;
   gap: 15px;
   align-items: center;
+  padding: 10px 15px;
+  border-radius: 5px;
+  box-sizing: content-box;
+  background: ${COLOR.black_background};
   & svg {
     transform: translateY(-1px);
   }
   @media screen and (max-width: ${SIZE.medium_width}) {
     font-size: 14px;
-    margin-top: 15px;
+    margin-top: 3px;
+    padding: 7px 8px;
     & svg {
       width: 15px;
     }

@@ -1,10 +1,12 @@
 import AddFuncMenu from "./AddFuncMenu";
 import { useRouter } from "next/dist/client/router";
+import GeneralMenu from "./GeneralMenu";
 
 export default function UnLoginScreen() {
   const router = useRouter();
   return (
     <>
+      <GeneralMenu />
       <h1 className="title">
         아직 <b>계정</b>이 없으신가요?
       </h1>

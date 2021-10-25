@@ -40,9 +40,18 @@ export const Wrapper = styled.div`
     font-size: 18px;
     font-weight: bold;
     color: ${COLOR.gray_text};
-    margin-top: 15px;
+    margin-top: 10px;
     @media screen and (max-width: ${SIZE.medium_width}) {
       font-size: 15px;
+    }
+  }
+  & .musician {
+    font-size: 15px;
+    font-weight: 500;
+    color: ${COLOR.gray_subText};
+    margin-top: 5px;
+    @media screen and (max-width: ${SIZE.medium_width}) {
+      font-size: 12px;
     }
   }
 `;
