@@ -31,6 +31,12 @@ export const Wrapper = styled.div`
       display: flex;
       justify-content: center;
       align-items: center;
+      transition: 0.5s;
+      background-color: rgb(0, 0, 0, 0);
+      transition: 0.3s;
+      &:hover {
+        background-color: rgb(0, 0, 0, 0.3);
+      }
     }
   }
   & .music-title {

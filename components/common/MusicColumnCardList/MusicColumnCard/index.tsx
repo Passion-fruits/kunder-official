@@ -1,10 +1,8 @@
-import { HeartIcon, PlayIcon } from "../../../../assets";
+import { PlayIcon } from "../../../../assets";
 import { musicCardObject } from "../../../../lib/interfaces/music";
 import * as S from "./styles";
 import { setValue } from "../../../../lib/context/index";
 import { useRouter } from "next/dist/client/router";
-import { COLOR } from "../../../../styles/index";
-import PlayListAddIcon from "../../../../assets/playListAdd";
 import React from "react";
 
 export default function MusicColumnCard({
