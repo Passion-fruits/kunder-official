@@ -22,6 +22,7 @@ export default function UserSubInformation({ user_id }) {
   const [nowMenu, setNowMen] = React.useState<
     "song" | "playlist" | "follower" | "following"
   >("song");
+  const pageRef = React.useRef(page);
 
   const changeMenu = React.useCallback(
     ({ target }) => {
@@ -97,14 +98,14 @@ export default function UserSubInformation({ user_id }) {
 
   React.useEffect(() => {
     setPage(1);
+    pageRef.current = 1;
   }, [user_id, nowMenu]);
 
   React.useEffect(() => {
-    let page = 1;
     window.addEventListener("scroll", () => {
       if (isScreenBottom()) {
-        page += 1;
-        setPage(page);
+        setPage(pageRef.current + 1);
+        pageRef.current += 1;
       }
     });
   }, []);
@@ -114,7 +115,7 @@ export default function UserSubInformation({ user_id }) {
     setPlaylistArr([]);
     setFollowerArr([]);
     setFollowingArr([]);
-  }, [user_id]);
+  }, [user_id, nowMenu]);
 
   React.useEffect(() => {
     const menu: any = router.query.menu;
