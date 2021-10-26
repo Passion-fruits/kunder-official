@@ -23,6 +23,7 @@ export default function UserSubInformation({ user_id }) {
     "song" | "playlist" | "follower" | "following"
   >("song");
   const pageRef = React.useRef(page);
+  const [isChange, setIsChange] = React.useState<boolean>(true);
 
   const changeMenu = React.useCallback(
     ({ target }) => {
@@ -35,7 +36,7 @@ export default function UserSubInformation({ user_id }) {
     [router]
   );
 
-  const getUserMusic = React.useCallback(() => {
+  const getUserMusic = () => {
     profile
       .getUserMusic(user_id, page)
       .then((res) => {
@@ -44,9 +45,9 @@ export default function UserSubInformation({ user_id }) {
       .catch(() => {
         return;
       });
-  }, [user_id, page, musicList]);
+  };
 
-  const getUserPlaylist = React.useCallback(() => {
+  const getUserPlaylist = () => {
     playlist
       .getUserPlaylist(user_id)
       .then((res) => {
@@ -55,55 +56,65 @@ export default function UserSubInformation({ user_id }) {
       .catch(() => {
         return;
       });
-  }, [user_id, page]);
+  };
 
-  const getUserFollower = React.useCallback(() => {
+  const getUserFollower = () => {
     profile
-      .getUserFollower({ user_id: user_id, page: 1 })
+      .getUserFollower({ user_id: user_id, page: page })
       .then((res) => {
-        setFollowerArr(res.data.followers);
+        setFollowerArr(followerArr.concat(res.data.followers));
       })
       .catch(() => {
         return;
       });
-  }, [user_id, page]);
+  };
 
-  const getUserFollowing = React.useCallback(() => {
+  const getUserFollowing = () => {
     profile
-      .getUserFollowing({ user_id: user_id, page: 1 })
+      .getUserFollowing({ user_id: user_id, page: page })
       .then((res) => {
-        setFollowingArr(res.data.followings);
+        setFollowingArr(followingArr.concat(res.data.followings));
       })
       .catch(() => {
         return;
       });
-  }, [user_id, page]);
+  };
 
+  // 메뉴가 바뀌었으면 isChange를 flase로
   React.useEffect(() => {
-    switch (nowMenu) {
-      case "song":
-        getUserMusic();
-        break;
-      case "playlist":
-        getUserPlaylist();
-        break;
-      case "follower":
-        getUserFollower();
-        return;
-      case "following":
-        getUserFollowing();
-        return;
-    }
-  }, [user_id, nowMenu, page]);
+    setIsChange(false);
+  }, [nowMenu]);
 
+  // page가 1이 되면 초기화가 정상적으로 이루어졌으므로 isChange를 true로
   React.useEffect(() => {
     setPage(1);
     pageRef.current = 1;
-  }, [user_id, nowMenu]);
+    setIsChange(true);
+  }, [user_id, nowMenu, isChange]);
+
+  // 만약 제대로 변환됬다? api 호출
+  React.useEffect(() => {
+    if (isChange) {
+      switch (nowMenu) {
+        case "song":
+          getUserMusic();
+          break;
+        case "playlist":
+          getUserPlaylist();
+          break;
+        case "follower":
+          getUserFollower();
+          return;
+        case "following":
+          getUserFollowing();
+          return;
+      }
+    }
+  }, [user_id, nowMenu, page, isChange]);
 
   React.useEffect(() => {
     window.addEventListener("scroll", () => {
-      if (isScreenBottom()) {
+      if (isScreenBottom() && window.scrollY > 50) {
         setPage(pageRef.current + 1);
         pageRef.current += 1;
       }
