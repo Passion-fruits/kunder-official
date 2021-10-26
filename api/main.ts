@@ -16,7 +16,7 @@ export default {
   getPopularMusic({ page, size }) {
     return request({
       method: "get",
-      url: `/playlist/random?page=${page}&size=${size}`,
+      url: `/song/popular?page=${page}&size=${size}`,
     });
   },
 };

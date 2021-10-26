@@ -12,6 +12,7 @@ export const Wrapper = styled.div`
     width: 100%;
     height: 100%;
     border: 1px solid ${COLOR.gray_borderColor};
+    background-color: ${COLOR.gray_subText};
     overflow: hidden;
     @media screen and (max-width: ${SIZE.medium_width}) {
       width: 98%;

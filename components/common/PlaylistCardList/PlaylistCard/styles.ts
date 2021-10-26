@@ -12,13 +12,17 @@ export const Wrapper = styled.div`
   &:hover {
     transform: translateY(-6px);
   }
-  & .cover-img {
+  & .cover-img,
+  .none {
     width: 90%;
     height: 90%;
     position: absolute;
     background-color: ${COLOR.black_background};
     z-index: 3;
     border: 1px solid ${COLOR.gray_borderColor};
+  }
+  & .none {
+    background-color: ${COLOR.gray_subText};
   }
   & .sqaure {
     width: 90%;

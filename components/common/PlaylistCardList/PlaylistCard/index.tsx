@@ -13,19 +13,25 @@ export default function PlayListCard({
 }: playList) {
   const router = useRouter();
   const [coverImg, setCoverImg] = React.useState<string>("/playlist.png");
+
   React.useEffect(() => {
     const img = new Image();
     img.src = cover_url;
     img.onload = () => {
       cover_url && setCoverImg(cover_url);
     };
-  }, []);
+  }, [cover_url]);
+
   return (
     <S.Wrapper onClick={() => router.push(`/playlist?id=${playlist_id}`)}>
       <S.ResponsiveWrap>
         <div className="sqaure square1" />
         <div className="sqaure square2" />
-        <img src={coverImg} className="cover-img" />
+        {playlist_id ? (
+          <img src={coverImg} className="cover-img" />
+        ) : (
+          <div className="none" />
+        )}
       </S.ResponsiveWrap>
       <h1 className="title text-overflow">{name}</h1>
       <h3 className="musician text-overflow">By {author}</h3>

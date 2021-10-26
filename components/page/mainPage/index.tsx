@@ -7,15 +7,19 @@ import music from "../../../api/music";
 import { playlistInfor } from "../../../lib/interfaces/playlist";
 import { getRandNum } from "./../../../lib/export/getRandNum";
 import { genreList } from "./../../../lib/export/genre";
+import { music_none_data } from "../../../lib/export/data";
+import { playlist_none_data } from "./../../../lib/export/data";
 
 export default function MainPage() {
   const [randNum, setRandNum] = useState<number>(null);
-  const [recentMusicList, setRecentMusicList] = useState<musicCardObject[]>([]);
-  const [randomPlaylists, setRandomPlaylists] = useState<playlistInfor[]>([]);
-  const [genreMusicList, setGenreMusicList] = useState<musicCardObject[]>([]);
-  const [popularMusicList, setPopularMusicList] = useState<musicCardObject[]>(
-    []
-  );
+  const [recentMusicList, setRecentMusicList] =
+    useState<musicCardObject[]>(music_none_data);
+  const [randomPlaylists, setRandomPlaylists] =
+    useState<playlistInfor[]>(playlist_none_data);
+  const [genreMusicList, setGenreMusicList] =
+    useState<musicCardObject[]>(music_none_data);
+  const [popularMusicList, setPopularMusicList] =
+    useState<musicCardObject[]>(music_none_data);
 
   useEffect(() => {
     setGenreMusicList([]);
@@ -76,7 +80,7 @@ export default function MainPage() {
         />
         <CardList
           option="music"
-          data={recentMusicList}
+          data={popularMusicList}
           title="🔥지금 인기있는 음악"
           description="현재 가장 핫한 음악을 만나보세요"
         />

@@ -74,12 +74,16 @@ export default function MusicColumnCard({
     <S.Wrapper>
       <S.ResponsiveWrap>
         <div className="cover-image-wrap">
-          <div className="cover" onClick={routingToDetail}>
-            <S.PlayBtn onClick={musicChange}>
-              <PlayIcon size={17} color="white" callback={() => {}} />
-            </S.PlayBtn>
-          </div>
-          <img src={coverImg} />
+          {song_id && (
+            <>
+              <div className="cover" onClick={routingToDetail}>
+                <S.PlayBtn onClick={musicChange}>
+                  <PlayIcon size={17} color="white" callback={() => {}} />
+                </S.PlayBtn>
+              </div>
+              <img src={coverImg} />
+            </>
+          )}
         </div>
       </S.ResponsiveWrap>
       <div className="music-title text-overflow" onClick={routingToDetail}>
