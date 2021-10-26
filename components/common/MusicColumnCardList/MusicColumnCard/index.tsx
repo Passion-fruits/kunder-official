@@ -68,7 +68,7 @@ export default function MusicColumnCard({
     return () => {
       isComponentMounted = false;
     };
-  }, []);
+  }, [cover_url]);
 
   return (
     <S.Wrapper>
