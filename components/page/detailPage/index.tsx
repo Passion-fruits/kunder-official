@@ -5,11 +5,11 @@ import SimilarMusic from "./SimilarMusic";
 import { useRouter } from "next/dist/client/router";
 import React, { useState } from "react";
 import music from "../../../api/music";
-import { musicObject } from "../../../lib/interfaces/music";
+import { musicCardObject } from "../../../lib/interfaces/music";
 
 export default function DetailPage() {
   const router = useRouter();
-  const [musicObj, setMusicObj] = useState<musicObject | null>(null);
+  const [musicObj, setMusicObj] = useState<musicCardObject | null>(null);
 
   React.useEffect(() => {
     const music_id = router.query.id;

@@ -7,7 +7,7 @@ export default function MusicColumnCardList({ musicList }: MusicCardListProps) {
     <LIST_WRAPPER>
       {musicList.map(
         (
-          { title, artist, song_id, song_url, like, cover_url, genre },
+          { title, artist, song_id, song_url, like, cover_url, genre, user_id },
           index
         ) => (
           <MusicColumnCard
@@ -18,6 +18,7 @@ export default function MusicColumnCardList({ musicList }: MusicCardListProps) {
             like={like}
             cover_url={cover_url}
             genre={genre}
+            user_id={user_id}
             key={index}
           />
         )

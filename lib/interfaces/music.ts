@@ -12,10 +12,7 @@ export interface musicCardObject {
   mood?: string;
   comment?: string;
   description?: string;
-}
-
-export interface musicObject extends musicCardObject {
-  user_id: string | number;
+  user_id?: string | number;
 }
 
 export interface MusicCardListProps {

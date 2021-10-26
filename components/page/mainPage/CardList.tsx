@@ -52,6 +52,7 @@ export default function CardList({ option, data, title, description }: Props) {
                 song_url={music.song_url}
                 like={music.like}
                 genre={music.genre}
+                user_id={music.user_id}
               />
             ))}
           </>

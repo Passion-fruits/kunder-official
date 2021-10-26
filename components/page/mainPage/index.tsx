@@ -26,7 +26,7 @@ export default function MainPage() {
   }, []);
 
   useEffect(() => {
-    setRandNum(getRandNum(0, genreList.length - 1));
+    setRandNum(getRandNum(0, genreList.length - 2));
   }, []);
 
   useEffect(() => {

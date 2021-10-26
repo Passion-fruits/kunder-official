@@ -83,7 +83,11 @@ export default function UserSubInformation({ user_id }) {
   // 메뉴가 바뀌었으면 isChange를 flase로
   React.useEffect(() => {
     setIsChange(false);
-  }, [nowMenu]);
+    setMusicList([]);
+    setPlaylistArr([]);
+    setFollowerArr([]);
+    setFollowingArr([]);
+  }, [router.query, nowMenu]);
 
   // page가 1이 되면 초기화가 정상적으로 이루어졌으므로 isChange를 true로
   React.useEffect(() => {
@@ -120,13 +124,6 @@ export default function UserSubInformation({ user_id }) {
       }
     });
   }, []);
-
-  React.useEffect(() => {
-    setMusicList([]);
-    setPlaylistArr([]);
-    setFollowerArr([]);
-    setFollowingArr([]);
-  }, [user_id, nowMenu]);
 
   React.useEffect(() => {
     const menu: any = router.query.menu;

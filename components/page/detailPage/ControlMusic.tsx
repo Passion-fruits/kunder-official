@@ -5,14 +5,14 @@ import PlayListAddIcon from "../../../assets/playListAdd";
 import React from "react";
 import music from "../../../api/music";
 import { useRouter } from "next/dist/client/router";
-import { comment, musicObject } from "../../../lib/interfaces/music";
+import { comment, musicCardObject } from "../../../lib/interfaces/music";
 import { toast } from "react-toastify";
 import { ACCESS_TOKEN } from "../../../lib/export/localstorage";
 import Comment from "./Comment";
 import { setValue } from "../../../lib/context/index";
 
 interface props {
-  musicObj: musicObject;
+  musicObj: musicCardObject;
 }
 
 export default function ControlMusic({ musicObj }: props) {

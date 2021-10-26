@@ -2,14 +2,14 @@ import * as S from "./styles";
 import PlayIcon from "../../../assets/play";
 import DateIcon from "../../../assets/date";
 import { InforIcon } from "../../../assets";
-import { musicObject } from "../../../lib/interfaces/music";
+import { musicCardObject } from "../../../lib/interfaces/music";
 import { getDate } from "../../../lib/util/getDate";
 import React from "react";
 import { setValue } from "../../../lib/context/index";
 import { useRouter } from "next/dist/client/router";
 
 interface props {
-  musicObj: musicObject;
+  musicObj: musicCardObject;
 }
 
 export default function MusicInformation({ musicObj }: props) {

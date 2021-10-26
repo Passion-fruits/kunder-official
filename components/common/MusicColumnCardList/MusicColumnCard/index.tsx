@@ -13,6 +13,7 @@ export default function MusicColumnCard({
   song_url,
   like,
   genre,
+  user_id,
 }: musicCardObject) {
   const dispatch = setValue();
   const router = useRouter();
@@ -20,6 +21,10 @@ export default function MusicColumnCard({
 
   const routingToDetail = (): void => {
     router.push(`/detail?id=${song_id}`);
+  };
+
+  const routingToUserPage = () => {
+    router.push(`/profile?id=${user_id}`);
   };
 
   const musicChange = (event) => {
@@ -89,7 +94,7 @@ export default function MusicColumnCard({
       <div className="music-title text-overflow" onClick={routingToDetail}>
         {title}
       </div>
-      <h3 className="musician-name text-overflow" id="noto">
+      <h3 className="musician-name text-overflow" onClick={routingToUserPage}>
         {artist}
       </h3>
     </S.Wrapper>
