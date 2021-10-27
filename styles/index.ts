@@ -2,7 +2,7 @@ import styled from "@emotion/styled";
 
 export const COLOR = {
   black_background: "#000000",
-  black_subBackground: "#1A1A1A",
+  black_subBackground: "#252525",
   black_text: "#FFF",
   gray_text: "#F8F8F8",
   gray_subText: "#A8A8A8",

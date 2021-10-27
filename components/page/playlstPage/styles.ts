@@ -13,7 +13,7 @@ export const Container = styled(BASE_CONTAINER)``;
 export const BASE_WRAP = styled.div`
   width: 100%;
   padding: 20px 30px;
-  background: #141414;
+  background: #161616;
   border-radius: 10px;
   margin-bottom: 20px;
 `;
