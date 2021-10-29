@@ -3,12 +3,14 @@ import styled from "@emotion/styled";
 export const COLOR = {
   black_background: "#000000",
   black_subBackground: "#252525",
+  blue_background: "#006FFF",
   black_text: "#FFF",
   gray_text: "#F8F8F8",
   gray_subText: "#A8A8A8",
   gray_borderColor: "rgb(30,30,30)",
   green_main: "#1CE1BF",
   green_subMain: "#74E5BB",
+  green_background: "#19FF7C",
   red_text: "#FF6464",
   blue_text: "#94C2FF",
 };

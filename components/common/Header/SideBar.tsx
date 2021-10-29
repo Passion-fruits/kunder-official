@@ -68,7 +68,7 @@ export default function SideBar() {
               <Link href={`/profile?id=${localStorage.getItem(USER_ID)}`}>
                 <button>내 프로필</button>
               </Link>
-              <Link href={`/upload`}>
+              <Link href={`/wallet`}>
                 <button>내 지갑</button>
               </Link>
               <Link href={`/upload`}>
