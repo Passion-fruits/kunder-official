@@ -38,7 +38,7 @@ export default function ChargeKdtModal() {
     <S.Wrapper>
       <h1 className="title">충전 금액 설정</h1>
       <p className="description">충전할 쿤더코인 갯수를 선택하세요</p>
-      <input type="number" value={kdtCnt} onChange={priceChange} />
+      <input type="number" value={kdtCnt} onChange={priceChange} id="focus" />
       <h3 className="total-price">
         총 <b>{changeKdtValue()}</b>원 결제
       </h3>

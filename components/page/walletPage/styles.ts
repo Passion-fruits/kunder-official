@@ -7,7 +7,9 @@ export const Container = styled(BASE_CONTAINER)`
   width: 700px;
   display: flex;
   flex-direction: column;
+  /*   align-items: center; */
   margin-top: 50px;
+  margin-right: 200px;
   & .my-wallet {
     font-size: 20px;
     font-weight: bold;
@@ -30,14 +32,13 @@ export const Container = styled(BASE_CONTAINER)`
 export const MenuWrap = styled.div`
   width: 100%;
   display: flex;
+  border-bottom: 1px solid ${COLOR.gray_borderColor};
   & button {
     width: 50%;
     color: ${COLOR.gray_subText};
     font-size: 17px;
     font-weight: bold;
     padding: 15px 0;
-    border: 1px solid ${COLOR.gray_borderColor};
-    border-width: 0px 0px 1px 0px;
     border-radius: 5px;
   }
 `;
@@ -65,6 +66,7 @@ export const ChartInfo = styled.div`
   & div {
     display: flex;
     align-items: center;
+    gap: 20px;
     position: relative;
     &::before {
       content: "";
@@ -84,37 +86,9 @@ export const ChartInfo = styled.div`
       margin-left: 20px;
     }
     & .kdt-percent {
-      position: absolute;
-      right: 0;
       color: ${COLOR.gray_subText};
       font-size: 15px;
       font-weight: 500;
-    }
-  }
-`;
-
-export const UseKdtChart = styled.div`
-  width: 100%;
-  height: 90px;
-  border-radius: 5px;
-  background: #1a1a1a;
-  margin-top: 40px;
-  padding: 20px 50px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  & div {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 5px;
-    & h1 {
-      color: ${COLOR.gray_text};
-      font-size: 20px;
-    }
-    & span {
-      color: ${COLOR.gray_subText};
-      font-size: 17px;
     }
   }
 `;
@@ -123,7 +97,8 @@ export const ControlBtnWrap = styled.div`
   display: flex;
   flex-direction: column;
   gap: 10px;
-  margin-top: 30px;
+  margin-top: 50px;
+  width: 100%;
   & button {
     width: 100%;
     height: 48px;
@@ -133,8 +108,8 @@ export const ControlBtnWrap = styled.div`
     color: ${COLOR.gray_text};
     background: ${COLOR.blue_background};
     &:nth-of-type(2) {
-      color: ${COLOR.blue_background};
-      border: 1px solid ${COLOR.blue_background};
+      color: ${COLOR.blue_text};
+      border: 1px solid ${COLOR.blue_text};
       background: none;
     }
   }
@@ -146,9 +121,8 @@ export const TransactionCard = styled.div`
   padding: 20px 17px;
   position: relative;
   border-radius: 5px;
-  &:nth-of-type(2n + 1) {
-    background-color: ${COLOR.black_subBackground};
-  }
+  border-bottom: 1px solid ${COLOR.gray_borderColor};
+  width: 100%;
   & h1 {
     font-size: 17px;
     font-weight: 500;

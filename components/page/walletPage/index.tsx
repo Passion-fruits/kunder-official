@@ -7,7 +7,6 @@ import Transaction from "./Transaction";
 export default function WalletPage() {
   const [menu, setMenu] = useState<"myKdt" | "transaction">("myKdt");
   const activeStyle = {
-    borderWidth: "1px 1px 0px 1px",
     background: COLOR.black_subBackground,
     color: COLOR.blue_text,
   };
@@ -18,12 +17,14 @@ export default function WalletPage() {
           <button
             style={menu === "myKdt" ? activeStyle : {}}
             onClick={() => setMenu("myKdt")}
+            id="focus"
           >
             보유 내역
           </button>
           <button
             style={menu === "transaction" ? activeStyle : {}}
             onClick={() => setMenu("transaction")}
+            id="focus"
           >
             거래 내역
           </button>

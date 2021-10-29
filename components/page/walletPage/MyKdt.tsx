@@ -30,20 +30,6 @@ export default function MyKdt() {
           <h3 className="kdt-percent">10/20개</h3>
         </div>
       </S.ChartInfo>
-      <S.UseKdtChart>
-        <div>
-          <h1>1 KDT</h1>
-          <span>100원</span>
-        </div>
-        <div>
-          <h1>후원받은 코인</h1>
-          <span>112 KDT</span>
-        </div>
-        <div>
-          <h1>후원한 코인</h1>
-          <span>10 KDT</span>
-        </div>
-      </S.UseKdtChart>
       <S.ControlBtnWrap>
         <button onClick={chargeTokenModalOn}>충전하기</button>
         <button>환전하기</button>
