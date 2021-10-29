@@ -15,7 +15,7 @@ export default function MyKdt() {
     <>
       <h5 className="my-wallet">My Wallet</h5>
       <h1 className="kdt-cnt">30 KDT</h1>
-      <p className="description">쿤더코인을 통해 아티스트를 후원해주세요!</p>
+      <p className="description">블록체인 지갑으로 출금 가능한 수량입니다</p>
       <S.KdtChart>
         <div />
         <div />

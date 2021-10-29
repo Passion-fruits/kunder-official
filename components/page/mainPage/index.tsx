@@ -75,6 +75,12 @@ export default function MainPage() {
         <CardList
           option="playlist"
           data={randomPlaylists}
+          title="최근 들은 곡 기반 추천"
+          description="여러 플레이리스트를 만나보세요"
+        />
+        <CardList
+          option="playlist"
+          data={randomPlaylists}
           title="랜덤 플레이리스트"
           description="여러 플레이리스트를 만나보세요"
         />
