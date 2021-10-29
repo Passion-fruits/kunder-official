@@ -2,7 +2,6 @@ import * as S from "./styles";
 import { loadTossPayments } from "@tosspayments/sdk";
 import { v4 as uuidv4 } from "uuid";
 import { useCallback, useState } from "react";
-import { toast } from "react-toastify";
 
 export default function ChargeKdtModal() {
   const minKdtCnt = 10;
@@ -21,7 +20,7 @@ export default function ChargeKdtModal() {
         orderId: uuidv4(),
         orderName: "쿤더코인 충전",
         customerName: "쿤더 후원자님",
-        successUrl: window.location.origin + "/checkPayment",
+        successUrl: window.location.origin + "/wallet/checkPayment",
         failUrl: window.location.origin + "/wallet",
       });
     });
