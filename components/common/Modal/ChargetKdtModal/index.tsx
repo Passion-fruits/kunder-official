@@ -6,7 +6,7 @@ import { toast } from "react-toastify";
 
 export default function ChargeKdtModal() {
   const minKdtCnt = 10;
-  const clientKey = "test_ck_OEP59LybZ8Bdv6A1JxkV6GYo7pRe";
+  const clientKey = "test_ck_mnRQoOaPz8L7bZe1MJvry47BMw6v";
   const tossPayments = loadTossPayments(clientKey);
   const [kdtCnt, setKdtCnt] = useState<number>(10);
 
@@ -21,8 +21,8 @@ export default function ChargeKdtModal() {
         orderId: uuidv4(),
         orderName: "쿤더코인 충전",
         customerName: "쿤더 후원자님",
-        successUrl: window.location.origin + "/wallet",
-        failUrl: window.location.origin + "/",
+        successUrl: window.location.origin + "/checkPayment",
+        failUrl: window.location.origin + "/wallet",
       });
     });
   };

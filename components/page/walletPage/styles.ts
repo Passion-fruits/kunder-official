@@ -148,3 +148,16 @@ export const TransactionCard = styled.div`
     font-size: 17px;
   }
 `;
+
+export const CheckPaymentWrap = styled(BASE_WRAPPER)`
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  & h1 {
+    color: ${COLOR.gray_text};
+    font-size: 18px;
+    margin-top: 20px;
+  }
+`;
