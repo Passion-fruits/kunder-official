@@ -27,8 +27,11 @@ export const Wrapper = styled.div`
     padding: 20px;
     & h1 {
       font-size: 20px;
-      font-weight: 800;
+      font-weight: 600;
       color: ${COLOR.gray_text};
+      @media screen and (max-width: ${SIZE.medium_width}) {
+        font-size: 16px;
+      }
     }
     & p {
       font-size: 17px;
@@ -40,6 +43,9 @@ export const Wrapper = styled.div`
       text-align: right;
       padding-bottom: 20px;
       padding-right: 20px;
+      @media screen and (max-width: ${SIZE.medium_width}) {
+        font-size: 13px;
+      }
     }
   }
   & .none {

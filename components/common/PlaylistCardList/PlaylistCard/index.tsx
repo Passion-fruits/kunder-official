@@ -59,7 +59,7 @@ export default function PlayListCard({
                 : {}
             }
           >
-            <h1>추천믹스{index + 1}</h1>
+            <h1>음악 MIX{index + 1}</h1>
             <p>
               Mix For You
               <br /> #{index + 1}
