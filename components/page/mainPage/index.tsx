@@ -7,7 +7,10 @@ import music from "../../../api/music";
 import { playlistInfor } from "../../../lib/interfaces/playlist";
 import { getRandNum } from "./../../../lib/export/getRandNum";
 import { genreList } from "./../../../lib/export/genre";
-import { music_none_data } from "../../../lib/export/data";
+import {
+  music_none_data,
+  playlist_recommend_data,
+} from "../../../lib/export/data";
 import { playlist_none_data } from "./../../../lib/export/data";
 
 export default function MainPage() {
@@ -74,14 +77,8 @@ export default function MainPage() {
       <S.Container>
         <CardList
           option="playlist"
-          data={randomPlaylists}
+          data={playlist_recommend_data}
           title="최근 들은 곡 기반 추천"
-          description="여러 플레이리스트를 만나보세요"
-        />
-        <CardList
-          option="playlist"
-          data={randomPlaylists}
-          title="랜덤 플레이리스트"
           description="여러 플레이리스트를 만나보세요"
         />
         <CardList

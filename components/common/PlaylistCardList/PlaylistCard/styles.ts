@@ -13,13 +13,34 @@ export const Wrapper = styled.div`
     transform: translateY(-6px);
   }
   & .cover-img,
-  .none {
+  .none,
+  .recommend-cover {
     width: 90%;
     height: 90%;
     position: absolute;
     background-color: ${COLOR.black_background};
     z-index: 3;
     border: 1px solid ${COLOR.gray_borderColor};
+    background-color: skyblue;
+  }
+  & .recommend-cover {
+    padding: 20px;
+    & h1 {
+      font-size: 20px;
+      font-weight: 800;
+      color: ${COLOR.gray_text};
+    }
+    & p {
+      font-size: 17px;
+      font-weight: bold;
+      color: ${COLOR.gray_text};
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      text-align: right;
+      padding-bottom: 20px;
+      padding-right: 20px;
+    }
   }
   & .none {
     background-color: ${COLOR.gray_subText};

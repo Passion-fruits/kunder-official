@@ -2,12 +2,12 @@ import * as S from "./styles";
 import MusicColumnCard from "../../common/MusicColumnCardList/MusicColumnCard/index";
 import { useCallback, useEffect, useState } from "react";
 import { musicCardObject } from "../../../lib/interfaces/music";
-import { playlistInfor } from "../../../lib/interfaces/playlist";
 import PlayListCard from "../../common/PlaylistCardList/PlaylistCard/index";
+import { playList } from "./../../../lib/interfaces/playlist";
 
 interface Props {
   option: "music" | "playlist";
-  data: musicCardObject[] | playlistInfor[];
+  data: musicCardObject[] | playList[];
   title: string;
   description: string;
 }
@@ -66,6 +66,7 @@ export default function CardList({ option, data, title, description }: Props) {
                 author={playlist.author}
                 like={playlist.like}
                 playlist_id={playlist.playlist_id}
+                index={index}
               />
             ))}
           </>

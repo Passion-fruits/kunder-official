@@ -434,3 +434,48 @@ export const playlist_none_data: playlistInfor[] = [
     user_id: null,
   },
 ];
+
+export const playlist_recommend_data: playList[] = [
+  {
+    playlist_id: 0,
+    name: "추천 MIX1",
+    cover_url: "/recommendPlaylist1.png",
+    author: "KUNDER",
+    like: null,
+  },
+  {
+    playlist_id: 0,
+    name: "추천 MIX2",
+    cover_url: "/recommendPlaylist1.png",
+    author: "KUNDER",
+    like: null,
+  },
+  {
+    playlist_id: 0,
+    name: "추천 MIX3",
+    cover_url: "/recommendPlaylist1.png",
+    author: "KUNDER",
+    like: null,
+  },
+  {
+    playlist_id: 0,
+    name: "추천 MIX4",
+    cover_url: "/recommendPlaylist1.png",
+    author: "KUNDER",
+    like: null,
+  },
+  {
+    playlist_id: 0,
+    name: "추천 MIX5",
+    cover_url: "/recommendPlaylist1.png",
+    author: "KUNDER",
+    like: null,
+  },
+  {
+    playlist_id: 0,
+    name: "추천 MIX6",
+    cover_url: "/recommendPlaylist1.png",
+    author: "KUNDER",
+    like: null,
+  },
+];

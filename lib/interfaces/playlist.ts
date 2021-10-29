@@ -6,6 +6,7 @@ export interface playList {
   like: number | string;
   cover_url: string;
   playlist_id: number;
+  index?: number;
 }
 
 export interface playlistInfor extends playList {
