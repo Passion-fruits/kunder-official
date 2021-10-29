@@ -12,6 +12,7 @@ export const Wrapper = styled(BASE_WRAPPER)`
   padding-right: ${SIZE.right_padding + "px"};
   padding-left: ${SIZE.sidebar_padding + "px"};
   background-color: rgb(12, 12, 12, 0.8);
+  backdrop-filter: blur(5px);
   position: fixed;
 `;
 
@@ -171,8 +172,8 @@ export const SearchBarWrap = styled.div<searchBarProps>`
     background-color: ${COLOR.black_subBackground};
     position: absolute;
     margin-top: 1px;
+    overflow: hidden;
     & .result {
-      display: ${(res) => (res.isFocusing ? "flex" : "none")};
       align-items: center;
       width: 100%;
       padding: 10px 10px;
@@ -185,6 +186,7 @@ export const SearchBarWrap = styled.div<searchBarProps>`
       border-left: 2px solid ${COLOR.black_subBackground};
       &:hover {
         border-left: 2px solid ${COLOR.blue_text};
+        background-color: rgb(50, 50, 50);
       }
       & em {
         color: ${COLOR.blue_text};

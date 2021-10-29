@@ -17,9 +17,7 @@ export default function SearchBar() {
   }, []);
 
   const focusOff = React.useCallback(() => {
-    setTimeout(() => {
-      setIsFocusing(false);
-    }, 100);
+    setIsFocusing(false);
   }, []);
 
   const getSearchValue = ({ target }) => {
