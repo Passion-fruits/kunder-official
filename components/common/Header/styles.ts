@@ -186,7 +186,7 @@ export const SearchBarWrap = styled.div<searchBarProps>`
       &:hover {
         border-left: 2px solid ${COLOR.blue_text};
       }
-      & b {
+      & em {
         color: ${COLOR.blue_text};
         font-weight: 500;
       }
