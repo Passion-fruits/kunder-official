@@ -4,7 +4,7 @@ import { BASE_WRAPPER, BASE_CONTAINER, COLOR } from "./../../../styles/index";
 export const Wrapper = styled(BASE_WRAPPER)``;
 
 export const Container = styled(BASE_CONTAINER)`
-  width: 630px;
+  width: 700px;
   display: flex;
   flex-direction: column;
   margin-top: 50px;

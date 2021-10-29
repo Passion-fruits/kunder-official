@@ -1,6 +1,16 @@
 import * as S from "./styles";
+import { useRouter } from "next/dist/client/router";
+import { useEffect } from "react";
+import { setValue } from "./../../../lib/context/index";
 
 export default function MyKdt() {
+  const dispatch = setValue();
+  const router = useRouter();
+
+  const chargeTokenModalOn = () => {
+    dispatch({ type: "SET_MODAL", modal: "chargeKdt" });
+  };
+
   return (
     <>
       <h5 className="my-wallet">My Wallet</h5>
@@ -35,7 +45,7 @@ export default function MyKdt() {
         </div>
       </S.UseKdtChart>
       <S.ControlBtnWrap>
-        <button>충전하기</button>
+        <button onClick={chargeTokenModalOn}>충전하기</button>
         <button>환전하기</button>
       </S.ControlBtnWrap>
     </>

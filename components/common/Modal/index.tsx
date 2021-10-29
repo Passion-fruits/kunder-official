@@ -6,6 +6,7 @@ import React from "react";
 import PrfoileUpdateModal from "./ProfileUpdateModal/index";
 import PlaylistUpdateModal from "./PlaylistUpdateModal";
 import AddLitCommentModal from "./AddLitCommentModal/index";
+import ChargeKdtModal from "./ChargetKdtModal";
 
 export default function Modal() {
   const contextObj = getValue();
@@ -32,6 +33,8 @@ export default function Modal() {
             <PlaylistUpdateModal />
           ) : modal === "addLitComment" ? (
             <AddLitCommentModal />
+          ) : modal === "chargeKdt" ? (
+            <ChargeKdtModal />
           ) : (
             <></>
           )}
