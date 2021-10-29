@@ -24,3 +24,4 @@ export { default as HomeIcon } from "./home";
 export { default as MedalIcon } from "./medal";
 export { default as ListIcon } from "./list";
 export { default as FireIcon } from "./fire";
+export { default as CoinIcon } from "./coin";

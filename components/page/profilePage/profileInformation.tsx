@@ -1,7 +1,7 @@
 import * as S from "./styles";
 import CircleFacebookIcon from "../../../assets/circleFacebook";
 import SoundCloudIcon from "../../../assets/soundCloud";
-import { InstaIcon } from "../../../assets";
+import { CoinIcon, InstaIcon } from "../../../assets";
 import YoutubeIcon from "../../../assets/youtube";
 import { profileObj } from "../../../lib/interfaces/profile";
 import SnsButton from "./SnsButton";
@@ -116,7 +116,14 @@ export default function ProfileInformation({ profileObj, getData }: props) {
           {user_id === localStorage.getItem(USER_ID) ? (
             <button onClick={profileUpdate}>정보수정</button>
           ) : (
-            <button onClick={follow}>{isFollow ? "언팔로우" : "팔로우"}</button>
+            <>
+              <button onClick={follow}>
+                {isFollow ? "언팔로우" : "팔로우"}
+              </button>
+              <button className="coinBtn">
+                <CoinIcon size={23} /> 후원하기
+              </button>
+            </>
           )}
           <div className="detail-contents">
             <div className="content">

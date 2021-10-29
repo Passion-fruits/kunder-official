@@ -131,18 +131,27 @@ export const InfoContainer = styled.div`
 
 export const FlexContainer = styled.div`
   display: flex;
-  gap: 30px;
   align-items: center;
   margin-top: 30px;
   & button {
-    padding: 10px 15px;
+    padding: 0px 15px;
+    height: 40px;
     background: none;
     border-radius: 3px;
     border: 1px solid white;
     color: white;
     font-size: 15px;
+    &:nth-of-type(2) {
+      color: ${COLOR.green_main};
+      border: 1px solid ${COLOR.green_main};
+      margin-left: 10px;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
   }
   & .detail-contents {
+    margin-left: 30px;
     display: flex;
     align-items: center;
     gap: 13px;
