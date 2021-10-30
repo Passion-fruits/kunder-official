@@ -77,6 +77,7 @@ export default function MainPage() {
           setRecommendPlaylists(res.data);
         })
         .catch(() => {
+          setRecommendPlaylists([]);
           return;
         });
     } else {
