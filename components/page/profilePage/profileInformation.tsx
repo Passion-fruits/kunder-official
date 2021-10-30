@@ -127,9 +127,11 @@ export default function ProfileInformation({ profileObj, getData }: props) {
               <button onClick={follow}>
                 {isFollow ? "언팔로우" : "팔로우"}
               </button>
-              <button className="coinBtn" onClick={donation}>
-                <CoinIcon size={23} /> 후원하기
-              </button>
+              {profileObj.wallet && (
+                <button className="coinBtn" onClick={donation}>
+                  <CoinIcon size={23} /> 후원하기
+                </button>
+              )}
             </>
           )}
           <div className="detail-contents">

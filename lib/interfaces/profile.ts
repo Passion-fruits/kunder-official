@@ -10,6 +10,7 @@ export interface profileObj {
   follower: string;
   following: string;
   is_mine: boolean;
+  wallet: string | null;
 }
 
 export interface menuObj {
