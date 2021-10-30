@@ -213,3 +213,10 @@ export const CheckPaymentWrap = styled(BASE_WRAPPER)`
     margin-top: 20px;
   }
 `;
+
+export const LoadingWrap = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+`;

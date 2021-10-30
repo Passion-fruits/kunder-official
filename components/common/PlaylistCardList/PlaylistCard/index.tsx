@@ -28,44 +28,7 @@ export default function PlayListCard({
       <S.ResponsiveWrap>
         <div className="sqaure square1" />
         <div className="sqaure square2" />
-        {playlist_id === 0 ? (
-          <div
-            className="recommend-cover"
-            style={
-              index === 0
-                ? {
-                    background: "linear-gradient(-45deg,#FF2D26,#FE4FBE)",
-                  }
-                : index === 1
-                ? {
-                    background: "linear-gradient(-45deg,#2659FF,#10CFA8)",
-                  }
-                : index === 2
-                ? {
-                    background: "linear-gradient(-45deg,#B83DE4,#428BDF)",
-                  }
-                : index === 3
-                ? {
-                    background: "linear-gradient(-45deg,#FF9270,#FF3939)",
-                  }
-                : index === 4
-                ? {
-                    background: "linear-gradient(-45deg,#07DE00,#7B8DFF)",
-                  }
-                : index === 5
-                ? {
-                    background: "linear-gradient(-45deg,#E43D80,#B142DF)",
-                  }
-                : {}
-            }
-          >
-            <h1>음악 MIX{index + 1}</h1>
-            <p>
-              Mix For You
-              <br /> #{index + 1}
-            </p>
-          </div>
-        ) : playlist_id ? (
+        {playlist_id || playlist_id === 0 ? (
           <img src={coverImg} className="cover-img" />
         ) : (
           <div className="none" />

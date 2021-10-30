@@ -26,6 +26,8 @@ export default function MyKdt() {
     if (typeof windowObj.klaytn !== "undefined") {
       console.log("success");
       const klaytn = windowObj.klaytn;
+      console.log(klaytn.selectedAddress);
+      console.log(klaytn);
       // get user wallet address
       if (localStorage.getItem(IS_KDT)) {
         console.log("aready have kdt");
@@ -66,7 +68,7 @@ export default function MyKdt() {
     <>
       <h5 className="my-wallet">My Wallet</h5>
       <h1 className="kdt-cnt">30 KDT</h1>
-      <p className="description">블록체인 지갑으로 출금 가능한 수량입니다</p>
+      <p className="description">쿤더코인 보유 내역입니다.</p>
       <S.KdtChart>
         <div />
         <div />

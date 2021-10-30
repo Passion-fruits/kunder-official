@@ -79,7 +79,7 @@ export default function MainPage() {
           option="playlist"
           data={playlist_recommend_data}
           title="최근 들은 곡 기반 추천"
-          description="여러 플레이리스트를 만나보세요"
+          description="오직 당신만을 위한 믹스"
         />
         <CardList
           option="music"
