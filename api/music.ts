@@ -98,4 +98,14 @@ export default {
       method: "get",
     });
   },
+  getHistoryMusic({ page, size }) {
+    return request({
+      url: `/history?page=${page}&size=${size}`,
+      method: "get",
+      headers: {
+        "Content-type": "application/json",
+        Authorization: `Bearer ${localStorage.getItem(ACCESS_TOKEN)}`,
+      },
+    });
+  },
 };

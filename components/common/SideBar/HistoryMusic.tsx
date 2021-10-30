@@ -1,26 +1,38 @@
 import * as S from "./styles";
-import { data2 } from "../../../lib/export/data";
 import { useRouter } from "next/dist/client/router";
 import PlayIcon from "../../../assets/play";
 import { setValue } from "../../../lib/context/index";
+import { useEffect, useState } from "react";
+import music from "../../../api/music";
+import { musicCardObject } from "./../../../lib/interfaces/music";
 
 export default function HistoryMusic() {
   const router = useRouter();
   const dispatch = setValue();
+  const [musicList, setMusicList] = useState<musicCardObject[]>([]);
+  useEffect(() => {
+    music
+      .getHistoryMusic({ page: 1, size: 5 })
+      .then((res) => {
+        setMusicList(res.data.song);
+      })
+      .catch(() => {
+        return;
+      });
+  }, []);
   return (
     <>
       <div className="line" />
       <h1 className="line-title">최근 들은 음악</h1>
       <S.HistoryMusicList>
-        {data2.slice(0, 5).map((music, index) => (
-          <div
-            className="music-card-wrap"
-            key={index}
-            onClick={() => {
-              dispatch({ type: "MUSIC_CHANGE", musicInformation: music });
-            }}
-          >
-            <div className="cover-img-wrap">
+        {musicList.map((music, index) => (
+          <div className="music-card-wrap" key={index}>
+            <div
+              className="cover-img-wrap"
+              onClick={() => {
+                dispatch({ type: "MUSIC_CHANGE", musicInformation: music });
+              }}
+            >
               <div className="cover">
                 <PlayIcon size={12} callback={() => {}} />
               </div>
