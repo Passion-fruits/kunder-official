@@ -14,35 +14,33 @@ export const Wrapper = styled.div`
   }
   & .cover-img,
   .none,
-  .recommend-cover {
+  .recommend-playlist {
     width: 90%;
     height: 90%;
     position: absolute;
     z-index: 3;
     border: 1px solid ${COLOR.gray_borderColor};
   }
-  & .recommend-cover {
-    padding: 20px;
-    & h1 {
-      font-size: 20px;
-      font-weight: 600;
-      color: ${COLOR.gray_text};
-      @media screen and (max-width: ${SIZE.medium_width}) {
-        font-size: 16px;
-      }
+  & .recommend-playlist {
+    & img {
+      width: 100%;
+      height: 100%;
     }
-    & p {
+    & .cover {
+      width: 100%;
+      height: 100%;
+      z-index: 3;
+      position: absolute;
+      display: flex;
+      justify-content: flex-end;
+      align-items: flex-end;
+      padding: 20px;
+      color: ${COLOR.gray_text};
       font-size: 17px;
       font-weight: bold;
-      color: ${COLOR.gray_text};
-      position: absolute;
-      bottom: 0;
-      right: 0;
       text-align: right;
-      padding-bottom: 20px;
-      padding-right: 20px;
       @media screen and (max-width: ${SIZE.medium_width}) {
-        font-size: 13px;
+        font-size: 14px;
       }
     }
   }

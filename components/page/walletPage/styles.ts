@@ -158,6 +158,7 @@ export const ControlBtnWrap = styled.div`
 export const TransactionCard = styled.div`
   display: flex;
   flex-direction: column;
+  justify-content: center;
   padding: 20px 0px;
   position: relative;
   border-radius: 5px;
@@ -204,11 +205,6 @@ export const TransactionCard = styled.div`
     font-size: 15px;
     background: ${COLOR.black_subBackground};
     cursor: pointer;
-    border: 1px solid ${COLOR.black_subBackground};
-    transition: 0.5s;
-    &:hover {
-      border: 1px solid ${COLOR.blue_text};
-    }
   }
   & .date {
     color: ${COLOR.gray_subText};
