@@ -10,6 +10,7 @@ type State = {
     | "updatePlaylist"
     | "addLitComment"
     | "chargeKdt"
+    | "donation"
     | null;
   song_id: number | string;
   list_index: number;
@@ -26,6 +27,7 @@ type Action =
         | "updatePlaylist"
         | "addLitComment"
         | "chargeKdt"
+        | "donation"
         | null;
     }
   | { type: "SET_MUSIC_ID"; song_id: number | string }

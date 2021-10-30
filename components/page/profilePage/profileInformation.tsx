@@ -68,6 +68,13 @@ export default function ProfileInformation({ profileObj, getData }: props) {
     });
   }, []);
 
+  const donation = React.useCallback(() => {
+    dispatch({
+      type: "SET_MODAL",
+      modal: "donation",
+    });
+  }, []);
+
   return (
     <S.ProfileInfoWrap>
       <img src={profileObj.profile} className="cover-img" />
@@ -120,7 +127,7 @@ export default function ProfileInformation({ profileObj, getData }: props) {
               <button onClick={follow}>
                 {isFollow ? "언팔로우" : "팔로우"}
               </button>
-              <button className="coinBtn">
+              <button className="coinBtn" onClick={donation}>
                 <CoinIcon size={23} /> 후원하기
               </button>
             </>

@@ -7,6 +7,7 @@ import PrfoileUpdateModal from "./ProfileUpdateModal/index";
 import PlaylistUpdateModal from "./PlaylistUpdateModal";
 import AddLitCommentModal from "./AddLitCommentModal/index";
 import ChargeKdtModal from "./ChargetKdtModal";
+import DonationModal from "./DonationModal";
 
 export default function Modal() {
   const contextObj = getValue();
@@ -35,6 +36,8 @@ export default function Modal() {
             <AddLitCommentModal />
           ) : modal === "chargeKdt" ? (
             <ChargeKdtModal />
+          ) : modal === "donation" ? (
+            <DonationModal />
           ) : (
             <></>
           )}

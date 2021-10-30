@@ -134,9 +134,9 @@ export default function ControlMusic({ musicObj }: props) {
           <button onClick={addMusicToPlaylist}>
             <PlayListAddIcon size={16} /> 추가
           </button>
-          <button>
+          {/*           <button>
             <CoinIcon size={23} /> 후원하기
-          </button>
+          </button> */}
         </div>
         <form onSubmit={sendComment}>
           <input

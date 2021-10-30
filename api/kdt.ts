@@ -28,4 +28,17 @@ export default {
       },
     });
   },
+  setKdtWallet(wallet) {
+    return request({
+      url: `/profile/wallet`,
+      method: "patch",
+      headers: {
+        "Content-type": "application/json",
+        Authorization: `Bearer ${localStorage.getItem(ACCESS_TOKEN)}`,
+      },
+      data: {
+        wallet: wallet,
+      },
+    });
+  },
 };

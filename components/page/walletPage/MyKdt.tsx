@@ -5,6 +5,7 @@ import { setValue } from "./../../../lib/context/index";
 import { IS_KDT } from "../../../lib/export/localstorage";
 import { toast } from "react-toastify";
 import axios from "axios";
+import kdt from "../../../api/kdt";
 
 export default function MyKdt() {
   const dispatch = setValue();
@@ -19,52 +20,7 @@ export default function MyKdt() {
     }
   };
 
-  useEffect(() => {
-    const tokenAddress = "0xaa27499753d621c79a8d08df8e6e989aba311fe0";
-    const tokenSymbol = "KDT";
-    const tokenDecimals = 18;
-    const tokenImage = "https://avatars.githubusercontent.com/u/64083083?v=4";
-    const windowObj: any = window;
-    if (typeof windowObj.klaytn !== "undefined") {
-      console.log("success");
-      const klaytn = windowObj.klaytn;
-      // get user wallet address
-      if (localStorage.getItem(IS_KDT)) {
-        console.log("aready have kdt");
-        return;
-      }
-      klaytn.sendAsync(
-        {
-          method: "wallet_watchAsset",
-          params: {
-            type: "ERC20",
-            options: {
-              address: tokenAddress,
-              symbol: tokenSymbol,
-              decimals: tokenDecimals,
-              image: tokenImage,
-            },
-          },
-          id: Math.round(Math.random() * 100000),
-        },
-        (err, added) => {
-          if (added) {
-            console.log(added);
-            if (added.result === true) {
-              localStorage.setItem(IS_KDT, "true");
-              toast.success("쿤더토큰이 추가되었습니다");
-            }
-          } else {
-            toast.error("추가에 실패하였습니다");
-          }
-        }
-      );
-    } else {
-      toast.info("카이카스 지갑 없음");
-    }
-  }, []);
-
-  useEffect(() => {
+  const getMyKdtAmount = () => {
     const windowObj: any = window;
     if (typeof windowObj.klaytn !== "undefined") {
       const klaytn = windowObj.klaytn;
@@ -89,6 +45,66 @@ export default function MyKdt() {
           return;
         });
     }
+  };
+
+  useEffect(() => {
+    const tokenAddress = "0xaa27499753d621c79a8d08df8e6e989aba311fe0";
+    const tokenSymbol = "KDT";
+    const tokenDecimals = 18;
+    const tokenImage = "https://avatars.githubusercontent.com/u/64083083?v=4";
+    const windowObj: any = window;
+    if (localStorage.getItem(IS_KDT)) {
+      console.log("aready have kdt");
+      return;
+    }
+    if (typeof windowObj.klaytn !== "undefined") {
+      console.log("success");
+      const klaytn = windowObj.klaytn;
+      // get user wallet address
+      klaytn.sendAsync(
+        {
+          method: "wallet_watchAsset",
+          params: {
+            type: "ERC20",
+            options: {
+              address: tokenAddress,
+              symbol: tokenSymbol,
+              decimals: tokenDecimals,
+              image: tokenImage,
+            },
+          },
+          id: Math.round(Math.random() * 100000),
+        },
+        (err, added) => {
+          if (added) {
+            console.log(added);
+            if (added.result === true) {
+              localStorage.setItem(IS_KDT, "true");
+              klaytn.enable().then((res) => {
+                kdt
+                  .setKdtWallet(res[0])
+                  .then((res) => {
+                    toast.success("정상 처리되었습니다");
+                  })
+                  .catch(() => {
+                    toast.error("에러가 발생하였습니다.");
+                  });
+              });
+              toast.success("쿤더토큰이 추가되었습니다");
+              getMyKdtAmount();
+            }
+          } else {
+            toast.error("추가에 실패하였습니다");
+          }
+        }
+      );
+    } else {
+      toast.info("카이카스 지갑 없음");
+    }
+  }, []);
+
+  useEffect(() => {
+    getMyKdtAmount();
   }, []);
 
   return (
