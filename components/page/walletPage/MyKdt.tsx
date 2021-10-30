@@ -2,14 +2,19 @@ import * as S from "./styles";
 import { useRouter } from "next/dist/client/router";
 import { useEffect } from "react";
 import { setValue } from "./../../../lib/context/index";
-import { IS_ADD_KDT } from "../../../lib/export/localstorage";
+import { IS_KDT } from "../../../lib/export/localstorage";
+import { toast } from "react-toastify";
 
 export default function MyKdt() {
   const dispatch = setValue();
   const router = useRouter();
 
   const chargeTokenModalOn = () => {
-    dispatch({ type: "SET_MODAL", modal: "chargeKdt" });
+    if (localStorage.getItem(IS_KDT)) {
+      dispatch({ type: "SET_MODAL", modal: "chargeKdt" });
+    } else {
+      toast.error("쿤더토큰을 추가해주세요");
+    }
   };
 
   useEffect(() => {
@@ -19,47 +24,41 @@ export default function MyKdt() {
     const tokenImage = "https://avatars.githubusercontent.com/u/64083083?v=4";
     const windowObj: any = window;
     if (typeof windowObj.klaytn !== "undefined") {
-      if (localStorage.getItem(IS_ADD_KDT)) {
-        console.log("aleady have kdt");
-        return;
-      }
       console.log("success");
       const klaytn = windowObj.klaytn;
-      klaytn
-        .enable()
-        .then((res) => {
-          console.log(res[0]);
-        })
-        .catch((err) => {
-          console.log(err);
-        });
+      // get user wallet address
+      if (localStorage.getItem(IS_KDT)) {
+        console.log("aready have kdt");
+        return;
+      }
       klaytn.sendAsync(
         {
           method: "wallet_watchAsset",
           params: {
-            type: "ERC20", // Initially only supports ERC20, but eventually more!
+            type: "ERC20",
             options: {
-              address: tokenAddress, // The address that the token is at.
-              symbol: tokenSymbol, // A ticker symbol or shorthand, up to 5 chars.
-              decimals: tokenDecimals, // The number of decimals in the token
-              image: tokenImage, // A string url of the token logo
+              address: tokenAddress,
+              symbol: tokenSymbol,
+              decimals: tokenDecimals,
+              image: tokenImage,
             },
           },
           id: Math.round(Math.random() * 100000),
         },
         (err, added) => {
           if (added) {
+            console.log(added);
             if (added.result === true) {
-              localStorage.setItem(IS_ADD_KDT, "true");
+              localStorage.setItem(IS_KDT, "true");
+              toast.success("쿤더토큰이 추가되었습니다");
             }
-            console.log("Thanks for your interest!");
           } else {
-            console.log("Your loss!");
+            toast.error("추가에 실패하였습니다");
           }
         }
       );
     } else {
-      console.log("load fail");
+      toast.info("카이카스 지갑 없음");
     }
   }, []);
 

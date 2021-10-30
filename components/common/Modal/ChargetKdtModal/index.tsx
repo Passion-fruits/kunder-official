@@ -1,7 +1,7 @@
 import * as S from "./styles";
 import { loadTossPayments } from "@tosspayments/sdk";
 import { v4 as uuidv4 } from "uuid";
-import { useCallback, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 
 export default function ChargeKdtModal() {
   const minKdtCnt = 10;
