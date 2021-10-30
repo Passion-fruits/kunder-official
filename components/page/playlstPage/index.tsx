@@ -13,6 +13,8 @@ export default function PlaylistPage() {
   const dispatch = setValue();
   const contextObj = getValue();
   const playlist_id = router.query.id;
+  const playlist_index = router.query.index;
+  const base_song_id = router.query.base_song_id;
   const [playlistObj, setPlaylistObj] = React.useState<playlistInfor>();
   const [musicArr, setMusicArr] = React.useState<musicCardObject[]>([]);
 
@@ -20,6 +22,16 @@ export default function PlaylistPage() {
     if (playlist_id && contextObj.modal === null) {
       playlist
         .getPlaylistDetail(playlist_id)
+        .then((res) => {
+          setPlaylistObj(res.data.playlist);
+          setMusicArr(res.data.songs);
+        })
+        .catch(() => {
+          return;
+        });
+    } else {
+      playlist
+        .getRecommendPlaylistDetail({ base_song_id: base_song_id, size: 15 })
         .then((res) => {
           setPlaylistObj(res.data.playlist);
           setMusicArr(res.data.songs);
@@ -43,13 +55,16 @@ export default function PlaylistPage() {
         {playlistObj && (
           <>
             <PlaylistInformation
-              name={playlistObj.name}
+              name={
+                playlistObj.name ||
+                `데일리 믹스 #${parseInt(playlist_index.toString()) + 1}`
+              }
               author={playlistObj.author}
               like={playlistObj.like}
               cover_url={playlistObj.cover_url}
               playlist_id={playlistObj.playlist_id}
               created_at={playlistObj.created_at}
-              user_id={playlistObj.user_id}
+              user_id={playlistObj.user_id || 0}
               songs={musicArr}
             />
             <S.MusicListWrap>

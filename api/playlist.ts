@@ -53,4 +53,10 @@ export default {
       data: fd,
     });
   },
+  getRecommendPlaylistDetail({ base_song_id, size }) {
+    return request({
+      method: "get",
+      url: `/recommend/main/playlist?song_id=${base_song_id}&size=${size}`,
+    });
+  },
 };

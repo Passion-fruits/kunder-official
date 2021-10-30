@@ -1,4 +1,5 @@
 import request from "./axios";
+import { ACCESS_TOKEN } from "./../lib/export/localstorage";
 
 export default {
   getRecentMusic({ page, size }) {
@@ -17,6 +18,16 @@ export default {
     return request({
       method: "get",
       url: `/song/popular?page=${page}&size=${size}`,
+    });
+  },
+  getRecommendPlaylist(size) {
+    return request({
+      method: "get",
+      url: `/recommend/main?size=${size}`,
+      headers: {
+        "Content-type": "multipart/form-data",
+        Authorization: `Bearer ${localStorage.getItem(ACCESS_TOKEN)}`,
+      },
     });
   },
 };

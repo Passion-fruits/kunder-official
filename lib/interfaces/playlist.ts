@@ -7,6 +7,7 @@ export interface playList {
   cover_url: string;
   playlist_id: number;
   index?: number;
+  base_song_id?: number;
 }
 
 export interface playlistInfor extends playList {

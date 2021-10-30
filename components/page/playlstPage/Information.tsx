@@ -52,10 +52,14 @@ export default function PlaylistInformation({
 
   return (
     <S.InforWrap>
-      <img
-        src={cover_url ? cover_url : "/playlist.png"}
-        className="cover-image"
-      />
+      {user_id ? (
+        <img
+          src={cover_url ? cover_url : "/playlist.png"}
+          className="cover-image"
+        />
+      ) : (
+        <div className="recommend-cover" />
+      )}
       <div className="infor-container">
         <div className="playlist-intro">
           <h5>플레이리스트</h5>

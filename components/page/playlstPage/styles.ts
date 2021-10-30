@@ -24,7 +24,8 @@ export const InforWrap = styled(BASE_WRAP)`
   @media screen and (max-width: ${SIZE.medium_width}) {
     grid-template-columns: 200px auto;
   }
-  & .cover-image {
+  & .cover-image,
+  .recommend-cover {
     width: 250px;
     height: 250px;
     border: 1px solid ${COLOR.gray_borderColor};
@@ -32,6 +33,13 @@ export const InforWrap = styled(BASE_WRAP)`
       width: 200px;
       height: 200px;
     }
+  }
+  & .recommend-cover {
+    background: linear-gradient(skyblue, pink);
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
   & .infor-container {
     width: 100%;
@@ -105,8 +113,7 @@ export const InforWrap = styled(BASE_WRAP)`
     display: flex;
     gap: 30px;
     align-items: center;
-    position: absolute;
-    bottom: 0;
+    margin-top: 20px;
     & .play-btn {
       width: 55px;
       height: 55px;

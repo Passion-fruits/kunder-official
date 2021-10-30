@@ -67,6 +67,7 @@ export default function CardList({ option, data, title, description }: Props) {
                 like={playlist.like}
                 playlist_id={playlist.playlist_id}
                 index={index}
+                base_song_id={playlist.base_song_id}
               />
             ))}
           </>

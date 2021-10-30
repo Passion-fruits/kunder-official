@@ -11,9 +11,18 @@ export default function PlayListCard({
   playlist_id,
   like,
   index,
+  base_song_id,
 }: playList) {
   const router = useRouter();
   const [coverImg, setCoverImg] = React.useState<string>("/playlist.png");
+
+  const routingToDetail = () => {
+    if (playlist_id === 0) {
+      router.push(`/playlist?base_song_id=${base_song_id}&index=${index}`);
+    } else {
+      router.push(`/playlist?id=${playlist_id}`);
+    }
+  };
 
   React.useEffect(() => {
     const img = new Image();
@@ -24,7 +33,7 @@ export default function PlayListCard({
   }, [cover_url]);
 
   return (
-    <S.Wrapper onClick={() => router.push(`/playlist?id=${playlist_id}`)}>
+    <S.Wrapper onClick={routingToDetail}>
       <S.ResponsiveWrap>
         <div className="sqaure square1" />
         <div className="sqaure square2" />
@@ -41,7 +50,7 @@ export default function PlayListCard({
                   : index === 1
                   ? {
                       background:
-                        "linear-gradient(134.42deg, rgba(70, 99, 255, 0.7) 7.99%, rgba(91, 255, 165, 0.7) 92.85%, rgba(95, 156, 119, 0.7) 92.85%)",
+                        "linear-gradient(134.42deg, rgba(70, 99, 255, 0.7) 7.99%, rgba(91, 255, 165, 0.7) 92.85%)",
                     }
                   : index === 2
                   ? {
