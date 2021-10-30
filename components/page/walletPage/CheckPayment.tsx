@@ -12,24 +12,33 @@ export default function CheckPayment() {
     const windowObj: any = window;
     if (typeof windowObj.klaytn !== "undefined") {
       const klaytn = windowObj.klaytn;
-      if (amount && orderId && paymentKey) {
-        kdt
-          .requestPayment({
-            paymentKey: paymentKey,
-            orderId: orderId,
-            amount: amount,
-            account: klaytn.selectedAddress,
-          })
-          .then((res) => {
-            router.push("/wallet");
-            toast.success("충전되었습니다");
-          })
-          .catch((err) => {
-            console.log(err);
-            router.push("/wallet");
-            toast.error("에러가 발생하였습니다");
-          });
-      }
+      // get user wallet address
+      klaytn
+        .enable()
+        .then((res) => {
+          // res[0] === user account
+          if (amount && orderId && paymentKey) {
+            kdt
+              .requestPayment({
+                paymentKey: paymentKey,
+                orderId: orderId,
+                amount: amount,
+                account: res[0],
+              })
+              .then((res) => {
+                router.push("/wallet");
+                toast.success("충전되었습니다");
+              })
+              .catch((err) => {
+                router.push("/wallet");
+                toast.error("에러가 발생하였습니다");
+              });
+          }
+        })
+        .catch(() => {
+          router.push("/wallet");
+          toast.error("에러가 발생하였습니다");
+        });
     }
   }, [router]);
   return (

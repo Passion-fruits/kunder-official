@@ -158,13 +158,13 @@ export const ControlBtnWrap = styled.div`
 export const TransactionCard = styled.div`
   display: flex;
   flex-direction: column;
-  padding: 20px 17px;
+  padding: 20px 0px;
   position: relative;
   border-radius: 5px;
   border-bottom: 1px solid ${COLOR.gray_borderColor};
   width: 100%;
   & h1 {
-    font-size: 17px;
+    font-size: 19px;
     font-weight: 500;
     color: ${COLOR.gray_subText};
     @media screen and (max-width: ${SIZE.medium_width}) {
@@ -180,18 +180,39 @@ export const TransactionCard = styled.div`
     justify-content: space-between;
     width: 100%;
   }
+  & .column-wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    &:nth-of-type(2) {
+      align-items: flex-end;
+    }
+  }
   & .kdt {
-    font-size: 20px;
+    font-size: 17px;
     font-weight: bold;
-    margin-top: 10px;
     color: ${COLOR.blue_text};
     @media screen and (max-width: ${SIZE.medium_width}) {
       font-size: 17px;
     }
   }
+  & .hax-code {
+    padding: 5px 10px;
+    border-radius: 5px;
+    width: 200px;
+    color: ${COLOR.blue_text};
+    font-size: 15px;
+    background: ${COLOR.black_subBackground};
+    cursor: pointer;
+    border: 1px solid ${COLOR.black_subBackground};
+    transition: 0.5s;
+    &:hover {
+      border: 1px solid ${COLOR.blue_text};
+    }
+  }
   & .date {
     color: ${COLOR.gray_subText};
-    font-size: 17px;
+    font-size: 15px;
     @media screen and (max-width: ${SIZE.medium_width}) {
       font-size: 14px;
     }
