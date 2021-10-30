@@ -8,15 +8,31 @@ import music from "../../../api/music";
 import { musicCardObject } from "../../../lib/interfaces/music";
 
 export default function DetailPage() {
-  const router = useRouter();
   const [musicObj, setMusicObj] = useState<musicCardObject | null>(null);
+  const [similarMusicList, setSimilarMusicList] = useState<musicCardObject[]>(
+    []
+  );
+  const router = useRouter();
+  const music_id = router.query.id;
 
   React.useEffect(() => {
-    const music_id = router.query.id;
     if (music_id) {
       music.getMusicDetail(music_id).then(({ data }) => {
         setMusicObj(data);
       });
+    }
+  }, [router]);
+
+  React.useEffect(() => {
+    if (music_id) {
+      music
+        .getSimilarMusic({ song_id: music_id, size: 6 })
+        .then((res) => {
+          setSimilarMusicList(res.data);
+        })
+        .catch(() => {
+          return;
+        });
     }
   }, [router]);
 
@@ -27,7 +43,7 @@ export default function DetailPage() {
           <S.Container>
             <MusicInformation musicObj={musicObj} />
             <ControlMusic musicObj={musicObj} />
-            <SimilarMusic />
+            <SimilarMusic data={similarMusicList} />
           </S.Container>
         </>
       )}

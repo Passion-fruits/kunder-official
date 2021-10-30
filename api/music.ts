@@ -92,4 +92,10 @@ export default {
       },
     });
   },
+  getSimilarMusic({ song_id, size }) {
+    return request({
+      url: `/recommend/song/detail?song_id=${song_id}&size=${size}`,
+      method: "get",
+    });
+  },
 };

@@ -1,9 +1,12 @@
-import MusicRowCardList from "../../common/MusicRowCardList";
 import * as S from "./styles";
-import { data } from "../../../lib/export/data";
 import MusicColumnCardList from "../../common/MusicColumnCardList";
+import { musicCardObject } from "./../../../lib/interfaces/music";
 
-export default function SimilarMusic() {
+interface Props {
+  data: musicCardObject[];
+}
+
+export default function SimilarMusic({ data }: Props) {
   return (
     <S.SimilarMusicWrap>
       <h1>이 노래와 유사한 음악</h1>

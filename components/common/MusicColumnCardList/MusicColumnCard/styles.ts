@@ -12,7 +12,7 @@ export const Wrapper = styled.div`
     width: 100%;
     height: 100%;
     border: 1px solid ${COLOR.gray_borderColor};
-    background-color: ${COLOR.gray_subText};
+    background-color: ${COLOR.black_subBackground};
     overflow: hidden;
     @media screen and (max-width: ${SIZE.medium_width}) {
       width: 98%;
@@ -21,6 +21,7 @@ export const Wrapper = styled.div`
     & img {
       width: 100%;
       height: 100%;
+      background-color: ${COLOR.black_background};
     }
     & .cover {
       width: 100%;

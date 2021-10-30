@@ -1,4 +1,4 @@
-import { HeartIcon } from "../../../assets";
+import { CoinIcon, HeartIcon } from "../../../assets";
 import * as S from "./styles";
 import { COLOR } from "../../../styles/index";
 import PlayListAddIcon from "../../../assets/playListAdd";
@@ -134,12 +134,16 @@ export default function ControlMusic({ musicObj }: props) {
           <button onClick={addMusicToPlaylist}>
             <PlayListAddIcon size={16} /> 추가
           </button>
+          <button>
+            <CoinIcon size={23} /> 후원하기
+          </button>
         </div>
         <form onSubmit={sendComment}>
           <input
             type="text"
             ref={commentRef}
             placeholder="댓글을 작성하여 의견을 남겨주세요"
+            id="focus"
           />
         </form>
       </S.ControlMusicContainer>

@@ -177,8 +177,20 @@ export const ControlMusicContainer = styled.div`
       border: 1px solid #575454;
       color: ${COLOR.gray_text};
       font-size: 16px;
-      padding: 8px 15px;
+      padding: 0px 15px;
+      height: 40px;
       border-radius: 5px;
+      &:nth-of-type(3) {
+        color: ${COLOR.green_main};
+        border: 1px solid ${COLOR.green_main};
+      }
+      @media screen and (max-width: ${SIZE.medium_width}) {
+        height: 35px;
+        font-size: 14px;
+        & svg {
+          width: 15px;
+        }
+      }
       & svg {
         margin-right: 5px;
       }
@@ -190,17 +202,11 @@ export const ControlMusicContainer = styled.div`
     height: 60px;
     font-size: 16px;
     color: ${COLOR.gray_subText};
-    border: 1px solid ${COLOR.gray_borderColor};
     border-radius: 5px;
     background: ${COLOR.black_subBackground};
-    transition: 0.3s;
     @media screen and (max-width: ${SIZE.medium_width}) {
       height: 50px;
       font-size: 14px;
-    }
-    &:focus {
-      color: ${COLOR.gray_text};
-      border: 1px solid #5d75d6;
     }
     &::placeholder {
       color: #9d9d9d;
@@ -212,7 +218,7 @@ export const SimilarMusicWrap = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 30px;
+  margin-top: 50px;
   & h1 {
     color: #bfbfbf;
     font-size: 20px;
@@ -226,7 +232,7 @@ export const SimilarMusicWrap = styled.div`
     height: 1px;
     background: #bfbfbf;
     margin-top: 20px;
-    margin-bottom: 30px;
+    margin-bottom: 50px;
   }
 `;
 

@@ -18,10 +18,8 @@ export const Wrapper = styled.div`
     width: 90%;
     height: 90%;
     position: absolute;
-    background-color: ${COLOR.black_background};
     z-index: 3;
     border: 1px solid ${COLOR.gray_borderColor};
-    background-color: skyblue;
   }
   & .recommend-cover {
     padding: 20px;
@@ -49,7 +47,7 @@ export const Wrapper = styled.div`
     }
   }
   & .none {
-    background-color: ${COLOR.gray_subText};
+    background-color: ${COLOR.black_subBackground};
   }
   & .sqaure {
     width: 90%;
