@@ -71,6 +71,9 @@ export default function SideBar() {
               <Link href={`/wallet`}>
                 <button>내 지갑</button>
               </Link>
+              <Link href={`/support`}>
+                <button>후원 내역</button>
+              </Link>
               <Link href={`/upload`}>
                 <button>음악 업로드</button>
               </Link>
