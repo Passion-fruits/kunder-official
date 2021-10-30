@@ -7,6 +7,7 @@ import PlayListAddIcon from "../../../assets/playListAdd";
 import VolumeControl from "./VolumeControl";
 import { setValue } from "../../../lib/context/index";
 import { toast } from "react-toastify";
+import music from "../../../api/music";
 
 export default function AudioPlayBar() {
   const musicObj = getValue().musicInformation;
@@ -115,6 +116,15 @@ export default function AudioPlayBar() {
       audio.current.src = musicObj.song_url;
       audio.current.play();
       setIsPlay(true);
+      // lit 아니면 히스토리에 추가
+      music
+        .setHistoryMusic(musicObj.song_id)
+        .then(() => {
+          return;
+        })
+        .catch(() => {
+          return;
+        });
     }
     if (musicObj.short_url) {
       audio.current.src = musicObj.short_url;

@@ -108,4 +108,17 @@ export default {
       },
     });
   },
+  setHistoryMusic(id) {
+    return request({
+      url: `/history`,
+      method: "post",
+      headers: {
+        "Content-type": "application/json",
+        Authorization: `Bearer ${localStorage.getItem(ACCESS_TOKEN)}`,
+      },
+      data: {
+        song_id:id
+      }
+    });
+  },
 };
