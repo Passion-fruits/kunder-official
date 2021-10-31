@@ -2,7 +2,7 @@ import LitCard from "./LitCard";
 import * as S from "./styles";
 import React from "react";
 import { getValue, setValue } from "../../../lib/context/index";
-import feed from "../../../api/feed";
+import music from "../../../api/music";
 import { musicCardObject } from "../../../lib/interfaces/music";
 
 export default function LitPage() {
@@ -10,6 +10,17 @@ export default function LitPage() {
   const audioListIndex = getValue().list_index;
   const [indexNum, setIndexNum] = React.useState<number>(0);
   const [musicList, setMusicList] = React.useState<musicCardObject[]>([]);
+
+  const getLitList = (song_id) => {
+    music
+      .getLit(song_id, 15)
+      .then((res) => {
+        setMusicList(musicList.concat(res.data));
+      })
+      .catch((err) => {
+        return;
+      });
+  };
 
   React.useEffect(() => {
     if (musicList.length > 0) {
@@ -25,18 +36,17 @@ export default function LitPage() {
   }, [musicList]);
 
   React.useEffect(() => {
-    feed
-      .getFeedList(1, 1, 2)
-      .then((res) => {
-        setMusicList(res.data);
-      })
-      .catch(() => {
-        return;
-      });
+    getLitList(2);
   }, []);
 
   React.useEffect(() => {
     setIndexNum(audioListIndex);
+  }, [audioListIndex]);
+
+  React.useEffect(() => {
+    if (musicList.length > 0 && audioListIndex > musicList.length - 3) {
+      getLitList(musicList[audioListIndex].song_id);
+    }
   }, [audioListIndex]);
 
   return (

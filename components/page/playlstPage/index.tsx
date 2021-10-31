@@ -31,7 +31,7 @@ export default function PlaylistPage() {
         });
     } else {
       playlist
-        .getRecommendPlaylistDetail({ base_song_id: base_song_id, size: 15 })
+        .getRecommendPlaylistDetail({ base_song_id: base_song_id, size: 5 })
         .then((res) => {
           setPlaylistObj(res.data.playlist);
           setMusicArr(res.data.songs);

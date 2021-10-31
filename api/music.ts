@@ -117,8 +117,14 @@ export default {
         Authorization: `Bearer ${localStorage.getItem(ACCESS_TOKEN)}`,
       },
       data: {
-        song_id:id
-      }
+        song_id: id,
+      },
+    });
+  },
+  getLit(id, size) {
+    return request({
+      url: `/recommend/lit?song_id=${id}&size=${size}`,
+      method: "get",
     });
   },
 };
