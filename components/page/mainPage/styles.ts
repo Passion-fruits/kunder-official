@@ -25,12 +25,15 @@ export const ListWrap = styled.div`
 export const Title = styled.h1`
   font-size: 25px;
   color: ${COLOR.gray_text};
+  @media screen and (max-width: ${SIZE.medium_width}) {
+    font-size: 20px;
+  }
+`;
+
+export const MusicTitle = styled(Title)`
   cursor: pointer;
   &:hover {
     text-decoration: underline;
-  }
-  @media screen and (max-width: ${SIZE.medium_width}) {
-    font-size: 20px;
   }
 `;
 

@@ -101,6 +101,7 @@ export default function MainPage() {
           data={popularMusicList}
           title="🔥지금 인기있는 음악"
           description="현재 가장 핫한 음악을 만나보세요"
+          collectOption="popular"
         />
         <CardList
           option="playlist"
@@ -113,12 +114,15 @@ export default function MainPage() {
           data={recentMusicList}
           title="새로 나온 음악"
           description="아티스트들의 새로운 예술을 경험하세요"
+          collectOption="recent"
         />
         <CardList
           option="music"
           data={genreMusicList}
           title={`${genreList[randNum]} 음악`}
           description={`${genreList[randNum]} 장르를 지금 바로 만나보세요`}
+          collectOption="genre"
+          genre={randNum}
         />
       </S.Container>
     </S.Wrapper>

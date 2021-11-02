@@ -4,15 +4,26 @@ import { useCallback, useEffect, useState } from "react";
 import { musicCardObject } from "../../../lib/interfaces/music";
 import PlayListCard from "../../common/PlaylistCardList/PlaylistCard/index";
 import { playList } from "./../../../lib/interfaces/playlist";
+import { useRouter } from "next/dist/client/router";
 
 interface Props {
   option: "music" | "playlist";
   data: musicCardObject[] | playList[];
   title: string;
   description: string;
+  collectOption?: "popular" | "recent" | "genre";
+  genre?: number;
 }
 
-export default function CardList({ option, data, title, description }: Props) {
+export default function CardList({
+  option,
+  data,
+  title,
+  description,
+  collectOption,
+  genre,
+}: Props) {
+  const router = useRouter();
   const [indexing, setIndexing] = useState<number>(6);
 
   const setIndexingToInnerWidth = useCallback(() => {
@@ -37,7 +48,17 @@ export default function CardList({ option, data, title, description }: Props) {
 
   return (
     <S.ListWrap>
-      <S.Title>{title}</S.Title>
+      {option === "music" ? (
+        <S.MusicTitle
+          onClick={() =>
+            router.push(`/allList?option=${collectOption}&genre=${genre}`)
+          }
+        >
+          {title}
+        </S.MusicTitle>
+      ) : (
+        <S.Title>{title}</S.Title>
+      )}
       <S.SubTitle>{description}</S.SubTitle>
       <S.List index={indexing}>
         {option === "music" ? (
