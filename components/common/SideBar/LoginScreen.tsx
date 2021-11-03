@@ -14,12 +14,12 @@ export default function LoginScreen() {
         <RouteMenu
           icon={<HistoryIcon size={23} />}
           content="기록"
-          route="like_music"
+          route="allList?option=history"
         />
         <RouteMenu
           icon={<HeartIcon size={20} callback={() => {}} color="#fff" />}
           content="좋아요 표시한 음악"
-          route="like_music"
+          route="like_music?option=like"
         />
         <RouteMenu
           icon={<PlaylistIcon size={14} />}

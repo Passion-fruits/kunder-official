@@ -26,6 +26,7 @@ export default function MainPage() {
   const router = useRouter();
 
   useEffect(() => {
+    setRandNum(null);
     setRandNum(getRandNum(0, genreList.length - 2));
   }, []);
 
@@ -37,6 +38,7 @@ export default function MainPage() {
           setGenreMusicList(res.data.songs);
         })
         .catch(() => {
+          setGenreMusicList([]);
           return;
         });
     }

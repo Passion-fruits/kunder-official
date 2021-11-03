@@ -54,6 +54,18 @@ export default function ListToOptionPage() {
           return;
         });
     }
+    if (option === "history") {
+      music
+        .getHistoryMusic({ page: page, size: size })
+        .then((res) => {
+          setData(res.data.song);
+        })
+        .catch(() => {
+          return;
+        });
+    }
+    if (option === "like") {
+    }
   }, [page, option]);
 
   useEffect(() => {
@@ -81,6 +93,10 @@ export default function ListToOptionPage() {
             ? "인기"
             : option === "genre"
             ? genreList[parseInt(genre.toString())]
+            : option === "like"
+            ? "좋아요 표시한"
+            : option === "history"
+            ? "내가 들은"
             : ""}{" "}
           음악 전체보기
         </h1>

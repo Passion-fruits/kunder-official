@@ -39,14 +39,7 @@ export const Container = styled(BASE_CONTAINER)`
     font-weight: 500;
     font-size: 15px;
     margin-top: 15px;
-  }
-  .information {
-    color: ${COLOR.gray_subText};
-    border-bottom: 1px solid ${COLOR.gray_subText};
-    font-size: 18px;
-    padding-bottom: 10px;
-    box-sizing: content-box;
-    margin-top: 30px;
+    margin-bottom: 20px;
   }
 `;
 
@@ -77,7 +70,7 @@ export const InputContainer = styled.div`
   & .base-input {
     background: ${COLOR.black_subBackground};
     border-radius: 3px;
-    transition: 0.5s;
+    transition: 0.2s;
     font-size: 17px;
     color: ${COLOR.gray_subText};
     border: 1px solid ${COLOR.gray_borderColor};
