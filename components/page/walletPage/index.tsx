@@ -1,5 +1,6 @@
 import MyKdtCard from "./MyKdtCard";
 import * as S from "./styles";
+import KdtDescription from "./KdtDescription";
 
 export default function WalletPage() {
   return (
@@ -7,7 +8,7 @@ export default function WalletPage() {
       <S.Container>
         <S.FlexWrap>
           <MyKdtCard />
-          <S.KdtDescriptionWrap></S.KdtDescriptionWrap>
+          <KdtDescription />
         </S.FlexWrap>
       </S.Container>
     </S.Wrapper>

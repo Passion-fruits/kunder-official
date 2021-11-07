@@ -105,6 +105,21 @@ export const KdtControlBtnWrap = styled.div`
 export const KdtDescriptionWrap = styled(BaseWrapper)`
   width: 480px;
   height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  & h1 {
+    color: ${COLOR.gray_subText};
+    font-size: 20px;
+  }
+  & p {
+    font-size: 17px;
+    color: ${COLOR.gray_text};
+    line-height: 23px;
+    & strong {
+      color: ${COLOR.green_main};
+    }
+  }
 `;
 
 export const CheckPaymentWrap = styled(BASE_WRAPPER)`
