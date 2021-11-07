@@ -141,6 +141,10 @@ export const FlexContainer = styled.div`
     border: 1px solid white;
     color: white;
     font-size: 15px;
+    @media screen and (max-width: ${SIZE.medium_width}) {
+      height: 35px;
+      font-size: 13px;
+    }
     &:nth-of-type(2) {
       color: ${COLOR.green_main};
       border: 1px solid ${COLOR.green_main};
