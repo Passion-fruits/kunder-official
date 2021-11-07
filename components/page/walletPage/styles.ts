@@ -9,215 +9,105 @@ import {
 export const Wrapper = styled(BASE_WRAPPER)``;
 
 export const Container = styled(BASE_CONTAINER)`
-  width: 700px;
+  width: 1250px;
+`;
+
+export const FlexWrap = styled.div`
   display: flex;
-  flex-direction: column;
-  /*   align-items: center; */
-  margin-top: 50px;
-  margin-right: 200px;
-  @media screen and (max-width: ${SIZE.medium_width}) {
-    width: 550px;
+  justify-content: space-between;
+  width: 100%;
+  height: 360px;
+`;
+
+export const BaseWrapper = styled.div`
+  border-radius: 10px;
+  background-color: ${COLOR.black_subBackground};
+  padding: 30px;
+`;
+
+export const MyKdtWrap = styled(BaseWrapper)`
+  width: 720px;
+  height: 100%;
+  position: relative;
+  padding: 30px 0;
+  & .padding-wrap {
+    width: 100%;
+    padding: 0 30px;
   }
-  & .my-wallet {
-    font-size: 20px;
-    font-weight: bold;
-    color: ${COLOR.gray_subText};
-    margin-top: 30px;
-    @media screen and (max-width: ${SIZE.medium_width}) {
-      font-size: 16px;
-    }
+  & .title {
+    color: ${COLOR.green_main};
+    font-size: 18px;
+    font-weight: 500;
   }
-  & .kdt-cnt {
-    font-size: 60px;
-    font-weight: bold;
+  & .kdt-amount {
     color: ${COLOR.gray_text};
-    margin-top: 10px;
-    @media screen and (max-width: ${SIZE.medium_width}) {
-      font-size: 45px;
+    font-size: 40px;
+    font-weight: bold;
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    & span {
+      font-size: 25px;
     }
   }
   & .description {
     font-size: 17px;
     color: ${COLOR.gray_subText};
-    margin-top: 10px;
-    @media screen and (max-width: ${SIZE.medium_width}) {
-      font-size: 15px;
-    }
+    margin-top: 25px;
   }
 `;
 
-export const MenuWrap = styled.div`
+export const KdtHistoryInfor = styled.div`
   width: 100%;
   display: flex;
-  border-bottom: 1px solid ${COLOR.gray_borderColor};
-  & button {
-    width: 50%;
-    color: ${COLOR.gray_subText};
-    font-size: 17px;
-    font-weight: bold;
-    padding: 15px 0;
-    border-radius: 5px;
-    @media screen and (max-width: ${SIZE.medium_width}) {
-      font-size: 15px;
-      padding: 10px 0;
-    }
-  }
-`;
-
-export const KdtChart = styled.div`
-  width: 100%;
-  display: flex;
-  margin-top: 40px;
+  margin-top: 45px;
   & div {
-    width: 50%;
-    height: 7px;
-    background: ${COLOR.blue_background};
-    @media screen and (max-width: ${SIZE.medium_width}) {
-      height: 3px;
-    }
-    &:nth-of-type(2) {
-      background-color: ${COLOR.green_background};
-    }
-  }
-`;
-
-export const ChartInfo = styled.div`
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  margin-top: 25px;
-  gap: 20px;
-  @media screen and (max-width: ${SIZE.medium_width}) {
-    gap: 15px;
-  }
-  & div {
+    width: 33%;
     display: flex;
-    align-items: center;
-    gap: 20px;
-    position: relative;
-    &::before {
-      content: "";
-      width: 6px;
-      height: 6px;
-      background-color: ${COLOR.blue_background};
-      position: absolute;
+    justify-content: space-evenly;
+    font-weight: bold;
+    border-left: 1px solid ${COLOR.gray_subText};
+    & .title {
+      color: ${COLOR.gray_subText};
+      font-size: 17px;
     }
-    &:nth-of-type(2) {
-      &::before {
-        background-color: ${COLOR.green_background};
-      }
-    }
-    & span {
+    & .content {
       color: ${COLOR.gray_text};
       font-size: 17px;
-      margin-left: 20px;
-      @media screen and (max-width: ${SIZE.medium_width}) {
-        font-size: 15px;
-      }
-    }
-    & .kdt-percent {
-      color: ${COLOR.gray_subText};
-      font-size: 15px;
-      font-weight: 500;
-      @media screen and (max-width: ${SIZE.medium_width}) {
-        font-size: 13px;
-      }
     }
   }
 `;
 
-export const ControlBtnWrap = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  margin-top: 50px;
+export const KdtControlBtnWrap = styled.div`
+  position: absolute;
+  bottom: 0;
   width: 100%;
-  @media screen and (max-width: ${SIZE.medium_width}) {
-    margin-top: 30px;
-  }
+  display: flex;
+  height: 70px;
+  border-top: 1px solid #474747;
   & button {
-    width: 100%;
-    height: 48px;
-    border-radius: 3px;
+    width: 50%;
+    height: 100%;
+    border-right: 1px solid #474747;
     font-size: 20px;
     font-weight: bold;
     color: ${COLOR.gray_text};
-    background: ${COLOR.blue_background};
-    @media screen and (max-width: ${SIZE.medium_width}) {
-      font-size: 17px;
-      height: 40px;
+    &:last-of-type {
+      border: none;
     }
-    &:nth-of-type(2) {
-      color: ${COLOR.blue_text};
-      border: 1px solid ${COLOR.blue_text};
-      background: none;
+    &:hover {
+      background-color: ${COLOR.gray_borderColor};
     }
   }
 `;
 
-export const TransactionCard = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 20px 0px;
-  position: relative;
-  border-radius: 5px;
-  border-bottom: 1px solid ${COLOR.gray_borderColor};
-  width: 100%;
-  & h1 {
-    font-size: 19px;
-    font-weight: 500;
-    color: ${COLOR.gray_subText};
-    @media screen and (max-width: ${SIZE.medium_width}) {
-      font-size: 15px;
-    }
-    & b {
-      color: ${COLOR.gray_text};
-      font-weight: bold;
-    }
-  }
-  & .flex {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-  }
-  & .column-wrap {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    &:nth-of-type(2) {
-      align-items: flex-end;
-    }
-  }
-  & .kdt {
-    font-size: 17px;
-    font-weight: bold;
-    color: ${COLOR.blue_text};
-    @media screen and (max-width: ${SIZE.medium_width}) {
-      font-size: 17px;
-    }
-  }
-  & .hax-code {
-    padding: 5px 10px;
-    border-radius: 5px;
-    width: 200px;
-    color: ${COLOR.blue_text};
-    font-size: 15px;
-    background: ${COLOR.black_subBackground};
-    cursor: pointer;
-  }
-  & .date {
-    color: ${COLOR.gray_subText};
-    font-size: 15px;
-    @media screen and (max-width: ${SIZE.medium_width}) {
-      font-size: 14px;
-    }
-  }
+export const KdtDescriptionWrap = styled(BaseWrapper)`
+  width: 480px;
+  height: 100%;
 `;
 
 export const CheckPaymentWrap = styled(BASE_WRAPPER)`
-  /*   padding: 0;
-  width: 100%; */
   padding-right: 200px;
   height: 90vh;
   display: flex;
@@ -229,11 +119,4 @@ export const CheckPaymentWrap = styled(BASE_WRAPPER)`
     font-size: 18px;
     margin-top: 20px;
   }
-`;
-
-export const LoadingWrap = styled.div`
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  margin-top: 50px;
 `;

@@ -2,7 +2,7 @@ import request from "./axios";
 import { ACCESS_TOKEN } from "./../lib/export/localstorage";
 
 export default {
-  requestPayment({ paymentKey, orderId, amount, account }) {
+  requestPayment({ paymentKey, orderId, amount }) {
     return request({
       url: `/kdt`,
       method: "post",
@@ -14,7 +14,6 @@ export default {
         payment_key: paymentKey,
         order_id: orderId,
         amount: parseInt(amount),
-        to_address: account,
       },
     });
   },
