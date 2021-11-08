@@ -10,6 +10,9 @@ export const Wrapper = styled(BASE_WRAPPER)``;
 
 export const Container = styled(BASE_CONTAINER)`
   width: 1250px;
+  @media screen and (max-width: ${SIZE.medium_width}) {
+    width: 1000px;
+  }
 `;
 
 export const FlexWrap = styled.div`
@@ -17,12 +20,18 @@ export const FlexWrap = styled.div`
   justify-content: space-between;
   width: 100%;
   height: 360px;
+  @media screen and (max-width: ${SIZE.medium_width}) {
+    height: 300px;
+  }
 `;
 
 export const BaseWrapper = styled.div`
   border-radius: 10px;
   background-color: ${COLOR.black_subBackground};
   padding: 30px;
+  @media screen and (max-width: ${SIZE.medium_width}) {
+    padding: 20px;
+  }
 `;
 
 export const MyKdtWrap = styled(BaseWrapper)`
@@ -30,6 +39,10 @@ export const MyKdtWrap = styled(BaseWrapper)`
   height: 100%;
   position: relative;
   padding: 30px 0;
+  @media screen and (max-width: ${SIZE.medium_width}) {
+    width: 600px;
+    padding: 20px 0;
+  }
   & .padding-wrap {
     width: 100%;
     padding: 0 30px;
@@ -38,6 +51,9 @@ export const MyKdtWrap = styled(BaseWrapper)`
     color: ${COLOR.green_main};
     font-size: 18px;
     font-weight: 500;
+    @media screen and (max-width: ${SIZE.medium_width}) {
+      font-size: 15px;
+    }
   }
   & .kdt-amount {
     color: ${COLOR.gray_text};
@@ -47,14 +63,23 @@ export const MyKdtWrap = styled(BaseWrapper)`
     display: flex;
     align-items: center;
     gap: 10px;
+    @media screen and (max-width: ${SIZE.medium_width}) {
+      font-size: 35px;
+    }
     & span {
       font-size: 25px;
+      @media screen and (max-width: ${SIZE.medium_width}) {
+        font-size: 22px;
+      }
     }
   }
   & .description {
     font-size: 17px;
     color: ${COLOR.gray_subText};
     margin-top: 25px;
+    @media screen and (max-width: ${SIZE.medium_width}) {
+      font-size: 15px;
+    }
   }
 `;
 
@@ -71,10 +96,16 @@ export const KdtHistoryInfor = styled.div`
     & .title {
       color: ${COLOR.gray_text};
       font-size: 17px;
+      @media screen and (max-width: ${SIZE.medium_width}) {
+        font-size: 15px;
+      }
     }
     & .content {
       color: ${COLOR.green_main};
       font-size: 17px;
+      @media screen and (max-width: ${SIZE.medium_width}) {
+        font-size: 15px;
+      }
     }
   }
 `;
@@ -86,6 +117,9 @@ export const KdtControlBtnWrap = styled.div`
   display: flex;
   height: 70px;
   border-top: 1px solid #474747;
+  @media screen and (max-width: ${SIZE.medium_width}) {
+    height: 60px;
+  }
   & button {
     width: 50%;
     height: 100%;
@@ -93,6 +127,9 @@ export const KdtControlBtnWrap = styled.div`
     font-size: 20px;
     font-weight: bold;
     color: ${COLOR.gray_text};
+    @media screen and (max-width: ${SIZE.medium_width}) {
+      font-size: 17px;
+    }
     &:last-of-type {
       border: none;
     }
@@ -108,14 +145,24 @@ export const KdtDescriptionWrap = styled(BaseWrapper)`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  @media screen and (max-width: ${SIZE.medium_width}) {
+    width: 350px;
+  }
   & h1 {
     color: ${COLOR.gray_subText};
     font-size: 20px;
+    @media screen and (max-width: ${SIZE.medium_width}) {
+      font-size: 17px;
+    }
   }
   & p {
     font-size: 17px;
     color: ${COLOR.gray_text};
     line-height: 23px;
+    @media screen and (max-width: ${SIZE.medium_width}) {
+      font-size: 14px;
+      line-height: 20px;
+    }
     & strong {
       color: ${COLOR.green_main};
     }
@@ -133,6 +180,9 @@ export const CheckPaymentWrap = styled(BASE_WRAPPER)`
     color: ${COLOR.blue_text};
     font-size: 18px;
     margin-top: 20px;
+    @media screen and (max-width: ${SIZE.medium_width}) {
+      font-size: 15px;
+    }
   }
 `;
 
@@ -152,6 +202,9 @@ export const HistoryWrapper = styled.table`
     color: ${COLOR.gray_subText};
     font-size: 17px;
     text-align: left;
+    @media screen and (max-width: ${SIZE.medium_width}) {
+      font-size: 14px;
+    }
   }
   & td {
     padding-top: 30px;
@@ -159,9 +212,11 @@ export const HistoryWrapper = styled.table`
   & tr {
     td {
       &:nth-of-type(1) {
-        width: 300px;
         color: ${COLOR.gray_subText};
         font-size: 17px;
+        @media screen and (max-width: ${SIZE.medium_width}) {
+          font-size: 14px;
+        }
         & b {
           color: ${COLOR.gray_text};
         }
@@ -169,6 +224,9 @@ export const HistoryWrapper = styled.table`
       &:nth-of-type(2) {
         color: ${COLOR.gray_subText};
         font-size: 17px;
+        @media screen and (max-width: ${SIZE.medium_width}) {
+          font-size: 14px;
+        }
       }
       &:nth-of-type(3) {
         & div {
@@ -179,11 +237,17 @@ export const HistoryWrapper = styled.table`
           background-color: #002350;
           padding: 4px 5px;
           cursor: pointer;
+          @media screen and (max-width: ${SIZE.medium_width}) {
+            font-size: 12px;
+          }
         }
       }
       &:nth-of-type(4) {
         font-size: 17px;
         font-weight: bold;
+        @media screen and (max-width: ${SIZE.medium_width}) {
+          font-size: 14px;
+        }
         & .minus {
           color: ${COLOR.green_subMain};
         }
