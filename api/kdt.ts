@@ -40,4 +40,19 @@ export default {
       },
     });
   },
+  donateToUser({ user_id, amount, question }) {
+    return request({
+      url: `/kdt/donate`,
+      method: "post",
+      headers: {
+        "Content-type": "application/json",
+        Authorization: `Bearer ${localStorage.getItem(ACCESS_TOKEN)}`,
+      },
+      data: {
+        artist_id: parseInt(user_id),
+        amount: parseInt(amount),
+        question: question,
+      },
+    });
+  },
 };

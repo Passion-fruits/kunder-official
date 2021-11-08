@@ -8,6 +8,7 @@ import VolumeControl from "./VolumeControl";
 import { setValue } from "../../../lib/context/index";
 import { toast } from "react-toastify";
 import music from "../../../api/music";
+import Head from "next/head";
 
 export default function AudioPlayBar() {
   const musicObj = getValue().musicInformation;
@@ -175,38 +176,45 @@ export default function AudioPlayBar() {
   }, [modal]);
 
   return (
-    <S.Wrapper>
-      <S.Container>
-        <S.RangeInput
-          type="range"
-          onClick={moveMusic}
-          progress={musicProgress}
-          value={musicProgress}
-          id="input-range"
-          readOnly
-        />
-        <S.Center>
-          <S.CenterControl>
-            <PassIcon callback={moveBeforeMusic} isNext={false} />
-            {isPlay ? (
-              <PauseIcon size={16} callback={musicStop} />
-            ) : (
-              <PlayIcon size={17} callback={musicStart} />
-            )}
-            <PassIcon callback={moveNextMusic} isNext={true} />
-          </S.CenterControl>
-        </S.Center>
-        <MusicInfo
-          title={musicObj.title}
-          coverImg={musicObj.cover_url}
-          name={musicObj.artist}
-          songId={musicObj.song_id}
-        />
-        <S.Control>
-          <PlayListAddIcon size={16} callback={addPlayList} />
-          <VolumeControl audio={audio} />
-        </S.Control>
-      </S.Container>
-    </S.Wrapper>
+    <>
+      <Head>
+        <title>
+          KUNDER | {musicObj.title ? musicObj.title : "곡이 없습니다."}
+        </title>
+      </Head>
+      <S.Wrapper>
+        <S.Container>
+          <S.RangeInput
+            type="range"
+            onClick={moveMusic}
+            progress={musicProgress}
+            value={musicProgress}
+            id="input-range"
+            readOnly
+          />
+          <S.Center>
+            <S.CenterControl>
+              <PassIcon callback={moveBeforeMusic} isNext={false} />
+              {isPlay ? (
+                <PauseIcon size={16} callback={musicStop} />
+              ) : (
+                <PlayIcon size={17} callback={musicStart} />
+              )}
+              <PassIcon callback={moveNextMusic} isNext={true} />
+            </S.CenterControl>
+          </S.Center>
+          <MusicInfo
+            title={musicObj.title}
+            coverImg={musicObj.cover_url}
+            name={musicObj.artist}
+            songId={musicObj.song_id}
+          />
+          <S.Control>
+            <PlayListAddIcon size={16} callback={addPlayList} />
+            <VolumeControl audio={audio} />
+          </S.Control>
+        </S.Container>
+      </S.Wrapper>
+    </>
   );
 }
