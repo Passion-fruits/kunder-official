@@ -19,7 +19,7 @@ export default {
   },
   getKdtHistory() {
     return request({
-      url: `/kdt/history`,
+      url: `/kdt/history/charge`,
       method: "get",
       headers: {
         "Content-type": "application/json",
@@ -52,6 +52,16 @@ export default {
         artist_id: parseInt(user_id),
         amount: parseInt(amount),
         question: question,
+      },
+    });
+  },
+  getMyKdt() {
+    return request({
+      url: "/kdt",
+      method: "get",
+      headers: {
+        "Content-type": "application/json",
+        Authorization: `Bearer ${localStorage.getItem(ACCESS_TOKEN)}`,
       },
     });
   },

@@ -69,11 +69,11 @@ export const KdtHistoryInfor = styled.div`
     font-weight: bold;
     border-left: 1px solid ${COLOR.gray_subText};
     & .title {
-      color: ${COLOR.gray_subText};
+      color: ${COLOR.gray_text};
       font-size: 17px;
     }
     & .content {
-      color: ${COLOR.gray_text};
+      color: ${COLOR.green_main};
       font-size: 17px;
     }
   }
@@ -133,5 +133,61 @@ export const CheckPaymentWrap = styled(BASE_WRAPPER)`
     color: ${COLOR.blue_text};
     font-size: 18px;
     margin-top: 20px;
+  }
+`;
+
+export const HistoryWrapper = styled.table`
+  width: 100%;
+  padding: 30px;
+  border-radius: 10px;
+  margin-top: 20px;
+  color: ${COLOR.gray_text};
+  background-color: ${COLOR.black_subBackground};
+  & .spiner-wrap {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  & th {
+    color: ${COLOR.gray_subText};
+    font-size: 17px;
+    text-align: left;
+  }
+  & td {
+    padding-top: 30px;
+  }
+  & tr {
+    td {
+      &:nth-of-type(1) {
+        width: 300px;
+        color: ${COLOR.gray_subText};
+        font-size: 17px;
+        & b {
+          color: ${COLOR.gray_text};
+        }
+      }
+      &:nth-of-type(2) {
+        color: ${COLOR.gray_subText};
+        font-size: 17px;
+      }
+      &:nth-of-type(3) {
+        & div {
+          color: ${COLOR.blue_text};
+          font-size: 14px;
+          width: 170px;
+          border-radius: 5px;
+          background-color: #002350;
+          padding: 4px 5px;
+          cursor: pointer;
+        }
+      }
+      &:nth-of-type(4) {
+        font-size: 17px;
+        font-weight: bold;
+        & .minus {
+          color: ${COLOR.green_subMain};
+        }
+      }
+    }
   }
 `;

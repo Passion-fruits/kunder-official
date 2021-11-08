@@ -9,3 +9,10 @@ export interface KdtHistoryObject {
 export interface KdtTransaction {
   history: KdtHistoryObject[];
 }
+
+export interface MyKdtObject {
+  add_kdt: number;
+  donate_kdt: number;
+  reward_kdt: number;
+  total_kdt: number;
+}
