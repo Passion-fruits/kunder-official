@@ -1,25 +1,47 @@
-import { SupportCardObj } from "../../../lib/interfaces/support";
 import * as S from "./styles";
-import UserComment from "./UserComment";
-import NoneAnswer from "./NoneAnswer";
 
-export default function SupportCard({ type }: SupportCardObj) {
+function Contents({ user = null, kdtAmount = null, content }) {
   return (
-    <S.SupportCard>
-      <UserComment />
-      <div className="line" />
-      {type === 1 ? (
-        <NoneAnswer />
-      ) : type === 2 ? (
-        <UserComment />
-      ) : type === 3 ? (
-        <S.AnswerWrap>
-          <textarea placeholder="답장 후 후원금을 받으세요!" id="focus" />
-          <button>답장하기</button>
-        </S.AnswerWrap>
+    <S.ContentsWrap>
+      {user ? (
+        <>
+          {kdtAmount ? (
+            <h3>
+              {user}님이 <b>{kdtAmount}KDT</b>를 후원하셨어요!
+            </h3>
+          ) : (
+            <h3>
+              <b>{user}</b>님의 답장이 왔어요!
+            </h3>
+          )}
+        </>
       ) : (
-        <UserComment />
+        <>
+          {kdtAmount ? (
+            <h3>
+              <b>{kdtAmount}KDT</b>를 후원했습니다.
+            </h3>
+          ) : (
+            <h3>내가 보낸 답장</h3>
+          )}
+        </>
       )}
-    </S.SupportCard>
+      <span>{content}</span>
+    </S.ContentsWrap>
+  );
+}
+
+export default function SupportCard() {
+  return (
+    <S.SupportCardWrap>
+      <S.UserProfileWrap>
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ9RUqE41QpOHLWYexujM_kb_7Rl65ELVA_DK2u7zERE7x1nrFdOXZBIeXNFEXcWo9Vsg0&usqp=CAU" />
+        <Contents user="adsf" kdtAmount={100} content="저 내일 군대가여" />
+      </S.UserProfileWrap>
+      {/*       <S.InputToAnswer placeholder="답장 후 후원금을 받아가세요!" id="focus" /> */}
+      <S.AnswerContainer>
+        <Contents content="저 내일 군대가여" />
+      </S.AnswerContainer>
+    </S.SupportCardWrap>
   );
 }

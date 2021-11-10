@@ -1,10 +1,15 @@
+import { ACCESS_TOKEN } from "../lib/export/localstorage";
 import request from "./axios";
 
 export default {
-  getFeedList(genre,page,sort) {
+  getFeedList({ page, size }) {
     return request({
       method: "get",
-      url: `/song/feed?genre=${genre}&page=${page}&sort=${sort}`,
+      url: `/follow/song?page=${page}&size=${size}`,
+      headers: {
+        "Content-type": "application/json",
+        Authorization: `Bearer ${localStorage.getItem(ACCESS_TOKEN)}`,
+      },
     });
   },
 };

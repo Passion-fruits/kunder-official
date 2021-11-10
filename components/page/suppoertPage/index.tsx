@@ -1,25 +1,54 @@
 import * as S from "./styles";
+import { useRouter } from "next/dist/client/router";
+import { useState } from "react";
 import SupportCard from "./SupportCard";
 
-/* 
-상태 1 : 후원 하고 답장 안옴
-상태 2 : 후원 하고 답장 옴
-상태 3 : 후원 온거 답장 안함
-상태 4 : 후원 온거 답장 함
-*/
+type menuType = "notAnswer" | "haveAnswer" | "isAnswer" | "isNotAnswer";
+
+interface menu {
+  title: string;
+  path: menuType;
+}
 
 export default function SupportPage() {
+  const router = useRouter();
+  const [path, setPath] = useState<menuType>("notAnswer");
+  const menuList: menu[] = [
+    {
+      title: "답장하지 못한 후원",
+      path: "notAnswer",
+    },
+    {
+      title: "답장한 후원",
+      path: "haveAnswer",
+    },
+    {
+      title: "답장 받은 후원",
+      path: "isAnswer",
+    },
+    {
+      title: "답장받지 못한 후원",
+      path: "isNotAnswer",
+    },
+  ];
   return (
     <S.Wrapper>
       <S.Container>
-        <h1 className="title">후원 내역</h1>
-        <p className="description">후원받은 기록, 후원한 기록을 표시합니다.</p>
-        <S.ListWrapper>
-          <SupportCard type={1} />
-          <SupportCard type={2} />
-          <SupportCard type={3} />
-          <SupportCard type={4} />
-        </S.ListWrapper>
+        <S.MenuWrap>
+          {menuList.map((menu, index) => (
+            <S.Menu
+              key={index}
+              active={path === menu.path}
+              onClick={() => setPath(menu.path)}
+            >
+              {menu.title}
+              {menu.path === path && <div className="line" />}
+            </S.Menu>
+          ))}
+        </S.MenuWrap>
+        <S.ListWrap>
+          <SupportCard />
+        </S.ListWrap>
       </S.Container>
     </S.Wrapper>
   );

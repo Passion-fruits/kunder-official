@@ -1,5 +1,9 @@
 import axios, { AxiosError } from "axios";
-import { ACCESS_TOKEN, REFRESH_TOKEN } from "./../lib/export/localstorage";
+import {
+  ACCESS_TOKEN,
+  REFRESH_TOKEN,
+  USER_ID,
+} from "./../lib/export/localstorage";
 
 const instance = axios.create({
   baseURL: process.env.NEXT_PUBLIC_API_DOMAIN,
@@ -68,14 +72,12 @@ instance.interceptors.response.use(
             // 엑세스랑 리프레쉬 둘다 비워버려
             localStorage.setItem(ACCESS_TOKEN, "");
             localStorage.setItem(REFRESH_TOKEN, "");
-            return Promise.reject(error);
           });
       } else {
         // 리프레쉬 토큰이 없어
         // 둘다 비워버려
         localStorage.setItem(ACCESS_TOKEN, "");
         localStorage.setItem(REFRESH_TOKEN, "");
-        return Promise.reject(error);
       }
       // token이 재발급 되는 동안의 요청은 refreshSubscribers에 저장
       const retryOriginalRequest = new Promise((resolve) => {

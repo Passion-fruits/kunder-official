@@ -13,7 +13,6 @@ export default function HistoryMusic() {
 
   useEffect(() => {
     if (musicList.length === 0) {
-      console.log("호출");
       music
         .getHistoryMusic({ page: 1, size: 5 })
         .then((res) => {
