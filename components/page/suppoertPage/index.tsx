@@ -1,9 +1,15 @@
 import * as S from "./styles";
 import { useRouter } from "next/dist/client/router";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import SupportCard from "./SupportCard";
-
-type menuType = "notAnswer" | "haveAnswer" | "isAnswer" | "isNotAnswer";
+import {
+  menuType,
+  SupportHitoryObject,
+  SupportHistory,
+} from "../../../lib/interfaces/support";
+import kdt from "../../../api//kdt";
+import { LoadingWrap } from "../feedPage/styles";
+import Spiner from "../../common/Spiner";
 
 interface menu {
   title: string;
@@ -11,8 +17,9 @@ interface menu {
 }
 
 export default function SupportPage() {
-  const router = useRouter();
   const [path, setPath] = useState<menuType>("notAnswer");
+  const [data, setData] = useState<SupportHitoryObject[]>([]);
+  const [loading, setLoading] = useState<boolean>(true);
   const menuList: menu[] = [
     {
       title: "답장하지 못한 후원",
@@ -31,6 +38,70 @@ export default function SupportPage() {
       path: "isNotAnswer",
     },
   ];
+
+  const getData = () => {
+    switch (path) {
+      case "notAnswer":
+        kdt
+          .getDonateForMeHistory(0)
+          .then((res) => {
+            const responseData: SupportHistory = res.data;
+            setData(data.concat(responseData.history));
+          })
+          .catch(() => {
+            setLoading(false);
+            return;
+          });
+        break;
+      case "haveAnswer":
+        kdt
+          .getDonateForMeHistory(1)
+          .then((res) => {
+            const responseData: SupportHistory = res.data;
+            setData(data.concat(responseData.history));
+          })
+          .catch(() => {
+            setLoading(false);
+            return;
+          });
+        break;
+      case "isAnswer":
+        kdt
+          .getDonateForArtistHistory(1)
+          .then((res) => {
+            const responseData: SupportHistory = res.data;
+            setData(data.concat(responseData.history));
+          })
+          .catch(() => {
+            setLoading(false);
+            return;
+          });
+        break;
+      case "isNotAnswer":
+        kdt
+          .getDonateForArtistHistory(0)
+          .then((res) => {
+            const responseData: SupportHistory = res.data;
+            setData(data.concat(responseData.history));
+          })
+          .catch(() => {
+            setLoading(false);
+            return;
+          });
+        break;
+    }
+  };
+
+  useEffect(() => {
+    setData([]);
+    setLoading(true);
+  }, [path]);
+
+  useEffect(() => {
+    if (data.length === 0) getData();
+    else setLoading(false);
+  }, [data]);
+
   return (
     <S.Wrapper>
       <S.Container>
@@ -46,8 +117,29 @@ export default function SupportPage() {
             </S.Menu>
           ))}
         </S.MenuWrap>
+        {loading && (
+          <LoadingWrap>
+            <Spiner size={50} />
+          </LoadingWrap>
+        )}
         <S.ListWrap>
-          <SupportCard />
+          {data.map((support, index) => (
+            <SupportCard
+              key={index}
+              amount={support.amount}
+              tx_hash={support.tx_hash}
+              user_id={support.user_id}
+              name={support.name}
+              profile={support.profile}
+              message_id={support.message_id}
+              question={support.question}
+              answer={support.answer}
+              artist_id={support.artist_id}
+              artist={support.artist}
+              artist_profile={support.artist_profile}
+              option={path}
+            />
+          ))}
         </S.ListWrap>
       </S.Container>
     </S.Wrapper>

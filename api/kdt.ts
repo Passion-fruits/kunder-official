@@ -65,4 +65,24 @@ export default {
       },
     });
   },
+  getDonateForArtistHistory(done: 0 | 1) {
+    return request({
+      url: `/kdt/history/donate?done=${done}`,
+      method: "get",
+      headers: {
+        "Content-type": "application/json",
+        Authorization: `Bearer ${localStorage.getItem(ACCESS_TOKEN)}`,
+      },
+    });
+  },
+  getDonateForMeHistory(done: 0 | 1) {
+    return request({
+      url: `/kdt/history/donate?done=${done}`,
+      method: "get",
+      headers: {
+        "Content-type": "application/json",
+        Authorization: `Bearer ${localStorage.getItem(ACCESS_TOKEN)}`,
+      },
+    });
+  },
 };

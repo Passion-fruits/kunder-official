@@ -41,17 +41,17 @@ export const SupportCardWrap = styled.div`
   padding: 20px 30px;
   border-radius: 10px;
   background-color: ${COLOR.black_subBackground};
-`;
-
-export const UserProfileWrap = styled.div`
-  display: flex;
-  gap: 23px;
   & img {
     width: 60px;
     height: 60px;
     border-radius: 50%;
     border: 1px solid ${COLOR.gray_borderColor};
+    margin-right: 23px;
   }
+`;
+
+export const UserProfileWrap = styled.div`
+  display: flex;
 `;
 
 export const ContentsWrap = styled.div`
@@ -104,4 +104,11 @@ export const ListWrap = styled.div`
   flex-direction: column;
   margin-top: 30px;
   gap: 20px;
+`;
+
+export const LoadingWrap = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
 `;
