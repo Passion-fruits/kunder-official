@@ -1,5 +1,4 @@
 import * as S from "./styles";
-import { useRouter } from "next/dist/client/router";
 import { useEffect, useState } from "react";
 import SupportCard from "./SupportCard";
 import {

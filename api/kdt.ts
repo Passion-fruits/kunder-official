@@ -77,11 +77,26 @@ export default {
   },
   getDonateForMeHistory(done: 0 | 1) {
     return request({
-      url: `/kdt/history/donate?done=${done}`,
+      url: `/kdt/history/answer?done=${done}`,
       method: "get",
       headers: {
         "Content-type": "application/json",
         Authorization: `Bearer ${localStorage.getItem(ACCESS_TOKEN)}`,
+      },
+    });
+  },
+  writeAnswer({ message_id, user_id, answer }) {
+    return request({
+      url: `/kdt/answer`,
+      method: "post",
+      headers: {
+        "Content-type": "application/json",
+        Authorization: `Bearer ${localStorage.getItem(ACCESS_TOKEN)}`,
+      },
+      data: {
+        message_id: message_id,
+        donate_user_id: user_id,
+        answer: answer,
       },
     });
   },

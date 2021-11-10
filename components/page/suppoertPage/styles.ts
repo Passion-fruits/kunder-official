@@ -11,7 +11,7 @@ export const Container = styled(BASE_CONTAINER)`
 `;
 
 export const MenuWrap = styled.div`
-  width: 1000px;
+  width: 850px;
   display: flex;
   justify-content: space-between;
 `;

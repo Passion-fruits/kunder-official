@@ -1,5 +1,8 @@
 import * as S from "./styles";
 import { SupportHitoryObject } from "./../../../lib/interfaces/support";
+import { useRef } from "react";
+import kdt from "../../../api/kdt";
+import { toast } from "react-toastify";
 
 function Contents({ user = null, kdtAmount = null, content = null }) {
   return (
@@ -54,6 +57,21 @@ export default function SupportCard({
   artist_profile,
   option,
 }: SupportHitoryObject) {
+  const answerRef = useRef<HTMLInputElement>(null);
+  const subAnswer = (event) => {
+    if (event.keyCode === 13) {
+      kdt
+        .writeAnswer({
+          message_id: message_id,
+          user_id: user_id,
+          answer: answerRef.current.value,
+        })
+        .then((res) => toast.success(`${amount}KDT를 받았습니다!`))
+        .catch(() => {
+          toast.error("에러가 발생하였습니다.");
+        });
+    }
+  };
   const setCardTsx = () => {
     switch (option) {
       case "notAnswer":
@@ -64,6 +82,8 @@ export default function SupportCard({
               <Contents user={name} kdtAmount={amount} content={question} />
             </S.UserProfileWrap>
             <S.InputToAnswer
+              ref={answerRef}
+              onKeyDown={subAnswer}
               placeholder="답장 후 후원금을 받아가세요!"
               id="focus"
             />
