@@ -14,6 +14,9 @@ export const MenuWrap = styled.div`
   width: 850px;
   display: flex;
   justify-content: space-between;
+  @media screen and (max-width: ${SIZE.medium_width}) {
+    width: 700px;
+  }
 `;
 
 interface MenuProps {
@@ -27,20 +30,30 @@ export const Menu = styled.button<MenuProps>`
   display: flex;
   flex-direction: column;
   align-items: center;
+  @media screen and (max-width: ${SIZE.medium_width}) {
+    font-size: 16px;
+  }
   & .line {
     content: "";
     width: 70px;
     height: 2px;
     background-color: ${COLOR.green_main};
     margin-top: 15px;
+    @media screen and (max-width: ${SIZE.medium_width}) {
+      width: 50px;
+      margin-top: 10px;
+    }
   }
 `;
 
 export const SupportCardWrap = styled.div`
   width: 100%;
   padding: 20px 30px;
-  border-radius: 10px;
+  border-radius: 5px;
   background-color: ${COLOR.black_subBackground};
+  @media screen and (max-width: ${SIZE.medium_width}) {
+    padding: 15px 20px;
+  }
   & img {
     width: 60px;
     height: 60px;
@@ -49,6 +62,10 @@ export const SupportCardWrap = styled.div`
     margin-right: 23px;
     cursor: pointer;
     transition: 0.3s;
+    @media screen and (max-width: ${SIZE.medium_width}) {
+      width: 50px;
+      height: 50px;
+    }
     &:hover {
       opacity: 0.8;
     }
@@ -64,10 +81,16 @@ export const ContentsWrap = styled.div`
   justify-content: center;
   flex-direction: column;
   gap: 12px;
+  @media screen and (max-width: ${SIZE.medium_width}) {
+    gap: 8px;
+  }
   & h3 {
     color: ${COLOR.green_subMain};
     font-size: 18px;
     font-weight: 500;
+    @media screen and (max-width: ${SIZE.medium_width}) {
+      font-size: 15px;
+    }
     & b {
       font-weight: bold;
     }
@@ -76,6 +99,9 @@ export const ContentsWrap = styled.div`
     color: ${COLOR.gray_text};
     font-size: 18px;
     font-weight: bold;
+    @media screen and (max-width: ${SIZE.medium_width}) {
+      font-size: 15px;
+    }
   }
 `;
 
@@ -88,6 +114,12 @@ export const InputToAnswer = styled.input`
   font-size: 18px;
   color: ${COLOR.gray_text};
   padding: 0 20px;
+  @media screen and (max-width: ${SIZE.medium_width}) {
+    padding: 0 15px;
+    height: 50px;
+    font-size: 14px;
+    margin-top: 10px;
+  }
   &::placeholder {
     color: ${COLOR.gray_subText};
   }
@@ -101,6 +133,9 @@ export const AnswerContainer = styled.div`
   margin-top: 15px;
   display: flex;
   align-items: center;
+  @media screen and (max-width: ${SIZE.medium_width}) {
+    padding: 8px 12px;
+  }
 `;
 
 export const ListWrap = styled.div`
