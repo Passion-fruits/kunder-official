@@ -5,24 +5,25 @@ import { setValue } from "../../../lib/context/index";
 import { useEffect, useState } from "react";
 import music from "../../../api/music";
 import { musicCardObject } from "./../../../lib/interfaces/music";
-import { USER_ID } from "./../../../lib/export/localstorage";
 
 export default function HistoryMusic() {
   const router = useRouter();
   const dispatch = setValue();
   const [musicList, setMusicList] = useState<musicCardObject[]>([]);
-  const user_id = localStorage.getItem(USER_ID);
 
   useEffect(() => {
-    music
-      .getHistoryMusic({ page: 1, size: 5 })
-      .then((res) => {
-        setMusicList(res.data.song);
-      })
-      .catch(() => {
-        return;
-      });
-  }, [user_id]);
+    if (musicList.length === 0) {
+      console.log("호출");
+      music
+        .getHistoryMusic({ page: 1, size: 5 })
+        .then((res) => {
+          setMusicList(res.data.song);
+        })
+        .catch(() => {
+          return;
+        });
+    }
+  }, [router]);
   return (
     <>
       <div className="line" />
