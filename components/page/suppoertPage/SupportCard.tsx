@@ -1,8 +1,10 @@
 import * as S from "./styles";
 import { SupportHitoryObject } from "./../../../lib/interfaces/support";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import kdt from "../../../api/kdt";
 import { toast } from "react-toastify";
+import { useRouter } from "next/dist/client/router";
+import Spiner from "../../common/Spiner";
 
 function Contents({ user = null, kdtAmount = null, content = null }) {
   return (
@@ -58,27 +60,46 @@ export default function SupportCard({
   option,
 }: SupportHitoryObject) {
   const answerRef = useRef<HTMLInputElement>(null);
+  const router = useRouter();
+
+  const [loading, setLoading] = useState<boolean>(false);
+
   const subAnswer = (event) => {
+    if (loading) return;
     if (event.keyCode === 13) {
+      setLoading(true);
       kdt
         .writeAnswer({
           message_id: message_id,
           user_id: user_id,
           answer: answerRef.current.value,
         })
-        .then((res) => toast.success(`${amount}KDT를 받았습니다!`))
+        .then((res) => {
+          toast.success(`${amount}KDT를 받았습니다!`);
+          setLoading(false);
+        })
         .catch(() => {
           toast.error("에러가 발생하였습니다.");
+          setLoading(false);
         });
     }
   };
+
+  const routingToUserProfile = () => {
+    router.push(`/profile?id=${user_id}`);
+  };
+
+  const routingToArtistProfile = () => {
+    router.push(`/profile?id=${artist_id}`);
+  };
+
   const setCardTsx = () => {
     switch (option) {
       case "notAnswer":
         return (
           <>
             <S.UserProfileWrap>
-              <img src={profile} />
+              <img src={profile} onClick={routingToUserProfile} />
               <Contents user={name} kdtAmount={amount} content={question} />
             </S.UserProfileWrap>
             <S.InputToAnswer
@@ -87,13 +108,18 @@ export default function SupportCard({
               placeholder="답장 후 후원금을 받아가세요!"
               id="focus"
             />
+            {loading && (
+              <S.SmallLoadingWrap>
+                <Spiner size={25} />
+              </S.SmallLoadingWrap>
+            )}
           </>
         );
       case "haveAnswer":
         return (
           <>
             <S.UserProfileWrap>
-              <img src={profile} />
+              <img src={profile} onClick={routingToUserProfile} />
               <Contents user={name} kdtAmount={amount} content={question} />
             </S.UserProfileWrap>
             <S.AnswerContainer>
@@ -106,7 +132,7 @@ export default function SupportCard({
           <>
             <Contents kdtAmount={amount} content={question} />
             <S.AnswerContainer>
-              <img src={artist_profile} />
+              <img src={artist_profile} onClick={routingToArtistProfile} />
               <Contents user={artist} content={question} />
             </S.AnswerContainer>
           </>
@@ -118,12 +144,13 @@ export default function SupportCard({
               <Contents kdtAmount={amount} content={question} />
             </S.UserProfileWrap>
             <S.AnswerContainer>
-              <img src={artist_profile} />
+              <img src={artist_profile} onClick={routingToArtistProfile} />
               <Contents user={artist} />
             </S.AnswerContainer>
           </>
         );
     }
   };
+
   return <S.SupportCardWrap>{setCardTsx()}</S.SupportCardWrap>;
 }

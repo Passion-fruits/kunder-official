@@ -47,6 +47,11 @@ export const SupportCardWrap = styled.div`
     border-radius: 50%;
     border: 1px solid ${COLOR.gray_borderColor};
     margin-right: 23px;
+    cursor: pointer;
+    transition: 0.3s;
+    &:hover {
+      opacity: 0.8;
+    }
   }
 `;
 
@@ -111,4 +116,11 @@ export const LoadingWrap = styled.div`
   display: flex;
   justify-content: center;
   margin-top: 50px;
+`;
+
+export const SmallLoadingWrap = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
 `;

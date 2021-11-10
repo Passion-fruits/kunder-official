@@ -9,6 +9,8 @@ import {
 import kdt from "../../../api//kdt";
 import { LoadingWrap } from "../feedPage/styles";
 import Spiner from "../../common/Spiner";
+import { ACCESS_TOKEN } from "./../../../lib/export/localstorage";
+import { useRouter } from "next/dist/client/router";
 
 interface menu {
   title: string;

@@ -3,10 +3,11 @@ import Header from "../Header";
 import Modal from "../Modal";
 import SideBar from "../SideBar";
 import AudioPlayBar from "../AudioPlayBar";
-import { FC } from "react";
+import { FC, useEffect } from "react";
 import { useRouter } from "next/dist/client/router";
 import { ToastContainer } from "react-toastify";
 import { SampleProvider } from "../../../lib/context";
+import { ACCESS_TOKEN } from "./../../../lib/export/localstorage";
 
 const Wrapper = styled.div`
   width: 100%;
@@ -17,6 +18,17 @@ const Wrapper = styled.div`
 
 const Layout: FC = ({ children }) => {
   const router = useRouter();
+  useEffect(() => {
+    if (!localStorage.getItem(ACCESS_TOKEN)) {
+      if (
+        router.pathname === "/wallet" ||
+        router.pathname === "/feed" ||
+        router.pathname === "/support"
+      ) {
+        router.push("/");
+      }
+    }
+  }, [router]);
   return (
     <SampleProvider>
       <Wrapper>
