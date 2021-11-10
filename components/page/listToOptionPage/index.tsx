@@ -58,7 +58,7 @@ export default function ListToOptionPage() {
       music
         .getHistoryMusic({ page: page, size: size })
         .then((res) => {
-          setData(res.data.song);
+          setData(data.concat(res.data.song));
         })
         .catch(() => {
           return;
