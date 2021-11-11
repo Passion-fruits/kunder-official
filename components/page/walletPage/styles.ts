@@ -186,6 +186,16 @@ export const CheckPaymentWrap = styled(BASE_WRAPPER)`
   }
 `;
 
+export const SpinerWrap = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+  background: ${COLOR.black_subBackground};
+  border-radius: 5px;
+  margin-top: 20px;
+`;
+
 export const HistoryWrapper = styled.table`
   width: 100%;
   padding: 30px;
@@ -193,11 +203,6 @@ export const HistoryWrapper = styled.table`
   margin-top: 20px;
   color: ${COLOR.gray_text};
   background-color: ${COLOR.black_subBackground};
-  & .spiner-wrap {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-  }
   & th {
     color: ${COLOR.gray_subText};
     font-size: 17px;

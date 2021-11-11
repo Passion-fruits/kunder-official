@@ -25,42 +25,48 @@ export default function KdtHistory() {
   }, []);
 
   return (
-    <S.HistoryWrapper>
+    <>
       {loading ? (
-        <div className="spiner-wrap">
+        <S.SpinerWrap>
           <Spiner size={30} />
-        </div>
+        </S.SpinerWrap>
       ) : (
-        <>
-          <th>기록</th>
-          <th>날짜</th>
-          <th>거래내역</th>
-          <th>수량</th>
-          {history.map((obj, index) => (
-            <tr key={index}>
-              <td className="text-overflow">
-                <b>KDT 충전</b>
-              </td>
-              <td>{getDate(obj.created_at)}</td>
-              <td>
-                <div
-                  className="text-overflow"
-                  onClick={() =>
-                    window.open(
-                      `https://baobab.scope.klaytn.com/tx/${obj.tx_hash}`
-                    )
-                  }
-                >
-                  {obj.tx_hash}
-                </div>
-              </td>
-              <td>
-                <span className="minus">+{obj.amount}KDT</span>
-              </td>
+        <S.HistoryWrapper>
+          <thead>
+            <tr>
+              <th>기록</th>
+              <th>날짜</th>
+              <th>거래내역</th>
+              <th>수량</th>
             </tr>
-          ))}
-        </>
+          </thead>
+          <tbody>
+            {history.map((obj, index) => (
+              <tr key={index}>
+                <td className="text-overflow">
+                  <b>KDT 충전</b>
+                </td>
+                <td>{getDate(obj.created_at)}</td>
+                <td>
+                  <div
+                    className="text-overflow"
+                    onClick={() =>
+                      window.open(
+                        `https://baobab.scope.klaytn.com/tx/${obj.tx_hash}`
+                      )
+                    }
+                  >
+                    {obj.tx_hash}
+                  </div>
+                </td>
+                <td>
+                  <span className="minus">+{obj.amount}KDT</span>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </S.HistoryWrapper>
       )}
-    </S.HistoryWrapper>
+    </>
   );
 }

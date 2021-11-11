@@ -133,7 +133,7 @@ export default function SupportCard({
             <Contents kdtAmount={amount} content={question} />
             <S.AnswerContainer>
               <img src={artist_profile} onClick={routingToArtistProfile} />
-              <Contents user={artist} content={question} />
+              <Contents user={artist} content={answer} />
             </S.AnswerContainer>
           </>
         );
