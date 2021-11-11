@@ -10,8 +10,10 @@ export default function FeedPage() {
   const [feedList, setFeedList] = useState<musicCardObject[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
   const [page, setPage] = useState<number>(1);
+  const [end, setEnd] = useState<boolean>(false);
 
   const getFeedList = () => {
+    if (end) return;
     setLoading(true);
     feed
       .getFeedList({ page: page, size: 15 })
@@ -21,22 +23,24 @@ export default function FeedPage() {
       })
       .catch((err) => {
         setLoading(false);
+        setEnd(true);
         return;
       });
   };
 
   useEffect(() => {
-    getFeedList();
-    setPage(2);
     let pageIndex = 2;
     window.addEventListener("scroll", () => {
       if (CheckScroll()) {
-        getFeedList();
-        pageIndex++;
         setPage(pageIndex);
+        pageIndex++;
       }
     });
   }, []);
+
+  useEffect(() => {
+    getFeedList();
+  }, [page]);
 
   return (
     <S.Wrapper>

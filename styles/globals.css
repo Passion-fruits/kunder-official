@@ -6,6 +6,7 @@ body {
   font-family: "NanumSquare", sans-serif;
   letter-spacing: 0px;
   background-color: #0c0c0c;
+  min-width: 1200px;
 }
 
 h1,
