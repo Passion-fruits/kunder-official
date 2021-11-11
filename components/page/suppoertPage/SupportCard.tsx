@@ -58,6 +58,8 @@ export default function SupportCard({
   artist,
   artist_profile,
   option,
+  deleteSupportCard,
+  index,
 }: SupportHitoryObject) {
   const answerRef = useRef<HTMLInputElement>(null);
   const router = useRouter();
@@ -75,8 +77,10 @@ export default function SupportCard({
           answer: answerRef.current.value,
         })
         .then((res) => {
+          deleteSupportCard(index);
           toast.success(`${amount}KDT를 받았습니다!`);
           setLoading(false);
+          answerRef.current.value = "";
         })
         .catch(() => {
           toast.error("에러가 발생하였습니다.");

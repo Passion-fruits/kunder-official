@@ -13,6 +13,8 @@ export interface SupportHitoryObject {
   artist: string;
   artist_profile: string;
   option: menuType;
+  deleteSupportCard(index: number): void;
+  index: number;
 }
 
 export interface SupportHistory {

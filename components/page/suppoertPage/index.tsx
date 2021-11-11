@@ -9,8 +9,6 @@ import {
 import kdt from "../../../api//kdt";
 import { LoadingWrap } from "../feedPage/styles";
 import Spiner from "../../common/Spiner";
-import { ACCESS_TOKEN } from "./../../../lib/export/localstorage";
-import { useRouter } from "next/dist/client/router";
 
 interface menu {
   title: string;
@@ -21,6 +19,7 @@ export default function SupportPage() {
   const [path, setPath] = useState<menuType>("notAnswer");
   const [data, setData] = useState<SupportHitoryObject[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
+  const [renderState, setRenderState] = useState<boolean>(false);
   const menuList: menu[] = [
     {
       title: "답장하지 못한 후원",
@@ -93,6 +92,11 @@ export default function SupportPage() {
     }
   };
 
+  const deleteSupportCard = (index) => {
+    data.splice(index, 1);
+    setRenderState(!renderState);
+  };
+
   useEffect(() => {
     setData([]);
     setLoading(true);
@@ -139,6 +143,8 @@ export default function SupportPage() {
               artist={support.artist}
               artist_profile={support.artist_profile}
               option={path}
+              deleteSupportCard={deleteSupportCard}
+              index={index}
             />
           ))}
         </S.ListWrap>

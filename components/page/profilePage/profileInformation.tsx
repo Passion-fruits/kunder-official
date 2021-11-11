@@ -134,11 +134,11 @@ export default function ProfileInformation({ profileObj, getData }: props) {
           )}
           <div className="detail-contents">
             <div className="content">
-              플레이리스트 <b>6개</b>
+              플레이리스트 <b>{profileObj.playlist_count}개</b>
             </div>
             <div className="circle" />
             <div className="content">
-              노래 <b>6개</b>
+              노래 <b>{profileObj.song_count}개</b>
             </div>
           </div>
         </S.FlexContainer>

@@ -11,6 +11,8 @@ export interface profileObj {
   following: string;
   is_mine: boolean;
   wallet: string | null;
+  song_count: number;
+  playlist_count: number;
 }
 
 export interface menuObj {
