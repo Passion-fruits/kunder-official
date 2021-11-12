@@ -5,24 +5,44 @@ import { KdtTransaction } from "../../../lib/interfaces/kdt";
 import { KdtHistoryObject } from "./../../../lib/interfaces/kdt";
 import { getDate } from "./../../../lib/util/getDate";
 import Spiner from "../../common/Spiner";
+import { CheckScroll } from "./../../../lib/util/checkScroll";
 
 export default function KdtHistory() {
   const [history, setHistory] = useState<KdtHistoryObject[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
+  const [page, setPage] = useState<number>(1);
+  const [end, setEnd] = useState<boolean>(false);
+  const size = 10;
 
-  useEffect(() => {
+  const getKdtHistory = () => {
     kdt
-      .getKdtHistory()
+      .getKdtHistory({ page: page, size: size })
       .then((res) => {
         const data: KdtTransaction = res.data;
-        setHistory(data.history);
+        setHistory(history.concat(data.history));
         setLoading(false);
       })
       .catch(() => {
         setLoading(false);
+        setEnd(true);
         return;
       });
+  };
+
+  useEffect(() => {
+    getKdtHistory();
+    let page = 1;
+    window.addEventListener("scroll", () => {
+      if (CheckScroll()) {
+        setPage(page + 1);
+        page++;
+      }
+    });
   }, []);
+
+  useEffect(() => {
+    if (page > 1 && !end) getKdtHistory();
+  }, [page]);
 
   return (
     <>

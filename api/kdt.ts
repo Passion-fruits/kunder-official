@@ -17,9 +17,9 @@ export default {
       },
     });
   },
-  getKdtHistory() {
+  getKdtHistory({ page, size }) {
     return request({
-      url: `/kdt/history/charge`,
+      url: `/kdt/history/charge?size=${size}&page=${page}`,
       method: "get",
       headers: {
         "Content-type": "application/json",
