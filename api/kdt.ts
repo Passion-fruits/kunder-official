@@ -65,9 +65,9 @@ export default {
       },
     });
   },
-  getDonateForArtistHistory(done: 0 | 1) {
+  getDonateForArtistHistory({ done, size, page }) {
     return request({
-      url: `/kdt/history/donate?done=${done}`,
+      url: `/kdt/history/donate?done=${done}&size=${size}&page=${page}`,
       method: "get",
       headers: {
         "Content-type": "application/json",
@@ -75,9 +75,9 @@ export default {
       },
     });
   },
-  getDonateForMeHistory(done: 0 | 1) {
+  getDonateForMeHistory({ done, size, page }) {
     return request({
-      url: `/kdt/history/answer?done=${done}`,
+      url: `/kdt/history/answer?done=${done}&size=${size}&page=${page}`,
       method: "get",
       headers: {
         "Content-type": "application/json",

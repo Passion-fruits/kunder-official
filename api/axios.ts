@@ -9,7 +9,6 @@ const instance = axios.create({
   baseURL: process.env.NEXT_PUBLIC_API_DOMAIN,
   timeout: 100000,
 });
-let isTokenRefreshing = false;
 let refreshSubscribers = [];
 
 const onTokenRefreshed = (accessToken) => {
@@ -42,9 +41,7 @@ instance.interceptors.response.use(
     // 만약 토큰 오류가 났으면
     if (status === 401) {
       // 만약 로컬스토리지에 리프레쉬 토큰이 박혀있으면
-      if (!isTokenRefreshing && localStorage.getItem(REFRESH_TOKEN)) {
-        // isTokenRefreshing이 false인 경우에만 token refresh 요청
-        isTokenRefreshing = true;
+      if (localStorage.getItem(REFRESH_TOKEN)) {
         // 리프레쉬 받아와
         const refreshToken = localStorage.getItem(REFRESH_TOKEN);
         // 리프레쉬로 토큰 재 요청 해
@@ -62,7 +59,6 @@ instance.interceptors.response.use(
             const accessToken = data.access_token;
             // 새로운 토큰으로 엑세스토큰 갈아 끼워
             localStorage.setItem(ACCESS_TOKEN, accessToken);
-            isTokenRefreshing = false;
             axios.defaults.headers.common.Authorization = `Bearer ${accessToken}`;
             // 401떳던 요청 다시 진행 시켜
             onTokenRefreshed(accessToken);

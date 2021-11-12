@@ -1,5 +1,5 @@
 import * as S from "./styles";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import SupportCard from "./SupportCard";
 import {
   menuType,
@@ -9,6 +9,7 @@ import {
 import kdt from "../../../api//kdt";
 import { LoadingWrap } from "../feedPage/styles";
 import Spiner from "../../common/Spiner";
+import { CheckScroll } from "./../../../lib/util/checkScroll";
 
 interface menu {
   title: string;
@@ -16,10 +17,15 @@ interface menu {
 }
 
 export default function SupportPage() {
+  const size = 10;
+  const [page, setPage] = useState<number>(1);
   const [path, setPath] = useState<menuType>("notAnswer");
   const [data, setData] = useState<SupportHitoryObject[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
   const [renderState, setRenderState] = useState<boolean>(false);
+  const [isChange, setIsChange] = useState<boolean>(false);
+  const changeRef = useRef(null);
+  changeRef.current = isChange;
   const menuList: menu[] = [
     {
       title: "답장하지 못한 후원",
@@ -39,14 +45,21 @@ export default function SupportPage() {
     },
   ];
 
-  const getData = () => {
+  const apiDataSet = (
+    response_data: SupportHistory,
+    p_data: SupportHitoryObject[]
+  ) => {
+    setData(p_data.concat(response_data.history));
+    setLoading(false);
+  };
+
+  const getData = ({ p_page, p_data }) => {
     switch (path) {
       case "notAnswer":
         kdt
-          .getDonateForMeHistory(0)
+          .getDonateForMeHistory({ done: 0, size: size, page: p_page })
           .then((res) => {
-            const responseData: SupportHistory = res.data;
-            setData(data.concat(responseData.history));
+            apiDataSet(res.data, p_data);
           })
           .catch(() => {
             setLoading(false);
@@ -55,10 +68,9 @@ export default function SupportPage() {
         break;
       case "haveAnswer":
         kdt
-          .getDonateForMeHistory(1)
+          .getDonateForMeHistory({ done: 1, size: size, page: p_page })
           .then((res) => {
-            const responseData: SupportHistory = res.data;
-            setData(data.concat(responseData.history));
+            apiDataSet(res.data, p_data);
           })
           .catch(() => {
             setLoading(false);
@@ -67,10 +79,9 @@ export default function SupportPage() {
         break;
       case "isAnswer":
         kdt
-          .getDonateForArtistHistory(1)
+          .getDonateForArtistHistory({ done: 1, size: size, page: p_page })
           .then((res) => {
-            const responseData: SupportHistory = res.data;
-            setData(data.concat(responseData.history));
+            apiDataSet(res.data, p_data);
           })
           .catch(() => {
             setLoading(false);
@@ -79,10 +90,9 @@ export default function SupportPage() {
         break;
       case "isNotAnswer":
         kdt
-          .getDonateForArtistHistory(0)
+          .getDonateForArtistHistory({ done: 0, size: size, page: p_page })
           .then((res) => {
-            const responseData: SupportHistory = res.data;
-            setData(data.concat(responseData.history));
+            apiDataSet(res.data, p_data);
           })
           .catch(() => {
             setLoading(false);
@@ -98,14 +108,31 @@ export default function SupportPage() {
   };
 
   useEffect(() => {
+    let page = 2;
+    window.addEventListener("scroll", () => {
+      if (changeRef.current) {
+        changeRef.current = false;
+        setIsChange(false);
+        page = 2;
+      }
+      if (CheckScroll()) {
+        setPage(page);
+        page++;
+      }
+    });
+  }, []);
+
+  useEffect(() => {
     setData([]);
     setLoading(true);
+    setPage(1);
+    setIsChange(true);
+    getData({ p_page: 1, p_data: [] });
   }, [path]);
 
   useEffect(() => {
-    if (data.length === 0) getData();
-    else setLoading(false);
-  }, [data]);
+    if (page > 1) getData({ p_page: page, p_data: data });
+  }, [page]);
 
   return (
     <S.Wrapper>
