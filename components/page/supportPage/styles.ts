@@ -1,6 +1,6 @@
 import styled from "@emotion/styled";
 import { BASE_CONTAINER, BASE_WRAPPER, SIZE } from "../../../styles";
-import { COLOR } from "./../../../styles/index";
+import { COLOR } from "../../../styles/index";
 
 export const Wrapper = styled(BASE_WRAPPER)``;
 

@@ -253,8 +253,11 @@ export const HistoryWrapper = styled.table`
         @media screen and (max-width: ${SIZE.medium_width}) {
           font-size: 14px;
         }
-        & .minus {
+        & .plus {
           color: ${COLOR.green_subMain};
+        }
+        & .minus {
+          color: ${COLOR.blue_text};
         }
       }
     }

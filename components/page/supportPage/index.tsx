@@ -6,10 +6,10 @@ import {
   SupportHitoryObject,
   SupportHistory,
 } from "../../../lib/interfaces/support";
-import kdt from "../../../api//kdt";
+import kdt from "../../../api/kdt";
 import { LoadingWrap } from "../feedPage/styles";
 import Spiner from "../../common/Spiner";
-import { CheckScroll } from "./../../../lib/util/checkScroll";
+import { CheckScroll } from "../../../lib/util/checkScroll";
 
 interface menu {
   title: string;
@@ -24,6 +24,7 @@ export default function SupportPage() {
   const [loading, setLoading] = useState<boolean>(true);
   const [renderState, setRenderState] = useState<boolean>(false);
   const [isChange, setIsChange] = useState<boolean>(false);
+  const [end, setEnd] = useState<boolean>(false);
   const changeRef = useRef(null);
   changeRef.current = isChange;
   const menuList: menu[] = [
@@ -53,7 +54,14 @@ export default function SupportPage() {
     setLoading(false);
   };
 
-  const getData = ({ p_page, p_data }) => {
+  const apiCatch = () => {
+    setLoading(false);
+    setEnd(true);
+    return;
+  };
+
+  const getData = ({ p_page, p_data, p_end }) => {
+    if (p_end) return;
     switch (path) {
       case "notAnswer":
         kdt
@@ -62,8 +70,7 @@ export default function SupportPage() {
             apiDataSet(res.data, p_data);
           })
           .catch(() => {
-            setLoading(false);
-            return;
+            apiCatch();
           });
         break;
       case "haveAnswer":
@@ -73,8 +80,7 @@ export default function SupportPage() {
             apiDataSet(res.data, p_data);
           })
           .catch(() => {
-            setLoading(false);
-            return;
+            apiCatch();
           });
         break;
       case "isAnswer":
@@ -84,8 +90,7 @@ export default function SupportPage() {
             apiDataSet(res.data, p_data);
           })
           .catch(() => {
-            setLoading(false);
-            return;
+            apiCatch();
           });
         break;
       case "isNotAnswer":
@@ -95,8 +100,7 @@ export default function SupportPage() {
             apiDataSet(res.data, p_data);
           })
           .catch(() => {
-            setLoading(false);
-            return;
+            apiCatch();
           });
         break;
     }
@@ -124,14 +128,15 @@ export default function SupportPage() {
 
   useEffect(() => {
     setData([]);
+    setEnd(false);
     setLoading(true);
     setPage(1);
     setIsChange(true);
-    getData({ p_page: 1, p_data: [] });
+    getData({ p_page: 1, p_data: [], p_end: false });
   }, [path]);
 
   useEffect(() => {
-    if (page > 1) getData({ p_page: page, p_data: data });
+    if (page > 1) getData({ p_page: page, p_data: data, p_end: end });
   }, [page]);
 
   return (

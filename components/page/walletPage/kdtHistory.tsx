@@ -64,7 +64,15 @@ export default function KdtHistory() {
             {history.map((obj, index) => (
               <tr key={index}>
                 <td className="text-overflow">
-                  <b>KDT 충전</b>
+                  {obj.kdt_type === 1 ? (
+                    <b>KDT 충전</b>
+                  ) : obj.kdt_type === 2 ? (
+                    <b>후원한 KDT</b>
+                  ) : obj.kdt_type === 3 ? (
+                    <b>후원받은 KDT</b>
+                  ) : (
+                    ""
+                  )}
                 </td>
                 <td>{getDate(obj.created_at)}</td>
                 <td>
@@ -80,7 +88,11 @@ export default function KdtHistory() {
                   </div>
                 </td>
                 <td>
-                  <span className="minus">+{obj.amount}KDT</span>
+                  {obj.kdt_type === 2 ? (
+                    <span className="minus">-{obj.amount}KDT</span>
+                  ) : (
+                    <span className="plus">+{obj.amount}KDT</span>
+                  )}
                 </td>
               </tr>
             ))}

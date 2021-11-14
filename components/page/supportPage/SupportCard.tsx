@@ -1,5 +1,5 @@
 import * as S from "./styles";
-import { SupportHitoryObject } from "./../../../lib/interfaces/support";
+import { SupportHitoryObject } from "../../../lib/interfaces/support";
 import { useRef, useState } from "react";
 import kdt from "../../../api/kdt";
 import { toast } from "react-toastify";
