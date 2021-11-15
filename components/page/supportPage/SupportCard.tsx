@@ -61,8 +61,8 @@ export default function SupportCard({
   deleteSupportCard,
   index,
 }: SupportHitoryObject) {
-  const answerRef = useRef<HTMLInputElement>(null);
   const router = useRouter();
+  const [ans, setAns] = useState("");
 
   const [loading, setLoading] = useState<boolean>(false);
 
@@ -74,15 +74,15 @@ export default function SupportCard({
         .writeAnswer({
           message_id: message_id,
           user_id: user_id,
-          answer: answerRef.current.value,
+          answer: ans,
         })
         .then((res) => {
           deleteSupportCard(index);
           toast.success(`${amount}KDT를 받았습니다!`);
           setLoading(false);
-          answerRef.current.value = "";
+          setAns("");
         })
-        .catch(() => {
+        .catch((err) => {
           toast.error("에러가 발생하였습니다.");
           setLoading(false);
         });
@@ -97,6 +97,10 @@ export default function SupportCard({
     router.push(`/profile?id=${artist_id}`);
   };
 
+  const handleAns = (event) => {
+    setAns(event.target.value);
+  };
+
   const setCardTsx = () => {
     switch (option) {
       case "notAnswer":
@@ -107,10 +111,11 @@ export default function SupportCard({
               <Contents user={name} kdtAmount={amount} content={question} />
             </S.UserProfileWrap>
             <S.InputToAnswer
-              ref={answerRef}
               onKeyDown={subAnswer}
               placeholder="답장 후 후원금을 받아가세요!"
               id="focus"
+              value={ans}
+              onChange={handleAns}
             />
             {loading && (
               <S.SmallLoadingWrap>

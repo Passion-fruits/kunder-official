@@ -13,9 +13,11 @@ export default function ListToOptionPage() {
   const size = 13;
   const [page, setPage] = useState<number>(1);
   const [data, setData] = useState<musicCardObject[]>([]);
+  const [end, setEnd] = useState<boolean>(false);
   const pageRef = useRef(page);
 
   useEffect(() => {
+    if (end) return;
     if (option === "recent") {
       main
         .getRecentMusic({
@@ -26,7 +28,7 @@ export default function ListToOptionPage() {
           setData(data.concat(res.data.song));
         })
         .catch(() => {
-          return;
+          setEnd(true);
         });
     }
     if (option === "popular") {
@@ -36,7 +38,7 @@ export default function ListToOptionPage() {
           setData(data.concat(res.data.song));
         })
         .catch(() => {
-          return;
+          setEnd(true);
         });
     }
     if (option === "genre") {
@@ -51,7 +53,7 @@ export default function ListToOptionPage() {
           setData(data.concat(res.data.songs));
         })
         .catch(() => {
-          return;
+          setEnd(true);
         });
     }
     if (option === "history") {
@@ -61,7 +63,7 @@ export default function ListToOptionPage() {
           setData(data.concat(res.data.song));
         })
         .catch(() => {
-          return;
+          setEnd(true);
         });
     }
     if (option === "like") {

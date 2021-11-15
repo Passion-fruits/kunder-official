@@ -114,6 +114,9 @@ export const InforWrap = styled(BASE_WRAP)`
     gap: 30px;
     align-items: center;
     margin-top: 20px;
+    & svg {
+      cursor: pointer;
+    }
     & .play-btn {
       width: 55px;
       height: 55px;
