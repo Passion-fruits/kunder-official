@@ -3,11 +3,12 @@ import { playlistInfor } from "../../../lib/interfaces/playlist";
 import * as S from "./styles";
 import { getDate } from "../../../lib/util/getDate";
 import { setValue, getValue } from "../../../lib/context/index";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { toast } from "react-toastify";
 import UpdateIcon from "../../../assets/update";
 import { USER_ID } from "../../../lib/export/localstorage";
 import { useRouter } from "next/dist/client/router";
+import playlist from "../../../api/playlist";
 
 export default function PlaylistInformation({
   name,
@@ -21,6 +22,7 @@ export default function PlaylistInformation({
 }: playlistInfor) {
   const dispatch = setValue();
   const router = useRouter();
+  const [isLike, setIsLike] = useState<boolean>(false);
 
   const startPlaylist = () => {
     if (songs.length > 0) {
@@ -48,6 +50,18 @@ export default function PlaylistInformation({
       type: "SET_MODAL",
       modal: "updatePlaylist",
     });
+  }, []);
+
+  useEffect(() => {
+    playlist
+      .getIsPlaylistLike(playlist_id)
+      .then((res) => {
+        console.log(res.data.is_like);
+        if (res.data.is_like) setIsLike(true);
+      })
+      .catch(() => {
+        return;
+      });
   }, []);
 
   return (

@@ -59,4 +59,14 @@ export default {
       url: `/recommend/main/playlist?song_id=${base_song_id}&size=${size}`,
     });
   },
+  getIsPlaylistLike(playlist_id) {
+    return request({
+      method: "get",
+      url: `/like/playlist?playlist_id=${playlist_id}`,
+      headers: {
+        "Content-type": "application/json",
+        Authorization: `Bearer ${localStorage.getItem(ACCESS_TOKEN)}`,
+      },
+    });
+  },
 };
